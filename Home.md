@@ -7,7 +7,6 @@ Install it.
 
 # Install STM32 boards support
 Follow the Readme.md of the [BoardManagerFiles](https://github.com/stm32duino/BoardManagerFiles)
-{{:https://github.com/stm32duino/BoardManagerFiles/raw/master/README.md}}
 
 # First step
 ToDo
