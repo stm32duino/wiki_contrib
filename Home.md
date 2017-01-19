@@ -1,4 +1,5 @@
-Welcome to the **stm32duino** wiki!
+![stm32duino](https://avatars2.githubusercontent.com/u/12180191?v=3&s=200) 
+# Welcome to the **stm32duino** wiki!
 
 
 For full instructions on using the STM32 boards with Arduino, see the [[Getting Started|Getting-Started]] page.
