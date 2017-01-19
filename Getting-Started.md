@@ -3,6 +3,6 @@ Download Arduino.cc IDE [here](https://www.arduino.cc/en/Main/Software) for the 
 
 Install it.
 
-# AddSTM32 boards support
+# Add STM32 boards support
 [[Boards Manager|Boards-Manager]] wiki
 
