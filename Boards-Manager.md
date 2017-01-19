@@ -1,3 +1,13 @@
+Arduino.cc IDE allows to add easily new board thanks the "**Boards Managers**".
+
+More information available on Arduino.cc official website:
+
+[Installing additional Arduino Cores](https://www.arduino.cc/en/guide/cores)
+
+STM32 cores packages are provided thanks:
+
+https://github.com/stm32duino/BoardManagerFiles
+
 ### Installing STM32 Cores
 
 1- Launch Arduino.cc IDE. Click on "**File**" menu and then "**Preferences**".
