@@ -24,7 +24,7 @@ See [Firmata library](https://www.arduino.cc/en/Reference/Firmata) for further i
 When board restart, LED blink several time. Firmata is ready to use.
 
 ## Test with [ScratchX](http://scratchx.org/)
-It can be tested with [ScratchX](http://scratchx.org/) using the [Scratch Arduino Extension](http://khanning.github.io/scratch-arduino-extension/index.html).
+Firmata can be tested with [ScratchX](http://scratchx.org/) using the [Scratch Arduino Extension](http://khanning.github.io/scratch-arduino-extension/index.html).
 Please, follow the [Getting Started](http://khanning.github.io/scratch-arduino-extension/gettingstarted.html) since step 2.
 
 Some examples, which could be loaded with the plugin, for the Nucleo L476RG:
