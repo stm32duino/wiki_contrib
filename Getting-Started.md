@@ -27,5 +27,5 @@ See the [[Boards Manager|Boards-Manager]] page.
   [[/img/SelectPort.png|alt="Port selection"]]
  
 ## Examples
-[[Blink-example]]
-[[Firmata-example]]
+* [[Blink-example]]
+* [[Firmata-example]]
