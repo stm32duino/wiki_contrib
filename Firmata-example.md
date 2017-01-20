@@ -14,6 +14,7 @@ See [Firmata library](https://www.arduino.cc/en/Reference/Firmata) for further i
   **Note:** Firmata library has been updated for the STM32 core. That's why _Firmata_ is displayed twice.
   1. "Examples for any board" section
   2. "Examples for Nucleo L476RG" section
+  Select the _firmata_ for the _Nucleo L476RG_
   [[/img/SelectSpecificExample.png|alt="StandardFirmata example selection"]]
 
 4. Click the upload button
@@ -22,3 +23,5 @@ See [Firmata library](https://www.arduino.cc/en/Reference/Firmata) for further i
 
 When board restart, LED blink several time. Firmata is ready to use.
 
+It can be tested with [ScratchX](http://scratchx.org/) using the [Scratch Arduino Extension](http://khanning.github.io/scratch-arduino-extension/index.html).
+Please, follow the [Getting Started](http://khanning.github.io/scratch-arduino-extension/gettingstarted.html) since step 2.
