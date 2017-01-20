@@ -25,7 +25,15 @@ See the [[Boards Manager|Boards-Manager]] page.
     (Or unplug the board, check the menu, and then plug the board and check what new port appears)
 
   [[/img/SelectPort.png|alt="Port selection"]]
- 
+
+### Upload method
+Depending of the board, several upload method could be proposed, thanks the "**Tools > Upload Method**" menu
+* Mass Storage: copy binary to the mass storage
+* [STLink](http://www.st.com/en/development-tools/st-link-v2.html): use STLink to flash
+* [DFU](https://en.wikipedia.org/wiki/USB#Device_Firmware_Upgrade): use USB to flash
+
+[[/img/UploadMethod.png|alt="Upload Method"]]
+
 ## Examples
 * [[Blink-example]]
 * [[Firmata-example]]
