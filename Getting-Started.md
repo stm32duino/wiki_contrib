@@ -6,7 +6,7 @@ Download and install [Arduino software (IDE)](https://www.arduino.cc/en/Main/Sof
 See the [[Boards Manager|Boards-Manager]] page.
 
 ## Configuring IDE 
-1. Connect a board to your computer's USB port. For this example: [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
+1. Connect a board to the computer USB port. For this example: [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
 
 2. Launch the Arduino software
 
@@ -22,7 +22,7 @@ See the [[Boards Manager|Boards-Manager]] page.
     * On Windows, it's often the highest-numbered COM port. In this example, it's _COM40_
     * On Linux, it's something like _/dev/ttyACM0_.
 
-    (Or unplug the Arduino, check the menu, and then replug the board and see what new port appears.)
+    (Or unplug the board, check the menu, and then plug the board and check what new port appears)
 
   [[/img/SelectPort.png|alt="Port selection"]]
  
