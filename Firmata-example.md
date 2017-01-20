@@ -23,5 +23,11 @@ See [Firmata library](https://www.arduino.cc/en/Reference/Firmata) for further i
 
 When board restart, LED blink several time. Firmata is ready to use.
 
+## Test with [ScratchX](http://scratchx.org/)
 It can be tested with [ScratchX](http://scratchx.org/) using the [Scratch Arduino Extension](http://khanning.github.io/scratch-arduino-extension/index.html).
 Please, follow the [Getting Started](http://khanning.github.io/scratch-arduino-extension/gettingstarted.html) since step 2.
+
+Some examples, which could be loaded with the plugin, for the Nucleo L476RG:
+*  [Blink-Nucleo-l476.sbx](/data/scratchx/Blink-Nucleo-l476.sbx): LED blinking every second.
+*  [Button-Nucleo-l476.sbx](/data/scratchx/Button-Nucleo-l476.sbx): LED is switch off when blue button is pressed.
+*  [ToggleButton-Nucleo-l476.sbx](/data/scratchx/ToggleButton-Nucleo-l476.sbx): LED state change each time blue button is pressed.
