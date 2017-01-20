@@ -12,6 +12,8 @@
 
 4. Click the upload button
   
+  See [[Getting-Started#upload-method]] to change the upload method.
+
   [[/img/Upload.png|alt="Upload"]]
 
 That's all. LED should blink on the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html).
