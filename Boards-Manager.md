@@ -8,7 +8,7 @@ STM32 cores packages are provided thanks:
 
 https://github.com/stm32duino/BoardManagerFiles
 
-### Installing STM32 Cores
+## Installing STM32 Cores
 
 1- Launch Arduino.cc IDE. Click on "**File**" menu and then "**Preferences**".
 
@@ -42,8 +42,17 @@ You can close the Board Manager.
 
 Now you can find the new board in the "**Board**" menu. 
 
-### Troubleshooting
+## Troubleshooting
 
+If you have any issue to download/use a package, you could [file an issue on Github](https://github.com/stm32duino/BoardManagerFiles/issues/new).
+
+Or submit a topic on the [stm32duino forum](http://stm32duino.com):
+
+ * questions on the [STM32 Core](http://stm32duino.com/viewforum.php?f=48)
+
+ * bugs/enhancements on the [STM core: Bugs and enhancements](http://stm32duino.com/viewforum.php?f=49)
+
+### Proxy
 If you have any issue to download a package, ensure to not be behind a proxy.
 
 Else configure the proxy in the Arduino.cc IDE (open the "**Preferences**" dialog and select "**Network**" tab).
