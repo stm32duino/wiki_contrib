@@ -33,6 +33,7 @@ See the [[Boards Manager|Boards-Manager]] page.
 [[/img/SelectBlinkExample.png|alt="Blink example selection"]]
 
 7. Click the upload button
-[[/img/Upload.png|alt="Upload"]]
+  
+  [[/img/Upload.png|alt="Upload"]]
 
-That's all. LED should blink on the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
+That's all. LED should blink on the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html).
