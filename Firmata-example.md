@@ -18,7 +18,9 @@ See [Firmata library](https://www.arduino.cc/en/Reference/Firmata) for further i
   [[/img/SelectSpecificExample.png|alt="StandardFirmata example selection"]]
 
 4. Click the upload button
-  
+
+  See [[Getting-Started#upload-method]] to change the upload method.
+
   [[/img/Upload.png|alt="Upload"]]
 
 When board restart, LED blink several time. Firmata is ready to use.
