@@ -28,4 +28,4 @@ See the [[Boards Manager|Boards-Manager]] page.
  
 ## Examples
 [[Blink-example]]
-
+[[Firmata-example]]
