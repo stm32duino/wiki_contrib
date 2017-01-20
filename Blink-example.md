@@ -2,7 +2,7 @@
 1. If not already done, download and install the [Arduino software (IDE)](https://www.arduino.cc/en/Main/Software) for the required OS.
 ([Windows](https://www.arduino.cc/en/Guide/Windows), [Linux](https://www.arduino.cc/en/Guide/linux) or [Mac](https://www.arduino.cc/en/Guide/MacOSX) instructions)
 
-2. Configure the IDE for the desired board. 
+2. Configure the IDE to the desired board. 
 
   See [[Getting-Started#configuring-ide]]
 
