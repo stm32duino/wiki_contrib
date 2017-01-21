@@ -33,4 +33,4 @@ Please, follow the [Getting Started](http://khanning.github.io/scratch-arduino-e
 Some examples, which could be loaded with the plugin, for the Nucleo L476RG:
 *  [Blink-Nucleo-l476.sbx](https://github.com/stm32duino/wiki/raw/master/examples/scratchx/Blink-Nucleo-l476.sbx): LED blinking every second.
 *  [Button-Nucleo-l476.sbx](https://github.com/stm32duino/wiki/raw/master/examples/scratchx/Button-Nucleo-l476.sbx): LED is switch off when blue button is pressed.
-*  [ToggleButton-Nucleo-l476.sbx](https://github.com/stm32duino/wiki/raw/master/examples/scratchx/ToggleButton-Nucleo-l476.sbx): LED state change each time blue button is pressed.
+*  [ToggleButton-Nucleo-l476.sbx](https://github.com/stm32duino/wiki/raw/master/examples/scratchx/ToggleButton-Nucleo-l476.sbx): LED state changes each time blue button is pressed.
