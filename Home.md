@@ -1,8 +1,22 @@
 ![stm32duino](https://avatars2.githubusercontent.com/u/12180191?v=3&s=200) 
 # Welcome to the **stm32duino** wiki!
 
-
+# [[Getting Started|Getting-Started]]
 For full instructions on using the STM32 boards with Arduino, see the [[Getting Started|Getting-Started]] page.
+
+# Boards available:
+
+	* STM32F0
+		* Nucleo F091RC
+
+	* STM32F1
+		* Nucleo F103RB
+		* STM32 VL Discovery STM32F100RB
+		* BluePill F103C8
+		* MapleMini F103CB
+
+	* STM32L4
+		* Nucleo L476RG
 
 # Troubleshooting
 
