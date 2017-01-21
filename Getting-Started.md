@@ -36,4 +36,4 @@ Depending of the board, several upload method could be proposed, thanks the "**T
 
 ## Examples
 * [[Blink-example]]
-* [[Firmata-example]]
+* [[Firmata-example]] (to use with [ScratchX](http://scratchx.org/) for example)
