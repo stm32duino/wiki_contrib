@@ -2,8 +2,9 @@
 Download and install [Arduino software (IDE)](https://www.arduino.cc/en/Main/Software) for the required OS.
 ([Windows](https://www.arduino.cc/en/Guide/Windows), [Linux](https://www.arduino.cc/en/Guide/linux) or [Mac](https://www.arduino.cc/en/Guide/MacOSX) instructions)
 
-## Add STM32 boards support
-See the [[Boards Manager|Boards-Manager]] page.
+## Add STM32 boards support to Arduino
+This is the needed step to get STM32 targets added to Arduino.
+So carefully follow the steps described in the [[Boards Manager|Boards-Manager]] page. 
 
 ## Configuring IDE 
 1. Connect a board to the computer USB port. For this example: [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
