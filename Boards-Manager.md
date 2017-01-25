@@ -1,3 +1,4 @@
+## Boards manager concept
 Arduino.cc IDE allows to add easily new board thanks the "**Boards Managers**".
 More information about "**Boards Managers**" is available on Arduino.cc official website:
 
