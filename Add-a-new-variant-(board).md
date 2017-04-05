@@ -1,2 +1,2 @@
-![](http://images.clipartpanda.com/under-construction-clipart-23117228-traffic-cone-and-under-construction-sign.jpg)
+[[/img/under-construction.jpg|alt="under construction"]]
 ## Will come soon.
