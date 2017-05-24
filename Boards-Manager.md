@@ -32,7 +32,7 @@ Select "**Contributed**" type.
 
 [[img/boardsmanager.png|alt="BoardsManager dialog"]]
 
-Select the STM32 core wanted and click on install.
+Select the "**STM32 Cores**" and click on install.
 
 [[img/boardsmanager2.png|alt="BoardsManager dialog"]]
 
@@ -42,7 +42,13 @@ You can close the Board Manager.
 
 [[img/boardslist.png|alt="Boards list"]]
 
-Now you can find the new board in the "**Board**" menu. 
+Now you can find the STM32 boards package in the "**Board**" menu.
+
+Select the desired boards series: _Nucleo-64 / Nucleo-144 / Discovery_
+
+[[img/boardslist2.png|alt="Boards list2"]]
+
+Then you can find the Nucleo-64 boards available in a sub-menu of the "Tools" menu.
 
 ## Troubleshooting
 
