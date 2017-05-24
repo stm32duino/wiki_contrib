@@ -13,14 +13,20 @@ So carefully follow the steps described in the [[Boards Manager|Boards-Manager]]
 
     [[/img/arduino.png|alt="Arduino icon"]]
 
-3. Select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html) board from the "**Tools > Board**" menu
+3. Select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html) board in two steps:
+
+a. From the "**Tools > Board**" menu, select the STM32 board series: _Nucleo-64_
 
   [[/img/SelectBoard.png|alt="Board selection"]]
+
+b. Then from the "**Tools > Nulceo 64 boards**" menu, select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
+
+  [[/img/SelectBoard2.png|alt="Board selection2"]]
 
 3. Select the serial port from the "**Tools > Port**" menu
 
     * On Mac, it's something like _/dev/tty.usbmodem-1511_.
-    * On Windows, it's often the highest-numbered COM port. In this example, it's _COM40_
+    * On Windows, it's often the highest-numbered COM port. In this example, it's _COM5_
     * On Linux, it's something like _/dev/ttyACM0_.
 
     (Or unplug the board, check the menu, and then plug the board and check what new port appears)
