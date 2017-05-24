@@ -15,6 +15,19 @@ For full instructions on using the STM32 boards with Arduino, see the [[Getting 
     * BluePill F103C8
     * MapleMini F103CB
 
+  * STM32F3
+    * [Nucleo F303RE](http://www.st.com/en/evaluation-tools/nucleo-f303re.html)
+
+  * STM32F4
+    * [Nucleo F429ZI](http://www.st.com/en/evaluation-tools/nucleo-f429zi.html)
+    * [STM32F407G-DISC1](http://www.st.com/en/evaluation-tools/stm32f4discovery.html)
+
+  * STM32F7
+    * [STM32F746G-DISCOVERY](http://www.st.com/en/evaluation-tools/32f746gdiscovery.html)
+
+  * STM32L0
+    * [Nucleo L053R8](http://www.st.com/en/evaluation-tools/nucleo-l053r8.html)
+
   * STM32L4
     * [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
 
@@ -23,9 +36,7 @@ For full instructions on using the STM32 boards with Arduino, see the [[Getting 
 If you have any issue to download/use a package, you could [file an issue on BoardManagerFiles](https://github.com/stm32duino/BoardManagerFiles/issues/new) github.
 
 For STM32 Core or tools issue, file an issue on the related Github:
- * [Arduino_Core_STM32F0](https://github.com/stm32duino/Arduino_Core_STM32F0/issues/new).
- * [Arduino_Core_STM32F1](https://github.com/stm32duino/Arduino_Core_STM32F1/issues/new).
- * [Arduino_Core_STM32L4](https://github.com/stm32duino/Arduino_Core_STM32L4/issues/new).
+ * [Arduino_Core_STM32](https://github.com/stm32duino/Arduino_Core_STM32/issues/new).
  * [Arduino_Tools](https://github.com/stm32duino/Arduino_Tools/issues/new).
 
 Or submit a topic on the [stm32duino forum](http://stm32duino.com):
