@@ -2,6 +2,6 @@
 
 [[Getting Started]]
 
-[[Add-a-new-variant-(board)]]
+[[Add a new variant (board)]]
 
 [[Examples]]
