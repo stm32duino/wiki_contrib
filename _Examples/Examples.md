@@ -1,6 +1,3 @@
-## Examples
-
-[[Blink-exampleExamples]]
-
-[[Firmata-example]]
+1. [[Blink-example]]
+2. [[Firmata-example]]
 
