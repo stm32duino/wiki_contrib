@@ -2,6 +2,6 @@
 
 [[Examples]]
 
-[[Blink-example]]
+[[Blink example]]
 
-[[Firmata-example]]
+[[Firmata example]]
