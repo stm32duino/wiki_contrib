@@ -12,6 +12,7 @@ This will install the required dependencies:
 Go to the local Arduino directory<br>
     [[/img/Tips-icon.png|alt="Tips icon"]] _The location is displayed in the "**Preferences**" dialog._<br>
 It should be:
+
     * `/Users/\<USERNAME\>/Library/Arduino15/` _(Mac)_
     * `c:\Documents and Settings\\<USERNAME\>\Application Data\Arduino15\` _(Windows XP)_
     * `c:\Users\\<USERNAME\>\AppData\Roaming\Arduino15\` _(Windows Vista)_
@@ -47,4 +48,6 @@ Uploader tools path need to be updated in **platform.txt** at the root of the gi
 Replace all `{runtime.hardware.path}` by `{runtime.tools.STM32Tools.path}`<br>
 That's all.<br>
 
-  ### 3.2. 
+[[/img/Warning-icon.png|alt="Warning icon"]] _Uninstalling from the boards managers will remove the git repository!_
+
+  ### 3.2. Adding repositories in _Arduino/hardware_ directory
