@@ -52,7 +52,10 @@ That's all.<br>
 [[/img/Warning_icon.png|alt="Warning icon"]] _Uninstalling from the boards managers will remove the git repository!_
 
   ### 3.2. Adding repositories in _Arduino/hardware_ directory (2nd method)
-Go to the "_**\<Arduino install directory\>/hardware/**_" and create a folder named: _**stm32**_<br>
+Go to the "_**\<Arduino install directory\>/hardware/**_" and create a folder named: _**stm**_<br>
+
 Go to this directory then do the clone:<br>
 
   `git clone https://github.com/stm32duino/Arduino_Core_STM32.git stm32`
+
+[[/img/Warning_icon.png|alt="Warning icon"]] The name of a new directory to clone into must be _**stm32**_ 
