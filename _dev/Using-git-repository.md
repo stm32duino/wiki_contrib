@@ -71,6 +71,7 @@ From the same directory clone the [Arduino_Tools](https://github.com/stm32duino/
 
 [[/img/Warning-icon.png|alt="Warning"]] The name of the new directory to clone into must be _**tools**_!
 
-So, you should have two directories in `\<Arduino install directory\>/hardware/stm/`: `stm32` and `tools`
+So, you should have two directories in `\<Arduino install directory\>/hardware/stm/`<br>
+`stm32` and `tools`
 
-[[/img/Note-icon.png|alt="Note"]] If you do not have delete the stm32 core extracted package, in "**Tools > Board**" menu, you will have twice the "**STM32 board**" menu.<br>
+[[/img/Note-icon.png|alt="Note"]] If you do not have deleted the stm32 core extracted package (step [2.](https://github.com/stm32duino/wiki/wiki/Using-git-repository/_edit#2-delete-the-stm32-core-extracted-package)), in "**Tools > Board**" menu, you will have twice the "**STM32 board**" menu.<br>
