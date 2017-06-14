@@ -26,7 +26,7 @@ Delete this directory.
 ## 3. Hereafter, 2 methods to use git repository:
 Directory of step 2 is now deleted.<br>
 
-  ### 3.1. Replacing the stm32 core version package by the clone of the git repository
+  ### 3.1. Cloning the git repository to replace the stm32 core version package (1st method)
 In the "**<local Arduino directory>/packages/STM32/hardware/stm32/**" do the clone:<br>
 
   `git clone https://github.com/stm32duino/Arduino_Core_STM32.git <version>`
@@ -48,6 +48,6 @@ Uploader tools path need to be updated in **platform.txt** at the root of the gi
 Replace all `{runtime.hardware.path}` by `{runtime.tools.STM32Tools.path}`<br>
 That's all.<br>
 
-[[/img/Warning-icon.png|alt="Warning icon"]] _Uninstalling from the boards managers will remove the git repository!_
+[[/img/Warning_icon.png|alt="Warning icon"]] _Uninstalling from the boards managers will remove the git repository!_
 
-  ### 3.2. Adding repositories in _Arduino/hardware_ directory
+  ### 3.2. Adding repositories in _Arduino/hardware_ directory (2nd method)
