@@ -1,6 +1,6 @@
 [[Home]]
 
-[[Devel]]
+[[Development]]
 
 [[Using git repository]]
 
