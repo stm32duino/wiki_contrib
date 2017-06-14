@@ -10,9 +10,8 @@ This will install the required dependencies:
 
 ## 2. Delete the stm32 core extracted package.
 Go to the local Arduino directory<br>
-    [[/img/Tips-icon.png|alt="Tips icon"]]The location is displayed in the "**Preferences**" dialog.<br>
-    It should be:
-
+    [[/img/Tips-icon.png|alt="Tips icon"]] _The location is displayed in the "**Preferences**" dialog._<br>
+It should be:
     * `/Users/\<USERNAME\>/Library/Arduino15/` _(Mac)_
     * `c:\Documents and Settings\\<USERNAME\>\Application Data\Arduino15\` _(Windows XP)_
     * `c:\Users\\<USERNAME\>\AppData\Roaming\Arduino15\` _(Windows Vista)_
@@ -31,12 +30,21 @@ In the "**<local Arduino directory>/packages/STM32/hardware/stm32/**" do the clo
 
   `git clone https://github.com/stm32duino/Arduino_Core_STM32.git <version>`
 
-where _<version>_ is the one you delete in step 2.<br>
+where _\<version\>_ is the one you delete in step 2.<br>
 For this example: _2017.6.2_<br>
 So, do:<br>
 
   `git clone https://github.com/stm32duino/Arduino_Core_STM32.git 2017.6.2`
 
-At this step, you are able to build using the git repo.
- 
-  3.2. 
+[[/img/Tips-icon.png|alt="Tips icon"]] _It is possible to clone it elsewhere and create a symlink named \<version>_<br>
+
+At this step, you are able to build using the git repository but upload is broken.<br>
+`.../massStorageCopy": error=2, No such file or directory`<br>
+or<br>
+`.../stlink_upload": error=2, No such file or directory `<br>
+
+Uploader tools path need to be updated in **platform.txt** at the root of the git repository.<br>
+Replace all `{runtime.hardware.path}` by `{runtime.tools.STM32Tools.path}`<br>
+That's all.<br>
+
+  ### 3.2. 
