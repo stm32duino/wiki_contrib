@@ -38,7 +38,7 @@ So, do:<br>
 
   `git clone https://github.com/stm32duino/Arduino_Core_STM32.git 2017.6.2`
 
-[[/img/Tips-icon.png|alt="Tips icon"]] _It is possible to clone it elsewhere and create a symlink named \<version>_<br>
+[[/img/Tips-icon.png|alt="Tips"]] _It is possible to clone it elsewhere and create a symlink named \<version>_<br>
 
 At this step, you are able to build using the git repository but upload is broken.<br>
 `.../massStorageCopy": error=2, No such file or directory`<br>
@@ -49,13 +49,13 @@ Uploader tools path need to be updated in _**platform.txt**_ at the root of the 
 Replace all `{runtime.hardware.path}` by `{runtime.tools.STM32Tools.path}`<br>
 That's all.<br>
 
-[[/img/Warning_icon.png|alt="Warning icon"]] _Uninstalling from the boards managers will remove the git repository!_
+[[/img/Warning_icon.png|alt="Warning"]] _Uninstalling from the boards managers will remove the git repository!_
 
   ### 3.2. Adding repositories in _Arduino/hardware_ directory (2nd method)
-Go to the "_**\<Arduino install directory\>/hardware/**_" and create a folder named: _**stm**_<br>
-
-Go to this directory then do the clone:<br>
+Go to the "_**\<Arduino install directory\>/hardware/**_" and create a directory named: _**stm**_<br>
+[[/img/Note_icon.png|alt="Note"]] Directory name is not important _**stm**_ is an example.<br>
+Go to this new directory then do the clone:<br>
 
   `git clone https://github.com/stm32duino/Arduino_Core_STM32.git stm32`
 
-[[/img/Warning_icon.png|alt="Warning icon"]] The name of a new directory to clone into must be _**stm32**_ 
+[[/img/Important_icon.png|alt="Important"]] The name of a new directory to clone into must be _**stm32**_!
