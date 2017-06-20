@@ -7,6 +7,7 @@ For full instructions on using the STM32 boards with Arduino, see the [[Getting 
 # Boards available:
 
   * STM32F0
+    * [Nucleo F030R8](http://www.st.com/en/evaluation-tools/nucleo-f030r8.html)
     * [Nucleo F091RC](http://www.st.com/en/evaluation-tools/nucleo-f091rc.html)
 
   * STM32F1
