@@ -5,3 +5,5 @@
 [[Blink example]]
 
 [[Firmata example]]
+
+[[ FAQ ]]
