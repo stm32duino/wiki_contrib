@@ -26,9 +26,10 @@ See [Firmata library](https://www.arduino.cc/en/Reference/Firmata) for further i
 
 When board restart, LED blinking several time (indicating Firmata version). **Firmata **is ready to use.
 
-## Test with **Firmata** client
-**Firmata** client test are available here: (no installation required)
-[www.firmata.org](http://www.firmata.org/wiki/Main_Page)
+## Firmata Test Program
+**Firmata** client test are available [here](http://firmata.org/wiki/Main_Page#Firmata_Test_Program) (no installation required)
+
+![Firmata_test_screenshot](http://firmata.org/w/images/4/4d/Firmata_test_screenshot.png)
 
 ## Test with [ScratchX](http://scratchx.org/) (experimental)
 Firmata can be tested with [ScratchX](http://scratchx.org/) using the [Scratch Arduino Extension](http://khanning.github.io/scratch-arduino-extension/index.html).
