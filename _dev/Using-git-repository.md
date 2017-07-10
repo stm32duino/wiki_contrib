@@ -8,20 +8,9 @@ This will install the required dependencies:
    * [STM32Tools](https://github.com/stm32duino/Arduino_Tools): upload tools,...
 
 ## 2. Delete the stm32 core extracted package
-Go to the local Arduino directory<br>
-    [[/img/Tips-icon.png|alt="Tips icon"]] _The location is displayed in the "**Preferences**" dialog._<br>
+Go to the installed package directory: [[Where-are-sources]]
 
-It should be:
-
-* `/Users/\<USERNAME\>/Library/Arduino15/` _(Mac)_
-* `c:\Documents and Settings\\<USERNAME\>\Application Data\Arduino15\` _(Windows XP)_
-* `c:\Users\\<USERNAME\>\AppData\Roaming\Arduino15\` _(Windows Vista)_
-* `c:\Users\\<USERNAME\>\AppData\Local\Arduino15\` _(Windows 7)_
-* `~/.arduino15/` _(Linux)_
-
-Then, go to "_**\<local Arduino directory\>/packages/STM32/hardware/stm32/**_" directory.<br> 
-You should see a directory named with the STM32 Core version installed. Example: _2017.6.2_<br>
-Delete this directory.
+Delete the  version directory: `<yyyy_mm_dd>`
 
 ## 3. Hereafter, 2 methods to use git repository
 Directory of step 2 is now deleted.<br>
