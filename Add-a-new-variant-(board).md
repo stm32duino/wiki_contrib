@@ -30,11 +30,24 @@ or get it from [Arduino_Tools github repo](https://github.com/stm32duino/Arduino
 
 [[/img/Warning-icon.png|alt="Warning"]]This xml file contains non alpha characters in its name, you should call it with quotes!<br>
 [[/img/Warning-icon.png|alt="Warning"]] Script uses default  [STM32CubeMX](http://www.st.com/en/development-tools/stm32cubemx.html) installation directory. If you changed it, update the installation path in the script.<br>
-[[/img/Tips-icon.png|alt="Tips"]] _\<product xml file name\>_ could be find in **_\<STM32CubeMX\>db/mcu_** folder<br>
+[[/img/Tips-icon.png|alt="Tips"]] _\<product xml file name\>_ could be find in **_\<STM32CubeMX\>/db/mcu_** folder<br>
 
 **Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):
 
 `python genpinmap_arduino.py NUCLEO_F207ZG "STM32F207Z(C-E-F-G)Tx.xml"`
 
+Copy the generated **_src/genpinmap/Arduino/\<BOARD_NAME\>/PeripheralPins.c_** file in the variant folder created.
 
+**Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):
+
+copy **_src/genpinmap/Arduino/NUCLEO_F207ZG/PeripheralPins.c_** to  **_variant/NUCLEO_F207ZG/PeripheralPins.c_**
+
+## 3- Review pins mapping
  
+Use the related user manual to define the best pins mapping:<br>
+**Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):<br>
+[UM1974: STM32 Nucleo-144 boards](http://www.st.com/resource/en/user_manual/dm00244518.pdf)<br>
+    
+[[/img/Tips-icon.png|alt="Tips"]] It is also possible to check the equivalent file for mbed os:
+    [ST-Nucleo-F207ZG](https://developer.mbed.org/platforms/ST-Nucleo-F207ZG/)
+
