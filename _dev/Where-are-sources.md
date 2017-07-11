@@ -13,13 +13,13 @@ It should be:
 * `c:\Users\\<USERNAME\>\AppData\Roaming\Arduino15\` _(Windows Vista)_
 * `c:\Users\\<USERNAME\>\AppData\Local\Arduino15\` _(Windows 7)_
 
-Then, go to "<local Arduino directory>/packages/STM32/hardware/stm32/" directory.
+Then, go to "**_\<local Arduino directory\>/packages/STM32/hardware/stm32/_**" directory.<br>
 Directory named with the STM32 Core version installed is present. Example: 2017.6.2
 
 ## STM32 Tools files location
 
 Go to the local Arduino directory. See above.<br>
-Then, go to "<local Arduino directory>/packages/STM32/tools/STM32Tools/" directory.
+Then, go to "**_\<local Arduino directory\>/packages/STM32/tools/STM32Tools/_**" directory.<br>
 Directory named with the STM32 Tools version installed is present. Example: 2017.5.12
 
 
