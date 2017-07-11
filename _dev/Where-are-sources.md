@@ -3,8 +3,8 @@
 
 By installing the stm32 core thanks the [[Boards Manager|Boards-Manager]], the extracted package is located here:
 
-Go to the local Arduino directory<br>
-    [[/img/Tips-icon.png|alt="Tips icon"]] _The location is displayed in the "**Preferences**" dialog._<br>
+Go to the local Arduino directory.<br>
+[[/img/Tips-icon.png|alt="Tips icon"]] _The location is displayed in the "**Preferences**" dialog._<br>
 
 It should be:
 
@@ -15,5 +15,11 @@ It should be:
 
 Then, go to "<local Arduino directory>/packages/STM32/hardware/stm32/" directory.
 Directory named with the STM32 Core version installed is present. Example: 2017.6.2
+
+## STM32 Tools files location
+
+Go to the local Arduino directory. See above.<br>
+Then, go to "<local Arduino directory>/packages/STM32/tools/STM32Tools/" directory.
+Directory named with the STM32 Tools version installed is present. Example: 2017.5.12
 
 
