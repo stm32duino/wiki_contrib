@@ -56,4 +56,14 @@ Use the related user manual to define the best pins mapping:<br>
 [ST-Nucleo-F207ZG](https://developer.mbed.org/platforms/ST-Nucleo-F207ZG/)
 
 ## 4- Review pins and signals pins numbering
-Edit the **_variant.h_** and **_variant.cpp_** file.
+Edit the **_variant.h_** and **_variant.cpp_** file.<br>
+In **_variant.cpp_**:<br>
+1. Fill the array `const PinName digitalPin[]`. This array allows to wrap Arduino pin number(Dx or x)
+to STM32 PinName (PYx).
+2. Declare Serial instance and define as many Serial instance as desired
+
+In **_variant.h_**:<br>
+1. Align the number of PinName defined above in `digitalPin[]` array in **_variant.h_**.<br>
+This is a one to one mapping, ie the first enum value is the first element in the array.
+2. Review macros to point to the right pin number: LED_BUILTIN, MOSI, MISO, SCLK, SDA, SCL,...<br>
+[[/img/Tips-icon.png|alt="Tips"]] Here, you can add custom macro to fit your needs
