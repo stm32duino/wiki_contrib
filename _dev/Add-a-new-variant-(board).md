@@ -40,7 +40,10 @@ Copy the generated **_src/genpinmap/Arduino/\<BOARD_NAME\>/PeripheralPins.c_** f
 
 **Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):
 
-copy **_src/genpinmap/Arduino/NUCLEO_F207ZG/PeripheralPins.c_** to  **_variant/NUCLEO_F207ZG/_**
+copy<br>
+**_src/genpinmap/Arduino/NUCLEO_F207ZG/PeripheralPins.c_**<br>
+to<br>
+**_variant/NUCLEO_F207ZG/_**
 
 ## 3- Review pins mapping
  
