@@ -1,5 +1,3 @@
-[[/img/under-construction.jpg|alt="under construction"]]
-
 # Create a new variant
 Go to the '_**variant**_' folder of the STM32 core.<br>
 Follow this page: [Where are sources](https://github.com/stm32duino/wiki/wiki/Where-are-sources#stm32-core-sources-files-location)
@@ -104,13 +102,31 @@ Copy the `stm32yyxx_hal_conf.h` file generated in `Inc/` folder to variant folde
 **Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html): `stm32f2xx_hal_conf.h`
 
 Then edit copied file in order to:
+ * Remove line: `#include "main.h"`
  * Enable/Disable (un)desired HAL modules by (un)commenting line like:
  `#define HAL_XXX_MODULE_ENABLED`
  where "_XXX_" is the feature (`ETH, I2S,...`)
  * Adjust `HSE/HSI` values adaptation if needed
  * Update any other configurations
 
-## 8- Declare the variant
-Edit **_boards.txt_** file<br>
+## 8- Declare the startup file (TODO: generate full list of possible startup file to avoid this step)
+Edit **_cores/arduino/stm32/stm32_def_build.h_** and add the `CMSIS_STARTUP_FILE` definition.<br>
+**Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):<br>
+`#elif defined(STM32F207xx)`<br>
+`#define CMSIS_STARTUP_FILE "startup_stm32f207xx.s"`<br>
 
-[[/img/Tips-icon.png|alt="Tips"]] See: [Arduino Boards.txt specifications](https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification#boardstxt)
+## 9- Declare the variant
+It still to add the menu and add relevant informations (Flash and SRAM sizes, cpu freq,...)<br>
+[[/img/Tips-icon.png|alt="Tips"]] See: [Arduino Boards.txt specifications](https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification#boardstxt) for further options.<br>
+Edit **_boards.txt_** file, then:<br>
+1. Copy one section which is the most similar to your board
+2. Rename all `menu.board_part_num.<old_board_name>` by `menu.board_part_num.<new_board_name>`
+3. Update `build.mcu=` and `build.cmsis_lib_gcc=` to the correct cortex-mX version
+4. Update `build.series=` to the correct `STM32YYxx` (where `YY` is the MCU serie)
+5. Update `build.product_line=` to the correct `STM32YYXXxx` MCU version.
+6. Update `upload.maximum_size=` and `upload.maximum_data_size=` to the correct Flash and SRAM sizes
+7. Update `build.f_cpu=` to the right system Core clock
+
+## 10- Restart
+Restart Arduino IDE and try your new board
+
