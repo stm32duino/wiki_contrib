@@ -12,9 +12,12 @@ For full instructions on using the STM32 boards with Arduino, see the [[Getting 
 
   * STM32F1
     * [Nucleo F103RB](http://www.st.com/en/evaluation-tools/nucleo-f103rb.html)
-    * STM32 VL Discovery STM32F100RB
-    * BluePill F103C8
-    * MapleMini F103CB
+    * STM32 VL Discovery STM32F100RB (on going)
+    * BluePill F103C8 (on going)
+    * MapleMini F103CB (on going)
+
+  * STM32F2
+    * [Nucleo F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html)
 
   * STM32F3
     * [Nucleo F303RE](http://www.st.com/en/evaluation-tools/nucleo-f303re.html)
@@ -30,6 +33,7 @@ For full instructions on using the STM32 boards with Arduino, see the [[Getting 
     * [Nucleo L053R8](http://www.st.com/en/evaluation-tools/nucleo-l053r8.html)
 
   * STM32L4
+    * [Nucleo L432KC](http://www.st.com/en/evaluation-tools/nucleo-l432kc.html)
     * [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
 
 # Troubleshooting
