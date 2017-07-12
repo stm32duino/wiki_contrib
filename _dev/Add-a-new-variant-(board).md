@@ -128,5 +128,5 @@ Edit **_boards.txt_** file, then:<br>
 7. Update `build.f_cpu=` to the right system Core clock
 
 ## 10- Restart
-Restart Arduino IDE and try your new board
+Restart Arduino IDE and try your new board with [[Blink-example]]
 
