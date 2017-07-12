@@ -1,4 +1,4 @@
-[[/img/Tips-icon.png|alt="Tips"]]Example of all steps below are shown in this PR: [Add Nucleo-F207ZG](https://github.com/stm32duino/Arduino_Core_STM32/pull/63) (ignore the 2 last commits)
+[[/img/Tips-icon.png|alt="Tips"]]Example of all below steps are shown in this PR: [Add Nucleo-F207ZG](https://github.com/stm32duino/Arduino_Core_STM32/pull/63) (ignore the 2 last commits)
 
 # Create a new variant
 Go to the '_**variant**_' folder of the STM32 core.<br>
