@@ -68,5 +68,22 @@ to STM32 PinName (PYx).
 In **_variant.h_**:<br>
 1. Align the number of PinName defined above in `digitalPin[]` array in **_variant.h_**.<br>
 This is a one to one mapping, ie the first enum value is the first element in the array.
-2. Review macros to point to the right pin number: LED_BUILTIN, MOSI, MISO, SCLK, SDA, SCL,...<br>
-[[/img/Tips-icon.png|alt="Tips"]] Here, you can add custom macro to fit your needs
+2. Review macros to point to the right pin number: `LED_BUILTIN, MOSI, MISO, SCLK, SDA, SCL,...`<br>
+[[/img/Tips-icon.png|alt="Tips"]] Here, you can add custom macro to fit your needs<br>
+
+## 5- System Clock configuration
+In **_variant.cpp_**, `void SystemClock_Config(void)` need to be defined.<br>
+It could be generated thanks [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html)<br>
+or copied from a [STM32CubeYY](http://www.st.com/en/embedded-software/stm32cube-embedded-software.html?querycriteria=productId=LN1897) project examples 
+(where 'YY' could be F0, F1, F2, F3, F4, F7, L0, L1, L4)
+
+From [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html):
+1. Run [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html), create a _New Project_ and select the targeted MCU or the board if listed.
+2. Configure the clock:
+
+
+
+## 6- Declare the variant
+Edit **_boards.txt_** file<br>
+
+[[/img/Tips-icon.png|alt="Tips"]] See: [Arduino Boards.txt specifications](https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification#boardstxt)
