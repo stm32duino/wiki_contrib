@@ -4,4 +4,4 @@
 
 [[Using git repository]]
 
-[[Add an new variant (board)]]
+[[Add a new variant (board)]]
