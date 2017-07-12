@@ -44,10 +44,16 @@ copy **_src/genpinmap/Arduino/NUCLEO_F207ZG/PeripheralPins.c_** to  **_variant/N
 
 ## 3- Review pins mapping
  
+After **_PeripheralPins.c_** generation, review it carefully.<br>
+Comment a line if the pin is generated several times for the same IP or<br>
+if the pin should not be used (overlaid with some HW on the board, for instance)
+
 Use the related user manual to define the best pins mapping:<br>
 **Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):<br>
 [UM1974: STM32 Nucleo-144 boards](http://www.st.com/resource/en/user_manual/dm00244518.pdf)<br>
     
 [[/img/Tips-icon.png|alt="Tips"]] It is also possible to check the equivalent file for mbed os:
-    [ST-Nucleo-F207ZG](https://developer.mbed.org/platforms/ST-Nucleo-F207ZG/)
+[ST-Nucleo-F207ZG](https://developer.mbed.org/platforms/ST-Nucleo-F207ZG/)
 
+## 4- Review pins and signals pins numbering
+Edit the **_variant.h_** and **_variant.cpp_** file.
