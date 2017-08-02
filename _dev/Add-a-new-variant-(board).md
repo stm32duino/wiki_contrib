@@ -111,8 +111,8 @@ Then edit copied file in order to:
  * Adjust `HSE/HSI` values adaptation if needed
  * Update any other configurations
 
-~~## 8 - Declare the startup file (TODO: generate full list of possible startup file to avoid this step)
-Edit **_cores/arduino/stm32/stm32_def_build.h_** and add the `CMSIS_STARTUP_FILE` definition.<br>
+## 8 - ~~Declare the startup file (TODO: generate full list of possible startup file to avoid this step)~~
+~~Edit **_cores/arduino/stm32/stm32_def_build.h_** and add the `CMSIS_STARTUP_FILE` definition.<br>
 **Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):<br>
 `#elif defined(STM32F207xx)`<br>
 `#define CMSIS_STARTUP_FILE "startup_stm32f207xx.s"`~~<br>
