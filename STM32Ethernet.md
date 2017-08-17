@@ -8,9 +8,16 @@ Examples allow a quickstart.
 ## Requirement
 
 This library could only be used with STM32 board with Ethernet compatibility.  
-Ex: NUCLEO-F429ZI
+Ex: 
+- NUCLEO-F429ZI
+- STM32F746G-DISCOVERY
 
-The LwIP library must be installed to use the STM32Ethernet library.  
+The LwIP library must be installed to use the STM32Ethernet library.
+
+## Installation
+Both libraries are available through the Arduino Libraries manager.<br>
+Click on "**Sketch**" menu and then "**Include Library > Manage Libraries...**"<br>
+Search "_LwIP_" then install "**_LwIP_**" and "**_STM32Ethernet_**"
 
 ## Note
 
