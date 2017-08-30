@@ -1,6 +1,8 @@
 Herafter, a non exhaustive list of libraries compatible with the [STM32](https://github.com/stm32duino/Arduino_Core_STM32) core. 
 
-Currently, libraries that come with the Arduino IDE should work (could required some pins update in the sketch)
+Currently, libraries that come with the Arduino IDE should work (could required some pins update in the sketch).
+
+All those using SPI, I2C should be fully compatible.
 
 [[/img/Warning-icon.png|alt="Warning"]] _Arduino boards provide ICSP connector used by several Arduino shield for SPI signal: MISO/MOSI/SCK. STM32 boards do not have this ICSP connector, so this requires to manually wire those SPI signal on the desire pin (mainly: D11 to D13)_
 
