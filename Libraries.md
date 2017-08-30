@@ -32,7 +32,7 @@ http://www.arduinolibraries.info/architectures/stm32
 * WiFi
 
 ## Third party
-
+`ARDUINO_ARCH_STM32` must be used as differentiator.
 ### Tested
 * Firmata
 
