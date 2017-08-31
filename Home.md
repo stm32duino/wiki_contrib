@@ -5,38 +5,7 @@
 For full instructions on using the STM32 boards with Arduino, see the [[Getting Started|Getting-Started]] page.
 
 # Boards available:
-
-  * STM32F0
-    * [Nucleo F030R8](http://www.st.com/en/evaluation-tools/nucleo-f030r8.html)
-    * [Nucleo F091RC](http://www.st.com/en/evaluation-tools/nucleo-f091rc.html)
-
-  * STM32F1
-    * [Nucleo F103RB](http://www.st.com/en/evaluation-tools/nucleo-f103rb.html)
-    * [STM32VLDISCOVERY](https://community.st.com/external-link.jspa?url=http%3A%2F%2Fwww.st.com%2Fen%2Fevaluation-tools%2Fstm32vldiscovery.html)
-    * BluePill F103C8 (on going)
-    * MapleMini F103CB (on going)
-
-  * STM32F2
-    * [Nucleo F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html)
-
-  * STM32F3
-    * [Nucleo F303RE](http://www.st.com/en/evaluation-tools/nucleo-f303re.html)
-
-  * STM32F4
-    * [Nucleo F401RE](http://www.st.com/en/evaluation-tools/nucleo-f401re.html)
-    * [Nucleo F411RE](http://www.st.com/en/evaluation-tools/nucleo-f411re.html)
-    * [Nucleo F429ZI](http://www.st.com/en/evaluation-tools/nucleo-f429zi.html)
-    * [STM32F407G-DISC1](http://www.st.com/en/evaluation-tools/stm32f4discovery.html)
-
-  * STM32F7
-    * [STM32F746G-DISCOVERY](http://www.st.com/en/evaluation-tools/32f746gdiscovery.html)
-
-  * STM32L0
-    * [Nucleo L053R8](http://www.st.com/en/evaluation-tools/nucleo-l053r8.html)
-
-  * STM32L4
-    * [Nucleo L432KC](http://www.st.com/en/evaluation-tools/nucleo-l432kc.html)
-    * [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
+See [Boards available](https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md#boards-available) section of the [Arduino_Core_STM32/README.md](https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md).
 
 # Troubleshooting
 
