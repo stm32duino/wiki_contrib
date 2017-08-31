@@ -26,13 +26,13 @@ Have a look here to see which one are available or thanks the "_**Library Manage
 http://www.arduinolibraries.info/architectures/stm32
 
 ## Official from Arduino
-* TFT
-* LCD
-* Ethernet
-* WiFi
+* [TFT](https://github.com/arduino-libraries/TFT/): required [arduino-libraries/TFT#11](https://github.com/arduino-libraries/TFT/pull/11) else use [Ucglib_Arduino](https://github.com/olikraus/Ucglib_Arduino)
+* [LiquidCrystal](https://github.com/arduino-libraries/LiquidCrystal)
+* [Ethernet](https://github.com/arduino-libraries/Ethernet)
+* [WiFi](https://github.com/arduino-libraries/WiFi)
 
 ## Third party
 `ARDUINO_ARCH_STM32` must be used as differentiator.
 ### Tested
-* Firmata
-
+* [Firmata](https://github.com/firmata/arduino): since release [2.5.7](https://github.com/firmata/arduino/releases/tag/2.5.7)
+* [Ucglib_Arduino](https://github.com/olikraus/Ucglib_Arduino): tested with ST7735
