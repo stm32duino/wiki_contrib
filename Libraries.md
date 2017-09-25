@@ -19,6 +19,11 @@ This library is fully compatible with Arduino [Ethernet](https://www.arduino.cc/
 * [STM32SD](https://github.com/stm32duino/STM32SD): for board with SD card slot (ex: Disco-F746).<br>
 This library is fully compatible with Arduino [SD](https://www.arduino.cc/en/Reference/SD) API.
 
+* [LPS22HB](https://github.com/stm32duino/LPS22HB)<br>
+* [](https://github.com/stm32duino/)<br>
+* [](https://github.com/stm32duino/)<br>
+* [](https://github.com/stm32duino/)<br>
+* [](https://github.com/stm32duino/)<br>
 Goal is to have all dedicated STM32 libraries available through the "_**Library Manager**_"
 
 Have a look here to see which one are available or thanks the "_**Library Manager**_"
