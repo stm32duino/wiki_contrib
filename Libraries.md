@@ -10,7 +10,7 @@ All those using SPI, I2C should be fully compatible.
 * SPI: follow the official [SPI](https://www.arduino.cc/en/Reference/SPI) API
 * Wire (I2C): follow the official [Wire](https://www.arduino.cc/en/Reference/Wire) API.
 * EEPROM: follow the official [EEPROM](https://www.arduino.cc/en/Reference/EEPROM) API.
-* Servo: follow the official [Servo](https://www.arduino.cc/en/Reference/Servo) API. Need some review. Range is not correct.
+* Servo: follow the official [Servo](https://www.arduino.cc/en/Reference/Servo) API. 
 
 ## Dedicated
 Some libraries have been developed to support specific hardware features:
