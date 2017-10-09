@@ -61,15 +61,14 @@ Use the related user manual to define the best pins mapping:<br>
 ## 4 - Review pins and signals pins numbering
 Edit the **_variant.h_** and **_variant.cpp_** file.<br>
 In **_variant.cpp_**:<br>
-1. Fill the array `const PinName digitalPin[]`. This array allows to wrap Arduino pin number(Dx or x)
-to STM32 PinName (PYx).
-2. Declare Serial instance and define as many Serial instance as desired
+1. Fill the array `const PinName digitalPin[]`. This array allows to wrap Arduino pin number(Dx or x or PYx)
+to STM32 PinName (PY_x).
 
 In **_variant.h_**:<br>
 1. Align the number of PinName defined above in `digitalPin[]` array in **_variant.h_**.<br>
 This is a one to one mapping, i.e. the first enum value is the first element in the array.
 2. Review macros to point to the right pin number: `LED_BUILTIN, MOSI, MISO, SCLK, SDA, SCL,...`<br>
-[[/img/Tips-icon.png|alt="Tips"]] Here, you can add custom macro to fit your needs<br>
+[[/img/Tips-icon.png|alt="Tips"]] Here, you can add custom define to fit your needs<br>
 
 ## 5 - System Clock configuration
 In **_variant.cpp_**, `void SystemClock_Config(void)` need to be defined.<br>
@@ -111,14 +110,7 @@ Then edit copied file in order to:
  * Adjust `HSE/HSI` values adaptation if needed
  * Update any other configurations
 
-## 8 - ~~Declare the startup file (TODO: generate full list of possible startup file to avoid this step)~~
-~~Edit **_cores/arduino/stm32/stm32_def_build.h_** and add the `CMSIS_STARTUP_FILE` definition.<br>
-**Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):<br>
-`#elif defined(STM32F207xx)`<br>
-`#define CMSIS_STARTUP_FILE "startup_stm32f207xx.s"`~~<br>
-This step is no more required as all startup files are listed. See [Arduino_Core_STM32#70](https://github.com/stm32duino/Arduino_Core_STM32/issues/70).
-
-## 9 - Declare the variant
+## 8 - Declare the variant
 It still to add the menu and add relevant informations (Flash and SRAM sizes, cpu freq,...)<br>
 [[/img/Tips-icon.png|alt="Tips"]] See: [Arduino Boards.txt specifications](https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification#boardstxt) for further options.<br>
 Edit **_boards.txt_** file, then:<br>
@@ -130,6 +122,6 @@ Edit **_boards.txt_** file, then:<br>
 6. Update `upload.maximum_size=` and `upload.maximum_data_size=` to the correct Flash and SRAM sizes
 7. Update `build.f_cpu=` to the right system Core clock
 
-## 10 - Restart
+## 9 - Restart
 Restart Arduino IDE and try your new board with [[Blink-example]]
 
