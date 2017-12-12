@@ -28,10 +28,13 @@ Search "_LwIP_" then install "**_LwIP_**" and "**_STM32Ethernet_**"
 * EthernetClass::maintain() in no more required to renew IP address from DHCP.  
 It is done automatically by the LwIP stack in a background task.  
 
-* An Idle task is required by the LwIP stack to handle timer and data reception.  
-This idle task is called inside the main loop in background by the function stm32_eth_scheduler().  
-Be careful to not lock the system inside the function loop() where LwIP could never be updated.  
-Call EthernetUDP::parsePacket() or EthernetClient::available() performs an update of the LwIP stack.  
+* An Idle task is required by the LwIP stack to handle timer and data reception.<br>
+This idle task is called inside a timer callback each 1 ms by the
+function `stm32_eth_scheduler()`.<br>
+A `DEFAULT_ETHERNET_TIMER` is set in the library to `TIM14`.<br>
+`DEFAULT_ETHERNET_TIMER` can be redefined in the core variant.<br>
+Be careful to not lock the system in a function which disabling IRQ.<br>
+Call `Ethernet::schedule()` performs an update of the LwIP stack.<br>
 
 ## Source
 
