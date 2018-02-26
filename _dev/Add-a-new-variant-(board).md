@@ -67,7 +67,9 @@ to STM32 PinName (PY_x).
 In **_variant.h_**:<br>
 1. Align the number of PinName defined above in `digitalPin[]` array in **_variant.h_**.<br>
 This is a one to one mapping, i.e. the first enum value is the first element in the array.
-2. Review macros to point to the right pin number: `LED_BUILTIN, MOSI, MISO, SCLK, SDA, SCL,...`<br>
+2. Review macros to point to the right pin name/number: `LED_BUILTIN, MOSI, MISO, SCLK, SDA, SCL,...`<br>
+Note that some of them have a default value in the core. Only redefine them if different from the default one.<br>
+See: https://github.com/stm32duino/Arduino_Core_STM32/blob/c392140415b3cf29100062ecb083adfa0f59f8b1/cores/arduino/pins_arduino.h#L142 <br>
 [[/img/Tips-icon.png|alt="Tips"]] Here, you can add custom define to fit your needs<br>
 
 ## 5 - System Clock configuration
@@ -120,7 +122,6 @@ Edit **_boards.txt_** file, then:<br>
 4. Update `build.series=` to the correct `STM32YYxx` (where `YY` is the MCU serie)
 5. Update `build.product_line=` to the correct `STM32YYXXxx` MCU version.
 6. Update `upload.maximum_size=` and `upload.maximum_data_size=` to the correct Flash and SRAM sizes
-7. Update `build.f_cpu=` to the right system Core clock
 
 ## 9 - Restart
 Restart Arduino IDE and try your new board with [[Blink-example]]
