@@ -117,7 +117,7 @@ It still to add the menu and add relevant informations (Flash and SRAM sizes, cp
 [[/img/Tips-icon.png|alt="Tips"]] See: [Arduino Boards.txt specifications](https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification#boardstxt) for further options.<br>
 Edit **_boards.txt_** file, then:<br>
 1. Copy one section which is the most similar to your board
-2. Rename all `menu.board_part_num.<old_board_name>` by `menu.board_part_num.<new_board_name>`
+2. Rename all `menu.pnum.<old_board_name>` by `menu.pnum.<new_board_name>`
 3. Update `build.mcu=` and `build.cmsis_lib_gcc=` to the correct cortex-mX version
 4. Update `build.series=` to the correct `STM32YYxx` (where `YY` is the MCU serie)
 5. Update `build.product_line=` to the correct `STM32YYXXxx` MCU version.
