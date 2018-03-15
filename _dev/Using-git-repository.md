@@ -10,7 +10,7 @@ This will install the required dependencies:
 ## 2. Delete the stm32 core extracted package
 Go to the installed package directory: [[Where-are-sources]]
 
-Delete the  version directory: `<yyyy_mm_dd>`
+Delete the version directory: `<x.y.z>`
 
 ## 3. Hereafter, 2 methods to use git repository
 Directory of step 2 is now deleted.<br>
@@ -21,10 +21,10 @@ In the "_**\<local Arduino directory\>/packages/STM32/hardware/stm32/**_" do the
   `git clone https://github.com/stm32duino/Arduino_Core_STM32.git <version>`
 
 where _\<version\>_ is the one you delete in step 2.<br>
-For this example: _**2017.6.2**_<br>
+For this example: _**1.1.1**_<br>
 So, do:<br>
 
-  `git clone https://github.com/stm32duino/Arduino_Core_STM32.git 2017.6.2`
+  `git clone https://github.com/stm32duino/Arduino_Core_STM32.git 1.1.1`
 
 [[/img/Tips-icon.png|alt="Tips"]] _It is possible to clone it elsewhere and create a symlink named \<version>_<br>
 
