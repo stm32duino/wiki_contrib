@@ -10,8 +10,8 @@ Checklist:
 If not, then probably you have an older board with a different label used for the mount point.<br>
 Update the "_board.txt_" file to add <your_node_label> to the targeted board.<br>
 Example:<br>
-`Nucleo_64.menu.Nucleo_64_board.NUCLEO_xxxxxx.node=NODE_xxxxxx`<br>
+`Nucleo_64.menu.pnum.NUCLEO_xxxxxx.node=NODE_xxxxxx`<br>
 becomes<br>
-`Nucleo_64.menu.Nucleo_64_board.NUCLEO_xxxxxx.node="NODE_xxxxxx,<your_node_label>"`
+`Nucleo_64.menu.pnum.NUCLEO_xxxxxx.node="NODE_xxxxxx,<your_node_label>"`
 
 Node names list has to be separated by ',' and double quoted (for Windows).
