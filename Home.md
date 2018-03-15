@@ -15,7 +15,7 @@ For STM32 Core or tools issue, file an issue on the related Github:
  * [Arduino_Core_STM32](https://github.com/stm32duino/Arduino_Core_STM32/issues/new).
  * [Arduino_Tools](https://github.com/stm32duino/Arduino_Tools/issues/new).
 
-For STM32dunio library, file an issue on the related Github.
+For STM32dunio libraries, file an issue on the related Github.
 
 Or submit a topic on the [stm32duino forum](http://stm32duino.com):
 
