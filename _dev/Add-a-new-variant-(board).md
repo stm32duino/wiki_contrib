@@ -14,34 +14,15 @@ Follow this page: [Where are sources](https://github.com/stm32duino/wiki/wiki/Wh
 
 ## 2 - Generate the pin mapping
 
-[[/img/Warning-icon.png|alt="Warning"]] Prerequisites:
-* [Python](https://www.python.org/) is required to use the script!
-* [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html) is required as script parses MCU xml file description provided with the tool.
+All `PeripheralPins.c` for all STM32 MCU are provided with STM32 Tools packages and are available here: [Arduino_Tools/genpinmap/Arduino](https://github.com/stm32duino/Arduino_Tools/tree/master/src/genpinmap/Arduino)
 
-Go to the '_**src/genpinmap/**_' folder of the STM32 Tools.<br>
-Follow this page: [Where are sources](https://github.com/stm32duino/wiki/wiki/Where-are-sources#stm32-tools-files-location)
-or get it from [Arduino_Tools github repo](https://github.com/stm32duino/Arduino_Tools/tree/master/src/genpinmap)
+[[/img/Tips-icon.png|alt="Tips"]]It's also possible to generate it manually, see [[genpinmap]] how to.
 
-**_genpinmap_arduino.py_** script allows to generate the pins mapping of an STM32 MCU.
-
-> USAGE: genpinmap_arduino.py _\<BOARD_NAME\> \<product xml file name\>_<br>
->        _\<BOARD_NAME\>_ is the name of the board as it will be named in variant folder<br>
->        _\<product xml file name\>_ is the STM32 file description in [STM32CubeMX](http://www.st.com/en/development-tools/stm32cubemx.html)
-
-[[/img/Warning-icon.png|alt="Warning"]]This xml file contains non alpha characters in its name, you should call it with quotes!<br>
-[[/img/Warning-icon.png|alt="Warning"]] Script uses default  [STM32CubeMX](http://www.st.com/en/development-tools/stm32cubemx.html) installation directory. If you changed it, update the installation path in the script.<br>
-[[/img/Tips-icon.png|alt="Tips"]] _\<product xml file name\>_ could be find in **_\<STM32CubeMX\>/db/mcu_** folder<br>
+Copy the `PeripheralPins.c` file in the variant folder created.
 
 **Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):
 
-`python genpinmap_arduino.py NUCLEO_F207ZG "STM32F207Z(C-E-F-G)Tx.xml"`
-
-Copy the generated **_src/genpinmap/Arduino/\<BOARD_NAME\>/PeripheralPins.c_** file in the variant folder created.
-
-**Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):
-
-copy<br>
-**_src/genpinmap/Arduino/NUCLEO_F207ZG/PeripheralPins.c_**<br>
+**_[genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PeripheralPins.c](https://github.com/stm32duino/Arduino_Tools/blob/master/src/genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PeripheralPins.c)_**<br>
 to<br>
 **_variant/NUCLEO_F207ZG/_**
 
