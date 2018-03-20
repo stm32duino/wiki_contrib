@@ -23,7 +23,7 @@ _Params_ ulPin analog pin.
 _Params_ pData pointer to the buffer where save the samples. Must be large enough.  
 _Params_ lData number of sample to read.  
 _Params_ callback pointer to the callback function. Called when the number of sample is reached.  
-_Params_ callbackParameter pointer to the callback parameters. Can be NULL. 
+_Params_ callbackParameter pointer to the callback parameters. Can be NULL.  
 _Return_ true if conversion started else false.  
 
 # Library
