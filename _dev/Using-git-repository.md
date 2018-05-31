@@ -40,8 +40,8 @@ That's all.<br>
 [[/img/Important-icon.png|alt="Important"]] _Uninstalling from the boards managers will remove the git repository!_
 
   ### 3.2. Adding repositories in _Arduino/hardware_ directory (2nd method)
-Go to the "_**\<Arduino install directory\>/hardware/**_" and create a directory named: _**stm**_<br>
-[[/img/Note-icon.png|alt="Note"]] Directory name is not important _**stm**_ is an example.<br>
+Go to the "_**\<Arduino install directory\>/hardware/**_" and create a directory named: _**STM32**_<br>
+[[/img/Warning-icon.png|alt="Warning"]] The name of the new directory to clone into must be _**STM32**_!
 
 Go to this new directory then do the clone:<br>
 
