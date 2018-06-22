@@ -34,7 +34,8 @@ By now, the main tab should look like the following:
 ### 1.3 - Install STM32 Cores
 Open _**“Arduino > Preferences”**_.<br>
 In the tree view that pops up, go to _**“Arduino > Third party index url’s”**_ and add the STM32 support package URL:
-https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/master/STM32/package_stm_index.json.
+
+https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/master/STM32/package_stm_index.json
 
 [[/img/UrlIndex.png|alt="UrlIndex"]]
 
@@ -75,9 +76,13 @@ There is multiple options to start a new project.
 --> _**Option C:**_ From the _**“File > New > Project…”**_ click on _**“Arduino New Sketch”**_.
 
 Regardless of the chosen method, set your _**“Project name”**_ and the _**“Location”**_ of your project. Then, push the _**“Next”**_ button.
-Complete the Arduino required information (board type, port number …) form and click _**“Next”**_. Do not forget to select the _**“Platform folder”**_ that corresponding to the STM32 Core version previously installed.
+Complete the Arduino required information (board type, port number …) form and click _**“Next”**_.
+
+Do not forget to select the _**“Platform folder”**_ that corresponding to the STM32 Core version previously installed.
 
 [[/img/ProjectConfig.png|alt="ProjectConfig"]] 
+
+[[/img/Note-icon.png|alt="Note"]] If you plan to debug, select "_**Debug (-g)**_" from the "_**Optimize**_" list else you will not have debugging symbols.
 
 From there, you can create your own sketch or use pre-configured examples. <br>
 In this case, we will try the _**“Blink”**_ example.<br>
@@ -101,8 +106,11 @@ Two standard tools are required in order to debug the code:
 ```
 <Eclipse installation path>\eclipse\arduinoPlugin\packages\STM32\tools\arm-none-eabi-gcc\6-2017-q2-update\bin\arm-none-eabi-gdb.exe
 ```
-+  **OpenOCD**, installed in 1.1.1 section. <br>
++  **OpenOCD**, installed in 1.1.1 section.
+
 [[/img/Important-icon.png|alt="ImportantIcon"]] Make sure these tools are correctly installed on your platform before proceeding any further.
+
+[[/img/Important-icon.png|alt="ImportantIcon"]] Do not forget to select "_**Debug (-g)**_" to the "_**Optimize**_" list in the "_**Arduino Board Selection**_" of your project else you will not have debugging symbols.
 
 ### 3.2 Setting up debug configuration 
 
