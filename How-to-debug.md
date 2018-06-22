@@ -16,11 +16,11 @@ The GNU MCU Eclipse plug-ins provide multiple tools based on the GNU toolchains 
 
 Launch Eclipse, go to _**“Help > Eclipse Marketplace”**_ and search for the _**"GNU MCU plug-in"**_. <br>
 
-![EclipseMarketPlace](https://github.com/angela-rph/Wiki/blob/master/img/EclipseMP.png)
+[[/img/EclipseMP.png|alt="EclipseMarketPlace"]]
 
 In the tree view, expand _**“GNU MCU Eclipse {version}”**_ and uncheck all items expect _**“GNU MCU C/C++ OpenOCD Debugging”**_, confirm and follow the recommended instructions. Then restart Eclipse.<br>
 
-![EclipseMarketPlaceGNU](https://github.com/angela-rph/Wiki/blob/master/img/EclipseMPGNU.png)
+[[/img/EclipseMPGNU.png|alt="EclipseMarketPlaceGNU"]]
 
 To finish the OpenOCD plug-in configuration, and for a simpler integration, install OpenOCD binaries by following the [“How to install the OpenOCD binaries”](https://gnu-mcu-eclipse.github.io/openocd/install/ 
 ) tutorial.
@@ -29,23 +29,23 @@ To finish the OpenOCD plug-in configuration, and for a simpler integration, inst
 From the Eclipse main tab, go to _**“Help > Eclipse Marketplace”**_ and search for _**Sloeber**_. <br>
 Download the _**"Sloeber plugin"**_ , follow the recommended instructions and restart Eclipse. <br>
 By now, the main tab should look like the following:
-![SloeberMenu](https://github.com/angela-rph/Wiki/blob/master/img/SloeberMenu.png)
+[[/img/SloeberMenu.png|alt="SloeberMenu"]]
 
 ### 1.3 - Install STM32 Cores
 Open _**“Arduino > Preferences”**_.<br>
 In the tree view that pops up, go to _**“Arduino > Third party index url’s”**_ and add the STM32 support package URL:
 https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/master/STM32/package_stm_index.json.
 
-![IndexUrl](https://github.com/angela-rph/Wiki/blob/master/img/UrlIndex.png)
+[[/img/UrlIndex.png|alt="UrlIndex"]]
 
 Hit _**“Apply and Close”**_ then re-open the _**“Arduino > Preferences”**_ menu. The STM32 Core is now available in the _**“Platforms and Boards”**_ menu.
 
-![CoreInstall](https://github.com/angela-rph/Wiki/blob/master/img/CoreInstall.png)
+[[/img/CoreInstall.png|alt="CoreInstall"]]
 
 Select the latest core version and hit _**“Apply and Close”**_.
 
 ## 2 - Programming the boards
-![ImportantIcon](https://github.com/angela-rph/Wiki/blob/master/img/Important-icon.png) 
+[[/img/Important-icon.png|alt="ImportantIcon"]]
 Arduino build recipe hooks are currently not supported by Sloeber (See GitHub issue [#927](https://github.com/Sloeber/arduino-eclipse-plugin/issues/927)), leading to some build issues. In order to avoid this, and before starting a new project, some configurations needs to be done. Open your STM32 core package folder; it might be in your Eclipse installation folder. The path should look like this one:
  
 ```
@@ -62,12 +62,11 @@ Otherwise, you can also get around these issues by using the [Sloeber nightly ve
 
 Once the update is completed, relaunch Eclipse then open your project properties and go to _**"C/C++ Build > Settings"**_. In the _**Pre-build steps**_ section, fill the **_"Command"_** field with **_"${A.RECIPE.HOOKS.PREBUILD.1.PATTERN}"_**
 
-![Note](https://github.com/angela-rph/Wiki/blob/master/img/Note-icon.png) Do not forget to do these steps after each core update
-
+[[/img/Note-icon.png|alt="Note"]] Do not forget to do these steps after each core update
 
 Now, let's create our first project . 
 
-![Tips](https://github.com/angela-rph/Wiki/blob/master/img/Tips-icon.png) Make sure your board is correctly connected before go any further.
+[[/img/Tips-icon.png|alt="Tips"]] Make sure your board is correctly connected before go any further.
 
 There is multiple options to start a new project. 
 
@@ -78,15 +77,15 @@ There is multiple options to start a new project.
 Regardless of the chosen method, set your _**“Project name”**_ and the _**“Location”**_ of your project. Then, push the _**“Next”**_ button.
 Complete the Arduino required information (board type, port number …) form and click _**“Next”**_. Do not forget to select the _**“Platform folder”**_ that corresponding to the STM32 Core version previously installed.
 
-![ProjectConfig](https://github.com/angela-rph/Wiki/blob/master/img/ProjectConfig.png)
+[[/img/ProjectConfig.png|alt="ProjectConfig"]] 
 
 From there, you can create your own sketch or use pre-configured examples. <br>
 In this case, we will try the _**“Blink”**_ example.<br>
 From the _**“select code”**_ bar, apply _**“Sample sketch”**_ and then choose _**“Examples > 01.Basics > Blink”**_ and _**“Finish”**_.
 
-![BuiltInExamples](https://github.com/angela-rph/Wiki/blob/master/img/BuiltInExamples.png)
+[[/img/BuiltInExamples.png|alt="BuiltInExamples"]] 
 
-![Note](https://github.com/angela-rph/Wiki/blob/master/img/Note-icon.png) As the GCC ARM Toolchain is provided by the STM32 core, you do not have to download it in order to program your board.
+[[/img/Note-icon.png|alt="Note"]] As the GCC ARM Toolchain is provided by the STM32 core, you do not have to download it in order to program your board.
 
 Use the _**“Arduino”**_ menu or the upload button on the toolbar to upload your sketch. If the setup is correct, the LED should blink on your board.
 
@@ -103,14 +102,14 @@ Two standard tools are required in order to debug the code:
 <Eclipse installation path>\eclipse\arduinoPlugin\packages\STM32\tools\arm-none-eabi-gcc\6-2017-q2-update\bin\arm-none-eabi-gdb.exe
 ```
 +  **OpenOCD**, installed in 1.1.1 section. <br>
-![ImportantIcon](https://github.com/angela-rph/Wiki/blob/master/img/Important-icon.png) Make sure these tools are correctly installed on your platform before proceeding any further.
+[[/img/Important-icon.png|alt="ImportantIcon"]] Make sure these tools are correctly installed on your platform before proceeding any further.
 
 ### 3.2 Setting up debug configuration 
 
 From the _**“Run”**_ menu, select _**“Debug Configurations”**_.
 Double-click on **_“GDB OpenOCD Debugging”_** to create a new configuration and set the configuration name.
 
-![DebugMenu](https://github.com/angela-rph/Wiki/blob/master/img/DebugMenu.png)
+[[/img/DebugMenu.png|alt="DebugMenu"]]
 
 Move to the _**“Debugger”**_ tab in order to configure OpenOCD and GDB. 
 
@@ -130,9 +129,9 @@ The _**“Actual executable”**_ field show the full executable path.
         -s "${openocd_path}/../scripts" -f interface/stlink-v2-1.cfg -f target/stm32f0x.cfg
 ```
 
-![OpenOCD-config](https://github.com/angela-rph/Wiki/blob/master/img/OCDConfig.png)
+[[/img/OCDConfig.png|alt="OpenOCD-config"]]
 
-![ImportantIcon](https://github.com/angela-rph/Wiki/blob/master/img/Important-icon.png) Do not forget to replace the config files with the version of the board you are using.
+[[/img/Important-icon.png|alt="ImportantIcon"]] Do not forget to replace the config files with the version of the board you are using.
 
 #### 3.2.1 Setting up GDB
 
@@ -144,7 +143,7 @@ In the _**“Debugger”**_ tab, scroll to the GDB Client setup field.
 
 By now, the _**“Debugger”**_ tab should look like the following: 
 
-![Debug-config](https://github.com/angela-rph/Wiki/blob/master/img/DebugConfig.png)
+[[/img/Debug-config.png|alt="DebugConfig"]]
 
 Move to the _**“Startup”**_ tab, scroll until the _**“Run/Restart Commands”**_ fields and add:<br> 
 ``` 
@@ -160,8 +159,8 @@ Finally, click on _**“Apply”**_ and _**“Close”**_.
 Launch the debug session from the _**“Debug”**_ or _**“Run”**_ button in the toolbar.<br>
 If the configuration process runs correctly, you will be able to see the debug capabilities of the chip in the Debug console (number of breakpoints, watchpoints, …).
 
-![DebugConsole](https://github.com/angela-rph/Wiki/blob/master/img/DebugConsole.png)
+[[/img/DebugConsole.png|alt="DebugConsole"]]
 
 Now, you can easily debug your code by using the Eclipse debug features including running step-by-step mode, live breakpoint, inspecting memory access, live view of variable contents and many more.
 
-![DebugView](https://github.com/angela-rph/Wiki/blob/master/img/DebugView.png)
+[[/img/DebugView.png|alt="DebugView"]]
