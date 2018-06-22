@@ -143,7 +143,7 @@ In the _**“Debugger”**_ tab, scroll to the GDB Client setup field.
 
 By now, the _**“Debugger”**_ tab should look like the following: 
 
-[[/img/Debug-config.png|alt="DebugConfig"]]
+[[/img/DebugConfig.png|alt="DebugConfig"]]
 
 Move to the _**“Startup”**_ tab, scroll until the _**“Run/Restart Commands”**_ fields and add:<br> 
 ``` 
