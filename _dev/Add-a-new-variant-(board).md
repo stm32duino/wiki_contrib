@@ -24,7 +24,7 @@ Copy the `PeripheralPins.c` and `PinNamesVar.h` file in the variant folder creat
 
 **_[genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PeripheralPins.c](https://github.com/stm32duino/Arduino_Tools/blob/master/src/genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PeripheralPins.c)_**<br>
 and<br>
-**_[genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PinNamesVar.c](https://github.com/stm32duino/Arduino_Tools/blob/master/src/genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PinNamesVar.h)_**<br>
+**_[genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PinNamesVar.h](https://github.com/stm32duino/Arduino_Tools/blob/master/src/genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PinNamesVar.h)_**<br>
 to<br>
 **_variant/NUCLEO_F207ZG/_**
 
