@@ -12,23 +12,25 @@ Follow this page: [Where are sources](https://github.com/stm32duino/wiki/wiki/Wh
 
 [[/img/Tips-icon.png|alt="Tips"]]It's also possible to copy one of the most similar board variant<br>
 
-## 2 - Generate the pin mapping
+## 2 - Add pins mapping
 
-All `PeripheralPins.c` for all STM32 MCU are provided with STM32 Tools packages and are available here: [Arduino_Tools/genpinmap/Arduino](https://github.com/stm32duino/Arduino_Tools/tree/master/src/genpinmap/Arduino)
+All `PeripheralPins.c` and `PinNamesVar.h` for all STM32 MCU are provided with STM32 Tools packages and are available here: [Arduino_Tools/genpinmap/Arduino](https://github.com/stm32duino/Arduino_Tools/tree/master/src/genpinmap/Arduino)
 
-[[/img/Tips-icon.png|alt="Tips"]]It's also possible to generate it manually, see [[genpinmap]] how to.
+[[/img/Tips-icon.png|alt="Tips"]]It's also possible to generate them manually, see [[genpinmap]] how to.
 
-Copy the `PeripheralPins.c` file in the variant folder created.
+Copy the `PeripheralPins.c` and `PinNamesVar.h` file in the variant folder created.
 
 **Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):
 
 **_[genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PeripheralPins.c](https://github.com/stm32duino/Arduino_Tools/blob/master/src/genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PeripheralPins.c)_**<br>
+and<br>
+**_[genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PinNamesVar.c](https://github.com/stm32duino/Arduino_Tools/blob/master/src/genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PinNamesVar.h)_**<br>
 to<br>
 **_variant/NUCLEO_F207ZG/_**
 
 ## 3 - Review pins mapping
  
-After **_PeripheralPins.c_** generation, review it carefully.<br>
+After **_PeripheralPins.c_** addition, review it carefully.<br>
 Comment a line if the pin is generated several times for the same IP or<br>
 if the pin should not be used (overlaid with some HW on the board, for instance)
 
