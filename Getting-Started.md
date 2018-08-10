@@ -6,18 +6,6 @@ Download and install [Arduino software (IDE)](https://www.arduino.cc/en/Main/Sof
 This is the needed step to get STM32 targets added to Arduino.
 So carefully follow the following steps.
 
-## Boards manager concept
-Arduino.cc IDE allows to add easily new board thanks the "**Boards Managers**".
-More information about "**Boards Managers**" is available on Arduino.cc official website:
-
-[Installing additional Arduino Cores](https://www.arduino.cc/en/guide/cores)
-
-The corresponding STM32 cores packages are provided thanks to:
-
-https://github.com/stm32duino/BoardManagerFiles
-
-Follow the below steps to get STM32 boards installed to your Arduino IDE.
-
 ## Installing STM32 Cores
 
 1- Launch Arduino.cc IDE. Click on "**File**" menu and then "**Preferences**".
@@ -57,6 +45,18 @@ Select the desired boards series: _Nucleo-64 / Nucleo-144 / Discovery_
 [[img/boardslist2.png|alt="Boards list2"]]
 
 Then you can find the Nucleo-64 boards available in a sub-menu of the "Tools" menu.
+
+## About Boards manager concept
+Arduino.cc IDE allows to add easily new board thanks the "**Boards Managers**".
+More information about "**Boards Managers**" is available on Arduino.cc official website:
+
+[Installing additional Arduino Cores](https://www.arduino.cc/en/guide/cores)
+
+The corresponding STM32 cores packages are provided thanks to:
+
+https://github.com/stm32duino/BoardManagerFiles
+
+Follow the below steps to get STM32 boards installed to your Arduino IDE.
 
 ## Troubleshooting
 
