@@ -18,12 +18,12 @@ Launch Eclipse, go to _**“Help > Eclipse Marketplace”**_ and search for the 
 
 [[/img/EclipseMP.png|alt="EclipseMarketPlace"]]
 
-In the tree view, expand _**“GNU MCU Eclipse {version}”**_ and uncheck all items expect _**“GNU MCU C/C++ OpenOCD Debugging”**_, confirm and follow the recommended instructions. Then restart Eclipse.<br>
+In the tree view, expand _**“GNU MCU Eclipse {version}”**_ and uncheck all items. In previous versions, you had to choose the OpenOCD entry. Since there is no such entry, you cannot select it. OpenOCD will automatically be installed. Confirm and follow the recommended instructions. Then restart Eclipse.<br>
 
-[[/img/EclipseMPGNU.png|alt="EclipseMarketPlaceGNU"]]
+![](https://cloud.blselectronics.ch/index.php/apps/files_sharing/ajax/publicpreview.php?x=1541&y=442&a=true&file=marketplace.png&t=3qjjaNBwqdibeqi&scalingup=0)
 
 To finish the OpenOCD plug-in configuration, and for a simpler integration, install OpenOCD binaries by following the [“How to install the OpenOCD binaries”](https://gnu-mcu-eclipse.github.io/openocd/install/ 
-) tutorial.
+) tutorial. This Guide will tell you to extract the openocd binaries to a specific path (Windows).
 
 ###  1.2 - Install Sloeber (The Arduino Eclipse Plugin) 
 From the Eclipse main tab, go to _**“Help > Eclipse Marketplace”**_ and search for _**Sloeber**_. <br>
@@ -114,6 +114,15 @@ Two standard tools are required in order to debug the code:
 
 ### 3.2 Setting up debug configuration 
 
+If you are using sloeber directly, not CDT with the plugin. The you probaly will not find the below mentiones menue "Debug Configurations" under "Run". This is, because you are in the arduino view. In this view, all "unneccessary" menues are hidden. To overcome this, you can change the view: 
+
+![](https://cloud.blselectronics.ch/index.php/apps/files_sharing/ajax/publicpreview.php?x=1541&y=442&a=true&file=perspective1.png&t=dPyGmpb2fC2Qamo&scalingup=0)
+
+You can choose the regular C/C++ view. 
+Alternatively you can also reach the debug configurations menu by right-click on your project under the arduino view. 
+
+![](https://cloud.blselectronics.ch/index.php/apps/files_sharing/ajax/publicpreview.php?x=1541&y=442&a=true&file=arduinoView.png&t=ZRF4j9Nij8xBSP4&scalingup=0)
+
 From the _**“Run”**_ menu, select _**“Debug Configurations”**_.
 Double-click on **_“GDB OpenOCD Debugging”_** to create a new configuration and set the configuration name.
 
@@ -166,6 +175,10 @@ Finally, click on _**“Apply”**_ and _**“Close”**_.
 
 Launch the debug session from the _**“Debug”**_ or _**“Run”**_ button in the toolbar.<br>
 If the configuration process runs correctly, you will be able to see the debug capabilities of the chip in the Debug console (number of breakpoints, watchpoints, …).
+
+If you are facing problems with messages like "binary not found" you should try to click on the drop down menu and then on your configuration instead of just click on the debug icon. 
+
+![](https://cloud.blselectronics.ch/index.php/apps/files_sharing/ajax/publicpreview.php?x=1541&y=442&a=true&file=debug.png&t=DPDNH47JPMo4LdH&scalingup=0)
 
 [[/img/DebugConsole.png|alt="DebugConsole"]]
 
