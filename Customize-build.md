@@ -1,7 +1,9 @@
 ## How to customize build options
 Since the core version [1.1.1](https://github.com/stm32duino/Arduino_Core_STM32/tree/1.1.1), it is possible to customize some core definitions or compiler options by adding a file named "`build_opt.h`" in the sketch directory. 
 
-This file allow to used the "_`@file`_" parameters of gcc. See https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html
+This file allow to used the "_`@file`_" parameter of gcc.
+
+See https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html
 
 > @file
 >
