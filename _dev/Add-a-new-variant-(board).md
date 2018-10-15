@@ -1,5 +1,10 @@
 [[/img/Tips-icon.png|alt="Tips"]]Example of all below steps are shown in this PR: [Add Nucleo-F207ZG](https://github.com/stm32duino/Arduino_Core_STM32/pull/63) (ignore the 2 last commits)
 
+[[/img/Warning-icon.png|alt="Warning"]] Since this PR, some enhancement has been done.
+* CMSIS startup file definition is no more needed as they are all defined in the core. See [#70](https://github.com/stm32duino/Arduino_Core_STM32/issues/70)
+* Custom startup file can be defined. [#353](https://github.com/stm32duino/Arduino_Core_STM32/pull/353)
+* Use define instead of enum for pins in `variant.h`. See [#356](https://github.com/stm32duino/Arduino_Core_STM32/pull/353)
+
 # Create a new variant
 Go to the '_**variant**_' folder of the STM32 core.<br>
 Follow this page: [Where are sources](https://github.com/stm32duino/wiki/wiki/Where-are-sources#stm32-core-sources-files-location)
@@ -49,7 +54,16 @@ to STM32 PinName (PY_x).
 
 In **_variant.h_**:<br>
 1. Align the number of PinName defined above in `digitalPin[]` array in **_variant.h_**.<br>
-This is a one to one mapping, i.e. the first enum value is the first element in the array.
+Define all usable pins and its linked pin number which is the index in the `digitalPin[]` array.<br>
+Example:
+```
+#define PG9  0
+#define PG14 1
+#define PF15 2
+#define PE13 3
+#define PF14 4
+```
+
 2. Review macros to point to the right pin name/number: `LED_BUILTIN, MOSI, MISO, SCLK, SDA, SCL,...`<br>
 Note that some of them have a default value in the core. Only redefine them if different from the default one.<br>
 See: https://github.com/stm32duino/Arduino_Core_STM32/blob/c392140415b3cf29100062ecb083adfa0f59f8b1/cores/arduino/pins_arduino.h#L142 <br>
