@@ -46,27 +46,6 @@ Hit _**“Apply and Close”**_ then re-open the _**“Arduino > Preferences”*
 Select the latest core version and hit _**“Apply and Close”**_.
 
 ## 2 - Programming the boards
-[[/img/Important-icon.png|alt="ImportantIcon"]]
-Arduino build recipe hooks are currently not supported by Sloeber (See GitHub issue [#927](https://github.com/Sloeber/arduino-eclipse-plugin/issues/927)), leading to some build issues. In order to avoid this, and before starting a new project, some configurations needs to be done. Open your STM32 core package folder; it might be in your Eclipse installation folder. The path should look like this one:
- 
-```
-<Eclipse installation path>\eclipse\arduinoPlugin\packages\STM32\hardware\stm32\<core version>. 
-```
-
-In this folder, open the _**platform.txt**_ file and follow **carefully** these steps   : 
--	Find the: _**“compiler.extra_flags=-mcpu={build.mcu} -mthumb @{build.opt.path}”**_ line.
--	Delete the _**“ @{build.opt.path} “**_ part.
--	Save your modification.
--	Relaunch Eclipse. 
-
-Otherwise, you can also get around these issues by using the [Sloeber nightly version](http://eclipse.baeyens.it/nightly.php) : open _**"Help > Check for updates"**_ and follow the recommended instructions. 
-
-Once the update is completed, relaunch Eclipse then open your project properties and go to _**"C/C++ Build > Settings"**_. In the _**Pre-build steps**_ section, fill the **_"Command"_** field with **_"${A.RECIPE.HOOKS.PREBUILD.1.PATTERN}"_**
-
-[[/img/Note-icon.png|alt="Note"]] Do not forget to do these steps after each core update
-
-Now, let's create our first project . 
-
 [[/img/Tips-icon.png|alt="Tips"]] Make sure your board is correctly connected before go any further.
 
 There is multiple options to start a new project. 
