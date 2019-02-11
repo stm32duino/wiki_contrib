@@ -15,3 +15,12 @@ becomes<br>
 `Nucleo_64.menu.pnum.NUCLEO_xxxxxx.node="NODE_xxxxxx,<your_node_label>"`
 
 Node names list has to be separated by ',' and double quoted (for Windows).
+
+### When using "STLink" upload method on Windows, nothing is happening:
+This is probably due to the missing `MSVCR100.dll`.
+
+You can easily check that by trying to launch manually `ST-LINK_CLI.exe` which is in your Arduino install packages folder:
+
+`STM32Tools\<x.y.z>\tools\win\stlink\`
+
+To solve this, install  _Microsoft Visual C++ 2010 Redistributable_ to get `MSVCR100.dll`
