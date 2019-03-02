@@ -26,6 +26,26 @@ _Params_ callback pointer to the callback function. Called when the number of sa
 _Params_ callbackParameter pointer to the callback parameters. Can be NULL.  
 _Return_ true if conversion started else false.  
 
+## HardwareSerial
+
+By default, only one `Serial` instance is available.
+To use a second serial port, a `HardwareSerial` object should be declared in the sketch before the `setup()` function:
+```C++
+//                      RX    TX
+HardwareSerial Serial1(PA10, PA9);
+
+void setup() {
+  Serial1.begin(115200); 
+}
+
+void loop() {
+  Serial1.println("Hello World!");
+  delay(1000);
+}
+```
+Another solution is to add a `build_opt.h` file alongside your main `.ino` file with: `-DENABLE_HWSERIAL1`.
+This will define the `Serial1` instance using the first `USART1` instance found in the `PeripheralPins.c` of your variant.
+
 # Library
 
 This part describes the STM32 libraries.
