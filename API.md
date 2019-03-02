@@ -46,6 +46,8 @@ void loop() {
 Another solution is to add a `build_opt.h` file alongside your main `.ino` file with: `-DENABLE_HWSERIAL1`.
 This will define the `Serial1` instance using the first `USART1` instance found in the `PeripheralPins.c` of your variant.
 
+Note that only the latter solution allows to use the `serialEvent1()` callback in the sketch.
+
 # Library
 
 This part describes the STM32 libraries.
