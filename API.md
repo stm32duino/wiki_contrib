@@ -119,4 +119,24 @@ This is an example of the use of the CS pin management:
     SPI.beginTransaction(1, settings); //Attachs another CS pin and configure the SPI instance with other settings  
     SPI.transfer(2, 0x52); //Transfers data to the first device
     SPI.transfer(1, 0xA4); //Transfers data to the second device. The SPI instance is configured with the right settings  
-    SPI.end() //SPI instance is disabled  
+    SPI.end() //SPI instance is disabled
+
+## i2c
+By default, only one `Wire` instance is available and it uses the Arduino pins 14 and 15.
+To use a second i2c port, a `TwoWire` object should be declared in the sketch before the `setup()` function:
+```C++
+#include "Wire.h"
+//            SDA  SCL
+TwoWire Wire2(PB3, PB10);
+
+void setup() {
+  Wire2.begin(); 
+}
+
+void loop() {
+  Wire2.beginTransmission(0x71);
+  Wire2.write('v');
+  Wire2.endTransmission();
+  delay(1000);
+}
+```
