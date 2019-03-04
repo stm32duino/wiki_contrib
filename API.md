@@ -68,7 +68,7 @@ We give to the user 3 possiblities about the management of the CS pin:
 _Params_ SPI mosi pin  
 _Params_ SPI miso pin  
 _Params_ SPI sclk pin  
-_Params_ (optional) SPI ssel pin. This pin must be an hardware CS pin. If you configure this pin, the chip select will be managed by the SPI peripheral. Do not use API functions with CS pin in parameter.  
+_Params_ (optional) SPI ssel pin. This pin must be an hardware CS pin. If you configure this pin, the chip select will be managed by the SPI peripheral. Do not use API functions with CS pin in parameter.
 
 * **void SPIClass::begin(uint8_t _pin)**: initialize the SPI interface and add a CS pin  
 _Params_ spi CS pin to be managed by the SPI library  
@@ -115,17 +115,25 @@ _Params_ (optional) if SPI_LAST CS pin is reset, SPI_CONTINUE the CS pin is kept
 
 This is an example of the use of the CS pin management:  
 
-    SPI.begin(2); //Enables the SPI instance with default settings and attachs the CS pin  
-    SPI.beginTransaction(1, settings); //Attachs another CS pin and configure the SPI instance with other settings  
-    SPI.transfer(2, 0x52); //Transfers data to the first device
-    SPI.transfer(1, 0xA4); //Transfers data to the second device. The SPI instance is configured with the right settings  
-    SPI.end() //SPI instance is disabled
+```C++
+#include <SPI.h>
+//            MOSI  MISO  SCLK
+SPIClass SPI3(PC12, PC11, PC10);
+
+void setup() {
+  SPI3.begin(2); //Enables the SPI3 instance with default settings and attaches the CS pin  
+  SPI3.beginTransaction(1, settings); //Attaches another CS pin and configure the SPI3 instance with other settings  
+  SPI3.transfer(2, 0x52); //Transfers data to the first device
+  SPI3.transfer(1, 0xA4); //Transfers data to the second device. The SPI3 instance is configured with the right settings  
+  SPI3.end() //SPI3 instance is disabled
+}
+```
 
 ## i2c
 By default, only one `Wire` instance is available and it uses the Arduino pins 14 and 15.
 To use a second i2c port, a `TwoWire` object should be declared in the sketch before the `setup()` function:
 ```C++
-#include "Wire.h"
+#include <Wire.h>
 //            SDA  SCL
 TwoWire Wire2(PB3, PB10);
 
