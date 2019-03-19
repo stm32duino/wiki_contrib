@@ -2,7 +2,7 @@
 
 This part describes the STM32 core functions.
 
-## core_callback.c
+## Core Callback
 
 CoreCallback functions allows to register a callback function called in the loop of the main() function.  
 If you need to call as often as possible a function to update your system and you want to be sure this function to be called, you can add it to the callback list. Otherwise, your function should be called inside the loop() function of
@@ -14,17 +14,25 @@ _Params_ func pointer to the callback function
 * **void unregisterCoreCallback(void (*func)(void))**: unregister a callback function  
 _Params_ func pointer to the callback function  
 
-## wiring_analog.c
+## Wiring
 
-`analogReadDma()` has been added to use ADC with DMA. This method is non-blocking and increases the ADC sampling rate to the possible maximum (see MCU datasheet for more information).
+### Analog
 
-* **bool analogReadDma(uint32_t ulPin, uint32_t *pData, uint32_t lData, void (*callback)(void *), void *callbackParameter))**: read analog pin using ADC with DMA.  
-_Params_ ulPin analog pin.  
-_Params_ pData pointer to the buffer where save the samples. Must be large enough.  
-_Params_ lData number of sample to read.  
-_Params_ callback pointer to the callback function. Called when the number of sample is reached.  
-_Params_ callbackParameter pointer to the callback parameters. Can be NULL.  
-_Return_ true if conversion started else false.  
+`analogWriteFrequency(freq)` has been added to set the frequency used by `analogWrite()`. Default is `PWM_FREQUENCY` (1000) in Hertz.
+
+**_Note_** frequency is common to all channels of a specified timer, setting the frequency for one channel will impact all others of the same timer.
+
+#### Example
+```C
+  // Assuming Ax pins have PWM capabilities and use a different Timer.
+  analogWrite(A1, 127); // Start PWM on A1, at 1000 Hz with 50% duty cycle
+  analogWriteFrequency(2000); // Set PMW period to 2000 Hz instead of 1000
+  analogWrite(A2, 64); // Start PWM on A2, at 2000 Hz with 25% duty cycle
+  analogWriteFrequency(500); // Set PMW period to 500 Hz
+  analogWrite(A3, 192); // Start PWM on A3, at 500 Hz with 75% duty cycle
+```
+
+[[/img/PWM_Freq.png|alt="PWM Freq result"]]
 
 ## HardwareSerial
 
@@ -48,9 +56,9 @@ This will define the `Serial1` instance using the first `USART1` instance found 
 
 Note that only the latter solution allows to use the `serialEvent1()` callback in the sketch.
 
-# Library
+# Built-In Library
 
-This part describes the STM32 libraries.
+This part describes the STM32 libraries provide with the core.
 
 ## SPI
 
@@ -129,7 +137,7 @@ void setup() {
 }
 ```
 
-## i2c
+## I2C
 By default, only one `Wire` instance is available and it uses the Arduino pins 14 and 15.
 To use a second i2c port, a `TwoWire` object should be declared in the sketch before the `setup()` function:
 ```C++
