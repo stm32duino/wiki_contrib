@@ -18,7 +18,7 @@ _Params_ func pointer to the callback function
 
 ### Analog
 
-`analogWriteFrequency(freq)` has been added to set the frequency used by `analogWrite()`. Default is `PWM_FREQUENCY` (1000) in Hertz.
+`analogWriteFrequency(freq)` has been added in core version **> 1.5.0** to set the frequency used by `analogWrite()`. Default is `PWM_FREQUENCY` (1000) in Hertz.
 
 **_Note_** frequency is common to all channels of a specified timer, setting the frequency for one channel will impact all others of the same timer.
 
