@@ -86,7 +86,7 @@ a. From the "**Tools > Board**" menu, select the STM32 board series: _Nucleo-64_
 
   [[/img/SelectBoard.png|alt="Board selection"]]
 
-b. Then from the "**Tools > Nulceo 64 boards**" menu, select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
+b. Then from the "**Tools > Nucleo 64 boards**" menu, select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
 
   [[/img/SelectBoard2.png|alt="Board selection2"]]
 
