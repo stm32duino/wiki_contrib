@@ -4,8 +4,8 @@ This part describes the STM32 core functions.
 
 ## Core Callback
 
-CoreCallback functions allows to register a callback function called in the loop of the main() function.  
-If you need to call as often as possible a function to update your system and you want to be sure this function to be called, you can add it to the callback list. Otherwise, your function should be called inside the loop() function of
+CoreCallback functions allows to register a callback function called in the loop of the `main()` function. 
+If you need to call as often as possible a function to update your system and you want to be sure this function to be called, you can add it to the callback list. Otherwise, your function should be called inside the `loop()` function of
 the sketch.
 
 * **void registerCoreCallback(void (*func)(void))**: register a callback function  
@@ -13,6 +13,10 @@ _Params_ func pointer to the callback function
 
 * **void unregisterCoreCallback(void (*func)(void))**: unregister a callback function  
 _Params_ func pointer to the callback function  
+
+[[/img/Warning-icon.png|alt="Warning"]] By default, the core callback feature is disabled, to enable it `CORE_CALLBACK` must be defined.
+
+`build_opt.h` can be used to define it by adding `-DCORE_CALLBACK`, see [build_opt.h wiki](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h).
 
 ## Wiring
 
