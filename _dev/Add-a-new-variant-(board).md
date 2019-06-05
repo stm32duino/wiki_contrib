@@ -109,6 +109,12 @@ Then edit copied file in order to:
  * Adjust `HSE/HSI` values adaptation if needed
  * Update any other configurations
 
+Note: Below HAL module have to be disabled, they are handled thanks Arduino menu:
+ * HAL_UART_MODULE_ENABLED
+ * HAL_PCD_MODULE_ENABLED
+ 
+
+
 ## 8 - Declare the variant
 It still to add the menu and add relevant informations (Flash and SRAM sizes, cpu freq,...)<br>
 [[/img/Tips-icon.png|alt="Tips"]] See: [Arduino Boards.txt specifications](https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification#boardstxt) for further options.<br>
