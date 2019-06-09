@@ -12,6 +12,8 @@ Go to the installed package directory: [[Where-are-sources]]
 
 Delete the version directory: `<x.y.z>`
 
+Note: There must be no other directories along side the `<x.y.z>` directory, so don't just rename the old one - it will cause problems later. If you want to keep it, move it somewhere else entirely.
+
 ## 3. Hereafter, 2 methods to use git repository
 Directory of step 2 is now deleted.<br>
 
