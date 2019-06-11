@@ -15,10 +15,10 @@
 This part describes the STM32 core functions.
 
 ## Core version
-This was introduced introduced after 1.5.0.
+This was introduced introduced core version greater than **1.5.0**.
 It is based on Semantic Versioning 2.0.0 (https://semver.org/).
 
-This ease core dependencies and defined [here](https://github.com/stm32duino/Arduino_Core_STM32/blob/d7c6b8b39b5dad3e5aa929cfa6ff235197aeea36/cores/arduino/stm32/stm32_def.h#L5-L21]
+This ease core dependencies and defined [here](https://github.com/stm32duino/Arduino_Core_STM32/blob/d7c6b8b39b5dad3e5aa929cfa6ff235197aeea36/cores/arduino/stm32/stm32_def.h#L5-L21).
 
 `STM32_CORE_VERSION` defines the core version with:
  * `STM32_CORE_VERSION_MAJOR`: major version [31:24]
@@ -34,9 +34,9 @@ This ease core dependencies and defined [here](https://github.com/stm32duino/Ard
 
 ```C
 #if !defined(STM32_CORE_VERSION) || (STM32_CORE_VERSION  <= 0x01050000)
-/* Do something for core version less than or equal to 1.5.0 */
+/* Do something for core version lesser than or equal to 1.5.0 */
 #else
-/* Do something for core version higher than 1.5.0 */
+/* Do something for core version greater than 1.5.0 */
 #endif
 ```
 
@@ -60,7 +60,8 @@ _Params_ func pointer to the callback function
 
 ## Analog
 
-`analogWriteFrequency(freq)` has been added in core version **> 1.5.0** to set the frequency used by `analogWrite()`. Default is `PWM_FREQUENCY` (1000) in Hertz.
+### Frequency
+`analogWriteFrequency(freq)` has been added in core version greater than **1.5.0** to set the frequency used by `analogWrite()`. Default is `PWM_FREQUENCY` (1000) in Hertz.
 
 **_Note_** frequency is common to all channels of a specified timer, setting the frequency for one channel will impact all others of the same timer.
 
@@ -75,6 +76,101 @@ _Params_ func pointer to the callback function
 ```
 
 [[/img/PWM_Freq.png|alt="PWM Freq result"]]
+
+### ADC internal channels
+Available in core version greater than **1.5.0**
+
+`analogRead()` can now be used to read some  internal channels with the following definitions:
+ * `ATEMP`: internal temperature sensor
+ * `AVREF`: VrefInt, internal voltage reference
+ * `AVBAT`: Vbat voltage
+
+A minimum ADC sampling time is required when reading internal channels so default is set it to max possible value. It can be defined more precisely by defining:
+ * `ADC_SAMPLINGTIME_INTERNAL`
+to the desired ADC sample time.
+
+`ADC_SAMPLINGTIME` and `ADC_CLOCK_DIV` could also be redefined by the variant or using `build_opt.h`.
+
+#### Example
+Hereafter an usage example which read then convert to proper Unit the 3 internal channels + A0:
+```C
+#include "stm32yyxx_ll_adc.h"
+
+/* Values available in datasheet */
+#define CALX_TEMP 25
+#if defined(STM32F1xx)
+#define V25       1430
+#define AVG_SLOPE 4300
+#define VREFINT   1200
+#elif defined(STM32F2xx)
+#define V25       760
+#define AVG_SLOPE 2500
+#define VREFINT   1210
+#endif
+
+/* Analog read resolution */
+#if ADC_RESOLUTION == 10
+#define LL_ADC_RESOLUTION LL_ADC_RESOLUTION_10B
+#define ADC_RANGE 1024
+#else
+#define LL_ADC_RESOLUTION LL_ADC_RESOLUTION_12B
+#define ADC_RANGE 4096
+#endif
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  analogReadResolution(ADC_RESOLUTION);
+}
+
+static int32_t readVref()
+{
+#ifdef __LL_ADC_CALC_VREFANALOG_VOLTAGE
+  return (__LL_ADC_CALC_VREFANALOG_VOLTAGE(analogRead(AVREF), LL_ADC_RESOLUTION));
+#else
+  return (VREFINT * ADC_RANGE / analogRead(AVREF)); // ADC sample to mV
+#endif
+}
+
+#ifdef ATEMP
+static int32_t readTempSensor(int32_t VRef)
+{
+#ifdef __LL_ADC_CALC_TEMPERATURE
+  return (__LL_ADC_CALC_TEMPERATURE(VRef, analogRead(ATEMP), LL_ADC_RESOLUTION));
+#elif defined(__LL_ADC_CALC_TEMPERATURE_TYP_PARAMS)
+  return (__LL_ADC_CALC_TEMPERATURE_TYP_PARAMS(AVG_SLOPE, V25, CALX_TEMP, VRef, analogRead(ATEMP), LL_ADC_RESOLUTION));
+#else
+  return 0;
+#endif
+}
+#endif
+
+static int32_t readVoltage(int32_t VRef, uint32_t pin)
+{
+  return (__LL_ADC_CALC_DATA_TO_VOLTAGE(VRef, analogRead(pin), LL_ADC_RESOLUTION));
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // print out the value you read:
+  Serial.print("VRef(mv)= ");
+  int32_t VRef = readVref();
+  Serial.print(VRef);
+
+#ifdef ATEMP
+  Serial.print("\tTemp(°C)= ");
+  Serial.print(readTempSensor(VRef));
+#endif
+#ifdef AVBAT
+  Serial.print("\tVbat(mv)= ");
+  Serial.print(readVoltage(VRef, AVBAT));
+#endif
+
+  Serial.print("\tA0(mv)= ");
+  Serial.println(readVoltage(VRef, A0));
+  delay(200);
+}
+```
 
 ## HardwareSerial
 
