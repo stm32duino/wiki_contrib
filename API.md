@@ -1,6 +1,44 @@
+# API
+
+ * [Core](https://github.com/stm32duino/wiki/wiki/API#core)
+   * [Core version](https://github.com/stm32duino/wiki/wiki/API#core-version)
+   * [Core Callback](https://github.com/stm32duino/wiki/wiki/API#core-callback)
+ * [Wiring](https://github.com/stm32duino/wiki/wiki/API#wiring)
+   * [Analog](https://github.com/stm32duino/wiki/wiki/API#analog)
+   * [HardwareSerial](https://github.com/stm32duino/wiki/wiki/API#hardwareserial)
+ * [Built-In Library](https://github.com/stm32duino/wiki/wiki/API#built-in-ibrary)
+   * [SPI](https://github.com/stm32duino/wiki/wiki/API#spi)
+   * [I2C](https://github.com/stm32duino/wiki/wiki/API#i2C)
+
 # Core
 
 This part describes the STM32 core functions.
+
+## Core version
+This was introduced introduced after 1.5.0.
+It is based on Semantic Versioning 2.0.0 (https://semver.org/).
+
+This ease core dependencies and defined [here](https://github.com/stm32duino/Arduino_Core_STM32/blob/d7c6b8b39b5dad3e5aa929cfa6ff235197aeea36/cores/arduino/stm32/stm32_def.h#L5-L21]
+
+`STM32_CORE_VERSION` defines the core version with:
+ * `STM32_CORE_VERSION_MAJOR`: major version [31:24]
+ * `STM32_CORE_VERSION_MINOR`: minor version [23:16]
+ * `STM32_CORE_VERSION_PATCH`: patch version [15:8]
+ * `STM32_CORE_VERSION_EXTRA`: Extra label [7:0]
+   with:
+   * `0`: official release
+   * `[1-9]`: release candidate
+   * `F[0-9]`: development
+
+### Example
+
+```C
+#if !defined(STM32_CORE_VERSION) || (STM32_CORE_VERSION  <= 0x01050000)
+/* Do something for core version less than or equal to 1.5.0 */
+#else
+/* Do something for core version higher than 1.5.0 */
+#endif
+```
 
 ## Core Callback
 
@@ -18,9 +56,9 @@ _Params_ func pointer to the callback function
 
 `build_opt.h` can be used to define it by adding `-DCORE_CALLBACK`, see [build_opt.h wiki](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h).
 
-## Wiring
+# Wiring
 
-### Analog
+## Analog
 
 `analogWriteFrequency(freq)` has been added in core version **> 1.5.0** to set the frequency used by `analogWrite()`. Default is `PWM_FREQUENCY` (1000) in Hertz.
 
