@@ -98,7 +98,7 @@ Replace the **_ldscript.ld_** in variant folder by the `STM32YYxxxxxx_FLASH.ld` 
 Since core version greater than **1.5.0**, a default STM32 HAL configuration is provided per STM32 series.
 Refer to [[hal-configuration]].
 
-Add in **_variant.h_** any extra HAL module to define.
+Add in **_variant.h_** any extra HAL module definition.
 
 **Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):<br>
 ```C
@@ -106,6 +106,11 @@ Add in **_variant.h_** any extra HAL module to define.
 #define HAL_DAC_MODULE_ENABLED
 #define HAL_ETH_MODULE_ENABLED
 ```
+
+Add in **_variant.h_** any extra [HAL configuration](https://github.com/stm32duino/wiki/wiki/HAL-configuration#other-hal-configuration).
+
+**Example**
+`#define HSE_VALUE               25000000U`
 
 ## 8 - Declare the variant
 It still to add the menu and add relevant information (Flash and SRAM sizes, cpu freq,...)<br>
