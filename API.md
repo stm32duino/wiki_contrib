@@ -203,7 +203,7 @@ This part describes the STM32 libraries provide with the core.
 STM32 SPI library has been modified with the possibility to manage several CS pins without to stop the SPI interface.  
 _We do not describe here the [SPI Arduino API](https://www.arduino.cc/en/Reference/SPI) but the functionalities added._  
 
-We give to the user 3 possiblities about the management of the CS pin:  
+We give to the user 3 possibilities about the management of the CS pin:  
 * the CS pin is managed directly by the user code before to transfer the data (like the Arduino SPI library)  
 * or the user gives the CS pin number to the library API and the library manages itself the CS pin (see example below)  
 * or the user uses a hardware CS pin linked to the SPI peripheral  
@@ -257,7 +257,7 @@ _Params_ pointer where to store the data read.
 _Params_ number of data to write/read.  
 _Params_ (optional) if SPI_LAST CS pin is reset, SPI_CONTINUE the CS pin is kept enabled.  
 
-### Example
+##### Example
 
 This is an example of the use of the CS pin management:  
 
@@ -276,8 +276,9 @@ void setup() {
 ```
 
 ## I2C
+
 By default, only one `Wire` instance is available and it uses the Arduino pins 14 and 15.
-To use a second i2c port, a `TwoWire` object should be declared in the sketch before the `setup()` function:
+To use a second I2C port, a `TwoWire` object should be declared in the sketch before the `setup()` function:
 ```C++
 #include <Wire.h>
 //            SDA  SCL
@@ -294,3 +295,32 @@ void loop() {
   delay(1000);
 }
 ```
+
+### New API functions
+
+#### Change default `Wire` instance pins 
+It is also possible to change the default pins used by the `Wire` instance using above API:
+
+* `void setSCL(uint32_t scl)`
+* `void setSDA(uint32_t sda)`
+* `void setSCL(PinName scl)`
+* `void setSDA(PinName sda)`
+
+##### Example:
+```C++
+    Wire.setSDA(PC_4); // using pin name PY_n
+    Wire.setSCL(PC2); // using pin number PYn
+    Wire.begin();
+```
+
+#### Enable general call mode
+Available in core version greater than **1.5.0**
+
+Adding `true` as last parameters of the 3 `Wire::begin()` methods will enable the general call mode otherwise `false` per default:
+
+* `void begin(bool generalCall = false)`
+* `void begin(uint8_t, bool generalCall = false)`
+* `void begin(int, bool generalCall = false)`
+
+##### Example
+`Wire.begin(true);` or `Wire.begin(0x70,true);`
