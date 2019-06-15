@@ -275,6 +275,25 @@ void setup() {
 }
 ```
 
+#### Change default `SPI` instance pins 
+It is also possible to change the default pins used by the `SPI` instance using above API:
+
+* `void setMISO(uint32_t miso)`
+* `void setMOSI(uint32_t mosi)`
+* `void setSCLK(uint32_t sclk)`
+* `void setSSEL(uint32_t ssel)`
+* `void setMISO(PinName miso)`
+* `void setMOSI(PinName mosi)`
+* `void setSCLK(PinName sclk)`
+* `void setSSEL(PinName ssel)`
+
+##### Example:
+```C++
+    SPI.setMISO(PC_4); // using pin name PY_n
+    SPI.setMOSI(PC2); // using pin number PYn
+    SPI.begin(2);
+```
+
 ## I2C
 
 By default, only one `Wire` instance is available and it uses the Arduino pins 14 and 15.
