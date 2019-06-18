@@ -17,6 +17,9 @@ becomes<br>
 Node names list has to be separated by ',' and double quoted (for Windows).
 
 ### When using "STLink" upload method on Windows, nothing is happening:
+
+[[/img/Warning-icon.png|alt="Warning"]] _**deprecated since core version > 1.5.0**_
+
 This is probably due to the missing `MSVCR100.dll`.
 
 You can easily check that by trying to launch manually `ST-LINK_CLI.exe` which is in your Arduino install packages folder:
