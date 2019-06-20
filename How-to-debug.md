@@ -1,4 +1,10 @@
-# Using Eclipse and Sloeber
+# How to debug
+
+Below, some ways to debug:
+ * [Eclipse and Sloeber](https://github.com/stm32duino/wiki/wiki/How-to-debug#eclipse-and-sloeber)
+ * [Visual Studio and VisualGDB](https://github.com/stm32duino/wiki/wiki/How-to-debug/_edit#visual-studio-and-visualgdb)
+
+# Eclipse and Sloeber
 ## 1 - Software requirements
 ### 1.1 - Install Eclipse C/C++ IDE
 +	**If you do not have any Eclipse package installed** <br>
@@ -164,3 +170,8 @@ If you are facing problems with messages like "binary not found" you should try 
 Now, you can easily debug your code by using the Eclipse debug features including running step-by-step mode, live breakpoint, inspecting memory access, live view of variable contents and many more.
 
 [[/img/DebugView.png|alt="DebugView"]]
+
+# Visual Studio and VisualGDB
+
+This [tutorial](https://visualgdb.com/tutorials/arduino/stm32/) shows how to develop Arduino-based projects for the STM32 boards using the [Arduino_Core_STM32](https://github.com/stm32duino/Arduino_Core_STM32), [Visual Studio](https://visualstudio.microsoft.com) and [VisualGDB](https://visualgdb.com).
+
