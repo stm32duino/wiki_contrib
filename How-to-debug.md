@@ -2,7 +2,7 @@
 
 Below, some ways to debug:
  * [Eclipse and Sloeber](https://github.com/stm32duino/wiki/wiki/How-to-debug#eclipse-and-sloeber)
- * [Visual Studio and VisualGDB](https://github.com/stm32duino/wiki/wiki/How-to-debug/visual-studio-and-visualgdb)
+ * [Visual Studio and VisualGDB](https://github.com/stm32duino/wiki/wiki/How-to-debug#visual-studio-and-visualgdb)
 
 # Eclipse and Sloeber
 ## 1 - Software requirements
