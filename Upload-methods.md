@@ -21,10 +21,23 @@
 
 ### DFU
 
-## HID Bootloader 2.2
-[[/img/Warning-icon.png|alt="Warning"]] _**Since core version > 1.5.0**_
+## HID Bootloader 2.2 (HID BL)
+This is a driverless USB bootloader for `STM32F10x` and `STM32F4xx` MCUs and is based on [HID protocol](https://en.wikipedia.org/wiki/Human_interface_device). No special USB drivers needed, even on Windows.
 
 
+The bootloader is installed at `0x8000000` address.
+On **STM32F103**, the bootloader consumes only `2 kB` of flash memory (0x800). 
+The user code area starts at `0x8000800`
+
+The **STM32F4xx** MCUs have built-in `DFU` (Device Firmware Upgrade) but you can also use HID BL for uploading firmwares.
+
+* The advantage of using HID BL instead of the DFU bootloader is that the entire firmware update process is automatic. You do not have to press any button or set any PCB jumper. 
+
+* The downside is that the `F4` HID BL firmware is larger than the `F1` version, consuming `16kB` (0x4000) of available flash memory.
+
+The `hid-flash` tool is available on Windows, Linux and MacOS.
+
+Details of HID bootloader v2.2 (and newer) hid-flash tool as well as ready-to-use binary files can be found at the GitHub repository: https://github.com/Serasidis/STM32_HID_Bootloader
 
 ## Maple DFU Bootloader
 [[/img/Warning-icon.png|alt="Warning"]] _**Since core version > 1.5.0**_
