@@ -22,7 +22,7 @@
 ### DFU
 
 ## HID Bootloader 2.2 (HID BL)
-This is a driverless USB bootloader for `STM32F10x` and `STM32F4xx` MCUs and is based on [HID protocol](https://en.wikipedia.org/wiki/Human_interface_device). No special USB drivers needed, even on Windows.
+This is a driverless USB bootloader for `STM32F10x` and `STM32F4xx` MCUs and is based on [HID protocol](https://en.wikipedia.org/wiki/Human_interface_device). No special USB drivers are needed, even on Windows.
 
 
 The bootloader is installed at `0x8000000` address.
