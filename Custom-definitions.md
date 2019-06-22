@@ -67,4 +67,4 @@ Syntax in the board.txt:
 
 Then add a `*.S` file in the `variant/NUCLEO_L476RG/` folder.
 
-[[/img/Important-icon.png|alt="Important"]] **Important note: file extension must be `.S` not `.s`
+[[/img/Important-icon.png|alt="Important"]] **Important note: file extension must be `.S` not `.s`**
