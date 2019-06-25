@@ -2,7 +2,10 @@
 
 Below, some ways to debug:
  * [Eclipse and Sloeber](https://github.com/stm32duino/wiki/wiki/How-to-debug#eclipse-and-sloeber)
+ * [PlatformIO](https://github.com/stm32duino/wiki/wiki/How-to-debug#PlatformIO)
  * [Visual Studio and VisualGDB](https://github.com/stm32duino/wiki/wiki/How-to-debug#visual-studio-and-visualgdb)
+
+[[/img/Warning-icon.png|alt="Warning"]] **Only the Arduino IDE is officially supported.** 
 
 # Eclipse and Sloeber
 ## 1 - Software requirements
@@ -170,6 +173,18 @@ If you are facing problems with messages like "binary not found" you should try 
 Now, you can easily debug your code by using the Eclipse debug features including running step-by-step mode, live breakpoint, inspecting memory access, live view of variable contents and many more.
 
 [[/img/DebugView.png|alt="DebugView"]]
+
+
+# PlatformIO
+
+[PlatformIO](https://platformio.org/) is an open source ecosystem for IoT development. Cross-platform IDE and unified debugger. Remote unit testing and firmware updates.
+
+It's built on top of GitHub's [Atom](https://atom.io/) and Microsoft's [Visual Studio Code](https://code.visualstudio.com/) – free, open source, and MIT licensed editors
+
+It now supports the [STM32Duino core](https://github.com/stm32duino/Arduino_Core_STM32):
+
+https://docs.platformio.org/en/latest/platforms/ststm32.html#configuration
+
 
 # Visual Studio and VisualGDB
 
