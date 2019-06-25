@@ -35,8 +35,12 @@ By default, if the file does not exist an empty one is created using the [pre-bu
 If you made a change in the "`build_opt.h`" file after a first build, this will not be detected by the Arduino IDE and will use the previous build object or cache core to build. To ensure the change is properly used, close the Arduino IDE or change one option in the menu (example upload method). This will force to rebuild all.
 If the compilation verbose is enabled you should see this at the beginning of the build:
 
-`Build options changed, rebuilding all`
+```Console
+Build options changed, rebuilding all
+```
 
 Else you will see several:
 
-`Using previously compiled file:`
+```Console
+Using previously compiled file:
+```
