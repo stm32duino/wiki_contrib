@@ -194,6 +194,23 @@ This will define the `Serial1` instance using the first `USART1` instance found 
 
 Note that only the latter solution allows to use the `serialEvent1()` callback in the sketch.
 
+### New API functions
+
+#### Change default `Serial` instance pins 
+It is also possible to change the default pins used by the `Serial` instance using above API:
+
+* `void setRx(uint32_t rx)`
+* `void setTx(uint32_t tx)`
+* `void setRx(PinName rx)`
+* `void setTx(PinName tx)`
+
+##### Example:
+```C++
+    Serial.setRx(PG_9); // using pin name PY_n
+    Serial.setTx(PG14); // using pin number PYn
+    Serial.begin(9600);
+```
+
 # Built-In Library
 
 This part describes the STM32 libraries provide with the core.
