@@ -4,6 +4,7 @@ Below, some ways to debug:
  * [Eclipse and Sloeber](https://github.com/stm32duino/wiki/wiki/How-to-debug#eclipse-and-sloeber)
  * [PlatformIO](https://github.com/stm32duino/wiki/wiki/How-to-debug#PlatformIO)
  * [Visual Studio and VisualGDB](https://github.com/stm32duino/wiki/wiki/How-to-debug#visual-studio-and-visualgdb)
+ * [Visual Studio Code and Arduino extension](https://github.com/stm32duino/wiki/wiki/How-to-debug#Visual-Studio-Code-and-Arduino-extension)
 
 [[/img/Warning-icon.png|alt="Warning"]] **Only the Arduino IDE is officially supported.** 
 
@@ -190,3 +191,35 @@ https://docs.platformio.org/en/latest/platforms/ststm32.html#configuration
 
 This [tutorial](https://visualgdb.com/tutorials/arduino/stm32/) shows how to develop Arduino-based projects for the STM32 boards using the [Arduino_Core_STM32](https://github.com/stm32duino/Arduino_Core_STM32), [Visual Studio](https://visualstudio.microsoft.com) and [VisualGDB](https://visualgdb.com).
 
+# Visual Studio Code and Arduino extension
+
+1. Install
+
+* Download and install [Visual Studio code](https://code.visualstudio.com/)
+* Install Arduino extension from Microsoft: [vscode-arduino](https://github.com/Microsoft/vscode-arduino)
+
+[[/img/VSCodeArduinoExtension.png|alt="VSCode Arduino Extension"]]
+
+2. Configuration
+
+Some settings are required for [vscode-arduino](https://github.com/Microsoft/vscode-arduino) extension.
+In your user [`settings.json`](https://code.visualstudio.com/docs/getstarted/settings), add:
+```
+    "arduino.path": "c:\STM32\arduino\arduino-1.8.9-windows\arduino-1.8.9\",`
+    "arduino.additionalUrls": "https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
+```
+
+For further options see [vscode-arduino Readme](https://github.com/microsoft/vscode-arduino/blob/master/README.md) 
+
+Check [vscode-arduino](https://github.com/Microsoft/vscode-arduino) extension configuration by opening the "**Arduino: Board manager**". Open the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Board manager**, `STM32 Cores` should be listed in `Contributed` Type:
+
+[[/img/VSCodeBoardManager.png|alt="VSCode Board Manager"]]
+
+3. Debug configuration
+
+3.1. Install
+* Install Cortex-Debug from Marus25 (@Marus): [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
+
+[[/img/VSCodeCortexDebugExtension.png|alt="VSCode Cortex-Debug Extension"]]
+
+* Install OpenOCD
