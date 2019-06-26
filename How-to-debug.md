@@ -193,14 +193,14 @@ This [tutorial](https://visualgdb.com/tutorials/arduino/stm32/) shows how to dev
 
 # Visual Studio Code and Arduino extension
 
-1. Install
+## 1. Install
 
 * Download and install [Visual Studio code](https://code.visualstudio.com/)
 * Install Arduino extension from Microsoft: [vscode-arduino](https://github.com/Microsoft/vscode-arduino)
 
 [[/img/VSCodeArduinoExtension.png|alt="VSCode Arduino Extension"]]
 
-2. Configuration
+## 2. Configuration
 
 Some settings are required for [vscode-arduino](https://github.com/Microsoft/vscode-arduino) extension.
 In your user [`settings.json`](https://code.visualstudio.com/docs/getstarted/settings), add:
@@ -209,15 +209,50 @@ In your user [`settings.json`](https://code.visualstudio.com/docs/getstarted/set
     "arduino.additionalUrls": "https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
 ```
 
-For further options see [vscode-arduino Readme](https://github.com/microsoft/vscode-arduino/blob/master/README.md) 
+[[/img/Tips-icon.png|alt="Tips"]] For further options see [vscode-arduino Readme](https://github.com/microsoft/vscode-arduino/blob/master/README.md) 
 
-Check [vscode-arduino](https://github.com/Microsoft/vscode-arduino) extension configuration by opening the "**Arduino: Board manager**". Open the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Board manager**, `STM32 Cores` should be listed in `Contributed` Type:
+Now, Ensure STM32 core installation is installed by opening the "**Arduino Board Manager**". Open the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Board Manager**, `STM32 Cores` should be listed in `Contributed` Type:
 
 [[/img/VSCodeBoardManager.png|alt="VSCode Board Manager"]]
 
-3. Debug configuration
+If not installed, click on **install**.
 
-3.1. Install
+## 3. Build an example
+
+### 3.1 Board Configuration
+
+Firstly, it is necessary to choose a board to build.
+
+Open the "**Arduino Board Configuration**". Open the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Board Config**
+
+[[/img/VSCodeBoardConfig.png|alt="VSCode Board Config"]]
+
+In this example, [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html).
+
+### 3.2 Choose an example
+
+Open the "**Arduino Examples**" by opening the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Examples**
+
+[[/img/VSCodeArduinoExamples.png|alt="VSCode Arduino Examples"]]
+
+For this example, Blink has been selected, then you will have this:
+
+[[/img/VSCodeBlinkExample.png|alt="VSCode Blink Example"]]
+
+### 3.3 Build and upload
+
+Opening the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Verify** to only build or **Arduino: Upload**  to build and upload.
+
+[[/img/VSCodeUpload.png|alt="VSCode Upload"]]
+
+## Enhance C/C++ code browsing
+
+[[/img/under-construction.jpg|alt="Under construction"]]
+
+## 4. Debug configuration
+
+
+### 4.1. Install
 * Install Cortex-Debug from Marus25 (@Marus): [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
 
 [[/img/VSCodeCortexDebugExtension.png|alt="VSCode Cortex-Debug Extension"]]
