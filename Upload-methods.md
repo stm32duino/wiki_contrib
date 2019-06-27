@@ -1,7 +1,5 @@
 # Upload methods
 
-[[/img/under-construction.jpg|alt="Under construction"]]
-
 ## Mass Storage
 
 This upload method is mainly dedicated to boards manufactured by ST which integrate a ST-Link: [Nucleo](https://www.st.com/en/evaluation-tools/stm32-nucleo-boards.html), [Discovery](https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits.html), [Eval](https://www.st.com/en/evaluation-tools/stm32-eval-boards.html).
@@ -11,7 +9,7 @@ The mass storage device of the ST-Link is a virtual disk, copy on this disk a bi
 Once programmed into the MCU the copied binary disappears from the virtual disk.
 
 ## STLink
-[[/img/Warning-icon.png|alt="Warning"]] _**Deprecated since core version > 1.5.0**_
+[[/img/Warning-icon.png|alt="Warning"]] _**Deprecated since core version > 1.5.0**_ replaced by [STM32CubeProgrammer (SWD)](https://github.com/stm32duino/wiki/wiki/Upload-methods#SWD)
 
 Requires a [ST-Link/V2](https://www.st.com/content/st_com/en/products/development-tools/hardware-development-tools/hardware-development-tools-for-stm32/st-link-v2.html) device connected to the PC over USB and to the board via the SWD interface.
 
@@ -31,7 +29,15 @@ Only 3 pins are required for basic programming and debugging of the STM32 MCU de
 Refers to [ST-Link V2 user Manual](https://www.st.com/resource/en/user_manual/dm00026748.pdf) and the board documentations (User Manual, schematics,...) to ensure connect to the right pins.
 
 ## Serial
-[[/img/Warning-icon.png|alt="Warning"]] _**Deprecated since core version > 1.5.0**_
+[[/img/Warning-icon.png|alt="Warning"]] _**Deprecated since core version > 1.5.0**_ replaced by [STM32CubeProgrammer (Serial)](https://github.com/stm32duino/wiki/wiki/Upload-methods#serial-1)
+
+This requires to restart the STM32 in 'native bootloader' mode and rely on `Boot` pins. Check in [STM32 microcontroller system memory boot mode AN2606](https://www.st.com/content/ccc/resource/technical/document/application_note/b9/9b/16/3a/12/1e/40/0c/CD00167594.pdf/files/CD00167594.pdf/jcr:content/translations/en.CD00167594.pdf) which pattern to apply to activate the bootloader for the dedicated STM32 MCU. Check also which U(S)ART is used.
+
+[[/img/Warning-icon.png|alt="Warning"]] A serial port or additional USB to Serial adapter is needed.
+
+Connect `power`, `GND`, and `Tx/Rx` pins of the serial adapter to your STM32 U(S)ART. 
+
+Adapter `Tx` goes to STM32 `Rx` and `Rx` goes to STM32 `Tx`.
 
 ## BMP (Black Magic Probe)
 
@@ -39,6 +45,8 @@ Refers to [Black Magic Probe](https://github.com/blacksphere/blackmagic) site an
 
 ## STM32CubeProgrammer
 [[/img/Warning-icon.png|alt="Warning"]] _**Since core version > 1.5.0**_
+
+[[/img/under-construction.jpg|alt="Under construction"]]
 
 ### SWD
 
