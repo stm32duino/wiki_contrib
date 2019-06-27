@@ -7,6 +7,23 @@
 ## STLink
 [[/img/Warning-icon.png|alt="Warning"]] _**Deprecated since core version > 1.5.0**_
 
+Requires a [ST-Link/V2](https://www.st.com/content/st_com/en/products/development-tools/hardware-development-tools/hardware-development-tools-for-stm32/st-link-v2.html) device connected to the PC over USB and to the board via the SWD interface.
+
+[[/img/Tips-icon.png|alt="Tips"]]  Several boards manufactured by ST integrate ST-Link: Nucleo, Discovery, Eval.
+
+Be sure that the necessary driver for Windows is installed ([available here](https://www.st.com/en/development-tools/stsw-link009.html)) and the ST-Link adapter is updated to the latest firmware ([application to upgrade the firmware](https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stsw-link007.html)).
+
+Only 3 pins are required for basic programming and debugging of the STM32 MCU devices (4 if the board is powered by the programmer) using Serial Debug Wire (SWD):
+
+* GND
+* SWDIO
+* SWCLK
+* 3.3V (optional)
+
+[[/img/Important-icon.png|alt="ImportantIcon"]] **Avoid wired 3.3V to the target board if it is already powered by an other source (external supply, USB,..) else you may damage the board, programmer, USB port or external supply.**
+
+Refers to [ST-Link V2 user Manual](https://www.st.com/resource/en/user_manual/dm00026748.pdf) and the board documentations (User Manual, schematics,...) to ensure connect to the right pins.
+
 ## Serial
 [[/img/Warning-icon.png|alt="Warning"]] _**Deprecated since core version > 1.5.0**_
 
