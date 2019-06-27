@@ -29,6 +29,8 @@ Refers to [ST-Link V2 user Manual](https://www.st.com/resource/en/user_manual/dm
 
 ## BMP (Black Magic Probe)
 
+Refers to [Black Magic Probe](https://github.com/blacksphere/blackmagic) site and its [Getting-Started](https://github.com/blacksphere/blackmagic/wiki/Getting-Started) Wiki.
+
 ## STM32CubeProgrammer
 [[/img/Warning-icon.png|alt="Warning"]] _**Since core version > 1.5.0**_
 
