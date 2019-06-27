@@ -100,11 +100,10 @@ b. Then from the "**Tools > Nucleo 64 boards**" menu, select the [Nucleo L476RG]
 
   [[/img/SelectPort.png|alt="Port selection"]]
 
-## Upload method
-Depending of the board, several upload method could be proposed, thanks the "**Tools > Upload Method**" menu
-* Mass Storage: copy binary to the mass storage
-* [STLink](http://www.st.com/en/development-tools/st-link-v2.html): use STLink to flash
-* [DFU](https://en.wikipedia.org/wiki/USB#Device_Firmware_Upgrade): use USB to flash
+## Upload methods
+Depending of the board, several upload methods could be proposed, thanks the "**Tools > Upload Method**" menu.
+
+See [Upload methods](https://github.com/stm32duino/wiki/wiki/Upload-methods) for more details.
 
 [[/img/UploadMethod.png|alt="Upload Method"]]
 
