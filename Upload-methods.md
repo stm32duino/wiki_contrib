@@ -4,12 +4,18 @@
 
 ## Mass Storage
 
+This upload method is mainly dedicated to boards manufactured by ST which integrate a ST-Link: [Nucleo](https://www.st.com/en/evaluation-tools/stm32-nucleo-boards.html), [Discovery](https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits.html), [Eval](https://www.st.com/en/evaluation-tools/stm32-eval-boards.html).
+
+This enables drag-and-drop flash programming, so there is no need for a separate debug probe. 
+The mass storage device of the ST-Link is a virtual disk, copy on this disk a binary will program it.
+Once programmed into the MCU the copied binary disappears from the virtual disk.
+
 ## STLink
 [[/img/Warning-icon.png|alt="Warning"]] _**Deprecated since core version > 1.5.0**_
 
 Requires a [ST-Link/V2](https://www.st.com/content/st_com/en/products/development-tools/hardware-development-tools/hardware-development-tools-for-stm32/st-link-v2.html) device connected to the PC over USB and to the board via the SWD interface.
 
-[[/img/Tips-icon.png|alt="Tips"]]  Several boards manufactured by ST integrate ST-Link: Nucleo, Discovery, Eval.
+[[/img/Tips-icon.png|alt="Tips"]]  Several boards manufactured by ST integrate ST-Link: [Nucleo](https://www.st.com/en/evaluation-tools/stm32-nucleo-boards.html), [Discovery](https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits.html), [Eval](https://www.st.com/en/evaluation-tools/stm32-eval-boards.html).
 
 Be sure that the necessary driver for Windows is installed ([available here](https://www.st.com/en/development-tools/stsw-link009.html)) and the ST-Link adapter is updated to the latest firmware ([application to upgrade the firmware](https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stsw-link007.html)).
 
