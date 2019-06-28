@@ -195,6 +195,8 @@ This [tutorial](https://visualgdb.com/tutorials/arduino/stm32/) shows how to dev
 
 ## 1. Install
 
+See [prerequisites](https://github.com/microsoft/vscode-arduino/blob/master/README.md#prerequisites).
+
 * Download and install [Visual Studio code](https://code.visualstudio.com/)
 * Install Arduino extension from Microsoft: [vscode-arduino](https://github.com/Microsoft/vscode-arduino)
 
@@ -214,8 +216,6 @@ In your user [`settings.json`](https://code.visualstudio.com/docs/getstarted/set
 Now, Ensure STM32 core installation is installed by opening the "**Arduino Board Manager**". Open the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Board Manager**, `STM32 Cores` should be listed in `Contributed` Type:
 
 [[/img/VSCodeBoardManager.png|alt="VSCode Board Manager"]]
-
-If not installed, click on **install**.
 
 ## 3. Build an example
 
@@ -250,7 +250,6 @@ Opening the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd>
 [[/img/under-construction.jpg|alt="Under construction"]]
 
 ## 4. Debug configuration
-
 
 ### 4.1. Install
 * Install Cortex-Debug from Marus25 (@Marus): [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
