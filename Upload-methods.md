@@ -46,13 +46,65 @@ Refers to [Black Magic Probe](https://github.com/blacksphere/blackmagic) site an
 ## STM32CubeProgrammer
 [[/img/Warning-icon.png|alt="Warning"]] _**Since core version > 1.5.0**_
 
-[[/img/under-construction.jpg|alt="Under construction"]]
+[STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) allows to write and verify device memory through both the debug interface (JTAG and SWD) and the bootloader interface (UART, USB DFU, I2C, SPI, and CAN).
+
+Since version 1.6.0, three upload methods are based on the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) CLI (command-line interface):
+
+* SWD
+* Serial
+* DFU
+
+### Requirement
+
+To use those upload methods, [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) have to be installed manually as **it is not provided** through the tools packages.
+
+User can change the default install path but in this case, the new path have to be added in the `PATH` environment. variable.
+
+In any case, if the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) binary is not found, user will be warned like this:
+
+```Console
+STM32_Programmer.sh/STM32_Programmer_CLI.exe not found.
+Please install it or add '<STM32CubeProgrammer path>/bin' to your PATH environment:`
+https://www.st.com/en/development-tools/stm32cubeprog.html`
+Aborting!
+```
+
+### Arduino integration
+
+Scripts have been deployed thanks [STM32 Tools](https://github.com/stm32duino/Arduino_Tools) packages to ease Arduino integration and allow to have only one definition of the tool in the `platform.txt`:
+
+* [linux/stm32CubeProg.sh](https://github.com/stm32duino/Arduino_Tools/blob/master/linux/stm32CubeProg.sh)
+* [macosx/stm32CubeProg](https://github.com/stm32duino/Arduino_Tools/blob/master/macosx/stm32CubeProg)
+* [win/stm32CubeProg.bat](https://github.com/stm32duino/Arduino_Tools/blob/master/win/stm32CubeProg.bat)
+
+`{upload.protocol}` allows to select the right interface to use:
+  * 0: SWD
+  * 1: Serial (using the built-in ST bootloader)
+  * 2: DFU (using the built-in ST bootloader)
+
+See [AN2606](https://www.st.com/content/ccc/resource/technical/document/application_note/b9/9b/16/3a/12/1e/40/0c/CD00167594.pdf/files/CD00167594.pdf/jcr:content/translations/en.CD00167594.pdf) for STM32 microcontroller system memory boot mode.
+
+`{upload.options}` is used to pass extra options:
+ * `-rst` for SWD to reset the device after the flash
+ * `{serial.port.file} -s` for Serial
+
+[[/img/Note-icon.png|alt="Note"]] Note: I2C, SPI, CAN could be added as supported by the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) tool.
 
 ### SWD
 
+This method replace the [STLink](https://github.com/stm32duino/wiki/wiki/Upload-methods#STLink) one and works the same way.
+In addition to the [ST-Link/V2](https://www.st.com/content/st_com/en/products/development-tools/hardware-development-tools/hardware-development-tools-for-stm32/st-link-v2.html) support, it allows to support the [ST-Link/V3] (https://www.st.com/en/development-tools/stlink-v3set.html)
+
 ### Serial
 
+This method replace the [STLink](https://github.com/stm32duino/wiki/wiki/Upload-methods#Serial) one and works the same way.
+
 ### DFU
+
+This requires to restart the STM32 in 'native bootloader' mode and rely on `Boot` pins. Check in [STM32 microcontroller system memory boot mode AN2606](https://www.st.com/content/ccc/resource/technical/document/application_note/b9/9b/16/3a/12/1e/40/0c/CD00167594.pdf/files/CD00167594.pdf/jcr:content/translations/en.CD00167594.pdf) which pattern to apply to activate the bootloader for the dedicated STM32 MCU.
+
+[[/img/Warning-icon.png|alt="Warning"]] **USB cable have to be plug to enter in DFU mode.**
+
 
 ## HID Bootloader 2.2 (HID BL)
 This is a driverless USB bootloader for `STM32F10x` and `STM32F4xx` MCUs and is based on [HID protocol](https://en.wikipedia.org/wiki/Human_interface_device). No special USB drivers are needed, even on Windows.
