@@ -5,6 +5,14 @@ Several definitions can be redefined by the end user by different ways:
  * in the `variant.h`
  * using `hal_conf_extra.h` file, see [[HAL-configuration#core-version--150-1]]
 
+## Quick links
+ * [Re-evaluate interrupt priority values](https://github.com/stm32duino/wiki/wiki/Custom-definitions#re-evaluate-interrupt-priority-values)
+ * [Custom startup file](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-startup-file)
+   * [Redefine the default startup file](https://github.com/stm32duino/wiki/wiki/Custom-definitions#redefine-the-default-startup-file)
+   * [Custom startup file in the variant](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-startup-file-in-the-variant)
+ * [Custom PinMap array](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-pinmap-array)
+ * [I2C Timing](https://github.com/stm32duino/wiki/wiki/API#i2c_timing)
+
 ## Re-evaluate interrupt priority values
 
 Default IRQ priorities are defined in the core which can be re-defined using below definitions:
@@ -25,7 +33,9 @@ Same for IRQ sub-priorities:
 
 #### Example:
 Using `build_opt.h`:
-`-DUSBD_IRQ_PRIO=2 -DUSBD_IRQ_SUBPRIO=2`
+```C
+-DUSBD_IRQ_PRIO=2 -DUSBD_IRQ_SUBPRIO=2
+```
 
 ## Custom startup file
 
@@ -43,16 +53,20 @@ https://github.com/stm32duino/Arduino_Core_STM32/tree/master/system/Drivers/CMSI
 
 It is possible to redefine the `CMSIS_STARTUP_FILE` or define a custom startup file in the variant.
     
-### Redefine the default startup file:
+### Redefine the default startup file
 
 Using `build_opt.h`:
-  `-DCMSIS_STARTUP_FILE=\"mystartup_file.s\"`
+```C
+-DCMSIS_STARTUP_FILE=\"mystartup_file.s\"
+```
 
 Then add your `mystartup_file.s` in the sketch folder (i.e. in a tab of your sketch files).
 
 #### Example for _Nucleo_L476RG_:
 
-`-DCMSIS_STARTUP_FILE=\"startup_stm32l476xx.s\`
+```C
+-DCMSIS_STARTUP_FILE=\"startup_stm32l476xx.s\
+```
 
 ### Custom startup file in the variant
 
@@ -77,7 +91,7 @@ Each array provides a default mapping for which peripheral instance is used for 
 
 Anyway, a pin can be used with several peripheral instances so to be able to override this default mapping, those arrays can be overridden at sketch level as they are defined as `WEAK`.
 
-### Example for the [ADC PinMap](https://github.com/stm32duino/Arduino_Core_STM32/blob/801ce35cea1faaf78c53ab501765d53fa3a60ced/variants/NUCLEO_F103RB/PeripheralPins.c#L43) of the NUCLEO_F103RB:
+#### Example for the [ADC PinMap](https://github.com/stm32duino/Arduino_Core_STM32/blob/801ce35cea1faaf78c53ab501765d53fa3a60ced/variants/NUCLEO_F103RB/PeripheralPins.c#L43) of the NUCLEO_F103RB:
 
 ```C
 #ifdef HAL_ADC_MODULE_ENABLED
@@ -129,3 +143,44 @@ const PinMap PinMap_ADC[] = {
   {NC,    NP,    0}
 };
 ```
+
+## I2C Timing
+
+Some STM32 series require to compute I2C timing value for the `TIMINGR` register depending of the specific I2C clock source configuration to ensure correct I2C speed.
+
+As this calculation of all timing values can consume huge time. By default, only the first **8** valid timing will be computed:
+```C
+#ifndef I2C_VALID_TIMING_NBR
+#define I2C_VALID_TIMING_NBR          8U
+#endif
+```
+
+It can be redefined thanks the `variant.h` or `build_opt.h` or `hal_conf_extra.h`
+
+#### Example to compute 64 valid timing value
+
+* Using `build_opt.h`:
+```C
+-DI2C_VALID_TIMING_NBR=64
+```
+
+* Using `variant.h` or `hal_conf_extra.h`:
+```C
+#define I2C_VALID_TIMING_NBR 64
+```
+
+[[/img/Warning-icon.png|alt="Warning"]] **Higher number ensure lowest clock error but require more time to compute depending of the board.**
+
+Moreover, to avoid time spent to compute the I2C timing, it can be defined in the `variant.h` or `build_opt.h` or `hal_conf_extra.h` with:
+
+  * `I2C_TIMING_SM` for Standard Mode (100kHz)
+  * `I2C_TIMING_FM` for Fast Mode (400kHz)
+  * `I2C_TIMING_FMP` for Fast Mode Plus (1000kHz) 
+
+#### Example for a **STM32F0xx** using `HSI` clock as I2C clock source, in `variant.h`:
+
+```C
+#define I2C_TIMING_SM           0x00201D2B
+#define I2C_TIMING_FM           0x0010020A
+```
+
