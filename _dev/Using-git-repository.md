@@ -30,15 +30,6 @@ So, do:<br>
 
 [[/img/Tips-icon.png|alt="Tips"]] _It is possible to clone it elsewhere and create a symlink named \<version>_<br>
 
-At this step, you are able to build using the git repository but upload is broken.<br>
-`.../massStorageCopy": error=2, No such file or directory`<br>
-or<br>
-`.../stlink_upload": error=2, No such file or directory `<br>
-
-Uploader tools path need to be updated in _**platform.txt**_ at the root of the git repository.<br>
-Replace all `{runtime.hardware.path}` by `{runtime.tools.STM32Tools.path}`<br>
-That's all.<br>
-
 [[/img/Important-icon.png|alt="Important"]] _Uninstalling from the boards managers will remove the git repository!_
 
   ### 3.2. Adding repositories in _Arduino/hardware_ directory (2nd method)
@@ -50,19 +41,5 @@ Go to this new directory then do the clone:<br>
   `git clone https://github.com/stm32duino/Arduino_Core_STM32.git stm32`
 
 [[/img/Warning-icon.png|alt="Warning"]] The name of the new directory to clone into must be _**stm32**_!
-
-At this step, you are able to build using the git repository but upload is broken.<br>
-`.../massStorageCopy": error=2, No such file or directory`<br>
-or<br>
-`.../stlink_upload": error=2, No such file or directory `<br>
-
-From the same directory clone the [Arduino_Tools](https://github.com/stm32duino/Arduino_Tools) git repository:
-
-  `git clone https://github.com/stm32duino/Arduino_Tools.git tools`
-
-[[/img/Warning-icon.png|alt="Warning"]] The name of the new directory to clone into must be _**tools**_!
-
-So, you should have two directories in `\<Arduino install directory\>/hardware/STM32/`<br>
-`stm32` and `tools`
 
 [[/img/Note-icon.png|alt="Note"]] If you do not have deleted the stm32 core extracted package (step [2.](https://github.com/stm32duino/wiki/wiki/Using-git-repository/_edit#2-delete-the-stm32-core-extracted-package)), in "**Tools > Board**" menu, you will have twice the "**STM32 board**" menu.<br>
