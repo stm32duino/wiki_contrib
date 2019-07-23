@@ -332,6 +332,8 @@ void loop() {
 }
 ```
 
+Refers to [I2C Timing](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timing) to customize I2C speed if needed.
+
 ### New API functions
 
 #### Change default `Wire` instance pins 
