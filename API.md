@@ -15,7 +15,7 @@
 This part describes the STM32 core functions.
 
 ## Core version
-This was introduced introduced core version greater than **1.5.0**.
+This was introduced core version greater than **1.5.0**.
 It is based on Semantic Versioning 2.0.0 (https://semver.org/).
 
 This ease core dependencies and defined [here](https://github.com/stm32duino/Arduino_Core_STM32/blob/d7c6b8b39b5dad3e5aa929cfa6ff235197aeea36/cores/arduino/stm32/stm32_def.h#L5-L21).
