@@ -6,6 +6,7 @@
  * [Wiring](https://github.com/stm32duino/wiki/wiki/API#wiring)
    * [Analog](https://github.com/stm32duino/wiki/wiki/API#analog)
    * [HardwareSerial](https://github.com/stm32duino/wiki/wiki/API#hardwareserial)
+   * [HardwareTimer](https://github.com/stm32duino/wiki/wiki/HardwareTimer-library )
  * [Built-In Library](https://github.com/stm32duino/wiki/wiki/API#built-in-ibrary)
    * [SPI](https://github.com/stm32duino/wiki/wiki/API#spi)
    * [I2C](https://github.com/stm32duino/wiki/wiki/API#i2C)
@@ -210,6 +211,9 @@ It is also possible to change the default pins used by the `Serial` instance usi
     Serial.setTx(PG14); // using pin number PYn
     Serial.begin(9600);
 ```
+
+## HardwareTimer library 
+https://github.com/stm32duino/wiki/wiki/HardwareTimer-library 
 
 # Built-In Library
 
