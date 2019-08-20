@@ -2,6 +2,18 @@
 Download and install [Arduino software (IDE)](https://www.arduino.cc/en/Main/Software) for the required OS.
 ([Windows](https://www.arduino.cc/en/Guide/Windows), [Linux](https://www.arduino.cc/en/Guide/linux) or [Mac](https://www.arduino.cc/en/Guide/MacOSX) instructions)
 
+## About Boards manager concept
+Arduino.cc IDE allows to add easily new board thanks the "**Boards Managers**".
+More information about "**Boards Managers**" is available on Arduino.cc official website:
+
+[Installing additional Arduino Cores](https://www.arduino.cc/en/guide/cores)
+
+The corresponding STM32 cores packages are provided thanks to:
+
+https://github.com/stm32duino/BoardManagerFiles
+
+Follow the below steps to get STM32 boards installed to your Arduino IDE.
+
 # Add STM32 boards support to Arduino
 This is the needed step to get STM32 targets added to Arduino.
 So carefully follow the following steps.
@@ -46,27 +58,13 @@ Select the desired boards series: _Nucleo-64 / Nucleo-144 / Discovery_
 
 Then you can find the Nucleo-64 boards available in a sub-menu of the "Tools" menu.
 
-## About Boards manager concept
-Arduino.cc IDE allows to add easily new board thanks the "**Boards Managers**".
-More information about "**Boards Managers**" is available on Arduino.cc official website:
+## Extra step
 
-[Installing additional Arduino Cores](https://www.arduino.cc/en/guide/cores)
-
-The corresponding STM32 cores packages are provided thanks to:
-
-https://github.com/stm32duino/BoardManagerFiles
-
-Follow the below steps to get STM32 boards installed to your Arduino IDE.
+To upload through SWD (STLink), Serial or DFU, [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) needs to be installed. See [Upload methods](https://github.com/stm32duino/wiki/wiki/Upload-methods#stm32cubeprogrammer).
 
 ## Troubleshooting
 
 If you have any issue to download/use a package, you could [file an issue on Github](https://github.com/stm32duino/BoardManagerFiles/issues/new).
-
-Or submit a topic on the [stm32duino forum](http://stm32duino.com):
-
- * questions on the [STM32 Core](http://stm32duino.com/viewforum.php?f=48)
-
- * bugs/enhancements on the [STM core: Bugs and enhancements](http://stm32duino.com/viewforum.php?f=49)
 
 ### Proxy
 If you have any issue to download a package, ensure to not be behind a proxy.
