@@ -12,6 +12,7 @@ Several definitions can be redefined by the end user by different ways:
    * [Custom startup file in the variant](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-startup-file-in-the-variant)
  * [Custom PinMap array](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-pinmap-array)
  * [I2C Timing](https://github.com/stm32duino/wiki/wiki/API#i2c_timing)
+ * [F_CPU](https://github.com/stm32duino/wiki/wiki/API#f_cpu)
 
 ## Re-evaluate interrupt priority values
 
@@ -184,3 +185,12 @@ Moreover, to avoid time spent to compute the I2C timing, it can be defined in th
 #define I2C_TIMING_FM           0x0010020A
 ```
 
+## F_CPU
+
+To avoid any issue with `F_CPU` value, it is defined by default to `SystemCoreClock` value which is updated automatically after each clock configuration update.
+
+Some libraries use `F_CPU` at build time for conditional purpose (example [Arduino_Core_STM32/#612](https://github.com/stm32duino/Arduino_Core_STM32/issues/612)).
+
+`F_CPU` can be redefined at build time using `build_opt.h` or `hal_conf_extra.h` then it will be possible to define it as a constant.
+
+[[/img/Important-icon.png|alt="Important"]] **Important note: user have to ensure to set it to the proper value.**
