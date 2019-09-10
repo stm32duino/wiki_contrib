@@ -1,18 +1,25 @@
-Herafter, a non exhaustive list of libraries known as compatible with the [STM32](https://github.com/stm32duino/Arduino_Core_STM32) core.
 
-Currently, libraries that come with the Arduino IDE should work (could required some pins update in the sketch).
 
-All those using basic features like Serial, SPI, I2C,... should be fully compatible.
+Libraries using basic features like Serial, SPI, I2C,... should be fully compatible with [STM32](https://github.com/stm32duino/Arduino_Core_STM32) core. It could required some pins update in the sketch.
+
+* [Built-in (delivered with the core package)](https://github.com/stm32duino/wiki/wiki/Libraries#built-in-delivered-with-the-core-package)
+* [Dedicated](https://github.com/stm32duino/wiki/wiki/Libraries#dedicated)
+* [Expansion boards](https://github.com/stm32duino/wiki/wiki/Libraries#expansion-boards)
+  * [X-NUCLEO Expansion Boards](https://github.com/stm32duino/wiki/wiki/Libraries#x-nucleo-expansion-boards)
+  * [Other expansion board](https://github.com/stm32duino/wiki/wiki/Libraries#other-expansion-board)
+* [Official from Arduino](https://github.com/stm32duino/wiki/wiki/Libraries#official-from-arduino)
+* [Third party](https://github.com/stm32duino/wiki/wiki/Libraries#third-party)
+  * [Tested](https://github.com/stm32duino/wiki/wiki/Libraries#tested)
 
 [[/img/Warning-icon.png|alt="Warning"]] _Arduino boards provide ICSP connector used by several Arduino shield for SPI signal: MISO/MOSI/SCK. STM32 boards do not have this ICSP connector, so this requires to manually wire those SPI signal on the desire pin (mainly: D11 to D13)_
 
 [[/img/Note-icon.png|alt="Note"]] All dedicated STM32 libraries are available through the "_**Library Manager**_"
+or have a look hereafter to see which one are available:
 
-Have a look hereafter to see which one are available or thanks the "_**Library Manager**_":
-
- * http://www.arduinolibraries.info/architectures/stm32
+* http://www.arduinolibraries.info/architectures/stm32
 
 ## Built-in (delivered with the core package)
+
 * EEPROM: follow the official [EEPROM](https://www.arduino.cc/en/Reference/EEPROM) API
 * Servo: follow the official [Servo](https://www.arduino.cc/en/Reference/Servo) API
 * SoftwareSerial: follow the official [SoftwareSerial](https://www.arduino.cc/en/Reference/softwareSerial) API
@@ -60,6 +67,7 @@ Some libraries have been developped to support specific features (hardware or no
 ## Expansion boards
 
 ### [X-NUCLEO Expansion Boards](https://www.st.com/en/evaluation-tools/stm32-nucleo-expansion-boards.html])
+
 Hereafter, an exhaustive list of Arduino libraries to support [X-NUCLEO Expansion Boards](https://www.st.com/en/evaluation-tools/stm32-nucleo-expansion-boards.html]).
 These libraries are guaranteed to work fine with all NUCLEO boards supported in the [STM32](https://github.com/stm32duino/Arduino_Core_STM32) Core. They could also work with standard Arduino boards but I suggest to check before electrical and pinout compatibility of [X-NUCLEO Expansion Boards](https://www.st.com/en/evaluation-tools/stm32-nucleo-expansion-boards.html]) with standard Arduino boards.
 
@@ -130,6 +138,7 @@ These libraries are guaranteed to work fine with all NUCLEO boards supported in 
 
 * [I-NUCLEO-LRWAN1](https://github.com/stm32duino/I-NUCLEO-LRWAN1): to support I-NUCLEO-LRWAN1 LoRa® expansion board based on USI® LoRaWAN™ technology module
 
+Herafter, a non exhaustive list of libraries known as compatible with the [STM32](https://github.com/stm32duino/Arduino_Core_STM32) core.
 
 ## Official from Arduino
 * [TFT](https://github.com/arduino-libraries/TFT/): since release [1.0.6](https://github.com/arduino-libraries/TFT/releases/tag/1.0.6) else use [Ucglib_Arduino](https://github.com/olikraus/Ucglib_Arduino)
