@@ -22,8 +22,8 @@ or have a look hereafter to see which one are available:
 
 * EEPROM: follow the official [EEPROM](https://www.arduino.cc/en/Reference/EEPROM) API
 * Servo: follow the official [Servo](https://www.arduino.cc/en/Reference/Servo) API
-* SoftwareSerial: follow the official [SoftwareSerial](https://www.arduino.cc/en/Reference/softwareSerial) API
-  It uses an HardwareTimer. Interrupt is triggered at a frequency = Baudrate * OVERSAMPLE (by default 3*baudrate) to handle RX as well as TX transmissions.
+* SoftwareSerial: follow the official [SoftwareSerial](https://www.arduino.cc/en/Reference/softwareSerial) API.<br>
+  It uses an **hardware timer**. Interrupt is triggered at a `frequency = Baudrate * OVERSAMPLE` (by default _3*baudrate_) to handle RX as well as TX transmissions.
   This impact CPU load specially at high baudrate.
 * SPI: follow the official [SPI](https://www.arduino.cc/en/Reference/SPI) API
 * Wire (I2C): follow the official [Wire](https://www.arduino.cc/en/Reference/Wire) API
