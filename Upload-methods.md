@@ -148,3 +148,5 @@ Details about the STM32duino-bootloader as well as ready to use binary files can
  * Maple bootloader 2.0 consumes 8KB of flash.
  * Maple bootloader original consumes 20kb of flash and some of the SRAM.
 
+[[/img/Warning-icon.png|alt="Warning"]] **USB CDC have to be enable else you will not be able to upload anymore.**
+
