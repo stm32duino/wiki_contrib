@@ -21,6 +21,6 @@ Load the Link Layer Only firmware in the ST BlueNRG-1_2 Flasher Utility and then
 
 [[/img/SensorTile_Box4.PNG|alt="Load and flash the new firmware into BlueNRG-1 chip"]]
 
-If you need to restore the original version of the BlueNRG-1 firmware, you can repeat the procedure using this firmware image:
+If you need to restore the stock firmware of the BLE module of STEVAL-MKSBOX1V1, you can repeat the procedure using this firmware image:
 
 [DTM_Full.bin](https://github.com/stm32duino/wiki/raw/master/wiki/STEVAL-MKSBOX1V1/DTM_Full.bin)
