@@ -58,7 +58,16 @@ Since version 1.6.0, three upload methods are based on the [STM32CubeProgrammer]
 
 To use those upload methods, [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) have to be installed manually as **it is not provided** through the tools packages.
 
-User can change the default install path but in this case, the new path have to be added in the `PATH` environment. variable.
+User can change the default install path but in this case, the new path have to be added in the [PATH](https://en.wikipedia.org/wiki/PATH_(variable)) environment variable.
+
+Default path of [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) binary:
+ * **Linux**: `$HOME/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin`
+ * **Mac**: `/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin`
+ * **Windows**:
+   * _32 bits_: `%ProgramFiles(X86)%\STMicroelectronics\STM32Cube\STM32CubeProgrammer\bin`
+   * _64 bits_: `%ProgramW6432%\STMicroelectronics\STM32Cube\STM32CubeProgrammer\bin`
+
+To add your custom installation path you can refer to this [HowTo](https://gist.github.com/jesperorb/836cb398e4bb8dc149902d68d3711295#environment-variables)
 
 In any case, if the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) binary is not found, user will be warned like this:
 
