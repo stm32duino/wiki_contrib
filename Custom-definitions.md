@@ -12,7 +12,7 @@ Several definitions can be redefined by the end user by different ways:
    * [Custom startup file in the variant](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-startup-file-in-the-variant)
  * [Custom PinMap array](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-pinmap-array)
  * [I2C Timing](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timing)
- * [F_CPU](https://github.com/stm32duino/wiki/wiki/Custom-definitions#f-cpu)
+ * [F_CPU](https://github.com/stm32duino/wiki/wiki/Custom-definitions#f_cpu)
  * [Serial Rx/Tx buffer size](https://github.com/stm32duino/wiki/wiki/Custom-definitions#serial-rxtx-buffer-size)
 
 ## Change interrupt priority values
