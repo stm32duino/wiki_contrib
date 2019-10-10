@@ -212,6 +212,8 @@ It is also possible to change the default pins used by the `Serial` instance usi
     Serial.begin(9600);
 ```
 
+**Note:** Serial Rx/TX buffer size can be changed, see [custom definitions](https://github.com/stm32duino/wiki/wiki/Custom-definitions#serial-rxtx-buffer-size)
+
 ## HardwareTimer library 
 https://github.com/stm32duino/wiki/wiki/HardwareTimer-library 
 
