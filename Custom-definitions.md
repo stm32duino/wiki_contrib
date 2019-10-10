@@ -6,15 +6,16 @@ Several definitions can be redefined by the end user by different ways:
  * using `hal_conf_extra.h` file, see [[HAL-configuration#core-version--150-1]]
 
 ## Quick links
- * [Re-evaluate interrupt priority values](https://github.com/stm32duino/wiki/wiki/Custom-definitions#re-evaluate-interrupt-priority-values)
+ * [Change interrupt priority values](https://github.com/stm32duino/wiki/wiki/Custom-definitions#change-interrupt-priority-values)
  * [Custom startup file](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-startup-file)
    * [Redefine the default startup file](https://github.com/stm32duino/wiki/wiki/Custom-definitions#redefine-the-default-startup-file)
    * [Custom startup file in the variant](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-startup-file-in-the-variant)
  * [Custom PinMap array](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-pinmap-array)
- * [I2C Timing](https://github.com/stm32duino/wiki/wiki/API#i2c_timing)
- * [F_CPU](https://github.com/stm32duino/wiki/wiki/API#f_cpu)
+ * [I2C Timing](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timing)
+ * [F_CPU](https://github.com/stm32duino/wiki/wiki/Custom-definitions#f-cpu)
+ * [Serial Rx/Tx buffer size](https://github.com/stm32duino/wiki/wiki/Custom-definitions#serial-rxtx-buffer-size)
 
-## Re-evaluate interrupt priority values
+## Change interrupt priority values
 
 Default IRQ priorities are defined in the core which can be re-defined using below definitions:
 * `UART_IRQ_PRIO`
@@ -194,3 +195,23 @@ Some libraries use `F_CPU` at build time for conditional purpose (example [Ardui
 `F_CPU` can be redefined at build time using `build_opt.h` or `hal_conf_extra.h` then it will be possible to define it as a constant.
 
 [[/img/Important-icon.png|alt="Important"]] **Important note: user have to ensure to set it to the proper value.**
+
+## Serial Rx/Tx buffer size
+
+By default, Serial Rx/Tx buffer size are defined like this:
+
+```C
+#if !defined(SERIAL_TX_BUFFER_SIZE)
+#define SERIAL_TX_BUFFER_SIZE 64
+#endif
+#if !defined(SERIAL_RX_BUFFER_SIZE)
+#define SERIAL_RX_BUFFER_SIZE 64
+#endif
+```
+
+Each size can be redefined at build time using `build_opt.h` or `hal_conf_extra.h`
+
+#### Example using `build_opt.h`:
+```C
+-DSERIAL_RX_BUFFER_SIZE=256 -DSERIAL_TX_BUFFER_SIZE=256
+```
