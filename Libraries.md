@@ -1,6 +1,6 @@
 
 
-Libraries using basic features like Serial, SPI, I2C,... should be fully compatible with [STM32](https://github.com/stm32duino/Arduino_Core_STM32) core. It could required some pins update in the sketch.
+Libraries using basic features like Serial, SPI, I2C,... should be fully compatible with [STM32](https://github.com/stm32duino/Arduino_Core_STM32) core. Pin updates could be required in the sketch.
 
 * [Built-in (delivered with the core package)](https://github.com/stm32duino/wiki/wiki/Libraries#built-in-delivered-with-the-core-package)
 * [Dedicated](https://github.com/stm32duino/wiki/wiki/Libraries#dedicated)
@@ -11,10 +11,10 @@ Libraries using basic features like Serial, SPI, I2C,... should be fully compati
 * [Third party](https://github.com/stm32duino/wiki/wiki/Libraries#third-party)
   * [Tested](https://github.com/stm32duino/wiki/wiki/Libraries#tested)
 
-[[/img/Warning-icon.png|alt="Warning"]] _Arduino boards provide ICSP connector used by several Arduino shield for SPI signal: MISO/MOSI/SCK. STM32 boards do not have this ICSP connector, so this requires to manually wire those SPI signal on the desire pin (mainly: D11 to D13)_
+[[/img/Warning-icon.png|alt="Warning"]] _Arduino boards provide ICSP connector used by several Arduino shields for SPI signal: MISO/MOSI/SCK. STM32 boards do not have this ICSP connector, so this requires to manually wire those SPI signals to the desired pin (mainly: D11 to D13)_
 
 [[/img/Note-icon.png|alt="Note"]] All dedicated STM32 libraries are available through the "_**Library Manager**_"
-or have a look hereafter to see which one are available:
+or have a look hereafter to see which one is available:
 
 * http://www.arduinolibraries.info/architectures/stm32
 
@@ -24,7 +24,7 @@ or have a look hereafter to see which one are available:
 * Servo: follow the official [Servo](https://www.arduino.cc/en/Reference/Servo) API
 * SoftwareSerial: follow the official [SoftwareSerial](https://www.arduino.cc/en/Reference/softwareSerial) API.<br>
   It uses an **hardware timer**. Interrupt is triggered at a `frequency = Baudrate * OVERSAMPLE` (by default _3*baudrate_) to handle RX as well as TX transmissions.
-  This impact CPU load specially at high baudrate.
+  This impacts CPU load specially at high baudrate.
 * SPI: follow the official [SPI](https://www.arduino.cc/en/Reference/SPI) API
 * Wire (I2C): follow the official [Wire](https://www.arduino.cc/en/Reference/Wire) API
 
