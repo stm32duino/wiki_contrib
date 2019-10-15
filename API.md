@@ -212,6 +212,119 @@ It is also possible to change the default pins used by the `Serial` instance usi
     Serial.begin(9600);
 ```
 
+#### Enable half-duplex mode
+
+Available in core version greater than **1.7.0**
+
+It is now possible to set a `HardwareSerial` in half-duplex mode.
+
+The `U(S)ART` can be configured to follow a single-wire half-duplex protocol where the Tx and Rx lines are internally connected. In this communication mode, only the Tx pin is used for both transmission and reception.
+
+* Extended `HardwareSerial` constructors: 
+  * `HardwareSerial(uint32_t _rxtx)`: U(S)ART Tx pin number (`PYn`) used for half-duplex
+  * `HardwareSerial(PinName _rxtx)`: U(S)ART Tx pin name (`PY_n`) used for half-duplex
+  * if `Rx == Tx` then assume half-duplex mode:
+    * `HardwareSerial(uint32_t _rx, uint32_t _tx)`: U(S)ART Tx pin number (`PYn`) used for half-duplex
+    * `HardwareSerial(PinName _rx, PinName tx)`: U(S)ART Tx pin name (`PY_n`) used for half-duplex
+  * `HardwareSerial(void *peripheral, bool halfDuplex = false)`: if `true` get the first Tx pin for requested peripheral in the` PeripheralPins.c` used for half-duplex
+
+* Add `enableHalfDuplexRx()` to enable Serial in Rx mode. Doing a `read()` could be used but will avoid to perform a read. Useful before `available()` usage
+* `void setHalfDuplex()`: enable half-duplex mode of an instance when it not instantiate in half-duplex mode. Must be call before `begin()` in this case.
+
+##### Example for a **Nucleo L496ZG-P**:
+`Serial4` sends byte to `Serila3`, compare values then `Serial3` resend it to `Serial4` and compare.
+Require to connect `PA0` and` PB10`.
+
+_All possible constructor are listed._
+
+```C++
+HardwareSerial Serial3(PA0);
+HardwareSerial Serial4(PB10);
+
+//HardwareSerial Serial3(PA_0);
+//HardwareSerial Serial4(PB_10);
+
+//HardwareSerial Serial3(UART4, true);
+//HardwareSerial Serial4(USART3, true);
+
+//HardwareSerial Serial3(PA0, PA0);
+//HardwareSerial Serial4(PB10, PB10);
+
+//HardwareSerial Serial3(PA_0, PA_0);
+//HardwareSerial Serial4(PB_10, PB_10);
+
+//HardwareSerial Serial3(NC, PA_0);
+//HardwareSerial Serial4(NC, PB_10);
+
+//HardwareSerial Serial3(NUM_DIGITAL_PINS, PA0);
+//HardwareSerial Serial4(NUM_DIGITAL_PINS, PB10);
+
+static uint32_t nbTestOK = 0;
+static uint32_t nbTestKO = 0;
+void test_uart(int val)
+{
+  int recval = -1;
+  uint32_t error = 0;
+
+  Serial4.write(val);
+  delay(10);
+  while (Serial3.available()) {
+    recval = Serial3.read();
+  }
+  /* Enable Serial4 to RX*/
+  Serial4.enableHalfDuplexRx();
+  if (val == recval) {
+    Serial3.write(val);
+    delay(10);
+
+    while (Serial4.available()) {
+      recval = Serial4.read();
+    }
+    /* Enable Serial3 to RX*/
+    Serial3.enableHalfDuplexRx();
+    if (val == recval) {
+      nbTestOK++;
+      Serial.print("Exchange: 0x");
+      Serial.println(recval, HEX);
+    } else {
+      error = 2;
+    }
+  }
+  else {
+    error = 1;
+  }
+  if (error) {
+    Serial.print("Send: 0x");
+    Serial.print(val, HEX);
+    Serial.print("\tReceived: 0x");
+    Serial.print(recval, HEX);
+    Serial.print(" --> KO <--");
+    Serial.println(error);
+    nbTestKO++;
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  Serial4.begin(9600);
+  Serial3.begin(9600);
+}
+
+void loop() {
+
+  for (uint32_t i = 0; i <= (0xFF); i++) {
+    test_uart(i);
+  }
+
+  Serial.println("Serial Half-Duplex test done.\nResults:");
+  Serial.print("OK: ");
+  Serial.println(nbTestOK);
+  Serial.print("KO: ");
+  Serial.println(nbTestKO);
+  while (1);
+}
+```
+
 **Note:** Serial Rx/TX buffer size can be changed, see [custom definitions](https://github.com/stm32duino/wiki/wiki/Custom-definitions#serial-rxtx-buffer-size)
 
 ## HardwareTimer library 
