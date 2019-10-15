@@ -6,10 +6,11 @@
  * [Wiring](https://github.com/stm32duino/wiki/wiki/API#wiring)
    * [Analog](https://github.com/stm32duino/wiki/wiki/API#analog)
    * [HardwareSerial](https://github.com/stm32duino/wiki/wiki/API#hardwareserial)
-   * [HardwareTimer](https://github.com/stm32duino/wiki/wiki/HardwareTimer-library )
- * [Built-In Library](https://github.com/stm32duino/wiki/wiki/API#built-in-ibrary)
+   * [HardwareTimer](https://github.com/stm32duino/wiki/wiki/HardwareTimer-library)
+ * [Built-In Library](https://github.com/stm32duino/wiki/wiki/API#built-in-library)
    * [SPI](https://github.com/stm32duino/wiki/wiki/API#spi)
    * [I2C](https://github.com/stm32duino/wiki/wiki/API#i2C)
+   * [CMSIS DSP](https://github.com/stm32duino/wiki/wiki/API#cmsis-dsp)
 
 # Core
 
@@ -332,7 +333,7 @@ https://github.com/stm32duino/wiki/wiki/HardwareTimer-library
 
 # Built-In Library
 
-This part describes the STM32 libraries provide with the core.
+This part describes the STM32 libraries provided with the core.
 
 ## SPI
 
@@ -481,3 +482,31 @@ Adding `true` as last parameters of the 3 `Wire::begin()` methods will enable th
 
 ##### Example
 `Wire.begin(true);` or `Wire.begin(0x70,true);`
+
+## CMSIS DSP
+
+Available in core version greater than **1.7.0**
+
+CMSIS DSP software library, is a suite of common signal processing functions for use on Cortex-M processor based devices.
+
+The library is divided into a number of functions each covering a specific category:
+* Basic math functions
+* Fast math functions
+* Complex math functions
+* Filters
+* Matrix functions
+* Transform functions
+* Motor control functions
+* Statistical functions
+* Support functions
+* Interpolation functions. 
+
+The library has separate functions for operating on 8-bit integers, 16-bit integers, 32-bit integer and 32-bit floating-point value.
+
+More info:
+https://arm-software.github.io/CMSIS_5/DSP/html/index.html
+
+To use it, add:
+` #include <CMSIS_DSP.h>`    
+
+`arm_math.h` is then automatically include.
