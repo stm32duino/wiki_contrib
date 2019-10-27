@@ -8,6 +8,7 @@ Go to the local Arduino directory.<br>
 
 It should be:
 
+* `/home/\<USERNAME\>/.arduino15/` _(Linux)_
 * `/Users/\<USERNAME\>/Library/Arduino15/` _(Mac)_
 * `c:\Documents and Settings\\<USERNAME\>\Application Data\Arduino15\` _(Windows XP)_
 * `c:\Users\\<USERNAME\>\AppData\Roaming\Arduino15\` _(Windows Vista)_
