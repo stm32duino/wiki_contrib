@@ -57,6 +57,8 @@ Each timer may provide several channels, nevertheless it is important to underst
 
     void setCaptureCompare(uint32_t channel, uint32_t compare, TimerCompareFormat_t format = TICK_COMPARE_FORMAT);  // set Compare register value of specified channel depending on format provided
 
+    void setInterruptPriority(uint32_t preemptPriority, uint32_t subPriority); // set interrupt priority. Arduino_Core_STM32 version > 1.8.0
+
     //Add interrupt to period update
     void attachInterrupt(void (*handler)(HardwareTimer *)); // Attach interrupt callback which will be called upon update event (timer rollover)
     void detachInterrupt();  // remove interrupt callback which was attached to update event
@@ -73,8 +75,6 @@ Each timer may provide several channels, nevertheless it is important to underst
     static void captureCompareCallback(TIM_HandleTypeDef *htim); // Generic Caputre and Compare callback which will call user callback
     static void updateCallback(TIM_HandleTypeDef *htim);  // Generic Update (rollover) callback which will call user callback
 ```
-<!-- FPI: toutes les API ne sont pas là ?-->
-
 ##  3. <a name='Usage'></a>Usage
 
 `HardwareTimer` is a C++ class, 1st thing to do is to instantiate an object with `TIM` instance as parameter.
@@ -284,6 +284,3 @@ New optional parameter *destruct* has been added to *noTone* to decide whether t
 ```C++
 noTone(uint8_t _pin, bool destruct = false)
 ```
-
-## TODO:
- * update Ethernet library
