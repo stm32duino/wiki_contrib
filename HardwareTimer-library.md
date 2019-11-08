@@ -82,7 +82,7 @@ Each timer may provide several channels, nevertheless it is important to underst
 
 `HardwareTimer` is a C++ class, 1st thing to do is to instantiate an object with `TIM` instance as parameter.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) Some instances are used by Servo and Tone (see TIMER_SERVO and TIMER_TONE) but only when they are used. Just be sure there is no conflict with your own usage.
+![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) Some instances are used by Servo, Tone and SoftSerial (see TIMER_SERVO, TIMER_TONE and TIMER_SERIAL) but only when they are used. Just be sure there is no conflict with your own usage.
 
 __Example__:
 ```C++
