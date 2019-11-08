@@ -234,6 +234,7 @@ Also, to get ride of Interrupt callback:
 ```C++
     detachInterrupt()
 ```
+![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) Once the timer is started with the callback enabled you can disable and enable the callback through `detachInterrupt` and `attachInterrupt` freely, how many times you want. However, if the first `resume` (= timer start) is done without **before** calling `attachInterrupt`, the HardwareTimer will **not** be able to attach the interrupt later (for performance reasons the timer will be started with interrupts disabled)
 
 ##  4. <a name='Examples'></a>Examples
 Following examples are provided in [STM32Examples](https://github.com/stm32duino/STM32Examples) library (available with Arduino Library manager):
