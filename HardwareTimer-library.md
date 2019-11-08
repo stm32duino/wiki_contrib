@@ -57,14 +57,17 @@ Each timer may provide several channels, nevertheless it is important to underst
 
     void setCaptureCompare(uint32_t channel, uint32_t compare, TimerCompareFormat_t format = TICK_COMPARE_FORMAT);  // set Compare register value of specified channel depending on format provided
 
-    void setInterruptPriority(uint32_t preemptPriority, uint32_t subPriority); // set interrupt priority. Arduino_Core_STM32 version > 1.8.0
+    void setInterruptPriority(uint32_t preemptPriority, uint32_t subPriority); // set interrupt priority. Arduino_Core_STM32 version >= 1.8.0
 
-    //Add interrupt to period update
+    //Period update interrupt
     void attachInterrupt(void (*handler)(HardwareTimer *)); // Attach interrupt callback which will be called upon update event (timer rollover)
     void detachInterrupt();  // remove interrupt callback which was attached to update event
-    //Add interrupt to capture/compare channel
+    bool hasInterrupt();  //returns true if a timer rollover interrupt has already been attached. Arduino_Core_STM32 version >= 1.8.0
+
+    //Channel capture/compare interrupts
     void attachInterrupt(uint32_t channel, void (*handler)(HardwareTimer *)); // Attach interrupt callback which will be called upon compare match event of specified channel
     void detachInterrupt(uint32_t channel);  // remove interrupt callback which was attached to compare match event of specified channel
+    bool hasInterrupt(uint32_t channel);  //returns true if a channel capture interrupt has already been attached. Arduino_Core_STM32 version >= 1.8.0
 
     void timerHandleDeinit();  // Timer deinitialization
 
@@ -235,6 +238,11 @@ Also, to get ride of Interrupt callback:
     detachInterrupt()
 ```
 ![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) Once the timer is started with the callback enabled you can disable and enable the callback through `detachInterrupt` and `attachInterrupt` freely, how many times you want. However, if the first `resume` (= timer start) is done without **before** calling `attachInterrupt`, the HardwareTimer will **not** be able to attach the interrupt later (for performance reasons the timer will be started with interrupts disabled)
+
+If you detach and attach interrupts while the timer is running, starting from version 1.8.0, you can also know if there's a callback already attached (without the need to track it externally) through the method
+```C++
+    hasInterrupt()
+```
 
 ##  4. <a name='Examples'></a>Examples
 Following examples are provided in [STM32Examples](https://github.com/stm32duino/STM32Examples) library (available with Arduino Library manager):
