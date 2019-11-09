@@ -206,6 +206,8 @@ It is also possible to change the default pins used by the `Serial` instance usi
 * `void setRx(PinName rx)`
 * `void setTx(PinName tx)`
 
+[[/img/Warning-icon.png|alt="Warning"]] **Have to be called before `begin()`.**
+
 ##### Example:
 ```C++
     Serial.setRx(PG_9); // using pin name PY_n
@@ -463,6 +465,8 @@ It is also possible to change the default pins used by the `Wire` instance using
 * `void setSDA(uint32_t sda)`
 * `void setSCL(PinName scl)`
 * `void setSDA(PinName sda)`
+
+[[/img/Warning-icon.png|alt="Warning"]] **Have to be called before `begin()`.**
 
 ##### Example:
 ```C++
