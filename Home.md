@@ -9,7 +9,7 @@ See [Boards available](https://github.com/stm32duino/Arduino_Core_STM32/blob/mas
 
 # Troubleshooting
 
-If you have any issue to download/use a package, you could [file an issue on BoardManagerFiles](https://github.com/stm32duino/BoardManagerFiles/issues/new) github.
+If you have any issue to download/use a package, you could [file an issue on BoardManagerFiles](https://github.com/stm32duino/BoardManagerFiles/issues/new) GitHub.
 
 For STM32 Core or tools issue, file an issue on the related Github:
  * [Arduino_Core_STM32](https://github.com/stm32duino/Arduino_Core_STM32/issues/new).
