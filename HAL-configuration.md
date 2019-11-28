@@ -59,7 +59,6 @@ Extra HAL configuration can be enabled/disabled in `variant.h` (if required) or 
 Custom HAL configuration file can replace the default one by adding a file named (at sketch level):
  * `hal_conf_custom.h`
 
-
 ### HAL modules configuration 
 
 [[/img/Important-icon.png|alt="Important"]] **Below HAL modules or definitions are listed for convenience but may not be up to date. Refer to [cores/arduino/stm32/stm32yyxx_hal_conf.h](
@@ -151,3 +150,20 @@ Hereafter, list of possible HAL system configuration values which can be redefin
 * `ART_ACCLERATOR_ENABLE`: To enable ART Accelerator
 * `USE_SD_TRANSCEIVER`: To use µSD Transceiver
 
+# HAL module only
+STM32 peripherals have many powerful features. Some of them are used by default by the Arduino API: I2C, SPI, TIM, U(S)ART, ... and take over IRQ Handlers (ex: `TIMx_IRQHandler') and other HAL weaked functions (ex: `HAL_XXX_MspInit()`).
+For advanced user applications, it could be useful to take control of those IRQ handlers. 
+
+Since core version greater than **1.7.0**, it is possible to disable the use of the HAL modules by the Arduino API.
+
+Defining `HAL_PPP_MODULE_ONLY` in `build_opt.h` or `hal_conf_extra.h` allows HAL peripheral (_PPP_ ) module usage without any usage by the core.
+
+Hereafter list of possible definition:
+* `HAL_UART_MODULE_ONLY`
+* `HAL_TIM_MODULE_ONLY`
+* `HAL_ADC_MODULE_ONLY`
+* `HAL_DAC_MODULE_ONLY`
+* `HAL_RTC_MODULE_ONLY`
+* `HAL_PWR_MODULE_ONLY`
+
+I2C and SPI do not required definition as used only thanks built-in library. Do not include `Wire.h` or `SPI.h` will allow to use the HAL module.
