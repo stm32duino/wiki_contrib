@@ -26,7 +26,7 @@ __Example__:
 * Some timers have up to 4 output channels with 4 complementary channels
     whereas other timers have no complementary, or have only 1 or 2 channels...
 
-Each timer may provide several channels, nevertheless it is important to understand that all channels of the same timer share the same counter as thus have the same period/frequency.
+Each timer may provide several channels, nevertheless it is important to understand that all channels of the same timer share the same counter and thus have the same period/frequency.
 
 ![Warning](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Warning-icon.png) __For genericity purpose, HardwareTimer library uses all timers like a 16bits timer (even if some may be wider).__
 
@@ -35,9 +35,11 @@ Each timer may provide several channels, nevertheless it is important to underst
 
 ```C++
     void pause(void);  // Pause counter and all output channels
+    void pauseChannel(uint32_t channel); // Timer is still running but channel (output and interrupt) is disabled
     void resume(void); // Resume counter and all output channels
+    void resumeChannel(uint32_t channel); // Resume only one channel
 
-    void setPrescaleFactor(uint32_t format = TICK_FORMAT); // set prescaler register (which is factor value - 1)
+    void setPrescaleFactor(uint32_t prescaler); // set prescaler register (which is factor value - 1)
     uint32_t getPrescaleFactor();
 
     void setOverflow(uint32_t val, TimerFormat_t format = TICK_FORMAT); // set AutoReload register depending on format provided
@@ -57,26 +59,31 @@ Each timer may provide several channels, nevertheless it is important to underst
 
     void setCaptureCompare(uint32_t channel, uint32_t compare, TimerCompareFormat_t format = TICK_COMPARE_FORMAT);  // set Compare register value of specified channel depending on format provided
 
-    void setInterruptPriority(uint32_t preemptPriority, uint32_t subPriority); // set interrupt priority. Arduino_Core_STM32 version >= 1.8.0
+    void setInterruptPriority(uint32_t preemptPriority, uint32_t subPriority); // set interrupt priority
 
-    //Period update interrupt
+    //Add interrupt to period update
     void attachInterrupt(void (*handler)(HardwareTimer *)); // Attach interrupt callback which will be called upon update event (timer rollover)
     void detachInterrupt();  // remove interrupt callback which was attached to update event
-    bool hasInterrupt();  //returns true if a timer rollover interrupt has already been attached. Arduino_Core_STM32 version >= 1.8.0
-
-    //Channel capture/compare interrupts
+    bool hasInterrupt();  //returns true if a timer rollover interrupt has already been set
+    //Add interrupt to capture/compare channel
     void attachInterrupt(uint32_t channel, void (*handler)(HardwareTimer *)); // Attach interrupt callback which will be called upon compare match event of specified channel
     void detachInterrupt(uint32_t channel);  // remove interrupt callback which was attached to compare match event of specified channel
-    bool hasInterrupt(uint32_t channel);  //returns true if a channel capture interrupt has already been attached. Arduino_Core_STM32 version >= 1.8.0
+    bool hasInterrupt(uint32_t channel);  //returns true if an interrupt has already been set on the channel compare match
 
     void timerHandleDeinit();  // Timer deinitialization
 
+    // Refresh() is usefull while timer is running after some registers update
     void refresh(void); // Generate update event to force all registers (Autoreload, prescaler, compare) to be taken into account
+
 
     uint32_t getTimerClkFreq();  // return timer clock frequency in Hz.
 
     static void captureCompareCallback(TIM_HandleTypeDef *htim); // Generic Caputre and Compare callback which will call user callback
     static void updateCallback(TIM_HandleTypeDef *htim);  // Generic Update (rollover) callback which will call user callback
+
+    // The following function(s) are available for more advanced timer options
+    TIM_HandleTypeDef *getHandle();  // return the handle address for HAL related configuration
+
 ```
 ##  3. <a name='Usage'></a>Usage
 
