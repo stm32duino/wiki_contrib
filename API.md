@@ -176,7 +176,16 @@ void loop() {
 
 ## HardwareSerial
 
-By default, only one `Serial` instance is available.
+The STM32 MCU's have several _U(S)ART_ peripherals. By convenience, the _U(S)ART_**x** number is used to define the `Serialx`instance:
+- `Serial1` for `USART1`
+- `Serial2` for `USART2`
+- `Serial3` for `USART3`
+- `Serial4` for `UART4`
+- ... 
+For `LPUART1` this is `SerialLP1`
+
+**By default, only one `Serialx` instance is available mapped to the generic `Serial` name.**
+
 To use a second serial port, a `HardwareSerial` object should be declared in the sketch before the `setup()` function:
 ```C++
 //                      RX    TX
@@ -191,10 +200,25 @@ void loop() {
   delay(1000);
 }
 ```
-Another solution is to add a `build_opt.h` file alongside your main `.ino` file with: `-DENABLE_HWSERIAL1`.
-This will define the `Serial1` instance using the first `USART1` instance found in the `PeripheralPins.c` of your variant.
+Another solution is to add a [build_opt.h](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h) file alongside your main `.ino` file with: `-DENABLE_HWSERIALx`.
+This will define the `Serialx` instance using the first `USARTx` instance found in the `PeripheralPins.c` of your variant.
 
-Note that only the latter solution allows to use the `serialEvent1()` callback in the sketch.
+[[/img/Note-icon.png|alt="Note"]] **Note** that only the latter solution allows to use the `serialEventx()` callback in the sketch.
+
+For Example, if you define in the [build_opt.h](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h): `-DENABLE_HWSERIAL3`
+
+This will instantiate `Serial3` with the first Rx and Tx pins found in the `PinMap_UART_RX[]` and `PinMap_UART_TX[]` arrays in the `PeripheralPins.c` of your variant and the `serialEvent3()` will be enabled.
+
+To specify which Rx or Tx pins should be used instead of the first one found, you can specified the `PIN_SERIALn_RX` or `PIN_SERIALn_TX` where **n** is the number of the Serial instance.
+
+Example for the `Serial3`:
+ - In the `variant.h`:
+```c
+#define PIN_SERIAL3_RX PB11
+#define PIN_SERIAL3_TX PB10
+```
+ - In the `build_opt.h`:
+`-DPIN_SERIAL3_RX=PB11 -DPIN_SERIAL3_TX=PB10`
 
 ### New API functions
 
