@@ -78,11 +78,11 @@ https://www.st.com/en/development-tools/stm32cubeprog.html`
 Aborting!
 ```
 
-If you need to install STM32CubeProgrammer in another directory under Linux, the above mentioned procedure did not work for me. For some reason, the script mentioned below ignores the PATH variable I set pointing to `/opt/STM32Cube/STM32CubeProgrammer/bin`. For this reason the following hack was necessary:
+If you need to install STM32CubeProgrammer in another directory under Linux, the above mentioned procedure will not work. For some reason, the script mentioned below ignores the PATH variable set to `/opt/STM32Cube/STM32CubeProgrammer/bin`. For this reason the following hack was necessary:
 
-Enable compilation and upload verbose under File->Preferences. Then, compile+upload to see that this script was been called `/home/username/.arduino15/packages/STM32/tools/STM32Tools/1.3.2/tools/linux/stm32CubeProg.sh`.
+Enable verbose compilation and upload under File->Preferences. Then, compile+upload to see that this script is called `/home/username/.arduino15/packages/STM32/tools/STM32Tools/1.3.2/tools/linux/stm32CubeProg.sh`.
 
-Then, replace line 44 (commented) by my actual path. 
+Then, edit this script to replace line 44 (commented) by my the actual path. 
 ```
   command -v $STM32CP_CLI >/dev/null 2>&1
   if [ $? != 0 ]; then
@@ -90,7 +90,7 @@ Then, replace line 44 (commented) by my actual path.
     export PATH="/opt/STM32Cube/STM32CubeProgrammer/bin":$PATH
   fi
 ```
-Save the file and repeat the upload procedure.
+Save the file and repeat the upload procedure in the Arduino IDE.
 
 ### Arduino integration
 
