@@ -5,8 +5,10 @@ Below, some ways to debug:
  * [PlatformIO](https://github.com/stm32duino/wiki/wiki/How-to-debug#PlatformIO)
  * [Visual Studio and VisualGDB](https://github.com/stm32duino/wiki/wiki/How-to-debug#visual-studio-and-visualgdb)
  * [Visual Studio Code and Arduino extension](https://github.com/stm32duino/wiki/wiki/How-to-debug#Visual-Studio-Code-and-Arduino-extension)
+ * [Command line GDB]((https://github.com/stm32duino/wiki/wiki/How-to-debug#command-line-gdb))
 
 [[/img/Warning-icon.png|alt="Warning"]] **Only the Arduino IDE is officially supported.** 
+
 
 # Eclipse and Sloeber
 ## 1 - Software requirements
@@ -257,3 +259,89 @@ Opening the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd>
 [[/img/VSCodeCortexDebugExtension.png|alt="VSCode Cortex-Debug Extension"]]
 
 * Install OpenOCD
+
+# Command Line GDB
+## 5. Command Line GDB
+### 5.1. Requirements
+* Linux, tested in Ubuntu 18.04 
+* Requires Arduino IDE with stm32duino installed
+* STLink compatible dongle
+
+### 5.2. Compiling for Debug
+* In the Arduino IDE, go to menu File->Preferences and check compilation verbose
+* Open your code, for example, the blink code
+* In the Arduino IDE, go to Tools->Optimize->Debug. This will include -g in the compilation process, including debug symbols
+* Connect the stlink probe to the board and the computer. I am assuming [stlink driver](https://github.com/texane/stlink) is already installed. If it is the first time you are using the Stlink dongle, it might be necessary to update the dongle's firmware 
+* Compile and upload in the Arduino IDE. If the compilation is successful, you will see something like this in the Arduino IDE console window.
+
+```
+/home/lsa/.arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-size -A /tmp/arduino_build_742171/Blink-stm32.ino.elf
+Sketch uses 9816 bytes (14%) of program storage space. Maximum is 65536 bytes.
+Global variables use 588 bytes (2%) of dynamic memory, leaving 19892 bytes for local variables. Maximum is 20480 bytes.
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.2.1                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 3B1108013212374D434B4E00
+ST-LINK FW  : V2J35S7
+Voltage     : 3,18V
+SWD freq    : 4000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x410
+Device name : STM32F101/F102/F103 Medium-density
+Flash size  : 64 KBytes
+Device type : MCU
+Device CPU  : Cortex-M3
+
+
+
+Memory Programming ...
+Opening and parsing file: Blink-stm32.ino.bin
+  File          : Blink-stm32.ino.bin
+  Size          : 10104 Bytes
+  Address       : 0x08000000 
+
+
+Erasing memory corresponding to segment 0:
+Erasing internal memory sectors [0 9]
+Download in Progress:
+
+
+File download complete
+Time elapsed during download operation: 00:00:00.614
+
+RUNNING Program ... 
+  Address:      : 0x8000000
+Application is running
+Start operation achieved successfully
+```
+
+### 5.3 Debugging with GDB
+
+* Open a terminal and run `st-info` to start gdbserver
+* Open another terminal and run `~/.arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-gdb /tmp/arduino_build_742171/Blink-stm32.ino.elf` to run the gdb used by stm32duino. Note that the path to the ELF file was figure out in the compilation messages in the Arduino IDE, shown in the previous section.
+* Now in the GDB console, run the following commands:
+
+```
+target remote localhost:4242
+
+# it adds breakpoint to the setup and loop functions
+b setup
+b loop
+# it runs until it reaches the setup and show the code 
+c
+l
+# it runs until it reaches the loop and show the code 
+c
+l
+# sets break point to line 37, in the middle of the toggle loop
+b 37
+# see the led blinking every time you continue
+c
+c
+c
+c
+c
+```
+
