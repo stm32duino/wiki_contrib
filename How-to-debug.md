@@ -261,11 +261,13 @@ Opening the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd>
 * Install OpenOCD
 
 # Command Line GDB
+
 ## 5. Command Line GDB
 ### 5.1. Requirements
 * Linux, tested in Ubuntu 18.04 
 * Requires Arduino IDE with stm32duino installed
 * STLink compatible dongle
+* assuming Blue Pill board, but it probably work with any other STM32 board
 
 ### 5.2. Compiling for Debug
 * In the Arduino IDE, go to menu File->Preferences and check compilation verbose
