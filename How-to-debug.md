@@ -273,7 +273,7 @@ Opening the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd>
 * In the Arduino IDE, go to menu File->Preferences and check compilation verbose
 * Open your code, for example, the blink code
 * In the Arduino IDE, go to Tools->Optimize->Debug. This will include -g in the compilation process, including debug symbols
-* Connect the stlink probe to the board and the computer. I am assuming [stlink driver](https://github.com/texane/stlink) is already installed. If it is the first time you are using the Stlink dongle, it might be necessary to update the dongle's firmware 
+* Connect the stlink probe to the board and the computer. I am assuming [stlink driver](https://github.com/texane/stlink) is already installed. If it is the first time you are using the Stlink dongle, it might be necessary to [update the dongle's firmware](http://www.emcu.eu/how-to-update-the-st-link-fw-under-linux/). 
 * Compile and upload in the Arduino IDE. If the compilation is successful, you will see something like this in the Arduino IDE console window.
 
 ```
