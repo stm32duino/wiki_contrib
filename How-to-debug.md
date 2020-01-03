@@ -319,7 +319,7 @@ Application is running
 Start operation achieved successfully
 ```
 
-### 5.3 Debugging with GDB
+### 5.3 Debugging with Command Line GDB
 
 * Open a terminal and run `st-info` to start gdbserver
 * Open another terminal and run `~/.arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-gdb /tmp/arduino_build_742171/Blink-stm32.ino.elf` to run the gdb used by stm32duino. Note that the path to the ELF file was figure out in the compilation messages in the Arduino IDE, shown in the previous section.
@@ -347,3 +347,7 @@ c
 c
 ```
 
+### 5.4 Debugging with GUI GDB
+
+* It is also possible to debug with GUI, such as `ddd`. It requires software installation with the command `sudo apt-get install -y ddd`. 
+* To run `ddd`, open a terminal and type `ddd --debugger ~/.arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-gdb /tmp/arduino_build_742171/Blink-stm32.ino.elf`. Note that you must point to the appropriate gdb and ELF file. 
