@@ -512,13 +512,13 @@ Adding `true` as last parameters of the 3 `Wire::begin()` methods will enable th
 `Wire.begin(true);` or `Wire.begin(0x70,true);`
 
 ### I2C buffer management
-By default I2C buffers are all aligned on Arduino API: 32 bytes.  
-Nevertheless it is possible to transfer up to 255 bytes:
+By default I2C buffers are all aligned on Arduino API: **32 bytes**.  
+Nevertheless it is possible to transfer up to **255 bytes**:
 * In master mode: RX and TX buffers will automatically grow when needed, independently one from each other, and independently from other I2C instances.  
   Nothing to do from application point of view.  
-  Warning: a bug in STM32 cube HAL (STM32 core v1.8.0) prevents to transfer exactly 255 bytes.(see #853)
+  Warning: a bug in STM32 cube HAL (STM32 core v1.8.0) prevents to transfer exactly 255 bytes.(see [#853](https://github.com/stm32duino/Arduino_Core_STM32/pull/853))
 
-* In slave mode: RX and TX buffer size can be statically redefined using [hal_conf_extra.h](https://github.com/stm32duino/wiki/wiki/HAL-configuration#core-version--150-1) or [build_opt.h](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h) (at compilation time) thanks to switch I2C_TXRX_BUFFER_SIZE (see #853)  
+* In slave mode: RX and TX buffer size can be statically redefined using [hal_conf_extra.h](https://github.com/stm32duino/wiki/wiki/HAL-configuration#core-version--150-1) or [build_opt.h](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h) (at compilation time) thanks to switch `I2C_TXRX_BUFFER_SIZE` (see [#853](https://github.com/stm32duino/Arduino_Core_STM32/pull/853))  
   All I2C instances are impacted by change of this compilation switch.
 
 ## CMSIS DSP
