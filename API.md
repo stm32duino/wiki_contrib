@@ -253,7 +253,7 @@ The `U(S)ART` can be configured to follow a single-wire half-duplex protocol whe
   * if `Rx == Tx` then assume half-duplex mode:
     * `HardwareSerial(uint32_t _rx, uint32_t _tx)`: U(S)ART Tx pin number (`PYn`) used for half-duplex
     * `HardwareSerial(PinName _rx, PinName tx)`: U(S)ART Tx pin name (`PY_n`) used for half-duplex
-  * `HardwareSerial(void *peripheral, bool halfDuplex = false)`: if `true` get the first Tx pin for requested peripheral in the` PeripheralPins.c` used for half-duplex
+  * `HardwareSerial(void *peripheral, HalfDuplexMode_t halfDuplex = HALF_DUPLEX_DISABLED)`: if `HALF_DUPLEX_ENABLED` get the first Tx pin for requested peripheral in the` PeripheralPins.c` used for half-duplex
 
 * Add `enableHalfDuplexRx()` to enable Serial in Rx mode. Doing a `read()` could be used but will avoid to perform a read. Useful before `available()` usage
 * `void setHalfDuplex()`: enable half-duplex mode of an instance when it not instantiate in half-duplex mode. Must be call before `begin()` in this case.
@@ -271,8 +271,8 @@ HardwareSerial Serial4(PB10);
 //HardwareSerial Serial3(PA_0);
 //HardwareSerial Serial4(PB_10);
 
-//HardwareSerial Serial3(UART4, true);
-//HardwareSerial Serial4(USART3, true);
+//HardwareSerial Serial3(UART4, HALF_DUPLEX_ENABLED);
+//HardwareSerial Serial4(USART3, HALF_DUPLEX_ENABLED);
 
 //HardwareSerial Serial3(PA0, PA0);
 //HardwareSerial Serial4(PB10, PB10);
