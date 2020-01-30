@@ -5,6 +5,7 @@
   3. [Usage](#Usage)
   4. [Examples](#Examples)
   5. [Dependencies](#Dependencies)
+  6. [Restriction](#Restriction)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -302,3 +303,7 @@ New optional parameter *destruct* has been added to *noTone* to decide whether t
 ```C++
 noTone(uint8_t _pin, bool destruct = false)
 ```
+##  6. <a name= Restriction ></a> Restriction
+There is a special case where period is set to its maximum value 0xFFFF and 100% duty cycle is requested.
+It is not possible to achieve this from hardware point of view (except changing mode to `TIMER_OUTPUT_COMPARE_FORCED_ACTIVE`).
+In this specific case there will be 1 tick (the last one) which will be LOW. Then we lose only 1 tick out of 65535 => 99,998..%
