@@ -27,7 +27,7 @@ Erase the flash memory of the BlueNRG-2 chip:
 
 Download the Link Layer Only firmware for the BLE module from the following link:
 
-[DTM_LLOnly.bin](https://github.com/stm32duino/wiki/raw/master/wiki/X-NUCLEO-BNRG2A1/DTM_LLOnly.bin)
+[DTM_LLOnly.bin](https://github.com/stm32duino/wiki/raw/master/X-NUCLEO-BNRG2A1/DTM_LLOnly.bin)
 
 Load the Link Layer Only firmware in the ST BlueNRG-1_2 Flasher Utility and then press the "Flash" button:
 
@@ -35,4 +35,4 @@ Load the Link Layer Only firmware in the ST BlueNRG-1_2 Flasher Utility and then
 
 If you need to restore the stock firmware of the BLE module of X-NUCLEO-BNRG2A1, you can repeat the procedure using this firmware image:
 
-[DTM_Full.bin](https://github.com/stm32duino/wiki/raw/master/wiki/X-NUCLEO-BNRG2A1/DTM_Full.bin)
+[DTM_Full.bin](https://github.com/stm32duino/wiki/raw/master/X-NUCLEO-BNRG2A1/DTM_Full.bin)
