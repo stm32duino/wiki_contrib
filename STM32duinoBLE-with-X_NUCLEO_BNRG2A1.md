@@ -1,6 +1,6 @@
 STM32duinoBLE library does not work with the stock firmware that is loaded in the BLE module of X-NUCLEO-BNRG2A1 expansion board.
 For this reason, first of all, it is needed to solder on X-NUCLEO-BNRG2A1, if it is not soldered, a 0 Ohm resistor at R117.
-Then you can use a standard ST-Link V2-1 with 5 jumper wires female-female together with [STSW-BNRGFLASHER](https://www.st.com/content/st_com/en/products/embedded-software/wireless-connectivity-software/stsw-bnrgflasher.html) software tool (currently available only for Windows PC) in order to update the firmware of the BLE module of STEVAL-MKSBOX1V1.
+Then you can use a standard ST-Link V2-1 with 5 jumper wires female-female together with [STSW-BNRGFLASHER](https://www.st.com/content/st_com/en/products/embedded-software/wireless-connectivity-software/stsw-bnrgflasher.html) software tool (currently available only for Windows PC) in order to update the firmware of the BLE module of X-NUCLEO-BNRG2A1.
 You need to connect the J12 pins of the X-NUCLEO-BNRG2A1 to the pins of the ST-Link V2-1 as shown in the picture below.
 
 [[/img/X_NUCLEO_BNRG2A1_1.PNG|alt="Connection among the J12 pins of the X-NUCLEO-BNRG2A1 and the ST-Link V2-1"]]
@@ -8,9 +8,13 @@ You need to connect the J12 pins of the X-NUCLEO-BNRG2A1 to the pins of the ST-L
 In particular we have the following connections:
 
 J12 Pin 1 -> ST-Link V2-1 Pin 1
+
 J12 Pin 2 -> ST-Link V2-1 Pin 9
+
 J12 Pin 3 -> ST-Link V2-1 Pin 12
+
 J12 Pin 4 -> ST-Link V2-1 Pin 7
+
 J12 Pin 5 -> ST-Link V2-1 Pin 15
 
 First of all, install the ST BlueNRG-1_2 Flasher Utility and open it, then select the SWD tab:
