@@ -78,6 +78,7 @@ https://www.st.com/en/development-tools/stm32cubeprog.html`
 Aborting!
 ```
 
+<!-- Comments as user probably do not define properly his PATH...
 If you need to install STM32CubeProgrammer in another directory under Linux, the above mentioned procedure will not work. For some reason, the script mentioned below ignores the PATH variable set to `/opt/STM32Cube/STM32CubeProgrammer/bin`. For this reason the following hack was necessary:
 
 Enable verbose compilation and upload under File->Preferences. Then, compile+upload to see that this script is called `/home/username/.arduino15/packages/STM32/tools/STM32Tools/1.3.2/tools/linux/stm32CubeProg.sh`.
@@ -91,6 +92,7 @@ Then, edit this script to replace line 44 (commented) by my the actual path.
   fi
 ```
 Save the file and repeat the upload procedure in the Arduino IDE.
+-->
 
 ### Arduino integration
 
