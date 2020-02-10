@@ -37,3 +37,5 @@ Load the Link Layer Only firmware in the ST BlueNRG-1_2 Flasher Utility and then
 If you need to restore the stock firmware of the BLE module of X-NUCLEO-BNRG2A1, you can repeat the procedure using this firmware image:
 
 [DTM_Full.bin](https://github.com/stm32duino/wiki/raw/master/X-NUCLEO-BNRG2A1/DTM_Full.bin)
+
+If you should find some issues during the update process, you can try to repeat the procedure closing the J15 jumper on the X-NUCLEO-BNRG2A1 expansion board.
