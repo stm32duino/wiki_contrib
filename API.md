@@ -563,7 +563,7 @@ Emulation is made in Flash, with all constraints related to Flash operation:
 In addition to Arduino API, to mitigate Flash constraints, it is possible to use buffered API:  
 Write operations are made in an intermediate RAM buffer, and only at the end (after writing several parameters for example) the buffer is copied in Flash. Thus only 1 write operation for a whole bunch of data.  
 Example is available here: https://github.com/stm32duino/STM32Examples/tree/master/examples/NonReg/BufferedEEPROM
-```
+```C
 void eeprom_buffer_fill(); // This function copies the data from flash into the buffer
 void eeprom_buffer_flush(); // This function writes the buffer content into the flash
 uint8_t eeprom_buffered_read_byte(const uint32_t pos); // Function reads a byte from the eeprom buffer
@@ -573,13 +573,15 @@ By default, EEPROM emulation storage correspond to the last sector/page of Flash
 and its size correspond to the size of the last sector/page.  
 Nevertheless it is possible to customize address and size used for EEPROM.  
 In this case, following switches should be defined (in variant.h or build_opt.h)
-* FLASH_BASE_ADDRESS
-* FLASH_DATA_SECTOR or FLASH_PAGE_NUMBER (depending on STM32 family used)
+* `FLASH_BASE_ADDRESS`
+* `FLASH_DATA_SECTOR` or `FLASH_PAGE_NUMBER` (depending on STM32 family used)
 
 see example of variant implementation: https://github.com/stm32duino/Arduino_Core_STM32/pull/938
 
-Warning: Single/dual bank configuration.  
+[[/img/Warning-icon.png|alt="Warning"]] **Single/dual bank configuration**:
+
 Default last sector used correspond to default board configuration.  
-Ex: NUCLEO_F767ZI is by default configured in single bank. Last sector correspond to this bank configuration.  
-If this configuration is changed, it is then mandatory to customize FLASH_BASE_ADDRESS/FLASH_DATA_SECTOR,
+
+For example, NUCLEO_F767ZI is by default configured in single bank. Last sector correspond to this bank configuration.  
+If this configuration is changed, it is then mandatory to customize `FLASH_BASE_ADDRESS`/`FLASH_DATA_SECTOR`,
 even to use last sector of Flash.
