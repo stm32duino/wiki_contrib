@@ -127,6 +127,7 @@ These libraries are guaranteed to work fine with all NUCLEO boards supported in 
   * [HTS221](https://github.com/stm32duino/HTS221)
   * [LPS22HH](https://github.com/stm32duino/LPS22HH)
   * [STTS751](https://github.com/stm32duino/STTS751)
+  * [LSM6DSOX](https://github.com/stm32duino/LSM6DSOX)
 
 * [X-NUCLEO-IHM02A1](https://github.com/stm32duino/X-NUCLEO-IHM02A1): it is a two axis stepper motor driver expansion board based on the L6470 component.
 * [X-NUCLEO-IHM12A1](https://github.com/stm32duino/X-NUCLEO-IHM12A1): it is a low voltage dual brush DC motor driver expansion board based on the STSPIN240.
