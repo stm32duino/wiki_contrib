@@ -62,6 +62,7 @@ Some libraries have been developped to support specific features (hardware or no
 * [MX25R6435F](https://github.com/stm32duino/MX25R6435F): to support the Quad-SPI NOR Flash memory MX25R6435F
 * [Proximity Gesture](https://github.com/stm32duino/Proximity_Gesture): o support gesture-detection using proximity sensors (VL53L0X or VL53L1X or VL6180X). The APIs provide single swipe gesture detection, directional (left/right) swipe gesture detection and single tap gesture detection
 * [SPBTLE-RF](https://github.com/stm32duino/SPBTLE-RF): to support the Bluetooth (V4.1 compliant) SPBTLE-RF
+* [ST25DV](https://github.com/stm32duino/ST25DV): to support the ST25DV components
 * [STTS22H](https://github.com/stm32duino/STTS22H): to support the STTS22H digital temperature sensor
 * [STTS751](https://github.com/stm32duino/STTS751): to support the STTS751 digital temperature sensor
 * [VL53L0X](https://github.com/stm32duino/VL53L0X): to support the VL53L0X Time-of-Flight and gesture-detection sensor
@@ -137,7 +138,10 @@ These libraries are guaranteed to work fine with all NUCLEO boards supported in 
   * [M24SR64-Y](https://github.com/stm32duino/M24SR64-Y)
 
 * [X-NUCLEO-NFC03A1](https://github.com/stm32duino/X-NUCLEO-NFC03A1): it is an NFC card reader evaluation board based on CR95HF-VMD5T that supports the detection, reading and writing of NFC Forum Type 1, 2, 3 and 4 tags.
-* [X-NUCLEO-NFC04A1](https://github.com/stm32duino/X-NUCLEO-NFC04A1): it is a dynamic NFC/RFID tag IC expansion board based on the ST25DV04K NFC Type V/RFID tag IC.
+* [X-NUCLEO-NFC04A1](https://github.com/stm32duino/X-NUCLEO-NFC04A1): it is a dynamic NFC/RFID tag IC expansion board based on the ST25DV04K NFC Type V/RFID tag IC. It depends on the following library:
+
+  * [ST25DV](https://github.com/stm32duino/ST25DV)
+
 
 
 ### Other expansion board
