@@ -43,6 +43,8 @@ Some libraries have been developped to support specific features (hardware or no
 
 
 * [HTS221](https://github.com/stm32duino/HTS221): to support the HTS221 capacitive digital sensor for relative humidity and temperature
+* [IIS2MDC](https://github.com/stm32duino/IIS2MDC):  to support the IIS2MDC high-performance 3-axis magnetometer
+* [ISM330DLC](https://github.com/stm32duino/ISM330DLC): to support the ISM330DLC 3D accelerometer and 3D gyroscope
 * [LIS2DW12](https://github.com/stm32duino/LIS2DW12): to support the LIS2DW12 3D accelerometer
 * [LIS2MDL](https://github.com/stm32duino/LIS2MDL):  to support the LIS2MDL high-performance 3-axis magnetometer
 * [LIS3DHH](https://github.com/stm32duino/LIS3DHH): to support the LIS3DHH 3D accelerometer
@@ -60,6 +62,7 @@ Some libraries have been developped to support specific features (hardware or no
 * [MX25R6435F](https://github.com/stm32duino/MX25R6435F): to support the Quad-SPI NOR Flash memory MX25R6435F
 * [Proximity Gesture](https://github.com/stm32duino/Proximity_Gesture): o support gesture-detection using proximity sensors (VL53L0X or VL53L1X or VL6180X). The APIs provide single swipe gesture detection, directional (left/right) swipe gesture detection and single tap gesture detection
 * [SPBTLE-RF](https://github.com/stm32duino/SPBTLE-RF): to support the Bluetooth (V4.1 compliant) SPBTLE-RF
+* [STTS22H](https://github.com/stm32duino/STTS22H): to support the STTS22H digital temperature sensor
 * [STTS751](https://github.com/stm32duino/STTS751): to support the STTS751 digital temperature sensor
 * [VL53L0X](https://github.com/stm32duino/VL53L0X): to support the VL53L0X Time-of-Flight and gesture-detection sensor
 * [VL53L1X](https://github.com/stm32duino/VL53L1X): to support the VL53L1X Time-of-Flight and gesture-detection sensor
