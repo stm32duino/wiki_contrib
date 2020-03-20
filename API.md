@@ -594,7 +594,7 @@ Since core version 1.9.0 (see [PR #996](https://github.com/stm32duino/Arduino_Co
 
 To do this, the variable must be placed in the `.noinit` section by adding `__attribute__((__section__(".noinit")))` (this is exactly the same as how this works on the original Arduino AVR core). Typically, you would also need to check the startup reason register so you can initialize the variable with a default on the first startup. For example, something like:
 
-```
+```C++
 unsigned boot_count __attribute__((__section__(".noinit")));
 
 void setup() {
