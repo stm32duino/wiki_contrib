@@ -12,7 +12,8 @@
    * [I2C](https://github.com/stm32duino/wiki/wiki/API#i2C)
    * [CMSIS DSP](https://github.com/stm32duino/wiki/wiki/API#cmsis-dsp)
    * [EEPROM emulation](https://github.com/stm32duino/wiki/wiki/API#EEPROM-Emulation)
-
+ * [Other](https://github.com/stm32duino/wiki/wiki/API#other)
+   * [Remembering variables across resets](https://github.com/stm32duino/wiki/wiki/API#Remembering-variables-across-resets)
 # Core
 
 This part describes the STM32 core functions.
@@ -585,3 +586,32 @@ Default last sector used correspond to default board configuration.
 For example, NUCLEO_F767ZI is by default configured in single bank. Last sector correspond to this bank configuration.  
 If this configuration is changed, it is then mandatory to customize `FLASH_BASE_ADDRESS`/`FLASH_DATA_SECTOR`,
 even to use last sector of Flash.
+
+# Other
+
+## Remembering variables across resets
+Since core version 1.9.0 (see [PR #996](https://github.com/stm32duino/Arduino_Core_STM32/pull/996)), it is possible to mark variables as "noinit", which prevents them from being initialized to a fixed value at startup. This allows using these variables to remember a value across resets (since the reset itself leaves memory unchanged, it is only the startup code that normally resets all variable values, but that is prevented by noinit).
+
+To do this, the variable must be placed in the `.noinit` section by adding `__attribute__((__section__(".noinit")))` (this is exactly the same as how this works on the original Arduino AVR core). Typically, you would also need to check the startup reason register so you can initialize the variable with a default on the first startup. For example, something like:
+
+```
+unsigned boot_count __attribute__((__section__(".noinit")));
+
+void setup() {
+    Serial.begin(115200);
+    while (!Serial); // Wait for serial port open
+
+    // Initialize the variable only on first power-on reset
+    if (__HAL_RCC_GET_FLAG(RCC_FLAG_PORRST))
+        boot_count = 1;
+    __HAL_RCC_CLEAR_RESET_FLAGS();
+    
+    Serial.print("Boot number: ");
+    Serial.println(boot_count);
+    ++boot_count;
+}
+
+void loop() { }
+```
+
+This shows the number of boots since the last POR by incrementing a noinit variable across resets. Note that when you first upload this, it might not start at 1 but at some arbitrary value, because typically the first boot after an upload is not a power-on-reset. To start at 1, disconnect and reconnect power.
