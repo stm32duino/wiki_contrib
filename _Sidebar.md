@@ -36,7 +36,7 @@
 </details>
 
 * <details>
-  <summary>Advanced usage</summary>
+  <summary>Advanced usages</summary>
   
   * Contributing
     * [Add a new variant (board)](https://github.com/stm32duino/wiki/wiki/Add-a-new-variant-%28board%29)
@@ -52,6 +52,7 @@
 
 * <details>
   <summary>Connectivities</summary>
+
     * [BLE](https://github.com/stm32duino/wiki/wiki/stm32duinoble)
     * [LoRa](https://github.com/stm32duino/wiki/wiki/lora)
 
