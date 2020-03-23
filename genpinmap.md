@@ -16,7 +16,7 @@ usage: genpinmap_arduino.py [-h] [-l | -m xml]
 
 By default, generate PeripheralPins.c and PinNamesVar.h for all xml files description available in
 STM32CubeMX directory defined in 'config.json':
-        /local/frq92243/STM32CubeMX/db/mcu
+        $HOME/STM32CubeMX/db/mcu
 
 optional arguments:
   -h, --help         show this help message and exit
@@ -33,7 +33,7 @@ for the same IP or if the pin should not be used (overlaid with some HW on the b
 for instance)
 ```
 
-Files are generated under: **_src/genpinmap/Arduino/\<MCU name\>/_**
+Files are generated under: **_src/genpinmap/Arduino/<STM32 serie>\<MCU name\>/_**
 
 [[/img/Warning-icon.png|alt="Warning"]]xml file contains non alpha characters in its name, you should call it with quotes!<br>
 [[/img/Warning-icon.png|alt="Warning"]] Script uses default  [STM32CubeMX](http://www.st.com/en/development-tools/stm32cubemx.html) installation directory. If you changed it, update the installation path in the `config.json`.<br>
@@ -45,5 +45,5 @@ Files are generated under: **_src/genpinmap/Arduino/\<MCU name\>/_**
 
 will produced:
 
-**_src/genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PeripheralPins.c_**<br>
-**_src/genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PinNamesVar.h_**<br>
+**_src/genpinmap/Arduino/STM32F2/STM32F207Z(C-E-F-G)Tx/PeripheralPins.c_**<br>
+**_src/genpinmap/Arduino/STM32F2/STM32F207Z(C-E-F-G)Tx/PinNamesVar.h_**<br>

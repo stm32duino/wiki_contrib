@@ -34,6 +34,8 @@ Some libraries have been developped to support specific features (hardware or no
 
 * [STM32Ethernet](https://github.com/stm32duino/STM32Ethernet): for on board Ethernet port (ex: Nucleo-F429ZI). This library is fully compatible with Arduino [Ethernet](https://www.arduino.cc/en/Reference/Ethernet) API. It depends on the following libraries:
   * [LwIP](https://github.com/stm32duino/LwIP): lightweight TCP/IP stack (LwIP) is a small independent implementation of the TCP/IP protocol suite
+  
+  Dedicated [Wiki page](https://github.com/stm32duino/wiki/wiki/STM32Ethernet)
 * [STM32FreeRTOS](https://github.com/stm32duino/STM32FreeRTOS): this is a port of [FreeRTOS](https://www.freertos.org/) for STM32 as Arduino libraries
 * [STM32LowPower](https://github.com/stm32duino/STM32LowPower): to support some STM32 low power mode. It depends on the following libraries:
   * [STM32RTC](https://github.com/stm32duino/STM32RTC)
@@ -42,14 +44,15 @@ Some libraries have been developped to support specific features (hardware or no
   * [FatFS](https://github.com/stm32duino/FatFs): FatFs is a generic FAT file system module for small embedded systems. The FatFs is written in compliance with ANSI C and completely separated from the disk I/O layer. Therefore it is independent of hardware architecture
 
 
-* [HTS221](https://github.com/stm32duino/HTS221): to support the HTS221 capacitive digital sensor for relative humidity and temperature
+* [HTS221](https://github.com/stm32duino/HTS221): to support the HTS221 capacitive digital sensor for relative humidity and temperature.
+  Dedicated [Wiki page](https://github.com/stm32duino/wiki/wiki/HTS221)
 * [IIS2MDC](https://github.com/stm32duino/IIS2MDC):  to support the IIS2MDC high-performance 3-axis magnetometer
 * [ISM330DLC](https://github.com/stm32duino/ISM330DLC): to support the ISM330DLC 3D accelerometer and 3D gyroscope
 * [LIS2DW12](https://github.com/stm32duino/LIS2DW12): to support the LIS2DW12 3D accelerometer
 * [LIS2MDL](https://github.com/stm32duino/LIS2MDL):  to support the LIS2MDL high-performance 3-axis magnetometer
 * [LIS3DHH](https://github.com/stm32duino/LIS3DHH): to support the LIS3DHH 3D accelerometer
-* [LIS3MDL](https://github.com/stm32duino/LIS3MDL): to support the LIS3MDL high-performance 3-axis magnetometer
-* [LPS22HB](https://github.com/stm32duino/LPS22HB): to support the LPS22HB 260-1260 hPa absolute digital ouput barometer
+* [LIS3MDL](https://github.com/stm32duino/LIS3MDL): to support the LIS3MDL high-performance 3-axis magnetometer. Dedicated [Wiki page](https://github.com/stm32duino/wiki/wiki/LIS3MDL)
+* [LPS22HB](https://github.com/stm32duino/LPS22HB): to support the LPS22HB 260-1260 hPa absolute digital ouput barometer. Dedicated [Wiki page](https://github.com/stm32duino/wiki/wiki/LPS22HB)
 * [LPS25HB](https://github.com/stm32duino/LPS25HB): to support the LPS25HB 260-1260 hPa absolute digital ouput barometer
 * [LPS22HH](https://github.com/stm32duino/LPS22HH): to support the LPS22HH 260-1260 hPa absolute digital ouput barometer
 * [LSM303AGR](https://github.com/stm32duino/LSM303AGR): to support the LSM303AGR 3D accelerometer and 3D magnetometer
@@ -57,15 +60,15 @@ Some libraries have been developped to support specific features (hardware or no
 * [LSM6DSOX](https://github.com/stm32duino/LSM6DSOX): to support the LSM6DSOX 3D accelerometer and 3D gyroscope
 * [LSM6DS0](https://github.com/stm32duino/LSM6DS0): to support the LSM6DS0 3D accelerometer and 3D gyroscope
 * [LSM6DS3 ](https://github.com/stm32duino/LSM6DS3): to support the LSM6DS3 3D accelerometer and 3D gyroscope
-* [LSM6DSL](https://github.com/stm32duino/LSM6DSL): to support the LSM6DSL 3D accelerometer and 3D gyroscope
-* [M24SR64-Y](https://github.com/stm32duino/M24SR64-Y): to support the dynamic NFC/RFID Tag IC dual interface M24SR64-Y
-* [MX25R6435F](https://github.com/stm32duino/MX25R6435F): to support the Quad-SPI NOR Flash memory MX25R6435F
+* [LSM6DSL](https://github.com/stm32duino/LSM6DSL): to support the LSM6DSL 3D accelerometer and 3D gyroscope. Dedicated [Wiki page](https://github.com/stm32duino/wiki/wiki/LSM6DSL)
+* [M24SR64-Y](https://github.com/stm32duino/M24SR64-Y): to support the dynamic NFC/RFID Tag IC dual interface M24SR64-Y. Dedicated [Wiki page](https://github.com/stm32duino/wiki/wiki/M24SR64-Y)
+* [MX25R6435F](https://github.com/stm32duino/MX25R6435F): to support the Quad-SPI NOR Flash memory MX25R6435F. Dedicated [Wiki page](https://github.com/stm32duino/wiki/wiki/MX25R6435F)
 * [Proximity Gesture](https://github.com/stm32duino/Proximity_Gesture): o support gesture-detection using proximity sensors (VL53L0X or VL53L1X or VL6180X). The APIs provide single swipe gesture detection, directional (left/right) swipe gesture detection and single tap gesture detection
-* [SPBTLE-RF](https://github.com/stm32duino/SPBTLE-RF): to support the Bluetooth (V4.1 compliant) SPBTLE-RF
+* [SPBTLE-RF](https://github.com/stm32duino/SPBTLE-RF): to support the Bluetooth (V4.1 compliant) SPBTLE-RF. Dedicated [Wiki page](https://github.com/stm32duino/wiki/wiki/SPBTLE-RF)
 * [ST25DV](https://github.com/stm32duino/ST25DV): to support the ST25DV components
 * [STTS22H](https://github.com/stm32duino/STTS22H): to support the STTS22H digital temperature sensor
 * [STTS751](https://github.com/stm32duino/STTS751): to support the STTS751 digital temperature sensor
-* [VL53L0X](https://github.com/stm32duino/VL53L0X): to support the VL53L0X Time-of-Flight and gesture-detection sensor
+* [VL53L0X](https://github.com/stm32duino/VL53L0X): to support the VL53L0X Time-of-Flight and gesture-detection sensor. Dedicated [Wiki page](https://github.com/stm32duino/wiki/wiki/VL53L0X)
 * [VL53L1X](https://github.com/stm32duino/VL53L1X): to support the VL53L1X Time-of-Flight and gesture-detection sensor
 * [VL6180X](https://github.com/stm32duino/VL6180X): to support the VL6180X proximity and ambient light sensing (ALS) sensor
 * [WiFi-ISM43362-M3G-L44](https://github.com/stm32duino/WiFi-ISM43362-M3G-L44): to support the Wi-Fi module Inventek ISM43362-M3G-L44 (802.11 b/g/n)

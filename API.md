@@ -12,8 +12,10 @@
    * [I2C](https://github.com/stm32duino/wiki/wiki/API#i2C)
    * [CMSIS DSP](https://github.com/stm32duino/wiki/wiki/API#cmsis-dsp)
    * [EEPROM emulation](https://github.com/stm32duino/wiki/wiki/API#EEPROM-Emulation)
+   * [Servo](https://github.com/stm32duino/wiki/wiki/Servo-library)
  * [Other](https://github.com/stm32duino/wiki/wiki/API#other)
    * [Remembering variables across resets](https://github.com/stm32duino/wiki/wiki/API#Remembering-variables-across-resets)
+
 # Core
 
 This part describes the STM32 core functions.
@@ -586,6 +588,9 @@ Default last sector used correspond to default board configuration.
 For example, NUCLEO_F767ZI is by default configured in single bank. Last sector correspond to this bank configuration.  
 If this configuration is changed, it is then mandatory to customize `FLASH_BASE_ADDRESS`/`FLASH_DATA_SECTOR`,
 even to use last sector of Flash.
+
+## Servo library
+https://github.com/stm32duino/wiki/wiki/Servo-library
 
 # Other
 
