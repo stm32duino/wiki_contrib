@@ -43,10 +43,10 @@
     * [Using git repository](https://github.com/stm32duino/wiki/wiki/Using-git-repository)
     * [Astyle](https://github.com/stm32duino/wiki/wiki/Astyle)
   * Customization
-    * [Custom definitions](https://github.com/stm32duino/wiki/wiki/Custom-definitions)
-    * [Customize build options (build_opt.h)](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h)
+    * [Definitions](https://github.com/stm32duino/wiki/wiki/Custom-definitions)
+    * [Build options (build_opt.h)](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h)
     * [HAL module configuration](https://github.com/stm32duino/wiki/wiki/HAL-configuration)
-    * [custom board support based on a core](https://github.com/stm32duino/wiki/wiki/Custom-board-based-on-a-core)
+    * [Board support based on a core](https://github.com/stm32duino/wiki/wiki/Custom-board-based-on-a-core)
   * [How to debug](https://github.com/stm32duino/wiki/wiki/How-to-debug)
 </details>
 
