@@ -1,5 +1,5 @@
- * [STEVAL_MKSBOX1V1](https://github.com/stm32duino/wiki/wiki/STM32duinoBLE#stm32duinoble-with-steval_mksbox1v1)
- * [X-NUCLEO-BNRG2A1](https://github.com/stm32duino/wiki/wiki/STM32duinoBLE#stm32duinoble-with-x-nucleo-bnrg2a1)
+ * [with STEVAL_MKSBOX1V1](https://github.com/stm32duino/wiki/wiki/STM32duinoBLE#stm32duinoble-with-steval_mksbox1v1)
+ * [with X-NUCLEO-BNRG2A1](https://github.com/stm32duino/wiki/wiki/STM32duinoBLE#stm32duinoble-with-x-nucleo-bnrg2a1)
 
 
 # STM32duinoBLE with STEVAL_MKSBOX1V1
