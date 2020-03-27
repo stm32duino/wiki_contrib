@@ -68,13 +68,10 @@ Each timer may provide several channels, nevertheless it is important to underst
     void attachInterrupt(void (*handler)(HardwareTimer *), void *arg = NULL); // Attach interrupt callback which will be called upon update event (timer rollover)
     void detachInterrupt();  // remove interrupt callback which was attached to update event
     bool hasInterrupt();  //returns true if a timer rollover interrupt has already been set
-    void* getArg(); // Getter for attached argument to event (timer rollover)
     //Add interrupt to capture/compare channel
     void attachInterrupt(uint32_t channel, void (*handler)(HardwareTimer *), void *arg = NULL); // Attach interrupt callback which will be called upon compare match event of specified channel
     void detachInterrupt(uint32_t channel);  // remove interrupt callback which was attached to compare match event of specified channel
     bool hasInterrupt(uint32_t channel);  //returns true if an interrupt has already been set on the channel compare match
-    void* getArg(uint32_t channel); // Getter for attached argument to compare match event of specified channel
-
     void timerHandleDeinit();  // Timer deinitialization
 
     // Refresh() is usefull while timer is running after some registers update
