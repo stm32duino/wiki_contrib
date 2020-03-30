@@ -145,6 +145,16 @@ These libraries are guaranteed to work fine with all NUCLEO boards supported in 
 
   * [ST25DV](https://github.com/stm32duino/ST25DV)
 
+* [X-NUCLEO-S2868A1](https://github.com/stm32duino/X-NUCLEO-S2868A1): it is a wireless sub-1 GHz expansion board based on S2-LP radio and operates in the 868 MHz ISM frequency band. It depends on the following libraries:
+
+  * [S2-LP](https://github.com/stm32duino/S2-LP)
+  * [M95640-R](https://github.com/stm32duino/M95640-R)
+
+* [X-NUCLEO-S2868A2](https://github.com/stm32duino/X-NUCLEO-S2868A2): it is a wireless sub-1 GHz expansion board based on S2-LP radio and operates in the 868 MHz ISM frequency band. It depends on the following libraries:
+
+  * [S2-LP](https://github.com/stm32duino/S2-LP)
+  * [M95640-R](https://github.com/stm32duino/M95640-R)
+
 
 
 ### Other expansion board
