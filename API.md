@@ -463,7 +463,7 @@ It is also possible to change the default pins used by the `SPI` instance using 
 
 ## I2C
 
-By default, only one `Wire` instance is available and it uses the Arduino pins 14 and 15.
+By default, only one `Wire` instance is available and it uses the Arduino pins D14(SDA) and D15(SCL).
 To use a second I2C port, a `TwoWire` object should be declared in the sketch before the `setup()` function:
 ```C++
 #include <Wire.h>
