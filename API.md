@@ -484,7 +484,7 @@ void loop() {
 
 Refers to [I2C Timing](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timing) to customize I2C speed if needed.
 
-By default the I2C interfaces are configured as followed (for Nucleo-L452RE in file PeripheralPins.c):
+By default the I2C interfaces are configured as followed (example below is for Nucleo-L452RE in file PeripheralPins.c):
 ```C++
 #ifdef HAL_I2C_MODULE_ENABLED 
  WEAK const PinMap PinMap_I2C_SDA[] = { 
@@ -532,8 +532,9 @@ const PinMap PinMap_I2C_SCL[] = {
   {PC_0,  I2C4, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_PULLUP, GPIO_AF2_I2C4)},
   {NC,    NP,    0}
 };
-
 ```
+
+
 
 ### New API functions
 
