@@ -484,7 +484,8 @@ void loop() {
 
 Refers to [I2C Timing](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timing) to customize I2C speed if needed.
 
-By default the I2C interfaces are configured as followed (example below is for Nucleo-L452RE in file PeripheralPins.c):
+The default I2C interface pins are configured inside the PeripheralPins.c file.
+#### Example (for Nucleo-L452RE in file PeripheralPins.c):
 ```C++
 #ifdef HAL_I2C_MODULE_ENABLED 
  WEAK const PinMap PinMap_I2C_SDA[] = { 
@@ -520,15 +521,16 @@ By default the I2C interfaces are configured as followed (example below is for N
 ```
 
 Because they are defined as WEAK, you can redefine them in your sketch file instead of changing values in the PeripheralPins.c file. 
+You can also enable/disable the internal pull-ups with the second parameter of STM_PIN_DATA().
 ##### Example (inside of sketch file):
 ```C++
 const PinMap PinMap_I2C_SDA[] = {
-  {PB_9,  I2C1, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_PULLUP, GPIO_AF4_I2C1)},
+  {PB_9,  I2C1, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_NOPULLUP, GPIO_AF4_I2C1)},
   {PC_1,  I2C4, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_PULLUP, GPIO_AF2_I2C4)},
   {NC,    NP,    0}
 };
 const PinMap PinMap_I2C_SCL[] = {
-  {PB_8,  I2C1, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_PULLUP, GPIO_AF4_I2C1)},
+  {PB_8,  I2C1, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_NOPULLUP, GPIO_AF4_I2C1)},
   {PC_0,  I2C4, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_PULLUP, GPIO_AF2_I2C4)},
   {NC,    NP,    0}
 };
