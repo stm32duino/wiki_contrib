@@ -484,7 +484,9 @@ void loop() {
 
 Refers to [I2C Timing](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timing) to customize I2C speed if needed.
 
-The default I2C interface pins are configured inside the PeripheralPins.c file.
+### Default I2C pins
+**The default I2C interface pins are configured inside the PeripheralPins.c file.**
+
 #### Example (for Nucleo-L452RE in file PeripheralPins.c):
 ```C++
 #ifdef HAL_I2C_MODULE_ENABLED 
@@ -520,6 +522,7 @@ The default I2C interface pins are configured inside the PeripheralPins.c file.
  #endif
 ```
 
+### Redefine I2C pins
 Because they are defined as WEAK, you can redefine them in your sketch file instead of changing values in the PeripheralPins.c file. 
 You can also enable/disable the internal pull-ups with the second parameter of STM_PIN_DATA().
 ##### Example (inside of sketch file):
