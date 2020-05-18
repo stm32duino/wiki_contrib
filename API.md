@@ -66,6 +66,14 @@ _Params_ `func` pointer to the callback function
 
 ## Analog
 
+### analogWrite: DAC, PWM or GPIO
+
+analogWrite() function follows the [API reference](https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/).
+As each pin has not the same capabilities, it uses the best way:
+1. True analog output when using on pins with DAC capabilities anf if `HAL_DAC_MODULE_ENABLED` is defined
+2. PWM on pins with timer (TIM) capabilities.
+3. GPIO toggling HIGH/LOW depending on requested value: `HIGH` if > 127 else `LOW`
+
 ### Frequency
 `analogWriteFrequency(freq)` has been added in core version greater than **1.5.0** to set the frequency used by `analogWrite()`. Default is `PWM_FREQUENCY` (1000) in Hertz.
 
