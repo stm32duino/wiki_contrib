@@ -46,9 +46,8 @@ Each timer may provide several channels, nevertheless it is important to underst
     void setOverflow(uint32_t val, TimerFormat_t format = TICK_FORMAT); // set AutoReload register depending on format provided
     uint32_t getOverflow(TimerFormat_t format = TICK_FORMAT); // return overflow depending on format provided
 
-    void setPWM(uint32_t channel, PinName pin, uint32_t frequency, uint32_t dutycycle, void (*PeriodCallback)(HardwareTimer *) = NULL, void (*CompareCallback)(HardwareTimer *) = NULL); // Set all in one command freq in HZ, Duty in percentage. Including both interrup.
-    void setPWM(uint32_t channel, uint32_t pin, uint32_t frequency, uint32_t dutycycle, void (*PeriodCallback)(HardwareTimer *) = NULL, void (*CompareCallback)(HardwareTimer *) = NULL);
-
+    void setPWM(uint32_t channel, PinName pin, uint32_t frequency, uint32_t dutycycle, callback_function_t PeriodCallback = nullptr, callback_function_t CompareCallback = nullptr); // Set all in one command freq in HZ, Duty in percentage. Including both interrup.
+    void setPWM(uint32_t channel, uint32_t pin, uint32_t frequency, uint32_t dutycycle, callback_function_t PeriodCallback = nullptr, callback_function_t CompareCallback = nullptr);
 
     void setCount(uint32_t val, TimerFormat_t format = TICK_FORMAT); // set timer counter to value 'val' depending on format provided
     uint32_t getCount(TimerFormat_t format = TICK_FORMAT);  // return current counter value of timer depending on format provided
@@ -58,25 +57,25 @@ Each timer may provide several channels, nevertheless it is important to underst
 
     TimerModes_t getMode(uint32_t channel);  // Retrieve configured mode
 
-    uint32_t getCaptureCompare(uint32_t channel, TimerCompareFormat_t format = TICK_COMPARE_FORMAT); // return Capture/Compare register value of specified channel depending on format provided
+    void setPreloadEnable(bool value); // Configure overflow preload enable setting
 
+    uint32_t getCaptureCompare(uint32_t channel, TimerCompareFormat_t format = TICK_COMPARE_FORMAT); // return Capture/Compare register value of specified channel depending on format provided
     void setCaptureCompare(uint32_t channel, uint32_t compare, TimerCompareFormat_t format = TICK_COMPARE_FORMAT);  // set Compare register value of specified channel depending on format provided
 
     void setInterruptPriority(uint32_t preemptPriority, uint32_t subPriority); // set interrupt priority
 
     //Add interrupt to period update
-    void attachInterrupt(void (*handler)(HardwareTimer *), void *arg = NULL); // Attach interrupt callback which will be called upon update event (timer rollover)
+    void attachInterrupt(callback_function_t callback); // Attach interrupt callback which will be called upon update event (timer rollover)
     void detachInterrupt();  // remove interrupt callback which was attached to update event
     bool hasInterrupt();  //returns true if a timer rollover interrupt has already been set
     //Add interrupt to capture/compare channel
-    void attachInterrupt(uint32_t channel, void (*handler)(HardwareTimer *), void *arg = NULL); // Attach interrupt callback which will be called upon compare match event of specified channel
+    void attachInterrupt(uint32_t channel, callback_function_t callback); // Attach interrupt callback which will be called upon compare match event of specified channel
     void detachInterrupt(uint32_t channel);  // remove interrupt callback which was attached to compare match event of specified channel
     bool hasInterrupt(uint32_t channel);  //returns true if an interrupt has already been set on the channel compare match
     void timerHandleDeinit();  // Timer deinitialization
 
     // Refresh() is usefull while timer is running after some registers update
     void refresh(void); // Generate update event to force all registers (Autoreload, prescaler, compare) to be taken into account
-
 
     uint32_t getTimerClkFreq();  // return timer clock frequency in Hz.
 
@@ -85,6 +84,13 @@ Each timer may provide several channels, nevertheless it is important to underst
 
     // The following function(s) are available for more advanced timer options
     TIM_HandleTypeDef *getHandle();  // return the handle address for HAL related configuration
+    int getChannel(uint32_t channel);
+    int getLLChannel(uint32_t channel);
+    int getIT(uint32_t channel);
+    int getAssociatedChannel(uint32_t channel);
+#if defined(TIM_CCER_CC1NE)
+    bool isComplementaryChannel[TIMER_CHANNELS];
+#endif
 
 ```
 ##  3. <a name='Usage'></a>Usage
@@ -192,8 +198,8 @@ If no channel is specified, callback is attach to update event.
 
 __Example__:
 ```C++
-    MyTim->attachInterrupt(Update_IT_callback); // Userdefined call back prototype : void     Update_IT_callback(HardwareTimer*);
-    MyTim->attachInterrupt(channel, Compare_IT_callback); // Userdefined call back    prototype : void Compare_IT_callback(HardwareTimer*);
+    MyTim->attachInterrupt(Update_IT_callback); // Userdefined call back. See 'Examples' chapter to see how to use callback with or without parameter
+    MyTim->attachInterrupt(channel, Compare_IT_callback); // Userdefined call back. See 'Examples' chapter to see how to use callback with or without parameter
 ```
 
 It is now time to start timer.
@@ -259,6 +265,12 @@ Following examples are provided in [STM32Examples](https://github.com/stm32duino
    * [Timebase_callback.ino](https://github.com/stm32duino/STM32Examples/blob/master/examples/Peripherals/HardwareTimer/Timebase_callback/Timebase_callback.ino)
 
         This example shows how to configure HardwareTimer to execute a callback at regular interval.
+        Callback toggles pin.
+        Once configured, there is only CPU load for callbacks executions.
+
+   * [Timebase_callback_with_parameter.ino](https://github.com/stm32duino/STM32Examples/blob/master/examples/Peripherals/HardwareTimer/Timebase_callback_with_parameter/Timebase_callback_with_parameter.ino)
+
+        This example shows how to configure HardwareTimer to execute a callback with parameter at regular interval.
         Callback toggles pin.
         Once configured, there is only CPU load for callbacks executions.
 
