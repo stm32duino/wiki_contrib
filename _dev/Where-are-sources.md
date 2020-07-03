@@ -17,6 +17,11 @@ It should be:
 Then, go to "**_\<local Arduino directory\>/packages/STM32/hardware/stm32/_**" directory.<br>
 Directory named with the STM32 Core version installed is present. Example: 2017.6.2 or 1.0.1
 
+If you use the portable IDE as described [here](https://www.arduino.cc/en/Guide/PortableIDE) then the location is in your Arduino install directory:
+
+* `\<Arduino IDE install path\>/portable/` _(Linux/Mac)_
+* `\<Arduino IDE install path\>\portable\` _(Windows)_
+
 ## STM32 Tools files location
 
 Go to the local Arduino directory. See above.<br>
