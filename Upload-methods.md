@@ -118,7 +118,7 @@ See [AN2606](https://www.st.com/content/ccc/resource/technical/document/applicat
 ### SWD
 
 This method replace the [STLink](https://github.com/stm32duino/wiki/wiki/Upload-methods#STLink) one and works the same way.
-In addition to the [ST-Link/V2](https://www.st.com/content/st_com/en/products/development-tools/hardware-development-tools/hardware-development-tools-for-stm32/st-link-v2.html) support, it allows to support the [ST-Link/V3] (https://www.st.com/en/development-tools/stlink-v3set.html)
+In addition to the [ST-Link/V2](https://www.st.com/content/st_com/en/products/development-tools/hardware-development-tools/hardware-development-tools-for-stm32/st-link-v2.html) support, it allows to support the [ST-Link/V3](https://www.st.com/en/development-tools/stlink-v3set.html)
 
 ### Serial
 
@@ -148,6 +148,8 @@ The **STM32F4xx** MCUs have built-in `DFU` (Device Firmware Upgrade) but you can
 The `hid-flash` tool is available on Windows, Linux and MacOS.
 
 Details of HID bootloader v2.2 (and newer) hid-flash tool as well as ready-to-use binary files can be found at the GitHub repository: https://github.com/Serasidis/STM32_HID_Bootloader
+
+[[/img/Warning-icon.png|alt="Warning"]] **USB CDC have to be enable else you will not be able to upload anymore.**
 
 ## Maple DFU Bootloader
 [[/img/Warning-icon.png|alt="Warning"]] _**Since core version > 1.5.0**_
