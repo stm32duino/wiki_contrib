@@ -3,7 +3,7 @@
 [[/img/Warning-icon.png|alt="Warning"]] Since this PR, some enhancement has been done.
 * CMSIS startup file definition is no more needed as they are all defined in the core. See [#70](https://github.com/stm32duino/Arduino_Core_STM32/issues/70)
 * Custom startup file can be defined. [#353](https://github.com/stm32duino/Arduino_Core_STM32/pull/353)
-* Use define instead of enum for pins in `variant.h`. See [#356](https://github.com/stm32duino/Arduino_Core_STM32/pull/353)
+* Use define instead of enum for pins in `variant.h`. See [#356](https://github.com/stm32duino/Arduino_Core_STM32/pull/356)
 * STM32 HAL configuration is no more needed. See [#518](https://github.com/stm32duino/Arduino_Core_STM32/pull/518)
 
 # Create a new variant
