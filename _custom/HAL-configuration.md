@@ -53,6 +53,7 @@ the default list of modules to be used in the HAL driver
  * HAL module enabled by default which can be disabled
  * HAL modules not defined by default
 
+##### Customize HAL or variant definition
 Extra HAL configuration can be enabled/disabled in `variant.h` (if required) or in a file named (at sketch level):
  * `hal_conf_extra.h`
     
