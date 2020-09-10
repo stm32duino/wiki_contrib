@@ -453,6 +453,8 @@ void setup() {
 #### Change default `SPI` instance pins 
 It is also possible to change the default pins used by the `SPI` instance using above API:
 
+[[/img/Warning-icon.png|alt="Warning"]] **Have to be called before `begin()`.**
+
 * `void setMISO(uint32_t miso)`
 * `void setMOSI(uint32_t mosi)`
 * `void setSCLK(uint32_t sclk)`
