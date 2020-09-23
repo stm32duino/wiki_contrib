@@ -72,6 +72,9 @@ Some libraries have been developped to support specific features (hardware or no
 * [VL53L1X](https://github.com/stm32duino/VL53L1X): to support the VL53L1X Time-of-Flight and gesture-detection sensor
 * [VL6180X](https://github.com/stm32duino/VL6180X): to support the VL6180X proximity and ambient light sensing (ALS) sensor
 * [WiFi-ISM43362-M3G-L44](https://github.com/stm32duino/WiFi-ISM43362-M3G-L44): to support the Wi-Fi module Inventek ISM43362-M3G-L44 (802.11 b/g/n)
+* [S2-LP](https://github.com/stm32duino/S2-LP): to support the S2-LP sub-1GHz transceiver
+* [VL53L1](https://github.com/stm32duino/VL53L1): to support the VL53L1 Time-of-Flight ranging sensor with advanced multi-zone and multi-object detection
+* [VL53L3CX](https://github.com/stm32duino/VL53L3CX): to support the VL53L3CX Time-of-Flight ranging sensor with multi target detection
 
 ## Expansion boards
 
@@ -160,6 +163,15 @@ These libraries are guaranteed to work fine with all NUCLEO boards supported in 
   * [S2-LP](https://github.com/stm32duino/S2-LP)
   * [M95640-R](https://github.com/stm32duino/M95640-R)
 
+* [X-NUCLEO-53L1A2](https://github.com/stm32duino/X-NUCLEO-53L1A2): it is an expansion board for the STM32 Nucleo based on VL53L1 Time-of-Flight ranging sensor with advanced multi object detection. It depends on the following libraries:
+
+  * [VL53L1](https://github.com/stm32duino/VL53L1)
+
+* [X-NUCLEO-53L3A2](https://github.com/stm32duino/X-NUCLEO-53L3A2): it is an expansion board for the STM32 Nucleo based on VL53L3CX Time-of-Flight ranging sensor with multi target detection. It depends on the following libraries:
+
+  * [VL53L3CX](https://github.com/stm32duino/VL53L3CX)
+
+* [X-NUCLEO-IHM05A1](https://github.com/stm32duino/X-NUCLEO-IHM05A1): it is a bipolar stepper motor driver expansion board based on the L6208 component.
 
 ### Other expansion board
 
