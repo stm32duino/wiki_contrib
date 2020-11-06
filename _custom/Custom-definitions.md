@@ -186,6 +186,29 @@ Moreover, to avoid time spent to compute the I2C timing, it can be defined in th
 #define I2C_TIMING_FM           0x0010020A
 ```
 
+## I2C_TIMEOUT_TICK
+
+I2C timeout in tick unit can be redefined. Default: **100**
+```C
+#ifndef I2C_TIMEOUT_TICK
+#define I2C_TIMEOUT_TICK        100
+#endif
+```
+
+It can be redefined thanks the `variant.h` or `build_opt.h` or `hal_conf_extra.h`
+
+#### Example to decrease or increase I2C timeout in tick unit value
+
+* Using `build_opt.h`:
+```C
+-DI2C_VALID_TIMING_NBR=50
+```
+
+* Using `variant.h` or `hal_conf_extra.h`:
+```C
+#define I2C_VALID_TIMING_NBR 120
+```
+
 ## F_CPU
 
 To avoid any issue with `F_CPU` value, it is defined by default to `SystemCoreClock` value which is updated automatically after each clock configuration update.
