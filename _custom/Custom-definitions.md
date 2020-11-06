@@ -211,6 +211,8 @@ By default, Serial Rx/Tx buffer size are defined like this:
 
 Each size can be redefined at build time using `build_opt.h` or `hal_conf_extra.h`
 
+[[/img/Warning-icon.png|alt="Warning"]] A "_power of 2_" buffer size is recommended to dramatically optimize all the modulo operations for ring buffers.
+
 #### Example using `build_opt.h`:
 ```C
 -DSERIAL_RX_BUFFER_SIZE=256 -DSERIAL_TX_BUFFER_SIZE=256
