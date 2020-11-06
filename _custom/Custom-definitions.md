@@ -12,6 +12,7 @@ Several definitions can be redefined by the end user by different ways:
    * [Custom startup file in the variant](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-startup-file-in-the-variant)
  * [Custom PinMap array](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-pinmap-array)
  * [I2C Timing](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timing)
+ * [I2C timeout in tick unit](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c_timeout_in_tick_unit)
  * [F_CPU](https://github.com/stm32duino/wiki/wiki/Custom-definitions#f_cpu)
  * [Serial Rx/Tx buffer size](https://github.com/stm32duino/wiki/wiki/Custom-definitions#serial-rxtx-buffer-size)
 
@@ -186,9 +187,12 @@ Moreover, to avoid time spent to compute the I2C timing, it can be defined in th
 #define I2C_TIMING_FM           0x0010020A
 ```
 
-## I2C_TIMEOUT_TICK
+## I2C timeout in tick unit
+
+[[/img/Warning-icon.png|alt="Warning"]] **Since core version higher than 1.9.0.**
 
 I2C timeout in tick unit can be redefined. Default: **100**
+
 ```C
 #ifndef I2C_TIMEOUT_TICK
 #define I2C_TIMEOUT_TICK        100
