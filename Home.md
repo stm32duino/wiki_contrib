@@ -5,7 +5,7 @@
 For full instructions on using the STM32 boards with Arduino, see the [[Getting Started|Getting-Started]] page.
 
 # Boards available:
-See [Boards available](https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md#boards-available) section of the [Arduino_Core_STM32/README.md](https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md).
+See [Supported boardse](https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md#supported-boards) section of the [Arduino_Core_STM32/README.md](https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md).
 
 # API References:
 See [API References](https://github.com/stm32duino/wiki/wiki/API) for usage of accessing the hardware with the Arduino API-functions.
