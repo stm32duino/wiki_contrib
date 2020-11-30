@@ -82,6 +82,7 @@ https://github.com/stm32duino/Arduino_Core_STM32/blob/master/cores/arduino/stm32
 * `HAL_TIM_MODULE_ENABLED`
 
 #### HAL modules not defined by default
+* `HAL_CAN_MODULE_ENABLED`
 * `HAL_DAC_MODULE_ENABLED`
 * `HAL_ETH_MODULE_ENABLED`
 * `HAL_SD_MODULE_ENABLED`
