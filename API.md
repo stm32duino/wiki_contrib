@@ -123,18 +123,14 @@ Hereafter an usage example which read then convert to proper Unit the 3 internal
 #endif
 
 /* Analog read resolution */
-#if ADC_RESOLUTION == 10
-#define LL_ADC_RESOLUTION LL_ADC_RESOLUTION_10B
-#define ADC_RANGE 1024
-#else
 #define LL_ADC_RESOLUTION LL_ADC_RESOLUTION_12B
 #define ADC_RANGE 4096
-#endif
+
 // the setup routine runs once when you press reset:
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
-  analogReadResolution(ADC_RESOLUTION);
+  analogReadResolution(12);
 }
 
 static int32_t readVref()
