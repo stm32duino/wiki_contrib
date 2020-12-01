@@ -2,8 +2,9 @@
 
 Several definitions can be redefined by the end user by different ways:
  * using `build_opt.h` file, see [[Customize-build-options-using-build_opt.h]]
- * in the `variant.h`
+ * in the `variant.h` when defining the board
  * using `hal_conf_extra.h` file, see [[HAL-configuration#core-version--150-1]]
+ * at sketch level for `WEAK` function
 
 ## Quick links
  * [Change interrupt priority values](https://github.com/stm32duino/wiki/wiki/Custom-definitions#change-interrupt-priority-values)
@@ -15,6 +16,7 @@ Several definitions can be redefined by the end user by different ways:
  * [I2C timeout in tick unit](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timeout-in-tick-unit)
  * [F_CPU](https://github.com/stm32duino/wiki/wiki/Custom-definitions#f_cpu)
  * [Serial Rx/Tx buffer size](https://github.com/stm32duino/wiki/wiki/Custom-definitions#serial-rxtx-buffer-size)
+ * [systemclock_config](https://github.com/stm32duino/wiki/wiki/Custom-definitions#systemclock_config)
 
 ## Change interrupt priority values
 
@@ -243,4 +245,15 @@ Each size can be redefined at build time using `build_opt.h` or `hal_conf_extra.
 #### Example using `build_opt.h`:
 ```C
 -DSERIAL_RX_BUFFER_SIZE=256 -DSERIAL_TX_BUFFER_SIZE=256
+```
+
+## SystemClock_Config
+
+Each variant define a default system clock configuration anyway user can redefine his own system clock configuration at sketch level. For example to change the source clock or decrease frequency.
+It is important to prefix the new function by `extern "C"` in `ino` or `cpp` file:
+
+```C
+extern "C" void SystemClock_Config() {
+  // new clock config
+}
 ```
