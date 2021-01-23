@@ -1,3 +1,6 @@
+# [[/img/Important-icon.png|alt="Tips"]] Please do not submit new variant support while core version 2.0.0 will not be released. All variants rework is ongoing. The way to create a new variant has changed and this wiki page have to be updated. See https://github.com/stm32duino/Arduino_Core_STM32/pull/1091
+
+
 [[/img/Tips-icon.png|alt="Tips"]]Example of all below steps are shown in this PR: [Add Nucleo-F207ZG](https://github.com/stm32duino/Arduino_Core_STM32/pull/63) (ignore the 2 last commits)
 
 [[/img/Warning-icon.png|alt="Warning"]] Since this PR, some enhancement has been done.
