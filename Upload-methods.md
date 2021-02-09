@@ -130,6 +130,19 @@ This requires to restart the STM32 in 'native bootloader' mode and rely on `Boot
 
 [[/img/Warning-icon.png|alt="Warning"]] **USB cable have to be plug to enter in DFU mode.**
 
+On Linux with some boards like the black pill, press and hold the boot button then plug the board in. Check dmsg to see if the board is was recognized as in DFU mode.  
+
+Note that on Linux you may need udev rules setup if the programmer cannot access your board.  After putting the board in DFU mode, check the kernel using dmesg, you should see your board.  Install dfu-util and run dfu-util -l as root and if it works, run as your user.  If it fails, you need to setup UDEV.  See the 45-maple.rules file for an example. 
+
+Edit /etc/udev/rules.d/45-maple.rules.  The first lines are for Maple.  The last line defines your board (the info reported by dfu-util -l or from running dmesg).  This was tested on Fedora 33.
+  45-maple.rules:
+  ATTRS{idProduct}=="1001", ATTRS{idVendor}=="0110", MODE="664", GROUP="plugdev"
+  ATTRS{idProduct}=="1002", ATTRS{idVendor}=="0110", MODE="664", GROUP="plugdev"
+  ATTRS{idProduct}=="0003", ATTRS{idVendor}=="1eaf", MODE="664", GROUP="plugdev" SYMLINK+="maple", ENV{ID_MM_DEVICE_IGNORE}="1"
+  ATTRS{idProduct}=="0004", ATTRS{idVendor}=="1eaf", MODE="664", GROUP="plugdev" SYMLINK+="maple", ENV{ID_MM_DEVICE_IGNORE}="1"
+  ATTRS{idProduct}=="df11", ATTRS{idVendor}=="0483", MODE="664", GROUP="dialout" SYMLINK+="blackpill", ENV{ID_MM_DEVICE_IGNORE}="1"
+
+After running this, tell udev to reload the rules:  sudo udevadm control --reload-rules
 
 ## HID Bootloader 2.2 (HID BL)
 This is a driverless USB bootloader for `STM32F10x` and `STM32F4xx` MCUs and is based on [HID protocol](https://en.wikipedia.org/wiki/Human_interface_device). No special USB drivers are needed, even on Windows.
