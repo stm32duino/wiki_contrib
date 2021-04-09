@@ -37,7 +37,8 @@ To solve this, install  _Microsoft Visual C++ 2010 Redistributable_ to get `MSVC
 
 problem:
 
-in some Linux distributions. usb serial (cdc) initially stalls could be into the 10s of seconds after a reset. There is no response in the serial monitor (e.g. putty), in fact the serial monitor (e.g. putty) simply won't connect. running _dmesg_ command did show a /dev/ttyACMx device.
+after a sketch is compiled and and firmware installed. on resetting the board.
+In some Linux distributions. usb serial (cdc) initially stalls could be into the 10s of seconds after a reset. There is no response in the serial monitor (e.g. putty), in fact the serial monitor (e.g. putty) simply won't connect. running _dmesg_ command did show a /dev/ttyACMx device.
 
 discussion and solution:
 
