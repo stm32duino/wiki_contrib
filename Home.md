@@ -30,6 +30,8 @@ See [Libraries](https://github.com/stm32duino/wiki/wiki/Libraries)
 
 # Troubleshooting
 
+Check the [FAQ](https://github.com/stm32duino/wiki/wiki/FAQ) in case it is a common problem and it may be discussed there.
+
 If you have any issue to download/use a package, you could [file an issue on BoardManagerFiles](https://github.com/stm32duino/BoardManagerFiles/issues/new) GitHub.
 
 For STM32 Core or tools issue, file an issue on the related Github:
