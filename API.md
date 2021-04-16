@@ -670,7 +670,7 @@ void setup() {
     while (!Serial); // Wait for serial port open
 
     // Initialize the variable only on first power-on reset
-    if (__HAL_RCC_GET_FLAG(RCC_FLAG_PORRST))
+    if (__HAL_RCC_GET_FLAG(RCC_FLAG_BORRST))
         boot_count = 1;
     __HAL_RCC_CLEAR_RESET_FLAGS();
     
