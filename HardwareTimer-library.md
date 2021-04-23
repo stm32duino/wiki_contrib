@@ -91,7 +91,6 @@ Each timer may provide several channels, nevertheless it is important to underst
 #if defined(TIM_CCER_CC1NE)
     bool isComplementaryChannel[TIMER_CHANNELS];
 #endif
-
 ```
 ##  3. <a name='Usage'></a>Usage
 
@@ -118,9 +117,9 @@ __Example__:
 Supported Mode:
 ```C
 typedef enum {
-  TIMER_DISABLED,
+  TIMER_DISABLED,                         // == TIM_OCMODE_TIMING           no output, useful for only-interrupt
   // Output Compare
-  TIMER_OUTPUT_COMPARE,                   // == TIM_OCMODE_TIMING           no output, useful for only-interrupt
+  TIMER_OUTPUT_COMPARE,                   // == Obsolete, use TIMER_DISABLED instead. Kept for compatibility reason
   TIMER_OUTPUT_COMPARE_ACTIVE,            // == TIM_OCMODE_ACTIVE           pin is set high when counter == channel compare
   TIMER_OUTPUT_COMPARE_INACTIVE,          // == TIM_OCMODE_INACTIVE         pin is set low when counter == channel compare
   TIMER_OUTPUT_COMPARE_TOGGLE,            // == TIM_OCMODE_TOGGLE           pin toggles when counter == channel compare
