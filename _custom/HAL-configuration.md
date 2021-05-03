@@ -1,32 +1,5 @@
 # HAL module configuration
 
-## core version <= **1.5.0**
-Each variants had to include a STM32 HAL configuration file named `stm32yyxx_hal_conf.h`.
-Where `yy` is one of the supported STM32 series in lowercase (ex: `f2`).
-
-File can be:
- * generated thanks [STM32CubeMX](http://www.st.com/en/development-tools/stm32cubemx.html).
-Copy the `stm32yyxx_hal_conf.h` file generated to the `Inc/` folder to variant folder. 
-
- * copied from a [STM32CubeYY](http://www.st.com/en/embedded-software/stm32cube-embedded-software.html?querycriteria=productId=LN1897) project examples (where `YY` is the MCU serie)
-
-**Example name** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html): `stm32f2xx_hal_conf.h`
-
-[[/img/Tips-icon.png|alt="Tips"]] If you copied the `variants/board_template` folder, **_stm32yyxx_hal_conf.h_** have to be deleted.<br>
-
-Then edit copied file in order to:
- * Remove line: `#include "main.h"`
- * Enable/Disable (un)desired HAL modules by (un)commenting line like:
- `#define HAL_XXX_MODULE_ENABLED`
- where "`_XXX_`" is the feature (`ETH`, `I2S`,...)
- * Adjust `HSE`/`HSI` values adaptation if needed
- * Update any other configurations if needed
-
-[[/img/Warning-icon.png|alt="Warning"]] Below HAL module have to be disabled, they are handled thanks Arduino menu:
- * `HAL_UART_MODULE_ENABLED`
- * `HAL_PCD_MODULE_ENABLED`
-
-## core version > **1.5.0**
 Since core version greater than **1.5.0**, a default STM32 HAL configuration is provided per STM32 series.
 As those files were almost the same for the same series, a default one per series avoid to add one for each variant.
 
