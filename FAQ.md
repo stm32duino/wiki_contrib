@@ -57,3 +57,10 @@ ENV{ID_MM_DEVICE_IGNORE}="1"
 which tells udev not to treat it as a modem
 that issue is explored in this thread
 https://www.stm32duino.com/viewtopic.php?f=62&t=1000
+
+### Windows:
+
+#### When using "BMP (Black Magic Probe)" upload method, error occurs it can't connect to the COM port.
+
+Refers to this [warning](https://github.com/stm32duino/wiki/wiki/Upload-methods#bmp-black-magic-probe)
+
