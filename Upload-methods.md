@@ -129,6 +129,12 @@ After running this, tell udev to reload the rules:
 
 Refers to [Black Magic Probe](https://github.com/blacksphere/blackmagic) site and its [Getting-Started](https://github.com/blacksphere/blackmagic/wiki/Getting-Started) Wiki.
 
+[[/img/Warning-icon.png|alt="Warning"]] **On Windows [Black Magic Probe](https://github.com/blacksphere/blackmagic) has a restriction**: 
+for ports `>= COM10` the command line requires to add this prefix `\\.\`.
+This is not handled by the core as it is tools restriction. To be able to use it:
+
+Go into the **Device manager**, select "**Show hidden devices**" and go to the "**Ports**" section, right-click on one COM port below COM10 and select "_Uninstall device_" to delete it. Free at least 2 COM port bleow 10. Then connect your BMP again.
+
 ## HID Bootloader 2.2 (HID BL)
 
 This is a driverless USB bootloader for `STM32F10x` and `STM32F4xx` MCUs and is based on [HID protocol](https://en.wikipedia.org/wiki/Human_interface_device). No special USB drivers are needed, even on Windows.
