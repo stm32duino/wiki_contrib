@@ -6,7 +6,7 @@ This will install the required dependencies for the current released version.
 To get started with development on master you must install the correct versions of the required dependencies (see: [platform.txt](https://github.com/stm32duino/Arduino_Core_STM32/blob/master/platform.txt)):
    * [CMSIS](https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php): ARM® Cortex® Microcontroller Software Interface Standard 
    * [arm-none-eabi-gcc](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm): GNU ARM Embedded Toolchain
-   * [STM32Tools](https://github.com/stm32duino/Arduino_Tools): upload tools for STM32 based boards and some other usefull scripts (ex: [genpinmap](https://github.com/stm32duino/Arduino_Tools/tree/master/src/genpinmap))
+   * [STM32Tools](https://github.com/stm32duino/Arduino_Tools): upload tools for STM32 based boards and some other useful scripts
 
 ## 2. Delete the stm32 core extracted package
 Go to the installed package directory: [[Where-are-sources]]
@@ -19,15 +19,15 @@ Note: There must be no other directories along side the `<x.y.z>` directory, so 
 Directory of step 2 is now deleted.<br>
 
   ### 3.1. Cloning the git repository to replace the stm32 core version package (1st method)
-In the "_**\<local Arduino directory\>/packages/STM32/hardware/stm32/**_" do the clone:<br>
+In the "_**\<local Arduino directory\>/packages/STMicroelectronics/hardware/stm32/**_" do the clone:<br>
 
   `git clone https://github.com/stm32duino/Arduino_Core_STM32.git <version>`
 
 where _\<version\>_ is the one you delete in step 2.<br>
-For this example: _**1.1.1**_<br>
+For this example: _**2.0.0**_<br>
 So, do:<br>
 
-  `git clone https://github.com/stm32duino/Arduino_Core_STM32.git 1.1.1`
+  `git clone https://github.com/stm32duino/Arduino_Core_STM32.git 2.0.0`
 
 [[/img/Tips-icon.png|alt="Tips"]] _It is possible to clone it elsewhere and create a symlink named \<version>_<br>
 
