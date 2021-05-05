@@ -14,8 +14,8 @@ It should be:
 * `c:\Users\\<USERNAME\>\AppData\Roaming\Arduino15\` _(Windows Vista)_
 * `c:\Documents and Settings\\<USERNAME\>\Application Data\Arduino15\` _(Windows XP)_
 
-Then, go to "**_\<local Arduino directory\>/packages/STM32/hardware/stm32/_**" directory.<br>
-Directory named with the STM32 Core version installed is present. Example: 2017.6.2 or 1.0.1
+Then, go to "**_\<local Arduino directory\>/packages/STMicroelectronics/hardware/stm32/_**" directory.<br>
+Directory named with the STM32 Core version installed is present. Example: 2.0.0
 
 If you use the portable IDE as described [here](https://www.arduino.cc/en/Guide/PortableIDE) then the location is in your Arduino install directory:
 
@@ -25,7 +25,7 @@ If you use the portable IDE as described [here](https://www.arduino.cc/en/Guide/
 ## STM32 Tools files location
 
 Go to the local Arduino directory. See above.<br>
-Then, go to "**_\<local Arduino directory\>/packages/STM32/tools/STM32Tools/_**" directory.<br>
-Directory named with the STM32 Tools version installed is present. Example: 2017.5.12 or 0.1.0
+Then, go to "**_\<local Arduino directory\>/packages/STMicroelectronics/tools/STM32Tools/_**" directory.<br>
+Directory named with the STM32 Tools version installed is present. Example: 1.4.0
 
 
