@@ -44,7 +44,7 @@ Select "**Contributed**" type.
 
 [[img/boardsmanager.png|alt="BoardsManager dialog"]]
 
-Select the "**STM32 Cores**" and click on install.
+Select the "**STM32 MCU based boards**" and click on install.
 
 [[img/boardsmanager2.png|alt="BoardsManager dialog"]]
 
@@ -58,7 +58,7 @@ Now you can find the STM32 boards package in the "**Board**" menu.
 
 Select the desired boards series: _Nucleo-64 / Nucleo-144 / Discovery_
 
-[[img/boardslist2.png|alt="Boards list2"]]
+[[img/SelectBoard.png|alt="Select boards"]]
 
 Then you can find the Nucleo-64 boards available in a sub-menu of the "Tools" menu.
 
@@ -86,11 +86,11 @@ Else configure the proxy in the Arduino.cc IDE (open the "**Preferences**" dialo
 
 a. From the "**Tools > Board**" menu, select the STM32 board series: _Nucleo-64_
 
-  [[/img/SelectBoard.png|alt="Board selection"]]
+  [[/img/boardslist.png|alt="Board selection"]]
 
 b. Then from the "**Tools > Nucleo 64 boards**" menu, select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
 
-  [[/img/SelectBoard2.png|alt="Board selection2"]]
+  [[/img/SelectBoard.png|alt="Board selection"]]
 
 3. Select the serial port from the "**Tools > Port**" menu
 
