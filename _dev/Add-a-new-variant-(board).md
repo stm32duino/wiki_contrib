@@ -11,8 +11,7 @@ Since STM32 core release 2.0.0 [`variants` folder] contains one folder for each 
 <details>
   <summary><i>Variants folders</i></summary>
 
-[[/img/variants/folders_family.png|alt="variants folders family"]]
-
+  [[/img/variants/folders_family.png|alt="variants folders family"]]
 </details>
 
 Each MCU family has several MCU references. Each subfolder name can contain one or more mcu reference(s).
@@ -20,9 +19,8 @@ Each MCU family has several MCU references. Each subfolder name can contain one 
 <details>
   <summary><i>STM32G0xx family example</i></summary>
   
-   ![variants folders mcu](../img/variants/folders_mcu.png)
+  [[/img/variants/folders_mcu.png|alt="variants folders mcu"]]
 </details>
-
 
 MCU name are factorized to avoid long path names, for example:
 
