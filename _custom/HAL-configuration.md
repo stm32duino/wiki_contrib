@@ -81,11 +81,11 @@ https://github.com/stm32duino/Arduino_Core_STM32/blob/master/cores/arduino/stm32
 
 ##### Example of `Blink.ino` for Nucleo-L031K6 with 32768 bytes of Flash and 8192 bytes of RAM:
 
-| | Flash Size(%) | RAM Size(%) |
+| Core 2.0.0 | Flash Size(%) | RAM Size(%) |
 | :---: | :---: | :---: |
-| Default (Serial enabled) | 11152 (34%) | 780 (9%) |
-| HAL disabled* | 4292 (13%) | 52 (0%) |
-| diff size(%) | -6860 (-21%) | -778 (-9%) |
+| Default (Serial enabled) | 11796 (35%) | 876 (10%) |
+| HAL disabled* | 5340 (16%) | 60 (0%) |
+| diff size(%) | -6456 (-19%) | -716 (-9%) |
 
 \*With all `HAL_*_MODULE_DISABLED` defined in `hal_conf_extra.h` and `Serial` disabled
 
