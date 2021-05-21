@@ -42,14 +42,14 @@ This means that the generic STM32 MCU files required for a variant are generated
  * `variant_generic.cpp`: contains Digital PinName array and Analog (`Ax) [pin number] array
  * `variant_generic.h`: contains all definition required by the variant: STM32 [pin number] definitions, peripheral pins for default instances: Serial, I2C, SPI, Tone, Servo, ...
 
-![Tips](../img/Tips-icon.png) The example of all the steps below are available in this PR: [Add generic G0B1R(B-C-E)T, G0C1R(C-E)T and Nucleo-G0B1RE ](https://github.com/stm32duino/Arduino_Core_STM32/pull/1398)
+[[/img/Tips-icon.png|alt="Tips"]] The example of all the steps below are available in this PR: [Add generic G0B1R(B-C-E)T, G0C1R(C-E)T and Nucleo-G0B1RE ](https://github.com/stm32duino/Arduino_Core_STM32/pull/1398)
 
 ---
 # Define a new generic variant
 
 Before adding a specific board, it is a good practice to add the generic entry of the STM32 MCU as it is possible to use it with the specific board.
 
-![Note](../img/Note-icon.png) A folder name can reference several MCU references so several boards entry could be added. Not only the one of the specific board.
+[[/img/Note-icon.png|alt="Note"]] A folder name can reference several MCU references so several boards entry could be added. Not only the one of the specific board.
 
 ## 1 - Find the MCU folder
 
@@ -133,7 +133,7 @@ WEAK void SystemClock_Config(void)
 }
 ```
 
-![Important](../img/Important-icon.png) For generic board the internal clock is used: `HSI`. 
+[[/img/Important-icon.png|alt="Important"]] For generic board the internal clock is used: `HSI`. 
 
 [STM32CubeMX]`is also used to generate it.
 
@@ -217,7 +217,7 @@ In this example only `USB` needs to be enabled as other peripherals default cloc
 ## 4 - Declare the variant
 It still to add the menu and add relevant information (Flash and SRAM sizes, ...)
 
-![Tips](../img/Tips-icon.png) See [Arduino boards.txt specification] for further options.
+[[/img/Tips-icon.png|alt="Tips"]] See [Arduino boards.txt specification] for further options.
 
 Edit [`boards.txt`] file, then:
 1. Find the menu part where to add the generic entry. In this example the `GenG0` menu.
@@ -298,8 +298,8 @@ Restart Arduino IDE and try one of the new entry with the [CheckVariant example]
 ---
 # Define a specific board
 
+[[/img/under-construction.jpg|alt="Under construction"]]
 
-![Under construction](../img/under-construction.jpg)
 
 
 [`boards.txt`]: https://github.com/stm32duino/Arduino_Core_STM32/blob/master/boards.txt
