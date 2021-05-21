@@ -11,7 +11,7 @@ Since STM32 core release 2.0.0 [`variants` folder] contains one folder for each 
 <details>
   <summary><i>Variants folders</i></summary>
 
-[[img/variants/folders_family.png|alt="variants folders family"]]
+[[/img/variants/folders_family.png|alt="variants folders family"]]
 
 </details>
 
@@ -30,11 +30,11 @@ MCU name are factorized to avoid long path names, for example:
 
 All generic variants are now automatically generated in the variant folder thanks the [STM32_open_pin_data] repository which provides all the information required for the pin configuration of products based on STM32 MCU.
 
-This means that the generic STM32 MCU files required for a variant are generated inside each mcu folder. Only the linker script and the system clock configuration are not automatically generated and required to be added manually.
+This means that the generic STM32 MCU files required for a variant are generated inside each MCU folder. Only the linker script and the system clock configuration are not automatically generated and required to be added manually.
 
 ### Generated variant files
 
-![Warning](../img/Warning-icon.png) **Below files are automatically generated so do not modify them. Only the `generic_clock.c` can be modified to add default system clock configuration and so will not be overridden.**
+[[/img/Warning-icon.png|alt="Warning"]] **Below files are automatically generated so do not modify them. Only the `generic_clock.c` can be modified to add default system clock configuration and so will not be overridden.**
 
  * `board_entry.txt`: contains generic variant declaration to ease board addition in the [`boards.txt`] file. See [Arduino boards.txt specification].
  * `generic_clock.c`: contains the default system clock configuration: `WEAK void SystemClock_Config(void)`
