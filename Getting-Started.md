@@ -56,7 +56,7 @@ You can close the Board Manager.
 
 Now you can find the STM32 boards package in the "**Board**" menu.
 
-Select the desired boards series: _Nucleo-64 / Nucleo-144 / Discovery_
+Select the desired boards series: _Nucleo-64 / Nucleo-144 / Discovery / ..._
 
 [[img/SelectBoard.png|alt="Select boards"]]
 
@@ -84,11 +84,11 @@ Else configure the proxy in the Arduino.cc IDE (open the "**Preferences**" dialo
 
 3. Select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html) board in two steps:
 
-a. From the "**Tools > Board**" menu, select the STM32 board series: _Nucleo-64_
+a. From the "**Tools > Board**" menu, select the STM32 boards groups: _Nucleo-64_
 
   [[/img/boardslist.png|alt="Board selection"]]
 
-b. Then from the "**Tools > Nucleo 64 boards**" menu, select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
+b. Then from the "**Tools > Board part number**" menu, select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
 
   [[/img/SelectBoard.png|alt="Board selection"]]
 

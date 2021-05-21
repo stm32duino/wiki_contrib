@@ -1,131 +1,316 @@
-# [[/img/Important-icon.png|alt="Tips"]] Please do not submit new variant support while core version 2.0.0 will not be released. All variants rework is ongoing. The way to create a new variant has changed and this wiki page have to be updated. See https://github.com/stm32duino/Arduino_Core_STM32/pull/1091
+# What is a variant?
+
+It is described by Arduino [here](https://arduino.github.io/arduino-cli/latest/platform-specification/#core-variants)
+
+> A core variant folder is an additional folder that is compiled together with the core and allows platform developers to easily add specific configurations.
+>
+> Variants must be placed inside the variants folder in the current architecture.
+
+Since STM32 core release 2.0.0 [`variants` folder] contains one folder for each STM32 MCU family.
+
+<details>
+  <summary><i>Variants folders</i></summary>
+
+   ![variants folders family](../img/variants/folders_family.png)
+</details>
+
+Each MCU family has several MCU references. Each subfolder name can contain one or more mcu reference(s).
+
+<details>
+  <summary><i>STM32G0xx family example</i></summary>
+  
+   ![variants folders mcu](../img/variants/folders_mcu.png)
+</details>
 
 
-[[/img/Tips-icon.png|alt="Tips"]]Example of all below steps are shown in this PR: [Add Nucleo-F207ZG](https://github.com/stm32duino/Arduino_Core_STM32/pull/63) (ignore the 2 last commits)
+MCU name are factorized to avoid long path names, for example:
 
-[[/img/Warning-icon.png|alt="Warning"]] Since this PR, some enhancement has been done.
-* CMSIS startup file definition is no more needed as they are all defined in the core. See [#70](https://github.com/stm32duino/Arduino_Core_STM32/issues/70)
-* Custom startup file can be defined. [#353](https://github.com/stm32duino/Arduino_Core_STM32/pull/353)
-* Use define instead of enum for pins in `variant.h`. See [#356](https://github.com/stm32duino/Arduino_Core_STM32/pull/356)
-* STM32 HAL configuration is no more needed. See [#518](https://github.com/stm32duino/Arduino_Core_STM32/pull/518)
+[`G0B1R(B-C-E)T_G0C1R(C-E)T`] is for `G0B1RBT`, `G0B1RCT`, `G0B1RET`, `G0C1RCT` and `G0C1RET`.
 
-# Create a new variant
-Go to the '_**variant**_' folder of the STM32 core.<br>
-Follow this page: [Where are sources](https://github.com/stm32duino/wiki/wiki/Where-are-sources#stm32-core-sources-files-location)
+All generic variants are now automatically generated in the variant folder thanks the [STM32_open_pin_data] repository which provides all the information required for the pin configuration of products based on STM32 MCU.
 
-## 1 - Create a copy of the _**stm32/variants/board_template**_ folder with a name of your choice.
+This means that the generic STM32 MCU files required for a variant are generated inside each mcu folder. Only the linker script and the system clock configuration are not automatically generated and required to be added manually.
 
-**Example**: To add variant for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html)
+### Generated variant files
 
-`cp -a board_template NUCLEO_F207ZG` (_linux_)
+![Warning](../img/Warning-icon.png) **Below files are automatically generated so do not modify them. Only the `generic_clock.c` can be modified to add default system clock configuration and so will not be overridden.**
 
-[[/img/Tips-icon.png|alt="Tips"]]It's also possible to copy one of the most similar board variant<br>
+ * `board_entry.txt`: contains generic variant declaration to ease board addition in the [`boards.txt`] file. See [Arduino boards.txt specification].
+ * `generic_clock.c`: contains the default system clock configuration: `WEAK void SystemClock_Config(void)`
+ * `PinNamesVar.h`: contains specific [`PinName`] definitions of the MCU
+ * `PeripheralPins.c`: contains list of available [`PinName`] per peripheral.
+ * `variant_generic.cpp`: contains Digital PinName array and Analog (`Ax) [pin number] array
+ * `variant_generic.h`: contains all definition required by the variant: STM32 [pin number] definitions, peripheral pins for default instances: Serial, I2C, SPI, Tone, Servo, ...
 
-## 2 - Add pins mapping
+![Tips](../img/Tips-icon.png) The example of all the steps below are available in this PR: [Add generic G0B1R(B-C-E)T, G0C1R(C-E)T and Nucleo-G0B1RE ](https://github.com/stm32duino/Arduino_Core_STM32/pull/1398)
 
-All `PeripheralPins.c` and `PinNamesVar.h` for all STM32 MCU are provided with STM32 Tools packages and are available here: [Arduino_Tools/genpinmap/Arduino](https://github.com/stm32duino/Arduino_Tools/tree/master/src/genpinmap/Arduino)
+---
+# Define a new generic variant
 
-[[/img/Tips-icon.png|alt="Tips"]]It's also possible to generate them manually, see [[genpinmap]] how to.
+Before adding a specific board, it is a good practice to add the generic entry of the STM32 MCU as it is possible to use it with the specific board.
 
-Copy the `PeripheralPins.c` and `PinNamesVar.h` file in the variant folder created.
+![Note](../img/Note-icon.png) A folder name can reference several MCU references so several boards entry could be added. Not only the one of the specific board.
 
-**Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):
+## 1 - Find the MCU folder
 
-**_[genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PeripheralPins.c](https://github.com/stm32duino/Arduino_Tools/blob/master/src/genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PeripheralPins.c)_**<br>
-and<br>
-**_[genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PinNamesVar.h](https://github.com/stm32duino/Arduino_Tools/blob/master/src/genpinmap/Arduino/STM32F207Z(C-E-F-G)Tx/PinNamesVar.h)_**<br>
-to<br>
-**_variant/NUCLEO_F207ZG/_**
+Go to the [`variants` folder] folder of the STM32 core (See [Where are sources]).
 
-## 3 - Review pins mapping
+**Example**: To add variant for the [Nucleo-G0B1RE] search for the folder name including `G0B1RET` reference in the STM32G0xx subfolder of the [`variants` folder]. In this case:
+
+[`G0B1R(B-C-E)T_G0C1R(C-E)T`]
+
+Several files are present as stated [here](https://github.com/stm32duino/wiki/wiki/Add-a-new-variant-%28board%29#Generated-variant-files).
+It misses only the default linker script named `ldscript.ld`.
+
+## 2 - Add the default linker script
+
+It could be generated thanks [STM32CubeMX].
+
+1. Open [STM32CubeMX] then create a **_New Project_** and select the targeted MCU. In this example the `STM32G0B1RET`:
+
+<details>
+  <summary><i>Create new CubeMX project...</i></summary>
+
+![MX new project](../img/variants/MX_new_project.png)
+</details>
+
+2. Configure the project thanks the **_Project Manager_** tab:
+
+ * Set a project name
+ * Set a project location
+ * Select the IDE: _**STM32CubeIDE**_
+
+<details>
+  <summary><i>Configure the project...</i></summary>
+
+![MX project](../img/variants/MX_project_generation.png)
+</details>
+
+3. Generate the code by clicking on **_ Generate Code_** button and open the folder
+
+<details>
+  <summary><i>Generate the project...</i></summary>
+
+![MX popup](../img/variants/MX_project_generation_popup.png)
+</details>
+
+4. Copy the `STM32YYxxxxxx_FLASH.ld` generated by [STM32CubeMX] in the variant folder and rename it: `ldscript.ld`
+
+**Example** for the [Nucleo-G0B1RE]: `STM32G0B1RETX_FLASH.ld`
+
+In order to have a common linker script for all MCU the `RAM` and `FLASH` definitions have to be updated.
+As the linker script is preprocessed it is possible to use some definitions based on board entry and defined by the [`platform.txt`].
+
+``` 
+-Wl,--defsym=LD_FLASH_OFFSET={build.flash_offset} -Wl,--defsym=LD_MAX_SIZE={upload.maximum_size} -Wl,--defsym=LD_MAX_DATA_SIZE={upload.maximum_data_size}
+```
+
+ * `LD_FLASH_OFFSET`: Flash base offset mainly used when a custom bootloader is used. Default set to 0.
+ * `LD_MAX_DATA_SIZE`: RAM size 
+ * `LD_MAX_SIZE`: Flash size
+
+
+```patch
+ /* Memories definition */
+ MEMORY
+ {
+-  RAM    (xrw)    : ORIGIN = 0x20000000,   LENGTH = 144K
+-  FLASH    (rx)    : ORIGIN = 0x8000000,   LENGTH = 512K
++  RAM    (xrw)    : ORIGIN = 0x20000000,   LENGTH = LD_MAX_DATA_SIZE
++  FLASH    (rx)    : ORIGIN = 0x8000000 + LD_FLASH_OFFSET, LENGTH = LD_MAX_SIZE - LD_FLASH_OFFSET
+ }
+```
+## 3 - Generic System Clock configuration
+
+`generic_clock.c` contains the default system clock configuration which is empty by default. So the default clock
+at reset will be used as stated by the warning:
+
+```c
+WEAK void SystemClock_Config(void)
+{
+  /* SystemClock_Config can be generated by STM32CubeMX */
+#warning "SystemClock_Config() is empty. Default clock at reset is used."
+}
+```
+
+![Important](../img/Important-icon.png) For generic board the internal clock is used: `HSI`. 
+
+[STM32CubeMX]`is also used to generate it.
+
+1. Go to **_Pinout_** tab, enable the desired peripherals: `I2C`, `SDIO`, `SPI`, `USB`, ...
+In this example only `USB` needs to be enabled as other peripherals default clock are correct by default.
+
+<details>
+  <summary><i>Pinout configuration...</i></summary>
+
+![MX pinout configuration](../img/variants/MX_pinout_config.png)
+</details>
+
+2. Configure the clock:
+   * Set `PLL Source Mux` to `HSI`.
+   * Set `HCLK` to the maximum frequency, [STM32CubeMX] will automatically configure the clock tree and resolve conflict if any.
+3. Generate the code by clicking on **_ Generate Code_** button and open the folder
+
+<details>
+  <summary><i>Generate the project...</i></summary>
+
+![MX popup](../img/variants/MX_project_generation_popup.png)
+</details>
+
+4. In the `generic_clock.c` replace the body of the `SystemClock_Config(void)` by the one generated in `src/main.c` of the generated project.
+
+<details>
+  <summary><i>Example</i></summary>
+
+```patch
+ WEAK void SystemClock_Config(void)
+ {
+-  /* SystemClock_Config can be generated by STM32CubeMX */
+-#warning "SystemClock_Config() is empty. Default clock at reset is used."
++  RCC_OscInitTypeDef RCC_OscInitStruct = {};
++  RCC_ClkInitTypeDef RCC_ClkInitStruct = {};
++  RCC_PeriphCLKInitTypeDef PeriphClkInit = {};
++
++  /** Configure the main internal regulator output voltage
++  */
++  HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1);
++  /** Initializes the RCC Oscillators according to the specified parameters
++  * in the RCC_OscInitTypeDef structure.
++  */
++  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI | RCC_OSCILLATORTYPE_HSI48;
++  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
++  RCC_OscInitStruct.HSI48State = RCC_HSI48_ON;
++  RCC_OscInitStruct.HSIDiv = RCC_HSI_DIV1;
++  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
++  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
++  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
++  RCC_OscInitStruct.PLL.PLLM = RCC_PLLM_DIV1;
++  RCC_OscInitStruct.PLL.PLLN = 8;
++  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
++  RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
++  RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
++  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
++    Error_Handler();
++  }
++  /** Initializes the CPU, AHB and APB buses clocks
++  */
++  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
++                                | RCC_CLOCKTYPE_PCLK1;
++  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
++  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
++  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
++
++  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK) {
++    Error_Handler();
++  }
++  /** Initializes the peripherals clocks
++  */
++  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USB;
++  PeriphClkInit.UsbClockSelection = RCC_USBCLKSOURCE_HSI48;
++  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK) {
++    Error_Handler();
++  }
+ }
+ ```
+</details>
+
+## 4 - Declare the variant
+It still to add the menu and add relevant information (Flash and SRAM sizes, ...)
+
+![Tips](../img/Tips-icon.png) See [Arduino boards.txt specification] for further options.
+
+Edit [`boards.txt`] file, then:
+1. Find the menu part where to add the generic entry. In this example the `GenG0` menu.
+2. Copy the all the boards entry from the `board_entry.txt` file to this section. Pay attention to alphabetical order.
+3. Check if the `build.product_line=` is correct and match the `STM32YYXXxx` MCU version.
+4. Check the `upload.maximum_size=` and `upload.maximum_data_size=`
+
+
+<details>
+  <summary><i>Example</i></summary>
+
+```patch
+ GenG0.menu.pnum.GENERIC_G081RBTX.build.variant=STM32G0xx/G071R(6-8)T_G071RB(I-T)_G081RB(I-T)
  
-After **_PeripheralPins.c_** addition, review it carefully.<br>
-Comment a line if the pin is generated several times for the same IP or<br>
-if the pin should not be used (overlaid with some HW on the board, for instance)
++# Generic G0B1RBTx
++GenG0.menu.pnum.GENERIC_G0B1RBTX=Generic G0B1RBTx
++GenG0.menu.pnum.GENERIC_G0B1RBTX.upload.maximum_size=131072
++GenG0.menu.pnum.GENERIC_G0B1RBTX.upload.maximum_data_size=147456
++GenG0.menu.pnum.GENERIC_G0B1RBTX.build.board=GENERIC_G0B1RBTX
++GenG0.menu.pnum.GENERIC_G0B1RBTX.build.product_line=STM32G0B1xx
++GenG0.menu.pnum.GENERIC_G0B1RBTX.build.variant=STM32G0xx/G0B1R(B-C-E)T_G0C1R(C-E)T
++
++# Generic G0B1RCTx
++GenG0.menu.pnum.GENERIC_G0B1RCTX=Generic G0B1RCTx
++GenG0.menu.pnum.GENERIC_G0B1RCTX.upload.maximum_size=262144
++GenG0.menu.pnum.GENERIC_G0B1RCTX.upload.maximum_data_size=147456
++GenG0.menu.pnum.GENERIC_G0B1RCTX.build.board=GENERIC_G0B1RCTX
++GenG0.menu.pnum.GENERIC_G0B1RCTX.build.product_line=STM32G0B1xx
++GenG0.menu.pnum.GENERIC_G0B1RCTX.build.variant=STM32G0xx/G0B1R(B-C-E)T_G0C1R(C-E)T
++
++# Generic G0B1RETx
++GenG0.menu.pnum.GENERIC_G0B1RETX=Generic G0B1RETx
++GenG0.menu.pnum.GENERIC_G0B1RETX.upload.maximum_size=524288
++GenG0.menu.pnum.GENERIC_G0B1RETX.upload.maximum_data_size=147456
++GenG0.menu.pnum.GENERIC_G0B1RETX.build.board=GENERIC_G0B1RETX
++GenG0.menu.pnum.GENERIC_G0B1RETX.build.product_line=STM32G0B1xx
++GenG0.menu.pnum.GENERIC_G0B1RETX.build.variant=STM32G0xx/G0B1R(B-C-E)T_G0C1R(C-E)T
++
++# Generic G0C1RCTx
++GenG0.menu.pnum.GENERIC_G0C1RCTX=Generic G0C1RCTx
++GenG0.menu.pnum.GENERIC_G0C1RCTX.upload.maximum_size=262144
++GenG0.menu.pnum.GENERIC_G0C1RCTX.upload.maximum_data_size=147456
++GenG0.menu.pnum.GENERIC_G0C1RCTX.build.board=GENERIC_G0C1RCTX
++GenG0.menu.pnum.GENERIC_G0C1RCTX.build.product_line=STM32G0C1xx
++GenG0.menu.pnum.GENERIC_G0C1RCTX.build.variant=STM32G0xx/G0B1R(B-C-E)T_G0C1R(C-E)T
++
++# Generic G0C1RETx
++GenG0.menu.pnum.GENERIC_G0C1RETX=Generic G0C1RETx
++GenG0.menu.pnum.GENERIC_G0C1RETX.upload.maximum_size=524288
++GenG0.menu.pnum.GENERIC_G0C1RETX.upload.maximum_data_size=147456
++GenG0.menu.pnum.GENERIC_G0C1RETX.build.board=GENERIC_G0C1RETX
++GenG0.menu.pnum.GENERIC_G0C1RETX.build.product_line=STM32G0C1xx
++GenG0.menu.pnum.GENERIC_G0C1RETX.build.variant=STM32G0xx/G0B1R(B-C-E)T_G0C1R(C-E)T
++
+ # Upload menu
+ ```
+</details>
 
-Use the related user manual to define the best pins mapping:<br>
-**Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):<br>
-[UM1974: STM32 Nucleo-144 boards](http://www.st.com/resource/en/user_manual/dm00244518.pdf)<br>
-    
-[[/img/Tips-icon.png|alt="Tips"]] It is also possible to check the equivalent file for mbed os:
-[ST-Nucleo-F207ZG](https://developer.mbed.org/platforms/ST-Nucleo-F207ZG/)
+## 5 - Add new reference to the [`README.md`]
 
-## 4 - Review pins and signals pins numbering
-Edit the **_variant.h_** and **_variant.cpp_** file.<br>
-In **_variant.cpp_**:<br>
-1. Fill the array `const PinName digitalPin[]`. This array allows to wrap Arduino pin number(Dx or x or PYx)
-to STM32 PinName (PY_x).
+Finally, all the new reference have to be added in the [`README.md`]
 
-In **_variant.h_**:<br>
-1. Align the number of PinName defined above in `digitalPin[]` array in **_variant.h_**.<br>
-Define all usable pins and its linked pin number which is the index in the `digitalPin[]` array.<br>
-Example:
-```
-#define PG9  0
-#define PG14 1
-#define PF15 2
-#define PE13 3
-#define PF14 4
-```
+<details>
+  <summary><i>Example</i></summary>
 
-2. Review macros to point to the right pin name/number: `LED_BUILTIN, MOSI, MISO, SCLK, SDA, SCL,...`<br>
-Note that some of them have a default value in the core. Only redefine them if different from the default one.<br>
-See: https://github.com/stm32duino/Arduino_Core_STM32/blob/c392140415b3cf29100062ecb083adfa0f59f8b1/cores/arduino/pins_arduino.h#L142 <br>
-[[/img/Tips-icon.png|alt="Tips"]] Here, you can add custom define to fit your needs<br>
+```patch
+ | :green_heart: | STM32G081RB | Generic Board | *2.0.0* |  |
++| :yellow_heart: | STM32G0B1RB<br>STM32G0B1RC<br>STM32G0B1RE | Generic Board | **2.1.0** |  |
++| :yellow_heart: | STM32G0C1RB<br>STM32G0C1RE | Generic Board | **2.1.0** |  |
+ 
+ ### Generic STM32G4 boards
+ ```
+</details>
 
-## 5 - System Clock configuration
-In **_variant.cpp_**, `void SystemClock_Config(void)` need to be defined.<br>
-It could be generated thanks [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html) or <br>
-copied from a [STM32CubeYY](http://www.st.com/en/embedded-software/stm32cube-embedded-software.html?querycriteria=productId=LN1897) project examples 
-(where 'YY' is the MCU serie)
+## 6 - Restart
+Restart Arduino IDE and try one of the new entry with the [CheckVariant example].
 
-From [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html):
-1. Run [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html), create a _New Project_ and select the targeted MCU or the board if listed.
-2. Go to **_Pinout_** tab, enable desired peripherals: `I2C, SDIO, SPI, USB,...`
-3. Configure the clock:
-    * If the board has an external crystal: set in **_Pinout_** tab `RCC->HSE` peripheral to `Crystal`.<br>
-In **_Clock Configuration_**, set `HSE Input frequency` to the crystal one then set `PLL Source Mux` to `HSE`.<br>
-    * Set `HCLK` to the maximum frequency, [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html) will automatically configure the clock tree and resolve conlict if any.
-4. Generate code. Set **_Toolchain/IDE_**: `SW4STM32`.<br>
-[[/img/Tips-icon.png|alt="Tips"]] Clock configuration for peripherals will be also generated
-5. Copy the `void SystemClock_Config(void)` generated in `src/main.c` to **_variant.cpp_**
+---
+# Define a specific board
 
-## 6 - Update ldscript.ld
-It could be generated thanks [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html) or <br>
-copied from a [STM32CubeYY](http://www.st.com/en/embedded-software/stm32cube-embedded-software.html?querycriteria=productId=LN1897) project examples 
-(where 'YY' is the MCU serie)<br>
-Replace the **_ldscript.ld_** in variant folder by the `STM32YYxxxxxx_FLASH.ld` generated by [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html) in the root folder.<br>
-**Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html): `STM32F207ZGTx_FLASH.ld`
 
-## 7 - HAL configuration
-Since core version greater than **1.5.0**, a default STM32 HAL configuration is provided per STM32 series.
-Refer to [[hal-configuration]].
+![Under construction](../img/under-construction.jpg)
 
-Add in **_variant.h_** any extra HAL module definition.
 
-**Example** for the [Nucleo-F207ZG](http://www.st.com/en/evaluation-tools/nucleo-f207zg.html):<br>
-```C
-/* Extra HAL modules */
-#define HAL_DAC_MODULE_ENABLED
-#define HAL_ETH_MODULE_ENABLED
-```
-
-Add in **_variant.h_** any extra [HAL configuration](https://github.com/stm32duino/wiki/wiki/HAL-configuration#other-hal-configuration).
-
-**Example**
-`#define HSE_VALUE               25000000U`
-
-## 8 - Declare the variant
-It still to add the menu and add relevant information (Flash and SRAM sizes, cpu freq,...)<br>
-[[/img/Tips-icon.png|alt="Tips"]] See: [Arduino Boards.txt specifications](https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification#boardstxt) for further options.<br>
-Edit **_boards.txt_** file, then:<br>
-1. Copy one section which is the most similar to your board
-2. Rename all `menu.pnum.<old_board_name>` by `menu.pnum.<new_board_name>`
-3. Update `build.mcu=` and `build.cmsis_lib_gcc=` to the correct cortex-mX version
-4. Update `build.series=` to the correct `STM32YYxx` (where `YY` is the MCU serie)
-5. Update `build.product_line=` to the correct `STM32YYXXxx` MCU version.
-6. Update `upload.maximum_size=` and `upload.maximum_data_size=` to the correct Flash and SRAM sizes
-
-## 9 - Restart
-Restart Arduino IDE and try your new board with [[Blink-example]]
-
+[`boards.txt`]: https://github.com/stm32duino/Arduino_Core_STM32/blob/master/boards.txt
+[`G0B1R(B-C-E)T_G0C1R(C-E)T`]: https://github.com/stm32duino/Arduino_Core_STM32/tree/master/variants/STM32G0xx/G0B1R(B-C-E)T_G0C1R(C-E)T
+[`PinName`]: tbd
+[`platform.txt`]: https://github.com/stm32duino/Arduino_Core_STM32/blob/master/platform.txt
+[`variants` folder]: https://github.com/stm32duino/Arduino_Core_STM32/tree/master/variants
+[Arduino boards.txt specification]: https://arduino.github.io/arduino-cli/latest/platform-specification/#boardstxt
+[CheckVariant example]: https://github.com/stm32duino/STM32Examples/tree/master/examples/NonReg/CheckVariant
+[Nucleo-G0B1RE]: https://www.st.com/en/evaluation-tools/nucleo-g0b1re.html
+[`README.md`]: https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md
+[STM32_open_pin_data]: https://github.com/STMicroelectronics/STM32_open_pin_data
+[STM32CubeMX]: http://www.st.com/en/development-tools/stm32cubemx.html
+[Where are sources]: https://github.com/stm32duino/wiki/wiki/Where-are-sources#stm32-core-sources-files-location
