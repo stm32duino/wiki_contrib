@@ -160,7 +160,7 @@ Then it is possible to configure *overflow* (also called rollover or update).
 
 For __output__ it correspond to period or frequency.
 
-For __input capture__ it is suggested to use max value: 0x1000 to avoid rollover before capture occurs .
+For __input capture__ it is suggested to use max value: 0x10000 to avoid rollover before capture occurs .
 
 ![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) Configuration of *prescaler* is automatic when using method `setOverflow` with `format == MICROSEC_FORMAT` or `format == HERTZ_FORMAT`.
 
