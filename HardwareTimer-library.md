@@ -172,7 +172,7 @@ __Example__:
 ```C++
      MyTim->setOverflow(10000); // Default format is TICK_FORMAT. Rollover will occurs when timer counter counts 10000 ticks (it reach it count from 0 to 9999)
      MyTim->setOverflow(10000, TICK_FORMAT);
-     MyTim->setOverflow(100000, MICROSEC_FORMAT); // 10000 microseconds
+     MyTim->setOverflow(10000, MICROSEC_FORMAT); // 10000 microseconds
      MyTim->setOverflow(10000, HERTZ_FORMAT); // 10 kHz
 ```
 
@@ -192,8 +192,9 @@ __Example__:
     MyTim->setCaptureCompare(channel, 50, RESOLUTION_12B_COMPARE_FORMAT); // used for   Dutycycle: [0.. 4095]
 ```
 
-It is possible to attach a callback on update interruption (rollover) and/or on Capture/Compare interruption.
-If no channel is specified, callback is attach to update event.
+It is possible to attach a user callback on update interrupt (rollover) and/or on Capture/Compare interrupt.
+If no channel is specified, the user callback is attach to update event.
+Note that the Update Interrupt Flag (UIF) is set when an update event occurs and generates an interrupt, and is automatically cleared by the HAL driver **before** the user callback is executed. There is no need for the user callback to clear the UIF explicitly.
 
 __Example__:
 ```C++
