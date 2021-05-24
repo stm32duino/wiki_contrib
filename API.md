@@ -107,6 +107,9 @@ to the desired ADC sample time.
 
 #### Example
 Hereafter an usage example which read then convert to proper Unit the 3 internal channels + A0:
+
+[[/img/Warning-icon.png|alt="Warning"]] This example is provided "as it" and can require some update mainly for datasheet values.
+
 ```C
 #include "stm32yyxx_ll_adc.h"
 
@@ -116,7 +119,7 @@ Hereafter an usage example which read then convert to proper Unit the 3 internal
 #define V25       1430
 #define AVG_SLOPE 4300
 #define VREFINT   1200
-#elif defined(STM32F2xx)
+#elif defined(STM32F2xx) || defined(STM32F4xx) && !defined(__LL_ADC_CALC_VREFANALOG_VOLTAGE)
 #define V25       760
 #define AVG_SLOPE 2500
 #define VREFINT   1210
@@ -130,6 +133,7 @@ Hereafter an usage example which read then convert to proper Unit the 3 internal
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
+  while (!Serial);
   analogReadResolution(12);
 }
 
@@ -163,21 +167,15 @@ static int32_t readVoltage(int32_t VRef, uint32_t pin)
 // the loop routine runs over and over again forever:
 void loop() {
   // print out the value you read:
-  Serial.print("VRef(mv)= ");
   int32_t VRef = readVref();
-  Serial.print(VRef);
-
+  Serial.printf("VRef(mv)= %i", VRef);
 #ifdef ATEMP
-  Serial.print("\tTemp(°C)= ");
-  Serial.print(readTempSensor(VRef));
+  Serial.printf("\tTemp(°C)= %i", readTempSensor(VRef));
 #endif
 #ifdef AVBAT
-  Serial.print("\tVbat(mv)= ");
-  Serial.print(readVoltage(VRef, AVBAT));
+  Serial.printf("\tVbat(mv)= %i", readVoltage(VRef, AVBAT));
 #endif
-
-  Serial.print("\tA0(mv)= ");
-  Serial.println(readVoltage(VRef, A0));
+  Serial.printf("\tA0(mv)= %i\n", readVoltage(VRef, A0));
   delay(200);
 }
 ```
