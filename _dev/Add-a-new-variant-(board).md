@@ -147,7 +147,7 @@ In this example only `USB` needs to be enabled as other peripherals default cloc
 
 2. Configure the clock:
    * Set `PLL Source Mux` to `HSI`.
-   * Set `HCLK` to the maximum frequency, [STM32CubeMX] will automatically configure the clock tree and resolve conflict if any.
+   * Try to set the CPU clock and `HCLK` to the maximum frequencies, [STM32CubeMX] will automatically configure the clock tree and resolve conflict if any. Sometimes due to some constraints (ex: USB) maximum frequency is not reachable.
 3. Generate the code by clicking on **_ Generate Code_** button and open the folder
 
 <details>
