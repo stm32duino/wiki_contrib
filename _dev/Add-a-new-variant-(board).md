@@ -28,11 +28,11 @@ MCU name are factorized to avoid long path names, for example:
 
 All generic variants are now automatically generated in the variant folder thanks the [STM32_open_pin_data] repository which provides all the information required for the pin configuration of products based on STM32 MCU.
 
-This means that the generic STM32 MCU files required for a variant are generated inside each MCU folder. Only the linker script and the system clock configuration are not automatically generated and required to be added manually.
+This means that the generic STM32 MCU files required for a variant are generated inside each MCU folder. Only the linker script is not automatically generated. Note that the default system clock configuration is empty by default. So the default clock at reset will be used.
 
 ### Generated variant files
 
-[[/img/Warning-icon.png|alt="Warning"]] **Below files are automatically generated so do not modify them. Only the `generic_clock.c` can be modified to add default system clock configuration and so will not be overridden.**
+[[/img/Warning-icon.png|alt="Warning"]] **Below files are automatically generated so do not modify them. Only the `generic_clock.c` can be modified to add default system clock configuration and so will not be overwritten.**
 
  * `board_entry.txt`: contains generic variant declaration to ease board addition in the [`boards.txt`] file. See [Arduino boards.txt specification].
  * `generic_clock.c`: contains the default system clock configuration: `WEAK void SystemClock_Config(void)`
@@ -52,7 +52,7 @@ Before adding a specific board, it is a good practice to add the generic entry o
 
 ## 1 - Find the MCU folder
 
-Go to the [`variants` folder] folder of the STM32 core (See [Where are sources]).
+Go to the [`variants` folder] of the STM32 core (See [Where are sources]).
 
 **Example**: To add variant for the [Nucleo-G0B1RE] search for the folder name including `G0B1RET` reference in the STM32G0xx subfolder of the [`variants` folder]. In this case:
 
