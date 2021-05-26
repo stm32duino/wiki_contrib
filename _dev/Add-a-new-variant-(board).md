@@ -136,7 +136,7 @@ WEAK void SystemClock_Config(void)
 
 [STM32CubeMX]`is also used to generate it.
 
-1. Go to **_Pinout_** tab, enable the desired peripherals: `I2C`, `SDIO`, `SPI`, `USB`, ...
+1. Go to **_Pinout_** tab, enable the desired peripherals which require specific clock configuration (not needed for peripherals clocked by `HCLKx`, or `APBx` clock): `SDIO`, `USB`, ...
 In this example only `USB` needs to be enabled as other peripherals default clock are correct by default.
 
 <details>
