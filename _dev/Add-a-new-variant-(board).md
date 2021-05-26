@@ -214,13 +214,13 @@ In this example only `USB` needs to be enabled as other peripherals default cloc
 </details>
 
 ## 4 - Declare the variant
-It still to add the menu and add relevant information (Flash and SRAM sizes, ...)
+It is still to add the menu and add relevant information (Flash and SRAM sizes, ...)
 
 [[/img/Tips-icon.png|alt="Tips"]] See [Arduino boards.txt specification] for further options.
 
 Edit [`boards.txt`] file, then:
 1. Find the menu part where to add the generic entry. In this example the `GenG0` menu.
-2. Copy the all the boards entry from the `board_entry.txt` file to this section. Pay attention to alphabetical order.
+2. Copy all the boards entry from the `board_entry.txt` file to this section. Pay attention to alphabetical order.
 3. Check if the `build.product_line=` is correct and match the `STM32YYXXxx` MCU version.
 4. Check the `upload.maximum_size=` and `upload.maximum_data_size=`
 
