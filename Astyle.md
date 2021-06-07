@@ -4,7 +4,7 @@
 
 > Artistic Style is a source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages.
 
-[Travis CI](https://travis-ci.com/) is used to ensure each PR (Pull Request) and `master` branch of the [STM32 core](https://github.com/stm32duino/Arduino_Core_STM32) follow the code style definition defined. 
+GitHub action is used to ensure each PR (Pull Request) and `master` branch of the [STM32 core](https://github.com/stm32duino/Arduino_Core_STM32) follow the code style definition defined. 
 
 Only sources files (`*.h`, `*.hpp`, `*.c`, `*.cpp`) from the following [STM32 core](https://github.com/stm32duino/Arduino_Core_STM32) directory lists are checked:
 * `cores/`
