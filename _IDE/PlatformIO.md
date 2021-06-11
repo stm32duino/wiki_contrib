@@ -5,15 +5,15 @@
 
 In your project, set your environment to use the `platform` setting `ststm32` and the `framework` setting `arduino`, e.g:
 
-```conf
+```dosini
 [env]
 platform  = ststm32
 framework = arduino
 ```
 
-Behind the scenes this will create a dependency on the [ST STM32: development platform] for [PlatformIO] ([`ststm32`]) and the framework package `framework-arduinoststm32` (the PlatformIO name of this library as noted in [`/package.json`]).
+Behind the scenes this will create a dependency on the [ST STM32: development platform] for [PlatformIO] ([`ststm32`]) and the framework package `framework-arduinoststm32` (the [PlatformIO]name of this library as noted in [`/package.json`]).
 
-This repository should not be confused with the [ST STM32: development platform] which is located at [https://github.com/platformio/platform-ststm32].
+This repository should not be confused with the [ST STM32: development platform] which is located at https://github.com/platformio/platform-ststm32.
 
 
 [STM32duino GitHub organization]: https://github.com/stm32duino/Arduino_Core_STM32
