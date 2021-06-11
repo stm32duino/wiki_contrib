@@ -48,6 +48,7 @@
     * [HAL module configuration](https://github.com/stm32duino/wiki/wiki/HAL-configuration)
     * [Board support based on a core](https://github.com/stm32duino/wiki/wiki/Custom-board-based-on-a-core)
   * [How to debug](https://github.com/stm32duino/wiki/wiki/How-to-debug)
+  * [PlatformIO](https://github.com/stm32duino/wiki/wiki/_IDE/PlatformIO)
 </details>
 
 * <details>
