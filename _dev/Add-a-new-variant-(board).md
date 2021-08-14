@@ -108,6 +108,7 @@ As the linker script is preprocessed it is possible to use some definitions base
  * `LD_MAX_DATA_SIZE`: RAM size 
  * `LD_MAX_SIZE`: Flash size
 
+Edit the `ldscript.ld` file accordingly:
 
 ```patch
  /* Memories definition */
