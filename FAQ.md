@@ -1,4 +1,4 @@
-### How do I know which core am I running on?
+### How do I know which (stm32duino/libmaple) core am I running on? 
 
 try this code
 ```
