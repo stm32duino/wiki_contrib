@@ -1,3 +1,24 @@
+### How do I know which core am I running on?
+
+try this code
+```
+void setup() {
+	Serial.begin();
+}
+
+void loop() {
+#ifdef ARDUINO_ARCH_STM32
+	Serial.println("stm32duino core");
+#elif defined(ARDUINO_ARCH_STM32F1)
+	Serial.println("libmaple core");
+#elif defined(ARDUINO_ARCH_STM32F4)
+	Serial.println("libmaple f4 core");
+#else
+	Serial.println("unknown core");
+#endif
+	delay(1000);
+}
+```
 
 ### When using "Mass Storage" upload method, following error is displayed:
 `NODE_xxxxxx not found. Please ensure the device is correctly connected.`
