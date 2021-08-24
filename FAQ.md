@@ -1,25 +1,3 @@
-### How do I know which (stm32duino/libmaple) core am I running on? 
-
-try this code
-```
-void setup() {
-	Serial.begin();
-}
-
-void loop() {
-#ifdef ARDUINO_ARCH_STM32
-	Serial.println("stm32duino core");
-#elif defined(ARDUINO_ARCH_STM32F1)
-	Serial.println("libmaple core");
-#elif defined(ARDUINO_ARCH_STM32F4)
-	Serial.println("libmaple f4 core");
-#else
-	Serial.println("unknown core");
-#endif
-	delay(1000);
-}
-```
-
 ### When using "Mass Storage" upload method, following error is displayed:
 `NODE_xxxxxx not found. Please ensure the device is correctly connected.`
 
@@ -49,7 +27,27 @@ You can easily check that by trying to launch manually `ST-LINK_CLI.exe` which i
 
 To solve this, install  _Microsoft Visual C++ 2010 Redistributable_ to get `MSVCR100.dll`
 
+### How do I know which (stm32duino/libmaple) core am I running on? 
 
+try this code
+```
+void setup() {
+	Serial.begin();
+}
+
+void loop() {
+#ifdef ARDUINO_ARCH_STM32
+	Serial.println("stm32duino core");
+#elif defined(ARDUINO_ARCH_STM32F1)
+	Serial.println("libmaple core");
+#elif defined(ARDUINO_ARCH_STM32F4)
+	Serial.println("libmaple f4 core");
+#else
+	Serial.println("unknown core");
+#endif
+	delay(1000);
+}
+```
 
 ## OS specific
 ### Linux
