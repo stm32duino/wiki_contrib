@@ -626,7 +626,7 @@ Emulation is made in Flash, with all constraints related to Flash operation:
 
 In addition to Arduino API, to mitigate Flash constraints, it is possible to use buffered API:  
 Write operations are made in an intermediate RAM buffer, and only at the end (after writing several parameters for example) the buffer is copied in Flash. Thus only 1 write operation for a whole bunch of data.  
-Example is available here: https://github.com/stm32duino/STM32Examples/tree/master/examples/NonReg/BufferedEEPROM
+Example is available here: https://github.com/stm32duino/STM32Examples/tree/main/examples/NonReg/BufferedEEPROM
 ```C
 void eeprom_buffer_fill(); // This function copies the data from flash into the buffer
 void eeprom_buffer_flush(); // This function writes the buffer content into the flash
