@@ -46,15 +46,15 @@ Using `build_opt.h`:
 
 Core use a default startup file included thanks `CMSIS_STARTUP_FILE` definition:
 
-https://github.com/stm32duino/Arduino_Core_STM32/blob/master/cores/arduino/stm32/startup_stm32yyxx.S
+https://github.com/stm32duino/Arduino_Core_STM32/blob/main/cores/arduino/stm32/startup_stm32yyxx.S
 
 which is defined thanks:
 
-https://github.com/stm32duino/Arduino_Core_STM32/blob/master/cores/arduino/stm32/stm32_def_build.h
+https://github.com/stm32duino/Arduino_Core_STM32/blob/main/cores/arduino/stm32/stm32_def_build.h
 
 and  provided thanks the CMSIS Device from ST (in `STM32YYxx/Source/Templates/gcc/`):
 
-https://github.com/stm32duino/Arduino_Core_STM32/tree/master/system/Drivers/CMSIS/Device/ST
+https://github.com/stm32duino/Arduino_Core_STM32/tree/main/system/Drivers/CMSIS/Device/ST
 
 It is possible to redefine the `CMSIS_STARTUP_FILE` or define a custom startup file in the variant.
     
