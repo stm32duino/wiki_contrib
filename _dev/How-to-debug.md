@@ -47,7 +47,7 @@ By now, the main tab should look like the following:
 Open _**“Arduino > Preferences”**_.<br>
 In the tree view that pops up, go to _**“Arduino > Third party index url’s”**_ and add the STM32 support package URL:
 
-https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/master/STM32/package_stm_index.json
+https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/main/package_stmicroelectronics_index.json
 
 [[/img/UrlIndex.png|alt="UrlIndex"]]
 
@@ -210,7 +210,7 @@ Some settings are required for [vscode-arduino](https://github.com/Microsoft/vsc
 In your user [`settings.json`](https://code.visualstudio.com/docs/getstarted/settings), add:
 ```
     "arduino.path": "c:\STM32\arduino\arduino-1.8.9-windows\arduino-1.8.9\",`
-    "arduino.additionalUrls": "https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json"
+    "arduino.additionalUrls": "https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json"
 ```
 
 [[/img/Tips-icon.png|alt="Tips"]] For further options see [vscode-arduino Readme](https://github.com/microsoft/vscode-arduino/blob/master/README.md) 
