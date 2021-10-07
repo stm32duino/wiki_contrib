@@ -26,11 +26,11 @@ So carefully follow the following steps.
 
 The "**Preferences**" dialog will open, then add the following link to the "*Additional Boards Managers URLs*" field:
 
-https://github.com/stm32duino/BoardManagerFiles/raw/master/package_stmicroelectronics_index.json
+https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json
 
 [[/img/Important-icon.png|alt="Important"]] **Important note: Since core 2.0.0, the below link is deprecated**
 
-_https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json_
+_https://github.com/stm32duino/BoardManagerFiles/raw/main/STM32/package_stm_index.json_
 
 Click "**Ok**"
 
