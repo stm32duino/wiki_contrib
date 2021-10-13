@@ -1,7 +1,7 @@
 # Custom board based on a core
 
 Arduino offers the possibility to create a custom board support based on an other core:
-[Referencing another core, variant or tool.](https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification#referencing-another-core-variant-or-tool)
+[Referencing another core, variant or tool.](https://arduino.github.io/arduino-cli/0.19/platform-specification/#referencing-another-core-variant-or-tool)
 
 [@RickKimball](https://github.com/RickKimball) provides a great use case based on the STM32 core:
 
