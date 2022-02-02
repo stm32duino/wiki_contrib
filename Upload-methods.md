@@ -51,11 +51,9 @@ In that case, up to end user to provide the correct environment by adding the co
 
 ### Arduino integration
 
-Scripts have been deployed thanks [STM32 Tools](https://github.com/stm32duino/Arduino_Tools) packages to ease Arduino integration and allow to have only one definition of the tool in the `platform.txt`:
+Unique script has been deployed thanks [STM32 Tools](https://github.com/stm32duino/Arduino_Tools) packages to ease Arduino integration and allow to have only one definition of the tool in the `platform.txt`:
 
-* [linux/stm32CubeProg.sh](https://github.com/stm32duino/Arduino_Tools/blob/master/linux/stm32CubeProg.sh)
-* [macosx/stm32CubeProg](https://github.com/stm32duino/Arduino_Tools/blob/master/macosx/stm32CubeProg)
-* [win/stm32CubeProg.bat](https://github.com/stm32duino/Arduino_Tools/blob/master/win/stm32CubeProg.bat)
+* [stm32CubeProg.sh](https://github.com/stm32duino/Arduino_Tools/blob/main/stm32CubeProg.sh)
 
 `{upload.protocol}` allows to select the right interface to use:
   * 0: SWD
