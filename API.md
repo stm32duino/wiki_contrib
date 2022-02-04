@@ -364,14 +364,14 @@ This is an example of the use of the CS pin management:
 ```C++
 #include <SPI.h>
 //            MOSI  MISO  SCLK
-SPIClass SPI3(PC12, PC11, PC10);
+SPIClass SPI_3(PC12, PC11, PC10);
 
 void setup() {
-  SPI3.begin(2); //Enables the SPI3 instance with default settings and attaches the CS pin  
-  SPI3.beginTransaction(1, settings); //Attaches another CS pin and configure the SPI3 instance with other settings  
-  SPI3.transfer(2, 0x52); //Transfers data to the first device
-  SPI3.transfer(1, 0xA4); //Transfers data to the second device. The SPI3 instance is configured with the right settings  
-  SPI3.end() //SPI3 instance is disabled
+  SPI_3.begin(2); //Enables the SPI_3 instance with default settings and attaches the CS pin  
+  SPI_3.beginTransaction(1, settings); //Attaches another CS pin and configure the SPI_3 instance with other settings  
+  SPI_3.transfer(2, 0x52); //Transfers data to the first device
+  SPI_3.transfer(1, 0xA4); //Transfers data to the second device. The SPI_3 instance is configured with the right settings  
+  SPI_3.end() //SPI_3 instance is disabled
 }
 ```
 
