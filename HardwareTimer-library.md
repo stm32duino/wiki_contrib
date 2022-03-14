@@ -180,7 +180,7 @@ Then it is possible to configure *CaptureCompare* (channel specific CaptureCompa
 
 ![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) *CaptureCompare* is for one channel only.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) *CaptureCompare* range: [1.. 0x10000]  (Hardware register will range [0..0xFFFF]).
+![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) *CaptureCompare* range: [0.. 0xFFFF]
 
 __Example__:
 ```C++
