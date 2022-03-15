@@ -42,9 +42,9 @@ https://www.st.com/en/development-tools/stm32cubeprog.html`
 Aborting!
 ```
 
-[[/img/Warning-icon.png|alt="Warning"]] **Linux user** having _`STM32_Programmer.sh` not found_, 2 cases have been identified:
+##### [[/img/Warning-icon.png|alt="Warning"]] **Linux user** having _`STM32_Programmer.sh` not found_, 2 cases have been identified:
 
-  1 . Arduino IDE installed from the "Software" package manager (See Ubuntu user issue about this (https://github.com/stm32duino/Arduino_Tools/issues/63)
+  1 . Arduino IDE installed from the "Software" package manager (See Ubuntu user issue about this: https://github.com/stm32duino/Arduino_Tools/issues/63)
 
   It means snap has been used to install Arduino IDE and snap does not use the default user `PATH`:
   https://snapcraft.io/docs/environment-variables
