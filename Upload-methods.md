@@ -42,12 +42,21 @@ https://www.st.com/en/development-tools/stm32cubeprog.html`
 Aborting!
 ```
 
-[[/img/Warning-icon.png|alt="Warning"]] Some Ubuntu user raised an issue about the [`STM32_Programmer.sh` not found](https://github.com/stm32duino/Arduino_Tools/issues/63)
+[[/img/Warning-icon.png|alt="Warning"]] **Linux user** having _`STM32_Programmer.sh` not found_, 2 cases have been identified:
 
-It means the Arduino IDE has been installed thanks the "Software" package manager which means snap has been used to install Arduino IDE and snap does not use the default user `PATH`:
-https://snapcraft.io/docs/environment-variables
+  1 . Arduino IDE installed from the "Software" package manager (See Ubuntu user issue about this (https://github.com/stm32duino/Arduino_Tools/issues/63)
 
-In that case, up to end user to provide the correct environment by adding the correct path of the STM32CubeProgrammer to the snap environment.
+  It means snap has been used to install Arduino IDE and snap does not use the default user `PATH`:
+  https://snapcraft.io/docs/environment-variables
+
+  **In that case, up to end user to provide the correct environment by adding the correct path of the STM32CubeProgrammer to the snap environment.**
+
+  2 . A desktop entry has been created (using the `install.sh`) then the `PATH` variable is not populated. In that case edit the Arduino desktop entry file (`arduino-arduinoide.desktop`) to set `PATH` like this:
+
+```patch
+- Exec="<arduino path installation>/arduino"
++ Exec=sh -c "PATH=<STM32CubeProgrammer path installation>/bin:$PATH <arduino path installation>/arduino"
+```
 
 ### Arduino integration
 
