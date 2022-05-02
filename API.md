@@ -196,7 +196,7 @@ The `U(S)ART` can be configured to follow a single-wire half-duplex protocol whe
 * `void setHalfDuplex()`: enable half-duplex mode of an instance when it not instantiate in half-duplex mode. Must be call before `begin()` in this case.
 
 ##### Example for a **Nucleo L496ZG-P**:
-`Serial4` sends byte to `Serila3`, compare values then `Serial3` resend it to `Serial4` and compare.
+`Serial4` sends byte to `Serial3`, compare values then `Serial3` resend it to `Serial4` and compare.
 Require to connect `PA0` and` PB10`.
 
 _All possible constructor are listed._
