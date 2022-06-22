@@ -291,6 +291,33 @@ void loop() {
 
 **Note:** Serial Rx/TX buffer size can be changed, see [custom definitions](https://github.com/stm32duino/wiki/wiki/Custom-definitions#serial-rxtx-buffer-size)
 
+#### Enable hardware flow control
+
+Available in core version **2.3.0** or later
+
+* `HardwareSerial` constructors accept optional RTS/CTS pins:
+  * `HardwareSerial(uint32_t _rx, uint32_t _tx, uint32_t _rts = NUM_DIGITAL_PINS, uint32_t _cts = NUM_DIGITAL_PINS)`
+  * `HardwareSerial(PinName _rx, PinName _tx, PinName _rts = NC, PinName _cts = NC)`
+* You can also enable RTS/CTS pins on `HardwareSerial` instances:
+  * `void setRts(uint32_t _rts)`
+  * `void setCts(uint32_t _cts)`
+  * `void setRtsCts(uint32_t _rts, uint32_t _cts)`
+  * `void setRts(PinName _rts)`
+  * `void setCts(PinName _cts)`
+  * `void setRtsCts(PinName _rts, PinName _cts)`
+
+##### Example:
+
+```C++
+// Enable hardware flow control on construction.
+HardwareSerial serial(PA10, PA9, PA12, PA11);
+
+// Or, enable later (but before calling begin()).
+HardwareSerial serial(PA10, PA9);
+serial.setRtsCts(PA12, PA11);
+serial.begin(460800);
+```
+
 ## HardwareTimer library 
 https://github.com/stm32duino/wiki/wiki/HardwareTimer-library 
 
