@@ -26,7 +26,7 @@
 
 * <details>
   <summary>Libraries</summary>
-  
+
   * [Introduction](https://github.com/stm32duino/wiki/wiki/Libraries)
   * [Built-in (delivered with the core package)](https://github.com/stm32duino/wiki/wiki/Libraries#built-in-delivered-with-the-core-package)
   * [Dedicated](https://github.com/stm32duino/wiki/wiki/Libraries#dedicated)
@@ -37,7 +37,7 @@
 
 * <details>
   <summary>Advanced usages</summary>
-  
+
   * Contributing
     * [Add a new variant (board)](https://github.com/stm32duino/wiki/wiki/Add-a-new-variant-%28board%29)
     * [Using git repository](https://github.com/stm32duino/wiki/wiki/Using-git-repository)
@@ -49,6 +49,7 @@
     * [Board support based on a core](https://github.com/stm32duino/wiki/wiki/Custom-board-based-on-a-core)
   * [How to debug](https://github.com/stm32duino/wiki/wiki/How-to-debug)
   * [PlatformIO](https://github.com/stm32duino/wiki/wiki/PlatformIO)
+  * [CMake support](https://github.com/massonal/Arduino_Core_STM32/wiki)
 </details>
 
 * <details>
