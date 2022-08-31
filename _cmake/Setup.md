@@ -48,7 +48,7 @@ Learn how to install it [here](https://arduino.github.io/arduino-cli/0.21/instal
 
 ## Compiler
 
-As with Arduino IDE, there is nothing to do here! The compiler (`arm-none-eabi-g++` *et al.*) will be downloaded when you first run CMake, in a separate folder along `Arduino_Core_STM32/`.
+As with Arduino IDE, there is nothing to do here! The compiler (`arm-none-eabi-g++` *et al.*) will be downloaded when you first run CMake, in a separate folder in your user home directory.
 For the curious user, here is where we get it: [https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack](https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack)
 
 ## CMSIS
