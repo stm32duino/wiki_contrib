@@ -13,3 +13,12 @@ However, much has been done to make the file as high-level as possible: it is wr
 Didactic examples can be found on a separate repository: [https://github.com/stm32duino/CMake_workspace](https://github.com/stm32duino/CMake_workspace).
 
 Before delving into this wiki, be sure to read [the dedicated README](https://github.com/massonal/Arduino_Core_STM32/blob/cmake_dev/README_CMAKE.md) first!
+
+
+## Pages in this section:
+- [[Setup]]
+- [[Quickstart guide]]
+- [[Introduction to CMake]]
+- [[Functions reference]]
+- [[Arduino (in)compatibility]]
+- [[Advanced usage]]
