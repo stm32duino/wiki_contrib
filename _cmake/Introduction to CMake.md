@@ -78,7 +78,7 @@ Here are some key points about the structure of a `CMakeLists.txt` (Also read [t
 
 - CMake [User Interaction Guide](https://cmake.org/cmake/help/v3.21/guide/user-interaction/index.html)
 - [CMake tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html)
-- [Convertinh existing systems to CMake](https://cmake.org/cmake/help/book/mastering-cmake/chapter/Converting%20Existing%20Systems%20To%20CMake.html)
+- [Converting existing systems to CMake](https://cmake.org/cmake/help/book/mastering-cmake/chapter/Converting%20Existing%20Systems%20To%20CMake.html)
 
 # Third-party
 
