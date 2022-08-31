@@ -49,7 +49,6 @@
     * [Board support based on a core](https://github.com/stm32duino/wiki/wiki/Custom-board-based-on-a-core)
   * [How to debug](https://github.com/stm32duino/wiki/wiki/How-to-debug)
   * [PlatformIO](https://github.com/stm32duino/wiki/wiki/PlatformIO)
-  * [CMake support](./CMake_presentation)
 </details>
 
 * <details>
@@ -58,4 +57,18 @@
     * [BLE](https://github.com/stm32duino/wiki/wiki/stm32duinoble)
     * [LoRa](https://github.com/stm32duino/wiki/wiki/lora)
 
+</details>
+
+
+* <details>
+  <summary>CMake support</summary>
+
+  - [[CMake_presentation]]
+  - [[Setup]]
+  - [[Quickstart guide]]
+  - [[Introduction to CMake]]
+  - [[Functions reference]]
+  - [[Arduino (in)compatibility]]
+  - [[Advanced usage]]
+  
 </details>
