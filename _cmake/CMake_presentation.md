@@ -1,6 +1,16 @@
 Welcome to the CMake port of Arduino_Core_STM32!
 
-The goal of this repository is to let users build Arduino sketches for STM32 boards, without using neither Arduino IDE nor `arduino-cli`.
+--------------------------
+
+[[/img/Important-icon.png]] Warning: work-in-progress!
+================
+
+The tool described in this section is currently subject to a pull request [PR #1776](https://github.com/stm32duino/Arduino_Core_STM32/pull/1776).
+Until it is merged, consider using the fork repo at [massonal/Arduino_Core_STM32](https://github.com/massonal/Arduino_Core_STM32).
+
+--------------------------
+
+The goal of this tool is to let users build Arduino sketches for STM32 boards, without using neither Arduino IDE nor `arduino-cli`.
 Advantages of this approach include:
 - faster build time (about -50%, tested on Windows 10 and Ubuntu20.04);
 - flexibility: CMake has a full language centered around build description;
