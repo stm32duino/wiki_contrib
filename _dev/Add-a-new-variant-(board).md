@@ -135,7 +135,7 @@ WEAK void SystemClock_Config(void)
 
 [[/img/Important-icon.png|alt="Important"]] For generic board the internal clock is used: `HSI`. 
 
-[STM32CubeMX]`is also used to generate it.
+[STM32CubeMX] is also used to generate it.
 
 1. Go to **_Pinout_** tab, enable the desired peripherals which require specific clock configuration (not needed for peripherals clocked by `HCLKx`, or `APBx` clock): `SDIO`, `USB`, ...
 In this example only `USB` needs to be enabled as other peripherals default clock are correct by default.
@@ -213,6 +213,16 @@ In this example only `USB` needs to be enabled as other peripherals default cloc
  }
  ```
 </details>
+
+[[/img/Tips-icon.png|alt="Tips"]] Pay attention to the default value of HAL RCC structures. CubeMx set it to `0` but it produces warning.
+Simply remove the `0` like this:
+
+```patch
+-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
++  RCC_OscInitTypeDef RCC_OscInitStruct = {};
++  RCC_ClkInitTypeDef RCC_ClkInitStruct = {};
+```
 
 ## 4 - Declare the variant
 It is still to add the menu and add relevant information (Flash and SRAM sizes, ...)
