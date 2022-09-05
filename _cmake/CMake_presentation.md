@@ -32,3 +32,4 @@ Before delving into this wiki, be sure to read [the dedicated README](https://gi
 - [[Functions reference]]
 - [[Arduino (in)compatibility]]
 - [[Advanced usage]]
+- [[cubeIDE]]

@@ -70,5 +70,6 @@
   - [[Functions reference]]
   - [[Arduino (in)compatibility]]
   - [[Advanced usage]]
-  
+  - [[cubeIDE]]
+
 </details>
