@@ -9,6 +9,7 @@ using its built-in support for Makefiles, is detailed below.
 # Requirements
 
 The same requirements as detailed in the [[Setup]] page for shell users apply.
+The walkthrough below was performed using CubeIDE version 1.10.1 ; some steps may differ when using another.
 
 # Walkthrough
 
