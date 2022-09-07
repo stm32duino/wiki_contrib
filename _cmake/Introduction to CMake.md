@@ -84,6 +84,7 @@ Here are some key points about the structure of a `CMakeLists.txt` (Also read [t
 
 The links below are not endorsed by STMicroelectonics nor Kitware, but have proven useful in practice for users learning to use CMake "sanely".
 
+- [LLVM's CMake introduction](https://llvm.org/docs/CMakePrimer.html)
 - [An Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/)
 - [C++: Compiling, Linking, and CMake](https://courses.grainger.illinois.edu/cs126/sp2020/notes/cmake/)
 - [CMake Part 1 – The Dark Arts](https://blog.feabhas.com/2021/07/cmake-part-1-the-dark-arts/), [Part 2 – Release and Debug builds](https://blog.feabhas.com/2021/07/cmake-part-2-release-and-debug-builds/), [Part 3 – Source File Organisation](https://blog.feabhas.com/2021/08/cmake-part-3-source-file-organisation/)
