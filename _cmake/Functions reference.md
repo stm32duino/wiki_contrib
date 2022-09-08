@@ -169,6 +169,7 @@ set_board(<boardName>
   [USB <usbSetting>]
   [XUSB <usbSpeed>]
   [VIRTIO <virtioSetting>]
+  [BOOTLOADER <bootloader>]
 )
 ```
 
@@ -178,9 +179,10 @@ and caches the result in a CMake-readable database.
 
 The first argument to this function must be the board codename, as used in boards.txt.
 E.g., "GENERIC_L010RBTX", not "Generic L010RBTx" (the latter being what the IDE displays).
-Then come any number of the four keywords, in any order. As with `overall_settings`, default values are used on fallback.
+Then come any number of the five keywords, in any order. As with `overall_settings`, default values are used on fallback.
 Depending on your board, not all features may be meaningful. Note: the values for each keyword are case-sensitive!
 - SERIAL: Serial support. Usually one of `generic`, `disabled`, `none` (standing for "Enabled (no generic 'Serial')");
 - USB: USB support. Usually one of `none`, `CDCgen`, `CDC`, `HID`;
 - XUSB: USB speed. Usually one of `FS`, `HS`, `HSFS`;
-- VIRTIO: virtIO support. Usually one of `disable`, `generic`, `enabled`.
+- VIRTIO: virtIO support. Usually one of `disable`, `generic`, `enabled`;
+- BOOTLOADER: third-party bootloader impacting the build (link step). Usually one of `hid`, `dfuo`, `dfu2`.
