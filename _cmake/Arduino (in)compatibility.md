@@ -13,7 +13,7 @@ This means that, while CMake can discover all the source files when it is manual
 it may not be reinvoked (as should be) after a source file is added, since it was not "monitoring" that file in the first place.
 Please reat the [warning note](https://cmake.org/cmake/help/latest/command/file.html#glob) in the CMake documentation for details.
 
-Also, as mentioned in [the Arduino documentation](https://arduino.github.io/arduino-cli/0.21/sketch-build-process/#pre-processing), all the
+Also, as mentioned in [the Arduino documentation](https://arduino.github.io/arduino-cli/latest/sketch-build-process/#pre-processing), all the
 `.ino` files of the sketch are concatenated during the pre-processing step.
 This is not implemented with CMake, as most sketches have a single `.ino` file, but if you fill the need for this feature, please submit a PR!
 
@@ -35,7 +35,7 @@ It is, however, possible to reuse the libraries installed by `arduino-cli`, e.g.
 
 Second item, Arduino IDE discovers at compile-time what libraries the sketch needs.
 This is done by catching GCC errors during the preprocessing stage, and fuzzy matching the missing `#include` with all the available libraries,
-as described in [their documentation](https://arduino.github.io/arduino-cli/0.21/sketch-build-process/#dependency-resolution).
+as described in [their documentation](https://arduino.github.io/arduino-cli/latest/sketch-build-process/#dependency-resolution).
 
 CMake does not have access to all these data _at configure-time_; also, it does not model the preprocessing at all.
 This means the dependency resolution process, if implemented, would have been awkward and fragile.
@@ -45,4 +45,4 @@ This is why another solution has been preferred: to have the user fill in all th
 # Upload, serial monitor, debugger
 
 These items are out of the scope of a CMake-based tool. Your IDE may handle (part of) those features; please refer to its documentation.
-As a fallback, [`arduino-cli`](https://arduino.github.io/arduino-cli/0.25/) may also be used to these ends.
+As a fallback, [`arduino-cli`](https://arduino.github.io/arduino-cli/latest/) may also be used to these ends.

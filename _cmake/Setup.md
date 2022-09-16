@@ -44,7 +44,7 @@ The two (this, and the Python module) are really optional requirement; if you on
 
 You may use the [quickstart script](./Quickstart-guide) to get started easily.
 This tool uses `arduino-cli` to inherit from your default Arduino installation.
-Learn how to install it [here](https://arduino.github.io/arduino-cli/0.21/installation/).
+Learn how to install it [here](https://arduino.github.io/arduino-cli/latest/installation/).
 
 ## Compiler
 
