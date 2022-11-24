@@ -69,24 +69,20 @@ keep-one-line-statements
 Python script [astyle.py](https://github.com/stm32duino/Arduino_Core_STM32/blob/main/CI/astyle/astyle.py) is provided to ease use of [AStyle](http://astyle.sourceforge.net/):
 
 ```stdout
-usage: astyle.py [-h] [-d <code style definition file>]
-                 [-g | -b <branch name>] [-i <ignore file>]
-                 [-p <astyle install path>] [-r <source root path>]
+usage: astyle.py [-h] [-d <code style definition file>] [-g | -b <branch name>] [-i <ignore file>] [-p <astyle install path>]
+                 [-r <source root path>]
 
-Launch astyle on source files found at specified root path.
+Launch astyle on source files.
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -d <code style definition file>, --definition <code style definition file>
-                        Code style definition file for Astyle. Default: <repo path>/Arduino_Core_S
-                        TM32/CI/astyle/.astylerc
-  -g, --gitdiff         Use changes files from git default branch. Default:
-                        remotes/origin/main
+                        Code style definition file for Astyle. Default: <repo path>/Arduino_Core_STM32/CI/astyle/.astylerc
+  -g, --gitdiff         Use changes files from git default branch. Default: {git_branch}
   -b <branch name>, --branch <branch name>
                         Use changes files from git specified branch.
   -i <ignore file>, --ignore <ignore file>
-                        File containing path to ignore. Default: <repo path>/Arduino_Core_STM32/CI
-                        /astyle/.astyleignore
+                        File containing path to ignore. Default: <repo path>/Arduino_Core_STM32/CI/astyle/.astyleignore
   -p <astyle install path>, --path <astyle install path>
                         Astyle installation path
   -r <source root path>, --root <source root path>
