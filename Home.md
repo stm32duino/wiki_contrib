@@ -1,4 +1,4 @@
-![stm32duino](https://avatars2.githubusercontent.com/u/12180191?v=3&s=200) 
+![stm32duino](https://avatars2.githubusercontent.com/u/12180191?v=3&s=200)
 # Welcome to the **stm32duino** wiki!
 
 # [[Getting Started|Getting-Started]]

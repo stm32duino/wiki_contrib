@@ -49,7 +49,7 @@
     * [Board support based on a core](https://github.com/stm32duino/wiki/wiki/Custom-board-based-on-a-core)
   * [How to debug](https://github.com/stm32duino/wiki/wiki/How-to-debug)
   * [PlatformIO](https://github.com/stm32duino/wiki/wiki/PlatformIO)
-  * [CMake support](https://github.com/massonal/Arduino_Core_STM32/wiki)
+  * [CMake support](./Cmake_home)
 </details>
 
 * <details>
