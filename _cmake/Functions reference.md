@@ -137,7 +137,7 @@ Keywords that take no argument:
 - LTO: enable Link-Time Optimizations (`-flto`);
 - NO_RELATIVE_MACRO: make `__FILE__` yield absolute paths; the default is the oppisite, for size and security reasons;
 - UNDEF_NDEBUG: do not define the `NDEBUG` macro; use this keyword for debug builds;
-- CORE_CALLBACK: define the `CORE_CALLBACK` macro; read about use cases [here](https://github.com/stm32duino/wiki/wiki/API#core-callback).
+- CORE_CALLBACK: define the `CORE_CALLBACK` macro; read about use cases [here](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#core-callback).
 
 Keywords that take a single argument:
 - OPTIMIZATION: takes an optimization level (one of `0123gs`); this will then be passed to GCC's as a `-O` flag;
@@ -145,7 +145,7 @@ Keywords that take a single argument:
 
 Keyword that takes several arguments:
 - DISABLE_HAL_MODULES: lets you disable any unused HAL modules as an optimization.
-  Read about it [on the wiki](https://github.com/stm32duino/wiki/wiki/HAL-configuration).
+  Read about it [on the wiki](https://github.com/stm32duino/Arduino_Core_STM32/wiki/HAL-configuration).
   The supported HAL modules are:
   - ADC
   - I2C

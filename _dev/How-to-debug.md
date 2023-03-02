@@ -1,11 +1,11 @@
 # How to debug
 
 Below, some ways to debug:
- * [Eclipse and Sloeber](https://github.com/stm32duino/wiki/wiki/How-to-debug#eclipse-and-sloeber)
- * [PlatformIO](https://github.com/stm32duino/wiki/wiki/How-to-debug#PlatformIO)
- * [Visual Studio and VisualGDB](https://github.com/stm32duino/wiki/wiki/How-to-debug#visual-studio-and-visualgdb)
- * [Visual Studio Code and Arduino extension](https://github.com/stm32duino/wiki/wiki/How-to-debug#Visual-Studio-Code-and-Arduino-extension)
- * [Command line GDB](https://github.com/stm32duino/wiki/wiki/How-to-debug#command-line-gdb)
+ * [Eclipse and Sloeber](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug#eclipse-and-sloeber)
+ * [PlatformIO](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug#PlatformIO)
+ * [Visual Studio and VisualGDB](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug#visual-studio-and-visualgdb)
+ * [Visual Studio Code and Arduino extension](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug#Visual-Studio-Code-and-Arduino-extension)
+ * [Command line GDB](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug#command-line-gdb)
 
 [[/img/Warning-icon.png|alt="Warning"]] **Only the Arduino IDE is officially supported.** 
 

@@ -81,5 +81,5 @@ https://www.stm32duino.com/viewtopic.php?f=62&t=1000
 
 #### When using "BMP (Black Magic Probe)" upload method, error occurs it can't connect to the COM port.
 
-Refers to this [warning](https://github.com/stm32duino/wiki/wiki/Upload-methods#bmp-black-magic-probe)
+Refers to this [warning](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#bmp-black-magic-probe)
 

@@ -58,7 +58,7 @@ Go to the [`variants` folder] of the STM32 core (See [Where are sources]).
 
 [`G0B1R(B-C-E)T_G0C1R(C-E)T`]
 
-Several files are present as stated [here](https://github.com/stm32duino/wiki/wiki/Add-a-new-variant-%28board%29#Generated-variant-files).
+Several files are present as stated [here](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Add-a-new-variant-%28board%29#Generated-variant-files).
 It misses only the default linker script named `ldscript.ld`.
 
 ## 2 - Add the default linker script
@@ -323,4 +323,4 @@ Restart Arduino IDE and try one of the new entry with the [CheckVariant example]
 [`README.md`]: https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md
 [STM32_open_pin_data]: https://github.com/STMicroelectronics/STM32_open_pin_data
 [STM32CubeMX]: http://www.st.com/en/development-tools/stm32cubemx.html
-[Where are sources]: https://github.com/stm32duino/wiki/wiki/Where-are-sources#stm32-core-sources-files-location
+[Where are sources]: https://github.com/stm32duino/Arduino_Core_STM32/wiki/Where-are-sources#stm32-core-sources-files-location

@@ -8,29 +8,29 @@ For full instructions on using the STM32 boards with Arduino, see the [[Getting 
 See [Supported boards](https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md#supported-boards) section of the [Arduino_Core_STM32/README.md](https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md).
 
 # API References:
-See [API References](https://github.com/stm32duino/wiki/wiki/API) for usage of accessing the hardware with the Arduino API-functions.
+See [API References](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API) for usage of accessing the hardware with the Arduino API-functions.
 
 # Libraries:
-See [Libraries](https://github.com/stm32duino/wiki/wiki/Libraries)
+See [Libraries](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Libraries)
 
 # Advanced usages:
 ## Contributing
-* [Add a new variant (board)](https://github.com/stm32duino/wiki/wiki/Add-a-new-variant-%28board%29)
-* [Using git repository](https://github.com/stm32duino/wiki/wiki/Using-git-repository)
+* [Add a new variant (board)](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Add-a-new-variant-%28board%29)
+* [Using git repository](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Using-git-repository)
 ## Customization
-* [Definitions](https://github.com/stm32duino/wiki/wiki/Custom-definitions)
-* [Build options (build_opt.h)](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h)
-* [HAL module configuration](https://github.com/stm32duino/wiki/wiki/HAL-configuration)
-* [Board support based on a core](https://github.com/stm32duino/wiki/wiki/Custom-board-based-on-a-core)
-## [How to debug](https://github.com/stm32duino/wiki/wiki/How-to-debug)
+* [Definitions](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions)
+* [Build options (build_opt.h)](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Customize-build-options-using-build_opt.h)
+* [HAL module configuration](https://github.com/stm32duino/Arduino_Core_STM32/wiki/HAL-configuration)
+* [Board support based on a core](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-board-based-on-a-core)
+## [How to debug](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug)
 
 # Connectivities
-* [BLE](https://github.com/stm32duino/wiki/wiki/stm32duinoble)
-* [LoRa](https://github.com/stm32duino/wiki/wiki/lora)
+* [BLE](https://github.com/stm32duino/Arduino_Core_STM32/wiki/stm32duinoble)
+* [LoRa](https://github.com/stm32duino/Arduino_Core_STM32/wiki/lora)
 
 # Troubleshooting
 
-Check the [FAQ](https://github.com/stm32duino/wiki/wiki/FAQ) in case it is a common problem and it may be discussed there.
+Check the [FAQ](https://github.com/stm32duino/Arduino_Core_STM32/wiki/FAQ) in case it is a common problem and it may be discussed there.
 
 If you have any issue to download/use a package, you could [file an issue on BoardManagerFiles](https://github.com/stm32duino/BoardManagerFiles/issues/new) GitHub.
 

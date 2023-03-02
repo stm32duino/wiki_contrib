@@ -14,9 +14,9 @@ Once programmed into the MCU the copied binary disappears from the virtual disk.
 
 Three upload methods are based on the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) CLI (command-line interface):
 
-* [SWD](https://github.com/stm32duino/wiki/wiki/Upload-methods#swd)
-* [Serial](https://github.com/stm32duino/wiki/wiki/Upload-methods#serial)
-* [DFU](https://github.com/stm32duino/wiki/wiki/Upload-methods#dfu)
+* [SWD](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#swd)
+* [Serial](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#serial)
+* [DFU](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#dfu)
 
 ### Requirement
 

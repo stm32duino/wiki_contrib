@@ -1,20 +1,20 @@
 # API
 
- * [Core](https://github.com/stm32duino/wiki/wiki/API#core)
-   * [Core version](https://github.com/stm32duino/wiki/wiki/API#core-version)
-   * [Core Callback](https://github.com/stm32duino/wiki/wiki/API#core-callback)
- * [Wiring](https://github.com/stm32duino/wiki/wiki/API#wiring)
-   * [Analog](https://github.com/stm32duino/wiki/wiki/API#analog)
-   * [HardwareSerial](https://github.com/stm32duino/wiki/wiki/API#hardwareserial)
-   * [HardwareTimer](https://github.com/stm32duino/wiki/wiki/HardwareTimer-library)
- * [Built-In Library](https://github.com/stm32duino/wiki/wiki/API#built-in-library)
-   * [SPI](https://github.com/stm32duino/wiki/wiki/API#spi)
-   * [I2C](https://github.com/stm32duino/wiki/wiki/API#i2C)
-   * [CMSIS DSP](https://github.com/stm32duino/wiki/wiki/API#cmsis-dsp)
-   * [EEPROM emulation](https://github.com/stm32duino/wiki/wiki/API#EEPROM-Emulation)
-   * [Servo](https://github.com/stm32duino/wiki/wiki/Servo-library)
- * [Other](https://github.com/stm32duino/wiki/wiki/API#other)
-   * [Remembering variables across resets](https://github.com/stm32duino/wiki/wiki/API#Remembering-variables-across-resets)
+ * [Core](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#core)
+   * [Core version](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#core-version)
+   * [Core Callback](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#core-callback)
+ * [Wiring](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#wiring)
+   * [Analog](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#analog)
+   * [HardwareSerial](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#hardwareserial)
+   * [HardwareTimer](https://github.com/stm32duino/Arduino_Core_STM32/wiki/HardwareTimer-library)
+ * [Built-In Library](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#built-in-library)
+   * [SPI](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#spi)
+   * [I2C](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#i2C)
+   * [CMSIS DSP](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#cmsis-dsp)
+   * [EEPROM emulation](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#EEPROM-Emulation)
+   * [Servo](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Servo-library)
+ * [Other](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#other)
+   * [Remembering variables across resets](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#Remembering-variables-across-resets)
 
 # Core
 
@@ -60,7 +60,7 @@ _Params_ `func` pointer to the callback function
 
 [[/img/Warning-icon.png|alt="Warning"]] By default, the core callback feature is disabled, to enable it `CORE_CALLBACK` must be defined.
 
-`build_opt.h` can be used to define it by adding `-DCORE_CALLBACK`, see [build_opt.h wiki](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h).
+`build_opt.h` can be used to define it by adding `-DCORE_CALLBACK`, see [build_opt.h wiki](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Customize-build-options-using-build_opt.h).
 
 # Wiring
 
@@ -137,12 +137,12 @@ void loop() {
   delay(1000);
 }
 ```
-Another solution is to add a [build_opt.h](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h) file alongside your main `.ino` file with: `-DENABLE_HWSERIALx`.
+Another solution is to add a [build_opt.h](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Customize-build-options-using-build_opt.h) file alongside your main `.ino` file with: `-DENABLE_HWSERIALx`.
 This will define the `Serialx` instance using the first `USARTx` instance found in the `PeripheralPins.c` of your variant.
 
 [[/img/Note-icon.png|alt="Note"]] **Note** that only the latter solution allows to use the `serialEventx()` callback in the sketch.
 
-For Example, if you define in the [build_opt.h](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h): `-DENABLE_HWSERIAL3`
+For Example, if you define in the [build_opt.h](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Customize-build-options-using-build_opt.h): `-DENABLE_HWSERIAL3`
 
 This will instantiate `Serial3` with the first Rx and Tx pins found in the `PinMap_UART_RX[]` and `PinMap_UART_TX[]` arrays in the `PeripheralPins.c` of your variant and the `serialEvent3()` will be enabled.
 
@@ -289,7 +289,7 @@ void loop() {
 }
 ```
 
-**Note:** Serial Rx/TX buffer size can be changed, see [custom definitions](https://github.com/stm32duino/wiki/wiki/Custom-definitions#serial-rxtx-buffer-size)
+**Note:** Serial Rx/TX buffer size can be changed, see [custom definitions](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#serial-rxtx-buffer-size)
 
 #### Enable hardware flow control
 
@@ -319,7 +319,7 @@ serial.begin(460800);
 ```
 
 ## HardwareTimer library 
-https://github.com/stm32duino/wiki/wiki/HardwareTimer-library 
+https://github.com/stm32duino/Arduino_Core_STM32/wiki/HardwareTimer-library 
 
 # Built-In Library
 
@@ -444,7 +444,7 @@ void loop() {
 }
 ```
 
-Refers to [I2C Timing](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timing) to customize I2C speed if needed.
+Refers to [I2C Timing](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#i2c-timing) to customize I2C speed if needed.
 
 ### Default I2C pins
 **The default I2C interface pins are configured inside the PeripheralPins.c file.**
@@ -541,7 +541,7 @@ Nevertheless it is possible to transfer up to **255 bytes**:
   Nothing to do from application point of view.  
   Warning: a bug in STM32 cube HAL (STM32 core v1.8.0) prevents to transfer exactly 255 bytes.(see [#853](https://github.com/stm32duino/Arduino_Core_STM32/pull/853))
 
-* In slave mode: RX and TX buffer size can be statically redefined using [hal_conf_extra.h](https://github.com/stm32duino/wiki/wiki/HAL-configuration#core-version--150-1) or [build_opt.h](https://github.com/stm32duino/wiki/wiki/Customize-build-options-using-build_opt.h) (at compilation time) thanks to switch `I2C_TXRX_BUFFER_SIZE` (see [#853](https://github.com/stm32duino/Arduino_Core_STM32/pull/853))  
+* In slave mode: RX and TX buffer size can be statically redefined using [hal_conf_extra.h](https://github.com/stm32duino/Arduino_Core_STM32/wiki/HAL-configuration#core-version--150-1) or [build_opt.h](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Customize-build-options-using-build_opt.h) (at compilation time) thanks to switch `I2C_TXRX_BUFFER_SIZE` (see [#853](https://github.com/stm32duino/Arduino_Core_STM32/pull/853))  
   All I2C instances are impacted by change of this compilation switch.
 
 ## CMSIS DSP
@@ -609,7 +609,7 @@ If this configuration is changed, it is then mandatory to customize `FLASH_BASE_
 even to use last sector of Flash.
 
 ## Servo library
-https://github.com/stm32duino/wiki/wiki/Servo-library
+https://github.com/stm32duino/Arduino_Core_STM32/wiki/Servo-library
 
 # Other
 

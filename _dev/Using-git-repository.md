@@ -44,4 +44,4 @@ So, do:<br>
 
 [[/img/Important-icon.png|alt="Important"]] _Uninstalling from the boards managers will remove the git repository!_
 
-[[/img/Note-icon.png|alt="Note"]] If you do not have deleted the stm32 core extracted package (step [2.](https://github.com/stm32duino/wiki/wiki/Using-git-repository/_edit#2-delete-the-stm32-core-extracted-package)), in "**Tools > Board**" menu, you will have twice the "**STM32 board**" menu.<br>
+[[/img/Note-icon.png|alt="Note"]] If you do not have deleted the stm32 core extracted package (step [2.](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Using-git-repository/_edit#2-delete-the-stm32-core-extracted-package)), in "**Tools > Board**" menu, you will have twice the "**STM32 board**" menu.<br>

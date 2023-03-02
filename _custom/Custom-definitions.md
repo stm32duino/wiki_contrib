@@ -7,16 +7,16 @@ Several definitions can be redefined by the end user by different ways:
  * at sketch level for `WEAK` function
 
 ## Quick links
- * [Change interrupt priority values](https://github.com/stm32duino/wiki/wiki/Custom-definitions#change-interrupt-priority-values)
- * [Custom startup file](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-startup-file)
-   * [Redefine the default startup file](https://github.com/stm32duino/wiki/wiki/Custom-definitions#redefine-the-default-startup-file)
-   * [Custom startup file in the variant](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-startup-file-in-the-variant)
- * [Custom PinMap array](https://github.com/stm32duino/wiki/wiki/Custom-definitions#custom-pinmap-array)
- * [I2C Timing](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timing)
- * [I2C timeout in tick unit](https://github.com/stm32duino/wiki/wiki/Custom-definitions#i2c-timeout-in-tick-unit)
- * [F_CPU](https://github.com/stm32duino/wiki/wiki/Custom-definitions#f_cpu)
- * [Serial Rx/Tx buffer size](https://github.com/stm32duino/wiki/wiki/Custom-definitions#serial-rxtx-buffer-size)
- * [systemclock_config](https://github.com/stm32duino/wiki/wiki/Custom-definitions#systemclock_config)
+ * [Change interrupt priority values](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#change-interrupt-priority-values)
+ * [Custom startup file](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#custom-startup-file)
+   * [Redefine the default startup file](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#redefine-the-default-startup-file)
+   * [Custom startup file in the variant](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#custom-startup-file-in-the-variant)
+ * [Custom PinMap array](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#custom-pinmap-array)
+ * [I2C Timing](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#i2c-timing)
+ * [I2C timeout in tick unit](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#i2c-timeout-in-tick-unit)
+ * [F_CPU](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#f_cpu)
+ * [Serial Rx/Tx buffer size](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#serial-rxtx-buffer-size)
+ * [systemclock_config](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#systemclock_config)
 
 ## Change interrupt priority values
 

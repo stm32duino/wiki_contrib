@@ -5,7 +5,7 @@
 * [STM32CubeMX ](http://www.st.com/en/development-tools/stm32cubemx.html) is required as script parses MCU xml file description provided with the tool.
 
 Go to the '_**src/genpinmap/**_' folder of the STM32 Tools.<br>
-Follow this page: [Where are sources](https://github.com/stm32duino/wiki/wiki/Where-are-sources#stm32-tools-files-location)
+Follow this page: [Where are sources](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Where-are-sources#stm32-tools-files-location)
 or get it from [Arduino_Tools github repo](https://github.com/stm32duino/Arduino_Tools/tree/master/src/genpinmap)
 
 **_genpinmap_arduino.py_** script allows to generate the pins mapping of an STM32 MCU.

@@ -60,7 +60,7 @@ Then you can find the Nucleo-64 boards available in a sub-menu of the "Tools" me
 
 ## Extra step
 
-To upload through SWD (STLink), Serial or DFU, [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) needs to be installed. See [Upload methods](https://github.com/stm32duino/wiki/wiki/Upload-methods#stm32cubeprogrammer).
+To upload through SWD (STLink), Serial or DFU, [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) needs to be installed. See [Upload methods](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#stm32cubeprogrammer).
 
 ## Troubleshooting
 
@@ -101,7 +101,7 @@ b. Then from the "**Tools > Board part number**" menu, select the [Nucleo L476RG
 ## Upload methods
 Depending of the board, several upload methods could be proposed, thanks the "**Tools > Upload Method**" menu.
 
-See [Upload methods](https://github.com/stm32duino/wiki/wiki/Upload-methods) for more details.
+See [Upload methods](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods) for more details.
 
 [[/img/UploadMethod.png|alt="Upload Method"]]
 
