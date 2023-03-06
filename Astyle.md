@@ -1,22 +1,22 @@
 # Astyle
 
-[AStyle](http://astyle.sourceforge.net/) is used for coding style checking.
+[AStyle] is used for coding style checking.
 
 > Artistic Style is a source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages.
 
-GitHub action is used to ensure each PR (Pull Request) and `main` branch of the [STM32 core](https://github.com/stm32duino/Arduino_Core_STM32) follow the code style definition defined. 
+GitHub action is used to ensure each PR (Pull Request) and `main` branch of the [STM32 core] follow the code style definition defined. 
 
-Only sources files (`*.h`, `*.hpp`, `*.c`, `*.cpp`) from the following [STM32 core](https://github.com/stm32duino/Arduino_Core_STM32) directory lists are checked:
+Only sources files (`*.h`, `*.hpp`, `*.c`, `*.cpp`) from the following [STM32 core] directory lists are checked:
 * `cores/`
 * `libraries/`
 * `variants/`
 
 ## Ignored files
-[.astyleignore](https://github.com/stm32duino/Arduino_Core_STM32/blob/main/CI/astyle/.astyleignore) file contains list of folder to ignore.
+[`.astyleignore`](https://github.com/stm32duino/Arduino_Core_STM32/blob/main/CI/astyle/.astyleignore) file contains list of folder to ignore.
 
 ## Code style definition
 
-Hereafter the code style definition applied ([.astylerc](https://github.com/stm32duino/Arduino_Core_STM32/blob/main/CI/astyle/.astylerc))
+Hereafter the code style definition applied ([`.astylerc`](https://github.com/stm32duino/Arduino_Core_STM32/blob/main/CI/astyle/.astylerc))
 
 ```bash
 # STM32duino code style definition file for Astyle
@@ -66,7 +66,7 @@ keep-one-line-statements
 
 ## Python script
 
-Python script [astyle.py](https://github.com/stm32duino/Arduino_Core_STM32/blob/main/CI/astyle/astyle.py) is provided to ease use of [AStyle](http://astyle.sourceforge.net/):
+Python script [`astyle.py`](https://github.com/stm32duino/Arduino_Core_STM32/blob/main/CI/astyle/astyle.py) is provided to ease use of [AStyle]:
 
 ```stdout
 usage: astyle.py [-h] [-d <code style definition file>] [-g | -b <branch name>] [-i <ignore file>] [-p <astyle install path>]
@@ -88,3 +88,6 @@ options:
   -r <source root path>, --root <source root path>
                         Source root path to use. Default: <repo path>/Arduino_Core_STM32
 ```
+
+[AStyle]: http://astyle.sourceforge.net/
+[STM32 core]: https://github.com/stm32duino/Arduino_Core_STM32

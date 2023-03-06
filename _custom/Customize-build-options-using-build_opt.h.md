@@ -1,5 +1,5 @@
 ## How to customize build options
-Since the core version [1.1.1](https://github.com/stm32duino/Arduino_Core_STM32/tree/1.1.1), it is possible to customize some core definitions or compiler options by adding a file named "`build_opt.h`" in the sketch directory. 
+Since the core version [1.1.1](../releases/tag/1.1.1), it is possible to customize some core definitions or compiler options by adding a file named "`build_opt.h`" in the sketch directory. 
 
 This file allow to used the "_`@file`_" parameter of gcc.
 
@@ -15,7 +15,7 @@ See https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html
 >     may be included by prefixing the character to be included with a backslash. The file may itself contain
 >     additional @file options; any such options will be processed recursively.
 
-By default, if the file does not exist an empty one is created using the [pre-build hooks](https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5-3rd-party-Hardware-specification#pre-and-post-build-hooks-since-ide-165) feature.
+By default, if the file does not exist an empty one is created using the [pre-build hooks](https://arduino.github.io/arduino-cli/latest/platform-specification/#pre-and-post-build-hooks-since-arduino-ide-165) feature.
 
 ### Examples of file content:
  * Enable an HAL module:

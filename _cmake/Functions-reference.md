@@ -1,12 +1,12 @@
 # Functions reference
 
-This document lists all the functions defined in the [`/cmake`](../blob/cmake_dev/cmake) folder in this project.
+This document lists all the functions defined in the [`/cmake`](../blob/main/cmake) folder in this project.
 It would be a good idea to add this folder to the "CMake search path" in your project :
 
 ```cmake
 list(APPEND CMAKE_MODULE_PATH ${CORE_PATH}/cmake)
 ```
-(done by default in the [quickstart template](./Quickstart-guide#Quickstart-script).)
+(done by default in the [[quickstart template|Quickstart-guide#Quickstart-script]].)
 
 All the functions are defined in a CMake module of the same name. Therefore, you have to include said module before calling the function:
 
@@ -15,7 +15,7 @@ include(foo)
 foo()
 ```
 
-(Of course, this does _not_ apply to the CMake built-in functions as described in [Introduction to CMake](./Introduction-to-CMake#CMake-language). These can be called directly.)
+(Of course, this does _not_ apply to the CMake built-in functions as described in [[Introduction to CMake|Introduction-to-CMake#CMake-language]]. These can be called directly.)
 
 # Functions emulating the Arduino behavior
 
@@ -137,7 +137,7 @@ Keywords that take no argument:
 - LTO: enable Link-Time Optimizations (`-flto`);
 - NO_RELATIVE_MACRO: make `__FILE__` yield absolute paths; the default is the oppisite, for size and security reasons;
 - UNDEF_NDEBUG: do not define the `NDEBUG` macro; use this keyword for debug builds;
-- CORE_CALLBACK: define the `CORE_CALLBACK` macro; read about use cases [here](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#core-callback).
+- CORE_CALLBACK: define the `CORE_CALLBACK` macro; read about use cases [[here|API#core-callback]].
 
 Keywords that take a single argument:
 - OPTIMIZATION: takes an optimization level (one of `0123gs`); this will then be passed to GCC's as a `-O` flag;
@@ -145,7 +145,7 @@ Keywords that take a single argument:
 
 Keyword that takes several arguments:
 - DISABLE_HAL_MODULES: lets you disable any unused HAL modules as an optimization.
-  Read about it [on the wiki](https://github.com/stm32duino/Arduino_Core_STM32/wiki/HAL-configuration).
+  Read about it [[on the wiki|HAL-configuration]].
   The supported HAL modules are:
   - ADC
   - I2C

@@ -1,9 +1,9 @@
 The goal of this page is to provide instructions to get a simple sketch to compile using CMake.
-Be sure to read [Setup](./Setup) through first!
+Be sure to read [[Setup]] through first!
 
 # Using CMake
 
-The page [Introduction to CMake](./Introduction-to-CMake) covers much more than this section.
+The page [[Introduction to CMake]] covers much more than this section.
 You are advised to read it if you want to write a more complex build description.
 
 Briefly, CMake is a meta build system: it generates configuration files for an actual build system to use.
@@ -32,7 +32,7 @@ Past the initial setup, when rebuilding, only the last step is necessary; if CMa
 
 # Quickstart script
 
-We provide a "quickstart script" [here](../blob/cmake_dev/cmake/scripts/cmake_easy_setup.py).
+We provide a "quickstart script" [here](../blob/main/cmake/scripts/cmake_easy_setup.py).
 This Python script uses jinja and arduino-cli to generate a CMakeLists.txt for you to get started more easily.
 
 This script can be used in two ways:
@@ -41,7 +41,7 @@ This script can be used in two ways:
 that can be imported into your actual CMakeLists.txt to use the variables it defines (path to this repo, path to your Arduino libraries...)
 
 Note about the `--board` option: the right value to pass there is your board _codename_, not actual name.
-If you don't know it, you can find it in [boards.txt](../blob/cmake_dev/boards.txt).
+If you don't know it, you can find it in [boards.txt](../blob/main/boards.txt).
 In the following excerpt, the board codename is "NUCLEO_F207ZG", _not_ "Nucleo F207ZG".
 > Nucleo_144.menu.pnum.NUCLEO_F207ZG=Nucleo F207ZG
 
@@ -67,6 +67,6 @@ to fill in the dependency relationships between (the sketch and) the libraries.
 # Further readings
 
 ## In this wiki
-- [Introduction to CMake](./Introduction-to-CMake)
-- [Functions reference](./Functions-reference)
-- [Arduino (in)compatibility](./Arduino-%28in%29compatibility)
+- [[Introduction to CMake]]
+- [[Functions reference]]
+- [[Arduino (in)compatibility]]

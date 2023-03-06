@@ -1,20 +1,20 @@
 # API
 
- * [Core](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#core)
-   * [Core version](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#core-version)
-   * [Core Callback](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#core-callback)
- * [Wiring](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#wiring)
-   * [Analog](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#analog)
-   * [HardwareSerial](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#hardwareserial)
-   * [HardwareTimer](https://github.com/stm32duino/Arduino_Core_STM32/wiki/HardwareTimer-library)
- * [Built-In Library](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#built-in-library)
-   * [SPI](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#spi)
-   * [I2C](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#i2C)
-   * [CMSIS DSP](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#cmsis-dsp)
-   * [EEPROM emulation](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#EEPROM-Emulation)
-   * [Servo](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Servo-library)
- * [Other](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#other)
-   * [Remembering variables across resets](https://github.com/stm32duino/Arduino_Core_STM32/wiki/API#Remembering-variables-across-resets)
+ * [Core](#core)
+   * [Core version](#core-version)
+   * [Core Callback](#core-callback)
+ * [Wiring](#wiring)
+   * [Analog](#analog)
+   * [HardwareSerial](#hardwareserial)
+   * [[HardwareTimer library]]
+ * [Built-In Library](#built-in-library)
+   * [SPI](#spi)
+   * [I2C](#i2C)
+   * [CMSIS DSP](#cmsis-dsp)
+   * [EEPROM emulation](#EEPROM-Emulation)
+   * [[Servo library]]
+ * [Other](#other)
+   * [Remembering variables across resets](#Remembering-variables-across-resets)
 
 # Core
 
@@ -60,7 +60,7 @@ _Params_ `func` pointer to the callback function
 
 [[/img/Warning-icon.png|alt="Warning"]] By default, the core callback feature is disabled, to enable it `CORE_CALLBACK` must be defined.
 
-`build_opt.h` can be used to define it by adding `-DCORE_CALLBACK`, see [build_opt.h wiki](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Customize-build-options-using-build_opt.h).
+[`build_opt.h`][build_opt.h] can be used to define it by adding `-DCORE_CALLBACK`.
 
 # Wiring
 
@@ -103,7 +103,7 @@ A minimum ADC sampling time is required when reading internal channels so defaul
  * `ADC_SAMPLINGTIME_INTERNAL`
 to the desired ADC sample time.
 
-`ADC_SAMPLINGTIME` and `ADC_CLOCK_DIV` could also be redefined by the variant or using `build_opt.h`.
+`ADC_SAMPLINGTIME` and `ADC_CLOCK_DIV` could also be redefined by the variant or using [`build_opt.h`][build_opt.h].
 
 #### Example
 An example which read then convert to proper Unit the 3 internal channels + A0 is provided with [STM32Examples](https://github.com/stm32duino/STM32Examples) library:
@@ -137,12 +137,12 @@ void loop() {
   delay(1000);
 }
 ```
-Another solution is to add a [build_opt.h](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Customize-build-options-using-build_opt.h) file alongside your main `.ino` file with: `-DENABLE_HWSERIALx`.
+Another solution is to add a [`build_opt.h`][build_opt.h] file alongside your main `.ino` file with: `-DENABLE_HWSERIALx`.
 This will define the `Serialx` instance using the first `USARTx` instance found in the `PeripheralPins.c` of your variant.
 
 [[/img/Note-icon.png|alt="Note"]] **Note** that only the latter solution allows to use the `serialEventx()` callback in the sketch.
 
-For Example, if you define in the [build_opt.h](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Customize-build-options-using-build_opt.h): `-DENABLE_HWSERIAL3`
+For Example, if you define in the [`build_opt.h`][build_opt.h]: `-DENABLE_HWSERIAL3`
 
 This will instantiate `Serial3` with the first Rx and Tx pins found in the `PinMap_UART_RX[]` and `PinMap_UART_TX[]` arrays in the `PeripheralPins.c` of your variant and the `serialEvent3()` will be enabled.
 
@@ -154,7 +154,7 @@ Example for the `Serial3`:
 #define PIN_SERIAL3_RX PB11
 #define PIN_SERIAL3_TX PB10
 ```
- - In the `build_opt.h`:
+ - In the [`build_opt.h`][build_opt.h]:
 `-DPIN_SERIAL3_RX=PB11 -DPIN_SERIAL3_TX=PB10`
 
 ### New API functions
@@ -289,7 +289,7 @@ void loop() {
 }
 ```
 
-**Note:** Serial Rx/TX buffer size can be changed, see [custom definitions](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#serial-rxtx-buffer-size)
+**Note:** Serial Rx/TX buffer size can be changed, see [[custom definitions|Custom-definitions#serial-rxtx-buffer-size]]
 
 #### Enable hardware flow control
 
@@ -318,8 +318,8 @@ serial.setRtsCts(PA12, PA11);
 serial.begin(460800);
 ```
 
-## HardwareTimer library 
-https://github.com/stm32duino/Arduino_Core_STM32/wiki/HardwareTimer-library 
+## [[HardwareTimer library]]
+
 
 # Built-In Library
 
@@ -444,7 +444,7 @@ void loop() {
 }
 ```
 
-Refers to [I2C Timing](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#i2c-timing) to customize I2C speed if needed.
+Refers to [[I2C Timing|Custom-definitions#i2c-timing]] to customize I2C speed if needed.
 
 ### Default I2C pins
 **The default I2C interface pins are configured inside the PeripheralPins.c file.**
@@ -539,9 +539,9 @@ By default I2C buffers are all aligned on Arduino API: **32 bytes**.
 Nevertheless it is possible to transfer up to **255 bytes**:
 * In master mode: RX and TX buffers will automatically grow when needed, independently one from each other, and independently from other I2C instances.  
   Nothing to do from application point of view.  
-  Warning: a bug in STM32 cube HAL (STM32 core v1.8.0) prevents to transfer exactly 255 bytes.(see [#853](https://github.com/stm32duino/Arduino_Core_STM32/pull/853))
+  Warning: a bug in STM32 cube HAL (STM32 core v1.8.0) prevents to transfer exactly 255 bytes. (see [#853])
 
-* In slave mode: RX and TX buffer size can be statically redefined using [hal_conf_extra.h](https://github.com/stm32duino/Arduino_Core_STM32/wiki/HAL-configuration#core-version--150-1) or [build_opt.h](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Customize-build-options-using-build_opt.h) (at compilation time) thanks to switch `I2C_TXRX_BUFFER_SIZE` (see [#853](https://github.com/stm32duino/Arduino_Core_STM32/pull/853))  
+* In slave mode: RX and TX buffer size can be statically redefined using [[hal_conf_extra.h|HAL-configuration#core-version--150-1]] or [`build_opt.h`][build_opt.h] (at compilation time) thanks to switch `I2C_TXRX_BUFFER_SIZE` (see [#853])  
   All I2C instances are impacted by change of this compilation switch.
 
 ## CMSIS DSP
@@ -594,11 +594,11 @@ void eeprom_buffered_write_byte(uint32_t pos, uint8_t value); // Function writes
 By default, EEPROM emulation storage correspond to the last sector/page of Flash,  
 and its size correspond to the size of the last sector/page.  
 Nevertheless it is possible to customize address and size used for EEPROM.  
-In this case, following switches should be defined (in variant.h or build_opt.h)
+In this case, following switches should be defined (in variant.h or [`build_opt.h`][build_opt.h])
 * `FLASH_BASE_ADDRESS`
 * `FLASH_DATA_SECTOR` or `FLASH_PAGE_NUMBER` (depending on STM32 family used)
 
-see example of variant implementation: https://github.com/stm32duino/Arduino_Core_STM32/pull/938
+see example of variant implementation: [#938](../pull/938)
 
 [[/img/Warning-icon.png|alt="Warning"]] **Single/dual bank configuration**:
 
@@ -608,13 +608,12 @@ For example, NUCLEO_F767ZI is by default configured in single bank. Last sector 
 If this configuration is changed, it is then mandatory to customize `FLASH_BASE_ADDRESS`/`FLASH_DATA_SECTOR`,
 even to use last sector of Flash.
 
-## Servo library
-https://github.com/stm32duino/Arduino_Core_STM32/wiki/Servo-library
+## [[Servo library]]
 
 # Other
 
 ## Remembering variables across resets
-Since core version 1.9.0 (see [PR #996](https://github.com/stm32duino/Arduino_Core_STM32/pull/996)), it is possible to mark variables as "noinit", which prevents them from being initialized to a fixed value at startup. This allows using these variables to remember a value across resets (since the reset itself leaves memory unchanged, it is only the startup code that normally resets all variable values, but that is prevented by noinit).
+Since core version 1.9.0 (see [#996](../pull/996)), it is possible to mark variables as "noinit", which prevents them from being initialized to a fixed value at startup. This allows using these variables to remember a value across resets (since the reset itself leaves memory unchanged, it is only the startup code that normally resets all variable values, but that is prevented by noinit).
 
 To do this, the variable must be placed in the `.noinit` section by adding `__attribute__((__section__(".noinit")))` (this is exactly the same as how this works on the original Arduino AVR core). Typically, you would also need to check the startup reason register so you can initialize the variable with a default on the first startup. For example, something like:
 
@@ -639,3 +638,6 @@ void loop() { }
 ```
 
 This shows the number of boots since the last POR by incrementing a noinit variable across resets. Note that when you first upload this, it might not start at 1 but at some arbitrary value, because typically the first boot after an upload is not a power-on-reset. To start at 1, disconnect and reconnect power.
+
+[build_opt.h]: Customize-build-options-using-build_opt.h
+[#853]: ../pull/853

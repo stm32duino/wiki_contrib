@@ -13,7 +13,7 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-![Warning](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Warning-icon.png) Needs *Arduino_Core_STM32* version > 1.6.1
+[[/img/Warning-icon.png|alt="Warning"]] Needs *Arduino_Core_STM32* version > 1.6.1
 
 ##  1. <a name='Introduction'></a>Introduction
 
@@ -29,7 +29,7 @@ __Example__:
 
 Each timer may provide several channels, nevertheless it is important to understand that all channels of the same timer share the same counter and thus have the same period/frequency.
 
-![Warning](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Warning-icon.png) __For genericity purpose, HardwareTimer library uses all timers like a 16bits timer (even if some may be wider).__
+[[/img/Warning-icon.png|alt="Warning"]] __For genericity purpose, HardwareTimer library uses all timers like a 16bits timer (even if some may be wider).__
 
 
 ##  2. <a name='API'></a>API
@@ -96,7 +96,7 @@ Each timer may provide several channels, nevertheless it is important to underst
 
 `HardwareTimer` is a C++ class, 1st thing to do is to instantiate an object with `TIM` instance as parameter.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) Some instances are used by Servo, Tone and SoftSerial (see TIMER_SERVO, TIMER_TONE and TIMER_SERIAL) but only when they are used. Just be sure there is no conflict with your own usage.
+[[/img/Note-icon.png|alt="Note"]] Some instances are used by Servo, Tone and SoftSerial (see TIMER_SERVO, TIMER_TONE and TIMER_SERIAL) but only when they are used. Just be sure there is no conflict with your own usage.
 
 __Example__:
 ```C++
@@ -105,9 +105,9 @@ __Example__:
 
 Then it is possible to configure mode of a channel.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) No need to configure pin mode (output/input/AlternateFunction), it will be done automatically by HardwareTimer library.
+[[/img/Note-icon.png|alt="Note"]] No need to configure pin mode (output/input/AlternateFunction), it will be done automatically by HardwareTimer library.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) Channel range [1..4], but not all timers support 4 channels.
+[[/img/Note-icon.png|alt="Note"]] Channel range [1..4], but not all timers support 4 channels.
 
 __Example__: 
 ```C++
@@ -145,11 +145,11 @@ typedef enum {
 Then it is possible to configure *PrescalerFactor*. The Timer clock will be divided by this factor (if timer clock is 10Khz, and prescaler factor is 2, then timer will count at 5kHz).
 
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) Configuration of *prescaler* is automatic when using method `setOverflow` with `format == MICROSEC_FORMAT` or `format == HERTZ_FORMAT`.
+[[/img/Note-icon.png|alt="Note"]] Configuration of *prescaler* is automatic when using method `setOverflow` with `format == MICROSEC_FORMAT` or `format == HERTZ_FORMAT`.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) *Prescaler* is for timer counter and thus is common to all channel.
+[[/img/Note-icon.png|alt="Note"]] *Prescaler* is for timer counter and thus is common to all channel.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) *PrescalerFactor* range: [1.. 0x10000]  (Hardware register will range [0..0xFFFF]).
+[[/img/Note-icon.png|alt="Note"]] *PrescalerFactor* range: [1.. 0x10000]  (Hardware register will range [0..0xFFFF]).
 
 __Example__:
 ```C++
@@ -162,11 +162,11 @@ For __output__ it correspond to period or frequency.
 
 For __input capture__ it is suggested to use max value: 0x10000 to avoid rollover before capture occurs .
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) Configuration of *prescaler* is automatic when using method `setOverflow` with `format == MICROSEC_FORMAT` or `format == HERTZ_FORMAT`.
+[[/img/Note-icon.png|alt="Note"]] Configuration of *prescaler* is automatic when using method `setOverflow` with `format == MICROSEC_FORMAT` or `format == HERTZ_FORMAT`.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) *overflow* is common to all channel.
+[[/img/Note-icon.png|alt="Note"]] *overflow* is common to all channel.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) *Overflow* range: [1.. 0x10000] (Hardware register will range [0..0xFFFF]).
+[[/img/Note-icon.png|alt="Note"]] *Overflow* range: [1.. 0x10000] (Hardware register will range [0..0xFFFF]).
 
 __Example__:
 ```C++
@@ -178,9 +178,9 @@ __Example__:
 
 Then it is possible to configure *CaptureCompare* (channel specific CaptureCompare register).
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) *CaptureCompare* is for one channel only.
+[[/img/Note-icon.png|alt="Note"]] *CaptureCompare* is for one channel only.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) *CaptureCompare* range: [0.. 0xFFFF]
+[[/img/Note-icon.png|alt="Note"]] *CaptureCompare* range: [0.. 0xFFFF]
 
 __Example__:
 ```C++
@@ -204,7 +204,7 @@ __Example__:
 
 It is now time to start timer.
 
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) All channel of the same timer are started at the same time (as there is only 1 counter per timer).
+[[/img/Note-icon.png|alt="Note"]] All channel of the same timer are started at the same time (as there is only 1 counter per timer).
 
 __Example__:
 ```C++
@@ -252,7 +252,7 @@ Also, to get ride of Interrupt callback:
 ```C++
     detachInterrupt()
 ```
-![Note](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Note-icon.png) Once the timer is started with the callback enabled you can disable and enable the callback through `detachInterrupt` and `attachInterrupt` freely, how many times you want. However, if the first `resume` (= timer start) is done without **before** calling `attachInterrupt`, the HardwareTimer will **not** be able to attach the interrupt later (for performance reasons the timer will be started with interrupts disabled)
+[[/img/Note-icon.png|alt="Note"]] Once the timer is started with the callback enabled you can disable and enable the callback through `detachInterrupt` and `attachInterrupt` freely, how many times you want. However, if the first `resume` (= timer start) is done without **before** calling `attachInterrupt`, the HardwareTimer will **not** be able to attach the interrupt later (for performance reasons the timer will be started with interrupts disabled)
 
 If you detach and attach interrupts while the timer is running, starting from version 1.8.0, you can also know if there's a callback already attached (without the need to track it externally) through the method
 ```C++
@@ -262,19 +262,19 @@ If you detach and attach interrupts while the timer is running, starting from ve
 ##  4. <a name='Examples'></a>Examples
 Following examples are provided in [STM32Examples](https://github.com/stm32duino/STM32Examples) library (available with Arduino Library manager):
 
-   * [Timebase_callback.ino](https://github.com/stm32duino/STM32Examples/blob/master/examples/Peripherals/HardwareTimer/Timebase_callback/Timebase_callback.ino)
+   * [Timebase_callback.ino](https://github.com/stm32duino/STM32Examples/blob/main/examples/Peripherals/HardwareTimer/Timebase_callback/Timebase_callback.ino)
 
         This example shows how to configure HardwareTimer to execute a callback at regular interval.
         Callback toggles pin.
         Once configured, there is only CPU load for callbacks executions.
 
-   * [Timebase_callback_with_parameter.ino](https://github.com/stm32duino/STM32Examples/blob/master/examples/Peripherals/HardwareTimer/Timebase_callback_with_parameter/Timebase_callback_with_parameter.ino)
+   * [Timebase_callback_with_parameter.ino](https://github.com/stm32duino/STM32Examples/blob/main/examples/Peripherals/HardwareTimer/Timebase_callback_with_parameter/Timebase_callback_with_parameter.ino)
 
         This example shows how to configure HardwareTimer to execute a callback with parameter at regular interval.
         Callback toggles pin.
         Once configured, there is only CPU load for callbacks executions.
 
-   * [PWM_FullConfiguration.ino](https://github.com/stm32duino/STM32Examples/blob/master/examples/Peripherals/HardwareTimer/PWM_FullConfiguration/PWM_FullConfiguration.ino)
+   * [PWM_FullConfiguration.ino](https://github.com/stm32duino/STM32Examples/blob/main/examples/Peripherals/HardwareTimer/PWM_FullConfiguration/PWM_FullConfiguration.ino)
 
         This example shows how to fully configure a PWM with HardwareTimer.
         PWM is generated on `LED_BUILTIN` if available.
@@ -283,21 +283,21 @@ Following examples are provided in [STM32Examples](https://github.com/stm32duino
         Those call back are used to toggle a second pin: `pin2`.
         Once configured, there is only CPU load for callbacks executions.
 
-   * [All-in-one_setPWM.ino](https://github.com/stm32duino/STM32Examples/blob/master/examples/Peripherals/HardwareTimer/All-in-one_setPWM/All-in-one_setPWM.ino)
+   * [All-in-one_setPWM.ino](https://github.com/stm32duino/STM32Examples/blob/main/examples/Peripherals/HardwareTimer/All-in-one_setPWM/All-in-one_setPWM.ino)
 
         This example shows how to configure a PWM with HardwareTimer in one single function call.
         PWM is generated on `LED_BUILTIN` if available.
         No interruption callback used: PWM is generated by hardware.
         Once configured, there is no CPU load.
 
-   * [InputCapture.ino](https://github.com/stm32duino/STM32Examples/blob/master/examples/Peripherals/HardwareTimer/InputCapture/InputCapture.ino)
+   * [InputCapture.ino](https://github.com/stm32duino/STM32Examples/blob/main/examples/Peripherals/HardwareTimer/InputCapture/InputCapture.ino)
 
         This example shows how to configure HardwareTimer in inputcapture to measure external signal frequency.
         Each time a rising edge is detected on the input pin, hardware will save counter value into CaptureCompare register.
         External signal (signal generator for example) should be connected to `D2`.
         Measured frequency is displayed on Serial Monitor.
 
-   * [Frequency_Dutycycle_measurement.ino](https://github.com/stm32duino/STM32Examples/blob/master/examples/Peripherals/HardwareTimer/Frequency_Dutycycle_measurement/Frequency_Dutycycle_measurement.ino)
+   * [Frequency_Dutycycle_measurement.ino](https://github.com/stm32duino/STM32Examples/blob/main/examples/Peripherals/HardwareTimer/Frequency_Dutycycle_measurement/Frequency_Dutycycle_measurement.ino)
 
         This example shows how to configure HardwareTimer to measure external signal frequency and dutycycle.
         The input pin will be connected to 2 channel of the timer, one for rising edge the other for falling edge.
@@ -306,7 +306,7 @@ Following examples are provided in [STM32Examples](https://github.com/stm32duino
         External signal (signal generator for example) should be connected to `D2`.
 
 ##  5. <a name='Dependencies'></a>Dependencies
-![Warning](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Warning-icon.png) Needs *Arduino_Core_STM32* version > 1.6.1
+[[/img/Warning-icon.png|alt="Warning"]] Needs *Arduino_Core_STM32* version > 1.6.1
 
 *Tone*, *Servo* and *analogwrite* have been updated to use *HardwareTimer*.
 

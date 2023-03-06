@@ -5,7 +5,7 @@ As those files were almost the same for the same series, a default one per serie
 
 Each required STM32 HAL configuration file is in `system/STM32YYxx/` (where `YY` is the MCU serie).<br>
 
-It allows to wrap to the correct HAL configurations. Example for a STM32F2: [stm32f2xx_hal_conf.h](https://github.com/stm32duino/Arduino_Core_STM32/blob/master/system/STM32F2xx/stm32f2xx_hal_conf.h)
+It allows to wrap to the correct HAL configurations. Example for a STM32F2: [stm32f2xx_hal_conf.h](../blob/main/system/STM32F2xx/stm32f2xx_hal_conf.h)
 ```C
 /* STM32F2xx specific HAL configuration options. */
 #if __has_include("hal_conf_custom.h")
@@ -18,7 +18,7 @@ It allows to wrap to the correct HAL configurations. Example for a STM32F2: [stm
 #endif
 ```
 Each `stm32yyxx_hal_conf_default.h` file disabled all HAL modules and include the same `stm32yyxx_hal_conf.h` file available here: [cores/arduino/stm32/stm32yyxx_hal_conf.h](
-https://github.com/stm32duino/Arduino_Core_STM32/blob/master/cores/arduino/stm32/stm32yyxx_hal_conf.h)
+../blob/main/cores/arduino/stm32/stm32yyxx_hal_conf.h)
 
 This file handles:
  * mandatory HAL modules definition
@@ -36,7 +36,7 @@ Custom HAL configuration file can replace the default one by adding a file named
 ### HAL modules configuration 
 
 [[/img/Important-icon.png|alt="Important"]] **Below HAL modules or definitions are listed for convenience but may not be up to date. Refer to [cores/arduino/stm32/stm32yyxx_hal_conf.h](
-https://github.com/stm32duino/Arduino_Core_STM32/blob/master/cores/arduino/stm32/stm32yyxx_hal_conf.h) to make sure having up to date values.**
+../blob/main/cores/arduino/stm32/stm32yyxx_hal_conf.h) to make sure having up to date values.**
 
 #### Mandatory HAL module enabled by default
 * `HAL_MODULE_ENABLED`

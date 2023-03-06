@@ -2,7 +2,7 @@
 
 ## Mass Storage
 
-This upload method is mainly dedicated to boards manufactured by ST which integrate a ST-Link: [Nucleo](https://www.st.com/en/evaluation-tools/stm32-nucleo-boards.html), [Discovery](https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits.html), [Eval](https://www.st.com/en/evaluation-tools/stm32-eval-boards.html).
+This upload method is mainly dedicated to boards manufactured by ST which integrate a ST-Link: [Nucleo], [Discovery], [Eval].
 
 This enables drag-and-drop flash programming, so there is no need for a separate debug probe. 
 The mass storage device of the ST-Link is a virtual disk, copy on this disk a binary will program it.
@@ -10,21 +10,21 @@ Once programmed into the MCU the copied binary disappears from the virtual disk.
 
 ## STM32CubeProgrammer
 
-[STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) allows to write and verify device memory through both the debug interface (JTAG and SWD) and the bootloader interface (UART, USB DFU, I2C, SPI, and CAN).
+[STM32CubeProgrammer] allows to write and verify device memory through both the debug interface (JTAG and SWD) and the bootloader interface (UART, USB DFU, I2C, SPI, and CAN).
 
-Three upload methods are based on the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) CLI (command-line interface):
+Three upload methods are based on the [STM32CubeProgrammer] CLI (command-line interface):
 
-* [SWD](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#swd)
-* [Serial](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#serial)
-* [DFU](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#dfu)
+* [SWD](#swd)
+* [Serial](#serial)
+* [DFU](#dfu)
 
 ### Requirement
 
-To use those upload methods, [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) have to be installed manually as **it is not provided** through the tools packages.
+To use those upload methods, [STM32CubeProgrammer] have to be installed manually as **it is not provided** through the tools packages.
 
 User can change the default install path but in this case, the new path have to be added in the [PATH](https://en.wikipedia.org/wiki/PATH_(variable)) environment variable.
 
-Default path of [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) binary:
+Default path of [STM32CubeProgrammer] binary:
  * **Linux**: `$HOME/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin`
  * **Mac**: `/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin`
  * **Windows**:
@@ -33,7 +33,7 @@ Default path of [STM32CubeProgrammer](https://www.st.com/en/development-tools/st
 
 To add your custom installation path you can refer to this [HowTo](https://gist.github.com/jesperorb/836cb398e4bb8dc149902d68d3711295#environment-variables)
 
-In any case, if the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) binary is not found, user will be warned like this:
+In any case, if the [STM32CubeProgrammer] binary is not found, user will be warned like this:
 
 ```Console
 STM32_Programmer.sh/STM32_Programmer_CLI.exe not found.
@@ -75,13 +75,13 @@ See [AN2606](https://www.st.com/content/ccc/resource/technical/document/applicat
  * `-rst` for SWD to reset the device after the flash
  * `{serial.port.file} -s` for Serial
 
-[[/img/Note-icon.png|alt="Note"]] Note: I2C, SPI, CAN could be added as supported by the [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) tool.
+[[/img/Note-icon.png|alt="Note"]] Note: I2C, SPI, CAN could be added as supported by the [STM32CubeProgrammer] tool.
 
 ### SWD
 
 Requires a [ST-Link/V2](https://www.st.com/content/st_com/en/products/development-tools/hardware-development-tools/hardware-development-tools-for-stm32/st-link-v2.html) or [ST-Link/V3](https://www.st.com/en/development-tools/stlink-v3set.html) device connected to the PC over USB and to the board via the SWD interface.
 
-[[/img/Tips-icon.png|alt="Tips"]] Several boards manufactured by ST integrate ST-Link: [Nucleo](https://www.st.com/en/evaluation-tools/stm32-nucleo-boards.html), [Discovery](https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits.html), [Eval](https://www.st.com/en/evaluation-tools/stm32-eval-boards.html).
+[[/img/Tips-icon.png|alt="Tips"]] Several boards manufactured by ST integrate ST-Link: [Nucleo], [Discovery], [Eval].
 
 Be sure that the necessary driver for Windows is installed ([available here](https://www.st.com/en/development-tools/stsw-link009.html)) and the ST-Link adapter is updated to the latest firmware ([application to upgrade the firmware](https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stsw-link007.html)).
 
@@ -165,7 +165,7 @@ Details of HID bootloader v2.2 (and newer) hid-flash tool as well as ready-to-us
 
 ## Maple DFU Bootloader
 
-Extract from the legacy wiki page about bootloaders (http://wiki.stm32duino.com/index.php?title=Bootloader):
+Extract from the legacy wiki page about bootloaders (https://web.archive.org/web/20190316155415/http://wiki.stm32duino.com/index.php?title=Bootloader):
 
 In order to simplify the upload process leveraging the USB device, Leaflabs developed a custom DFU bootloader that needs to be uploaded in the MCU at address `0x08000000` via one of the standard STM upload methods (ST Link or standard STM serial bootloader); this custom bootloader is called the **_original Maple bootloader_**.
 Leaflabs' documentation about the original Maple bootloader can be found here: 
@@ -188,3 +188,8 @@ Details about the STM32duino-bootloader as well as ready to use binary files can
 
 [[/img/Warning-icon.png|alt="Warning"]] **USB CDC have to be enable else you will not be able to upload automatically as bootloader reset sequence are manged through the USB CDC communication port.**
 
+
+[Discovery]: https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits.html
+[Eval]: https://www.st.com/en/evaluation-tools/stm32-eval-boards.html
+[Nucleo]: https://www.st.com/en/evaluation-tools/stm32-nucleo-boards.html
+[STM32CubeProgrammer]: https://www.st.com/en/development-tools/stm32cubeprog.html

@@ -39,7 +39,7 @@ ninja # if you are using `ninja`
 The syntax of the CMake language is very simple: the only statement is the function call, the only value type is the string.
 You may want to read [the CMake tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html) to get a comprehensive overview of the features CMake offers.
 
-For a detailed list of the functions this project provides, please refer to [Functions reference](./Functions-reference).
+For a detailed list of the functions this project provides, please refer to [[Functions reference]].
 Below is an introduction to general-purpose CMake; most of it is abstracted away in said funtions.
 
 Here are some key points about the structure of a `CMakeLists.txt` (Also read [the documentation](https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html)):

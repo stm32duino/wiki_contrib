@@ -48,7 +48,7 @@ Servo1 ___|   |__________________________________|   |___
                ____                                   ____
 Servo2 _______|    |_________________________________|    |__
 ```
-![Warning](https://raw.githubusercontent.com/wiki/stm32duino/wiki/img/Warning-icon.png)To avoid CPU load, it is possible to use [HardwareTimer](https://github.com/stm32duino/Arduino_Core_STM32/wiki/HardwareTimer-library) directly to control servo motors.  
+[[/img/Warning-icon.png|alt="Warning"]]To avoid CPU load, it is possible to use [[HardwareTimer library]] directly to control servo motors.  
 But is this case, all GPIO are not eligible to control servo,  
 only the GPIO that have HardwareTimer output capability.
 One timer channel is required per servo.

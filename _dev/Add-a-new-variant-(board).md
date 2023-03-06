@@ -41,7 +41,7 @@ This means that the generic STM32 MCU files required for a variant are generated
  * `variant_generic.cpp`: contains Digital PinName array and Analog (`Ax) [pin number] array
  * `variant_generic.h`: contains all definition required by the variant: STM32 [pin number] definitions, peripheral pins for default instances: Serial, I2C, SPI, Tone, Servo, ...
 
-[[/img/Tips-icon.png|alt="Tips"]] The example of all the steps below are available in this PR: [Add generic G0B1R(B-C-E)T, G0C1R(C-E)T and Nucleo-G0B1RE ](https://github.com/stm32duino/Arduino_Core_STM32/pull/1398)
+[[/img/Tips-icon.png|alt="Tips"]] The example of all the steps below are available in this PR: [Add generic G0B1R(B-C-E)T, G0C1R(C-E)T and Nucleo-G0B1RE ](../pull/1398)
 
 ---
 # Define a new generic variant
@@ -52,13 +52,13 @@ Before adding a specific board, it is a good practice to add the generic entry o
 
 ## 1 - Find the MCU folder
 
-Go to the [`variants` folder] of the STM32 core (See [Where are sources]).
+Go to the [`variants` folder] of the STM32 core (See [[Where are sources|Where-are-sources#stm32-core-sources-files-location]]).
 
 **Example**: To add variant for the [Nucleo-G0B1RE] search for the folder name including `G0B1RET` reference in the STM32G0xx subfolder of the [`variants` folder]. In this case:
 
 [`G0B1R(B-C-E)T_G0C1R(C-E)T`]
 
-Several files are present as stated [here](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Add-a-new-variant-%28board%29#Generated-variant-files).
+Several files are present as stated [here](#Generated-variant-files).
 It misses only the default linker script named `ldscript.ld`.
 
 ## 2 - Add the default linker script
@@ -312,15 +312,14 @@ Restart Arduino IDE and try one of the new entry with the [CheckVariant example]
 
 
 
-[`boards.txt`]: https://github.com/stm32duino/Arduino_Core_STM32/blob/master/boards.txt
-[`G0B1R(B-C-E)T_G0C1R(C-E)T`]: https://github.com/stm32duino/Arduino_Core_STM32/tree/master/variants/STM32G0xx/G0B1R(B-C-E)T_G0C1R(C-E)T
+[`boards.txt`]: ../blob/main/boards.txt
+[`G0B1R(B-C-E)T_G0C1R(C-E)T`]: ../blob/main/variants/STM32G0xx/G0B1R(B-C-E)T_G0C1R(C-E)T
 [`PinName`]: tbd
-[`platform.txt`]: https://github.com/stm32duino/Arduino_Core_STM32/blob/master/platform.txt
-[`variants` folder]: https://github.com/stm32duino/Arduino_Core_STM32/tree/master/variants
+[`platform.txt`]: ../blob/main/platform.txt
+[`variants` folder]: ../blob/main/variants
 [Arduino boards.txt specification]: https://arduino.github.io/arduino-cli/latest/platform-specification/#boardstxt
-[CheckVariant example]: https://github.com/stm32duino/STM32Examples/tree/master/examples/NonReg/CheckVariant
+[CheckVariant example]: https://github.com/stm32duino/STM32Examples/tree/main/examples/NonReg/CheckVariant
 [Nucleo-G0B1RE]: https://www.st.com/en/evaluation-tools/nucleo-g0b1re.html
-[`README.md`]: https://github.com/stm32duino/Arduino_Core_STM32/blob/master/README.md
+[`README.md`]: ../blob/main/README.md
 [STM32_open_pin_data]: https://github.com/STMicroelectronics/STM32_open_pin_data
 [STM32CubeMX]: http://www.st.com/en/development-tools/stm32cubemx.html
-[Where are sources]: https://github.com/stm32duino/Arduino_Core_STM32/wiki/Where-are-sources#stm32-core-sources-files-location

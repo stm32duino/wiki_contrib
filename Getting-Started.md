@@ -60,7 +60,7 @@ Then you can find the Nucleo-64 boards available in a sub-menu of the "Tools" me
 
 ## Extra step
 
-To upload through SWD (STLink), Serial or DFU, [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) needs to be installed. See [Upload methods](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#stm32cubeprogrammer).
+To upload through SWD (STLink), Serial or DFU, [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html) needs to be installed. See [[Upload methods|Upload-methods#stm32cubeprogrammer]].
 
 ## Troubleshooting
 
@@ -72,19 +72,19 @@ If you have any issue to download a package, ensure to not be behind a proxy.
 Else configure the proxy in the Arduino.cc IDE (open the "**Preferences**" dialog and select "**Network**" tab).
 
 # Configuring IDE 
-1. Connect a board to the computer USB port. For this example: [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
+1. Connect a board to the computer USB port. For this example: [Nucleo L476RG]
 
 2. Launch the Arduino software
 
     [[/img/arduino.png|alt="Arduino icon"]]
 
-3. Select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html) board in two steps:
+3. Select the [Nucleo L476RG] board in two steps:
 
 a. From the "**Tools > Board**" menu, select the STM32 boards groups: _Nucleo-64_
 
   [[/img/boardslist.png|alt="Board selection"]]
 
-b. Then from the "**Tools > Board part number**" menu, select the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
+b. Then from the "**Tools > Board part number**" menu, select the [Nucleo L476RG]
 
   [[/img/SelectBoard.png|alt="Board selection"]]
 
@@ -101,10 +101,13 @@ b. Then from the "**Tools > Board part number**" menu, select the [Nucleo L476RG
 ## Upload methods
 Depending of the board, several upload methods could be proposed, thanks the "**Tools > Upload Method**" menu.
 
-See [Upload methods](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods) for more details.
+See [[Upload methods]] for more details.
 
 [[/img/UploadMethod.png|alt="Upload Method"]]
 
 # Examples
 * [[Blink-example]]
 * [[Firmata-example]] (to use with [ScratchX](http://scratchx.org/) for example)
+
+
+[Nucleo L476RG]: http://www.st.com/en/evaluation-tools/nucleo-l476rg.html

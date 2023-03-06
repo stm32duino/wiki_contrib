@@ -7,7 +7,7 @@ Checklist:
 * Verify if a mount point exists and check the mount point name. It should be the same than the one searched by the upload tool. 
 
 If not, then probably you have an older board with a different label used for the mount point.<br>
-Update the "_board.txt_" file to add <your_node_label> to the targeted board.<br>
+Update the `board.txt` file to add `<your_node_label>` to the targeted board.<br>
 Example:<br>
 `Nucleo_64.menu.pnum.NUCLEO_xxxxxx.node=NODE_xxxxxx`<br>
 becomes<br>
@@ -81,5 +81,5 @@ https://www.stm32duino.com/viewtopic.php?f=62&t=1000
 
 #### When using "BMP (Black Magic Probe)" upload method, error occurs it can't connect to the COM port.
 
-Refers to this [warning](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#bmp-black-magic-probe)
+Refers to this [[warning|Upload-methods#bmp-black-magic-probe]]
 

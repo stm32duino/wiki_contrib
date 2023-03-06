@@ -1,11 +1,11 @@
 # How to debug
 
 Below, some ways to debug:
- * [Eclipse and Sloeber](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug#eclipse-and-sloeber)
- * [PlatformIO](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug#PlatformIO)
- * [Visual Studio and VisualGDB](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug#visual-studio-and-visualgdb)
- * [Visual Studio Code and Arduino extension](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug#Visual-Studio-Code-and-Arduino-extension)
- * [Command line GDB](https://github.com/stm32duino/Arduino_Core_STM32/wiki/How-to-debug#command-line-gdb)
+ * [Eclipse and Sloeber](#eclipse-and-sloeber)
+ * [PlatformIO](#PlatformIO)
+ * [Visual Studio and VisualGDB](#visual-studio-and-visualgdb)
+ * [Visual Studio Code and Arduino extension](#Visual-Studio-Code-and-Arduino-extension)
+ * [Command line GDB](#command-line-gdb)
 
 [[/img/Warning-icon.png|alt="Warning"]] **Only the Arduino IDE is officially supported.** 
 
@@ -32,7 +32,7 @@ Launch Eclipse, go to _**“Help > Eclipse Marketplace”**_ and search for the 
 
 In the tree view, expand _**“GNU MCU Eclipse {version}”**_ and uncheck all items. In previous versions, you had to choose the OpenOCD entry. Since there is no such entry, you cannot select it. OpenOCD will automatically be installed. Confirm and follow the recommended instructions. Then restart Eclipse.<br>
 
-![](https://cloud.blselectronics.ch/index.php/apps/files_sharing/ajax/publicpreview.php?x=1541&y=442&a=true&file=marketplace.png&t=3qjjaNBwqdibeqi&scalingup=0)
+[[/img/EclipseMPGNU.png|alt="EclipseMarketPlaceGNU"]]
 
 To finish the OpenOCD plug-in configuration, and for a simpler integration, install OpenOCD binaries by following the [“How to install the OpenOCD binaries”](https://gnu-mcu-eclipse.github.io/openocd/install/ 
 ) tutorial. This Guide will tell you to extract the openocd binaries to a specific path (Windows).
@@ -87,7 +87,7 @@ Use the _**“Arduino”**_ menu or the upload button on the toolbar to upload y
 
 ## 3 - Debugging Arduino Code
 
-First, make sure your board can work with STLink. The debugger support is currently fully tested with the board supported by the STM32Core (Full list on [boards available section](https://github.com/stm32duino/Arduino_Core_STM32#boards-available)). 
+First, make sure your board can work with STLink. The debugger support is currently fully tested with the board supported by the STM32Core (Full list on [Supported boards section](../#supported-boards)). 
 
 ### 3.1 Software requirements
 
@@ -107,12 +107,8 @@ Two standard tools are required in order to debug the code:
 
 If you are using sloeber directly, not CDT with the plugin. The you probaly will not find the below mentiones menue "Debug Configurations" under "Run". This is, because you are in the arduino view. In this view, all "unneccessary" menues are hidden. To overcome this, you can change the view: 
 
-![](https://cloud.blselectronics.ch/index.php/apps/files_sharing/ajax/publicpreview.php?x=1541&y=442&a=true&file=perspective1.png&t=dPyGmpb2fC2Qamo&scalingup=0)
-
 You can choose the regular C/C++ view. 
 Alternatively you can also reach the debug configurations menu by right-click on your project under the arduino view. 
-
-![](https://cloud.blselectronics.ch/index.php/apps/files_sharing/ajax/publicpreview.php?x=1541&y=442&a=true&file=arduinoView.png&t=ZRF4j9Nij8xBSP4&scalingup=0)
 
 From the _**“Run”**_ menu, select _**“Debug Configurations”**_.
 Double-click on **_“GDB OpenOCD Debugging”_** to create a new configuration and set the configuration name.
@@ -169,8 +165,6 @@ If the configuration process runs correctly, you will be able to see the debug c
 
 If you are facing problems with messages like "binary not found" you should try to click on the drop down menu and then on your configuration instead of just click on the debug icon. 
 
-![](https://cloud.blselectronics.ch/index.php/apps/files_sharing/ajax/publicpreview.php?x=1541&y=442&a=true&file=debug.png&t=DPDNH47JPMo4LdH&scalingup=0)
-
 [[/img/DebugConsole.png|alt="DebugConsole"]]
 
 Now, you can easily debug your code by using the Eclipse debug features including running step-by-step mode, live breakpoint, inspecting memory access, live view of variable contents and many more.
@@ -197,7 +191,7 @@ This [tutorial](https://visualgdb.com/tutorials/arduino/stm32/) shows how to dev
 
 ## 1. Install
 
-See [prerequisites](https://github.com/microsoft/vscode-arduino/blob/master/README.md#prerequisites).
+See [prerequisites](https://github.com/microsoft/vscode-arduino/blob/main/README.md#prerequisites).
 
 * Download and install [Visual Studio code](https://code.visualstudio.com/)
 * Install Arduino extension from Microsoft: [vscode-arduino](https://github.com/Microsoft/vscode-arduino)
@@ -213,7 +207,7 @@ In your user [`settings.json`](https://code.visualstudio.com/docs/getstarted/set
     "arduino.additionalUrls": "https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json"
 ```
 
-[[/img/Tips-icon.png|alt="Tips"]] For further options see [vscode-arduino Readme](https://github.com/microsoft/vscode-arduino/blob/master/README.md) 
+[[/img/Tips-icon.png|alt="Tips"]] For further options see [vscode-arduino Readme](https://github.com/microsoft/vscode-arduino/blob/main/README.md) 
 
 Now, Ensure STM32 core installation is installed by opening the "**Arduino Board Manager**". Open the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Board Manager**, `STM32 Cores` should be listed in `Contributed` Type:
 

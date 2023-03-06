@@ -15,13 +15,13 @@ The walkthrough below was performed using CubeIDE version 1.10.1 ; some steps ma
 
 The first step is to create or import a __"Makefile Project with Existing Code"__:
 
-![1](./img/cmake_cubeIDE/1.png)
+[[/img/cmake_cubeIDE/1.png|alt="1"]]
 
 -----------------
 
 Then browse for the project's location, and leave all other settings to default as illustrated below:
 
-![2](./img/cmake_cubeIDE/2.png)
+[[/img/cmake_cubeIDE/2.png|alt="2"]]
 
 -----------------
 
@@ -30,8 +30,8 @@ Right click on the project, hit "Properties" (or `Alt`+`Enter`), then go to the 
 Fill in the "Builder Settings" and "Behavior" tabs as follows
 (be sure to replace the build location with the relevant value for your project).
 
-![3](./img/cmake_cubeIDE/3.png)
-![4](./img/cmake_cubeIDE/4.png)
+[[/img/cmake_cubeIDE/3.png|alt="3"]]
+[[/img/cmake_cubeIDE/4.png|alt="4"]]
 
 You may also change the build command to "ninja"; this is known to be much more efficient, in terms of build time, than Make.
 
@@ -40,11 +40,11 @@ You may also change the build command to "ninja"; this is known to be much more 
 Once this is done, there remains to tell CubeIDE how to run CMake.
 Right click on the project, hit "Build targets" -> "Create" (or `Shift`+`F9`, "Add").
 
-![5](./img/cmake_cubeIDE/5.png)
+[[/img/cmake_cubeIDE/5.png|alt="5"]]
 
 Fill the window that pops up as follows:
 
-![6](./img/cmake_cubeIDE/6.png)
+[[/img/cmake_cubeIDE/6.png|alt="6"]]
 
 Build command :
 ```sh
@@ -64,8 +64,8 @@ Now, all the configuration steps are done.
 
 To run CMake, build the target you created in the previous step (or hit `F9`):
 
-![7](./img/cmake_cubeIDE/7.png)
+[[/img/cmake_cubeIDE/7.png|alt="7"]]
 
 To or rebuild the project, hit `Ctrl`+`B`, or right-click on the project -> "Build project".
 
-![8](./img/cmake_cubeIDE/8.png)
+[[/img/cmake_cubeIDE/8.png|alt="8"]]

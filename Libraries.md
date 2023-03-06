@@ -1,15 +1,15 @@
 
 
-Libraries using basic features like Serial, SPI, I2C,... should be fully compatible with [STM32](https://github.com/stm32duino/Arduino_Core_STM32) core. Pin updates could be required in the sketch.
+Libraries using basic features like Serial, SPI, I2C,... should be fully compatible with [STM32] core. Pin updates could be required in the sketch.
 
-* [Built-in (delivered with the core package)](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Libraries#built-in-delivered-with-the-core-package)
-* [Dedicated](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Libraries#dedicated)
-* [Expansion boards](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Libraries#expansion-boards)
-  * [X-NUCLEO Expansion Boards](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Libraries#x-nucleo-expansion-boards)
-  * [Other expansion board](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Libraries#other-expansion-board)
-* [Official from Arduino](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Libraries#official-from-arduino)
-* [Third party](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Libraries#third-party)
-  * [Tested](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Libraries#tested)
+* [Built-in (delivered with the core package](#built-in-delivered-with-the-core-package)
+* [Dedicated](#dedicated)
+* [Expansion boards](#expansion-boards)
+  * [X-NUCLEO Expansion Boards](#x-nucleo-expansion-boards)
+  * [Other expansion board](#other-expansion-board)
+* [Official from Arduino](#official-from-arduino)
+* [Third party](#third-party)
+  * [Tested](#tested)
 
 [[/img/Warning-icon.png|alt="Warning"]] _Arduino boards provide ICSP connector used by several Arduino shields for SPI signal: MISO/MOSI/SCK. STM32 boards do not have this ICSP connector, so this requires to manually wire those SPI signals to the desired pin (mainly: D11 to D13)_
 
@@ -35,7 +35,7 @@ Some libraries have been developped to support specific features (hardware or no
 * [STM32Ethernet](https://github.com/stm32duino/STM32Ethernet): for on board Ethernet port (ex: Nucleo-F429ZI). This library is fully compatible with Arduino [Ethernet](https://www.arduino.cc/en/Reference/Ethernet) API. It depends on the following libraries:
   * [LwIP](https://github.com/stm32duino/LwIP): lightweight TCP/IP stack (LwIP) is a small independent implementation of the TCP/IP protocol suite
   
-  Dedicated [Wiki page](https://github.com/stm32duino/Arduino_Core_STM32/wiki/STM32Ethernet)
+  Dedicated [[Wiki page|STM32Ethernet]]
 * [STM32FreeRTOS](https://github.com/stm32duino/STM32FreeRTOS): this is a port of [FreeRTOS](https://www.freertos.org/) for STM32 as Arduino libraries
 * [STM32LowPower](https://github.com/stm32duino/STM32LowPower): to support some STM32 low power mode. It depends on the following libraries:
   * [STM32RTC](https://github.com/stm32duino/STM32RTC)
@@ -45,14 +45,14 @@ Some libraries have been developped to support specific features (hardware or no
 
 
 * [HTS221](https://github.com/stm32duino/HTS221): to support the HTS221 capacitive digital sensor for relative humidity and temperature.
-  Dedicated [Wiki page](https://github.com/stm32duino/Arduino_Core_STM32/wiki/HTS221)
+  Dedicated [[Wiki page|HTS221]]
 * [IIS2MDC](https://github.com/stm32duino/IIS2MDC):  to support the IIS2MDC high-performance 3-axis magnetometer
 * [ISM330DLC](https://github.com/stm32duino/ISM330DLC): to support the ISM330DLC 3D accelerometer and 3D gyroscope
 * [LIS2DW12](https://github.com/stm32duino/LIS2DW12): to support the LIS2DW12 3D accelerometer
 * [LIS2MDL](https://github.com/stm32duino/LIS2MDL):  to support the LIS2MDL high-performance 3-axis magnetometer
 * [LIS3DHH](https://github.com/stm32duino/LIS3DHH): to support the LIS3DHH 3D accelerometer
-* [LIS3MDL](https://github.com/stm32duino/LIS3MDL): to support the LIS3MDL high-performance 3-axis magnetometer. Dedicated [Wiki page](https://github.com/stm32duino/Arduino_Core_STM32/wiki/LIS3MDL)
-* [LPS22HB](https://github.com/stm32duino/LPS22HB): to support the LPS22HB 260-1260 hPa absolute digital ouput barometer. Dedicated [Wiki page](https://github.com/stm32duino/Arduino_Core_STM32/wiki/LPS22HB)
+* [LIS3MDL](https://github.com/stm32duino/LIS3MDL): to support the LIS3MDL high-performance 3-axis magnetometer. Dedicated [[Wiki page|LIS3MDL]]
+* [LPS22HB](https://github.com/stm32duino/LPS22HB): to support the LPS22HB 260-1260 hPa absolute digital ouput barometer. Dedicated [[Wiki page|LPS22HB]]
 * [LPS25HB](https://github.com/stm32duino/LPS25HB): to support the LPS25HB 260-1260 hPa absolute digital ouput barometer
 * [LPS22HH](https://github.com/stm32duino/LPS22HH): to support the LPS22HH 260-1260 hPa absolute digital ouput barometer
 * [LSM303AGR](https://github.com/stm32duino/LSM303AGR): to support the LSM303AGR 3D accelerometer and 3D magnetometer
@@ -60,15 +60,15 @@ Some libraries have been developped to support specific features (hardware or no
 * [LSM6DSOX](https://github.com/stm32duino/LSM6DSOX): to support the LSM6DSOX 3D accelerometer and 3D gyroscope
 * [LSM6DS0](https://github.com/stm32duino/LSM6DS0): to support the LSM6DS0 3D accelerometer and 3D gyroscope
 * [LSM6DS3 ](https://github.com/stm32duino/LSM6DS3): to support the LSM6DS3 3D accelerometer and 3D gyroscope
-* [LSM6DSL](https://github.com/stm32duino/LSM6DSL): to support the LSM6DSL 3D accelerometer and 3D gyroscope. Dedicated [Wiki page](https://github.com/stm32duino/Arduino_Core_STM32/wiki/LSM6DSL)
-* [M24SR64-Y](https://github.com/stm32duino/M24SR64-Y): to support the dynamic NFC/RFID Tag IC dual interface M24SR64-Y. Dedicated [Wiki page](https://github.com/stm32duino/Arduino_Core_STM32/wiki/M24SR64-Y)
-* [MX25R6435F](https://github.com/stm32duino/MX25R6435F): to support the Quad-SPI NOR Flash memory MX25R6435F. Dedicated [Wiki page](https://github.com/stm32duino/Arduino_Core_STM32/wiki/MX25R6435F)
+* [LSM6DSL](https://github.com/stm32duino/LSM6DSL): to support the LSM6DSL 3D accelerometer and 3D gyroscope. Dedicated [[Wiki page|LSM6DSL]]
+* [M24SR64-Y](https://github.com/stm32duino/M24SR64-Y): to support the dynamic NFC/RFID Tag IC dual interface M24SR64-Y. Dedicated [[Wiki page|M24SR64-Y]]
+* [MX25R6435F](https://github.com/stm32duino/MX25R6435F): to support the Quad-SPI NOR Flash memory MX25R6435F. Dedicated [[Wiki page|MX25R6435F]]
 * [Proximity Gesture](https://github.com/stm32duino/Proximity_Gesture): o support gesture-detection using proximity sensors (VL53L0X or VL53L1X or VL6180X). The APIs provide single swipe gesture detection, directional (left/right) swipe gesture detection and single tap gesture detection
-* [SPBTLE-RF](https://github.com/stm32duino/SPBTLE-RF): to support the Bluetooth (V4.1 compliant) SPBTLE-RF. Dedicated [Wiki page](https://github.com/stm32duino/Arduino_Core_STM32/wiki/SPBTLE-RF)
+* [SPBTLE-RF](https://github.com/stm32duino/SPBTLE-RF): to support the Bluetooth (V4.1 compliant) SPBTLE-RF. Dedicated [[Wiki page|SPBTLE-RF]]
 * [ST25DV](https://github.com/stm32duino/ST25DV): to support the ST25DV components
 * [STTS22H](https://github.com/stm32duino/STTS22H): to support the STTS22H digital temperature sensor
 * [STTS751](https://github.com/stm32duino/STTS751): to support the STTS751 digital temperature sensor
-* [VL53L0X](https://github.com/stm32duino/VL53L0X): to support the VL53L0X Time-of-Flight and gesture-detection sensor. Dedicated [Wiki page](https://github.com/stm32duino/Arduino_Core_STM32/wiki/VL53L0X)
+* [VL53L0X](https://github.com/stm32duino/VL53L0X): to support the VL53L0X Time-of-Flight and gesture-detection sensor. Dedicated [[Wiki page|VL53L0X]]
 * [VL53L1X](https://github.com/stm32duino/VL53L1X): to support the VL53L1X Time-of-Flight and gesture-detection sensor
 * [VL6180X](https://github.com/stm32duino/VL6180X): to support the VL6180X proximity and ambient light sensing (ALS) sensor
 * [WiFi-ISM43362-M3G-L44](https://github.com/stm32duino/WiFi-ISM43362-M3G-L44): to support the Wi-Fi module Inventek ISM43362-M3G-L44 (802.11 b/g/n)
@@ -78,26 +78,26 @@ Some libraries have been developped to support specific features (hardware or no
 
 ## Expansion boards
 
-### [X-NUCLEO Expansion Boards](https://www.st.com/en/evaluation-tools/stm32-nucleo-expansion-boards.html])
+### [X-NUCLEO Expansion Boards]
 
-Hereafter, an exhaustive list of Arduino libraries to support [X-NUCLEO Expansion Boards](https://www.st.com/en/evaluation-tools/stm32-nucleo-expansion-boards.html]).
-These libraries are guaranteed to work fine with all NUCLEO boards supported in the [STM32](https://github.com/stm32duino/Arduino_Core_STM32) Core. They could also work with standard Arduino boards but I suggest to check before electrical and pinout compatibility of [X-NUCLEO Expansion Boards](https://www.st.com/en/evaluation-tools/stm32-nucleo-expansion-boards.html]) with standard Arduino boards.
+Hereafter, an exhaustive list of Arduino libraries to support [X-NUCLEO Expansion Boards].
+These libraries are guaranteed to work fine with all NUCLEO boards supported in the [STM32] Core. They could also work with standard Arduino boards but I suggest to check before electrical and pinout compatibility of [X-NUCLEO Expansion Boards] with standard Arduino boards.
 
 
 * [X-NUCLEO-53L0A1](https://github.com/stm32duino/X-NUCLEO-53L0A1): it is an expansion board for the STM32 Nucleo based on VL53L0X Time-of-Flight and gesture-detection sensor. It depends on the following libraries:
 
   * [VL53L0X](https://github.com/stm32duino/VL53L0X)
-  * [Proximity Gesture](https://github.com/stm32duino/Proximity_Gesture)
+  * [Proximity Gesture]
 
 * [X-NUCLEO-53L1A1](https://github.com/stm32duino/X-NUCLEO-53L1A1): it is an expansion board for the STM32 Nucleo based on VL53L1X Time-of-Flight and gesture-detection sensor. It depends on the following libraries:
 
   * [VL53L1X](https://github.com/stm32duino/VL53L1X)
-  * [Proximity Gesture](https://github.com/stm32duino/Proximity_Gesture)
+  * [Proximity Gesture]
 
 * [X-NUCLEO-6180XA1](https://github.com/stm32duino/X-NUCLEO-6180XA1): it is an expansion board for the STM32 Nucleo based on VL6180X proximity sensor, gesture and ambient light sensing (ALS) module. It depends on the following libraries:
 
   * [VL6180X](https://github.com/stm32duino/VL6180X)
-  * [Proximity Gesture](https://github.com/stm32duino/Proximity_Gesture)
+  * [Proximity Gesture]
 
 * [X-NUCLEO-GNSS1A1](https://github.com/stm32duino/X-NUCLEO-GNSS1A1): to support the X-NUCLEO-GNSS1A1 expansion board using the TESEO-LIV3F module. It depends on the following libraries:
   * [MicroNMEA](https://github.com/stevemarple/MicroNMEA)
@@ -177,7 +177,7 @@ These libraries are guaranteed to work fine with all NUCLEO boards supported in 
 
 * [I-NUCLEO-LRWAN1](https://github.com/stm32duino/I-NUCLEO-LRWAN1): to support I-NUCLEO-LRWAN1 LoRa® expansion board based on USI® LoRaWAN™ technology module
 
-Herafter, a non exhaustive list of libraries known as compatible with the [STM32](https://github.com/stm32duino/Arduino_Core_STM32) core.
+Herafter, a non exhaustive list of libraries known as compatible with the [STM32] core.
 
 ## Official from Arduino
 * [TFT](https://github.com/arduino-libraries/TFT/): since release [1.0.6](https://github.com/arduino-libraries/TFT/releases/tag/1.0.6) else use [Ucglib_Arduino](https://github.com/olikraus/Ucglib_Arduino)
@@ -195,3 +195,7 @@ Herafter, a non exhaustive list of libraries known as compatible with the [STM32
 * [RTClib](https://github.com/adafruit/RTClib): tested with Adafruit module 3296
 * [Ucglib_Arduino](https://github.com/olikraus/Ucglib_Arduino): tested with ST7735
 * [UIPEthernet](https://github.com/UIPEthernet/UIPEthernet): tested with ENC28j60 module
+
+[Proximity Gesture]: https://github.com/stm32duino/Proximity_Gesture
+[STM32]: https://github.com/stm32duino/Arduino_Core_STM32
+[X-NUCLEO Expansion Boards]: https://www.st.com/en/evaluation-tools/stm32-nucleo-expansion-boards.html

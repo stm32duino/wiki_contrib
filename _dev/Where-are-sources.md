@@ -1,7 +1,7 @@
 
 ## STM32 core sources files location
 
-By installing the stm32 core thanks the [[Boards Manager|Boards-Manager]], the extracted package is located here:
+By installing the stm32 core thanks the [[Boards Manager|Getting-Started#About-Boards-manager-concept]], the extracted package is located here:
 
 Go to the local Arduino directory.<br>
 [[/img/Tips-icon.png|alt="Tips icon"]] _The location is displayed in the "**Preferences**" dialog._<br>

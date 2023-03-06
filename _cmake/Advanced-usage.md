@@ -6,7 +6,7 @@ Regarding the latter, an [`insight()`](./Functions-reference#insights) can be us
 Below is the logic structure of the simplest example, the Blink sketch.
 The following sections may refer to it to illustrate their points.
 
-![Blink logic structure](./img/logicstructure.gv.svg)
+[[/img/logicstructure.gv.svg|alt="Blink logic structure"]]
 
 
 # Adding new settings to the build
