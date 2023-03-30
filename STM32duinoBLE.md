@@ -38,7 +38,7 @@ STM32duinoBLE library could not work with the stock firmware that is loaded in t
 
 For this reason, first of all, it is needed to solder on X-NUCLEO-BNRG2A1, if it is not soldered, a 0 Ohm resistor at R117.
 
-Then you can use a standard ST-Link V2-1 with 5 jumper wires female-female together with [STSW-BNRGFLASHER](https://www.st.com/content/st_com/en/products/embedded-software/wireless-connectivity-software/stsw-bnrgflasher.html) software tool (currently available only for Windows PC) in order to update the firmware of the BLE module of X-NUCLEO-BNRG2A1.
+Then you can use a standard ST-Link V2-1 with 5 jumper wires female-female together with [RF-Flasher Utility](https://www.st.com/en/embedded-software/stsw-bnrgflasher.html) software tool (currently available only for Windows PC) in order to update the firmware of the BLE module of X-NUCLEO-BNRG2A1.
 
 You need to connect the J12 pins of the X-NUCLEO-BNRG2A1 to the pins of the ST-Link V2-1 as shown in the picture below.
 
