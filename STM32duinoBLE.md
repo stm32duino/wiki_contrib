@@ -34,7 +34,7 @@ If you need to restore the stock firmware of the BLE module of STEVAL-MKSBOX1V1,
 
 # STM32duinoBLE with X-NUCLEO-BNRG2A1
 
-STM32duinoBLE library does not work with the stock firmware that is loaded in the BLE module of X-NUCLEO-BNRG2A1 expansion board.
+STM32duinoBLE library could not work with the stock firmware that is loaded in the BLE module of X-NUCLEO-BNRG2A1 expansion board.
 
 For this reason, first of all, it is needed to solder on X-NUCLEO-BNRG2A1, if it is not soldered, a 0 Ohm resistor at R117.
 
@@ -54,25 +54,21 @@ In particular we have the following connections:
 | Pin | 4 | 7  |
 | Pin | 5 | 15 |
 
-First of all, install the ST BlueNRG-1_2 Flasher Utility and open it, then select the SWD tab:
+First of all, install the RF-Flasher Utility and open it, then select the SWD tab:
 
-[[/img/X_NUCLEO_BNRG2A1_2.PNG|alt="SWD tab of ST BlueNRG-1_2 Flasher Utility"]]
+[[/img/X_NUCLEO_BNRG2A1_5.PNG|alt="SWD tab of RF-Flasher Utility"]]
 
 Erase the flash memory of the BlueNRG-2 chip:
 
-[[/img/X_NUCLEO_BNRG2A1_3.PNG|alt="Erase of the BlueNRG-2 chip"]]
+[[/img/X_NUCLEO_BNRG2A1_6.PNG|alt="Erase of the BlueNRG-2 chip"]]
 
-Download the Link Layer Only firmware for the BLE module from the following link:
+Download a new version of the firmware for the BLE module from the following link:
 
-[DTM_LLOnly.bin](https://github.com/stm32duino/wiki/blob/main/X-NUCLEO-BNRG2A1/DTM_LLOnly.bin)
+[BLUENRG-M2SP_DTM_SPI.hex](https://github.com/stm32duino/wiki/blob/main/X-NUCLEO-BNRG2A1/BLUENRG-M2SP_DTM_SPI.hex)
 
-Load the Link Layer Only firmware in the ST BlueNRG-1_2 Flasher Utility and then press the "Flash" button:
+Load the new firmware in the RF-Flasher Utility and then press the "Flash" button:
 
-[[/img/X_NUCLEO_BNRG2A1_4.PNG|alt="Load and flash the new firmware into BlueNRG-2 chip"]]
-
-If you need to restore the stock firmware of the BLE module of X-NUCLEO-BNRG2A1, you can repeat the procedure using this firmware image:
-
-[DTM_Full.bin](https://github.com/stm32duino/wiki/blob/main/X-NUCLEO-BNRG2A1/DTM_Full.bin)
+[[/img/X_NUCLEO_BNRG2A1_7.PNG|alt="Load and flash the new firmware into BlueNRG-2 chip"]]
 
 If you should find some issues during the update process, you can try to repeat the procedure closing the J15 jumper on the X-NUCLEO-BNRG2A1 expansion board.
 
