@@ -305,6 +305,10 @@ Finally, all the new reference have to be added in the [`README.md`]
 ## 6 - Restart
 Restart Arduino IDE and try one of the new entry with the [CheckVariant example].
 
+[[/img/Important-icon.png|alt="Important"]] An issue with the Arduino IDE 2.x prevents the board to appears
+in the menu. Follow this workaround to get it working:
+https://github.com/arduino/arduino-ide/issues/1030#issuecomment-1152005617
+
 ---
 # Define a specific board
 
