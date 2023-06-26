@@ -30,7 +30,7 @@ To solve this, install  _Microsoft Visual C++ 2010 Redistributable_ to get `MSVC
 ### How do I know which (stm32duino/libmaple) core am I running on? 
 
 try this code
-```
+```C++
 void setup() {
 	Serial.begin();
 }
