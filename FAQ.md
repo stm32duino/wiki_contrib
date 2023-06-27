@@ -49,6 +49,29 @@ void loop() {
 }
 ```
 
+## Debug
+
+Debug can not be functional using generic when some features are enabled. Example, with Generic L486 with USB enabled. When USB is initialized, it configures all the pins available in the `PinMap_USB_OTG_FS`:
+https://github.com/stm32duino/Arduino_Core_STM32/blob/c6bc5b23761c30ff5ef08baa22af1519b0a76d5a/variants/STM32L4xx/L475V(C-E-G)T_L476V(C-E-G)T_L486VGT/PeripheralPins.c#L403-L411
+
+In this case `PA_13` is `JTMS-SWDIO` preventing debug to be functional.
+To avoid this, it is required to redefine the `PinMap_USB_OTG_FS` array to remove useless pins as explained [here](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Custom-definitions#example-for-the-adc-pinmap-of-the-nucleo_f103rb), like this:
+
+```C
+const PinMap PinMap_USB_OTG_FS[] = {
+  // {PA_8,  USB_OTG_FS, STM_PIN_DATA(STM_MODE_AF_PP, GPIO_PULLUP, GPIO_AF10_OTG_FS)}, // USB_OTG_FS_SOF
+  // {PA_9,  USB_OTG_FS, STM_PIN_DATA(STM_MODE_INPUT, GPIO_NOPULL, GPIO_AF_NONE)}, // USB_OTG_FS_VBUS
+  // {PA_10, USB_OTG_FS, STM_PIN_DATA(STM_MODE_AF_OD, GPIO_PULLUP, GPIO_AF10_OTG_FS)}, // USB_OTG_FS_ID
+  {PA_11, USB_OTG_FS, STM_PIN_DATA(STM_MODE_AF_PP, GPIO_PULLUP, GPIO_AF10_OTG_FS)}, // USB_OTG_FS_DM
+  {PA_12, USB_OTG_FS, STM_PIN_DATA(STM_MODE_AF_PP, GPIO_PULLUP, GPIO_AF10_OTG_FS)}, // USB_OTG_FS_DP
+  // {PA_13, USB_OTG_FS, STM_PIN_DATA(STM_MODE_AF_PP, GPIO_PULLUP, GPIO_AF10_OTG_FS)}, // USB_OTG_FS_NOE
+  // {PC_9,  USB_OTG_FS, STM_PIN_DATA(STM_MODE_AF_PP, GPIO_PULLUP, GPIO_AF10_OTG_FS)}, // USB_OTG_FS_NOE
+  {NC,    NP,         0}
+};
+```
+
+Issue discussed here: https://github.com/stm32duino/Arduino_Core_STM32/issues/2047
+
 ## OS specific
 ### Linux
 
