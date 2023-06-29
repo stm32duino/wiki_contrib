@@ -21,7 +21,7 @@ Erase the flash memory of the BlueNRG-1 chip:
 
 Download the Link Layer Only firmware for the BLE module from the following link:
 
-[DTM_LLOnly.bin](https://github.com/stm32duino/wiki/raw/master/STEVAL-MKSBOX1V1/DTM_LLOnly.bin)
+[DTM_LLOnly.bin](https://github.com/stm32duino/wiki/blob/main/STEVAL-MKSBOX1V1/DTM_LLOnly.bin)
 
 Load the Link Layer Only firmware in the ST BlueNRG-1_2 Flasher Utility and then press the "Flash" button:
 
@@ -29,7 +29,7 @@ Load the Link Layer Only firmware in the ST BlueNRG-1_2 Flasher Utility and then
 
 If you need to restore the stock firmware of the BLE module of STEVAL-MKSBOX1V1, you can repeat the procedure using this firmware image:
 
-[DTM_Full.bin](https://github.com/stm32duino/wiki/raw/master/STEVAL-MKSBOX1V1/DTM_Full.bin)
+[DTM_Full.bin](https://github.com/stm32duino/wiki/blob/main/STEVAL-MKSBOX1V1/DTM_Full.bin)
 
 
 # STM32duinoBLE with X-NUCLEO-BNRG2A1
