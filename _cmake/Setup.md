@@ -12,7 +12,8 @@ Alternative installation methods:
 - [pip package](https://pypi.org/project/cmake/) (universal)
 - Your IDE may also have a plug-in to support CMake; please refer to its documentation when appropriate
 
-_Note: thanks to Alex Reinking for this [summary](https://alexreinking.com/blog/how-to-use-cmake-without-the-agonizing-pain-part-1.html)!_
+> [!NOTE]
+> thanks to Alex Reinking for this [summary](https://alexreinking.com/blog/how-to-use-cmake-without-the-agonizing-pain-part-1.html)!
 
 ## Ninja
 

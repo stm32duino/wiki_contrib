@@ -4,7 +4,8 @@
 By installing the stm32 core thanks the [[Boards Manager|Getting-Started#About-Boards-manager-concept]], the extracted package is located here:
 
 Go to the local Arduino directory.<br>
-[[/img/Tips-icon.png|alt="Tips icon"]] _The location is displayed in the "**Preferences**" dialog._<br>
+> [!TIP]
+> The location is displayed in the "**Preferences**" dialog.
 
 It should be:
 

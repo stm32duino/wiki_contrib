@@ -87,10 +87,9 @@ _Return_ SPBTLERF_OK in case of success, an error code otherwise
 * **LED_State**: read the LED state  
 _Return_ led state (true or false)  
 
-## Note
-
-This library provides a basic BLE class to enable or disable the Bluetooth Low Energy module
-and 2 profiles as examples. You can use the BLE stack to create your own profile.  
+> [!NOTE]
+> This library provides a basic BLE class to enable or disable the Bluetooth Low Energy module
+> and 2 profiles as examples. You can use the BLE stack to create your own profile.
 
 ## Examples
 

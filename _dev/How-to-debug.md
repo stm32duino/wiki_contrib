@@ -7,7 +7,8 @@ Below, some ways to debug:
  * [Visual Studio Code and Arduino extension](#Visual-Studio-Code-and-Arduino-extension)
  * [Command line GDB](#command-line-gdb)
 
-[[/img/Warning-icon.png|alt="Warning"]] **Only the Arduino IDE is officially supported.** 
+> [!WARNING]
+> **Only the Arduino IDE is officially supported.**
 
 
 # Eclipse and Sloeber
@@ -58,7 +59,8 @@ Hit _**“Apply and Close”**_ then re-open the _**“Arduino > Preferences”*
 Select the latest core version and hit _**“Apply and Close”**_.
 
 ## 2 - Programming the boards
-[[/img/Tips-icon.png|alt="Tips"]] Make sure your board is correctly connected before go any further.
+> [!TIP]
+> Make sure your board is correctly connected before go any further.
 
 There is multiple options to start a new project. 
 
@@ -73,7 +75,8 @@ Do not forget to select the _**“Platform folder”**_ that corresponding to th
 
 [[/img/ProjectConfig.png|alt="ProjectConfig"]] 
 
-[[/img/Note-icon.png|alt="Note"]] If you plan to debug, select "_**Debug (-g)**_" from the "_**Optimize**_" list else you will not have debugging symbols.
+> [!NOTE]
+> If you plan to debug, select "_**Debug (-g)**_" from the "_**Optimize**_" list else you will not have debugging symbols.
 
 From there, you can create your own sketch or use pre-configured examples. <br>
 In this case, we will try the _**“Blink”**_ example.<br>
@@ -81,7 +84,8 @@ From the _**“select code”**_ bar, apply _**“Sample sketch”**_ and then c
 
 [[/img/BuiltInExamples.png|alt="BuiltInExamples"]] 
 
-[[/img/Note-icon.png|alt="Note"]] As the GCC ARM Toolchain is provided by the STM32 core, you do not have to download it in order to program your board.
+> [!NOTE]
+> As the GCC ARM Toolchain is provided by the STM32 core, you do not have to download it in order to program your board.
 
 Use the _**“Arduino”**_ menu or the upload button on the toolbar to upload your sketch. If the setup is correct, the LED should blink on your board.
 
@@ -99,9 +103,11 @@ Two standard tools are required in order to debug the code:
 ```
 +  **OpenOCD**, installed in 1.1.1 section.
 
-[[/img/Important-icon.png|alt="ImportantIcon"]] Make sure these tools are correctly installed on your platform before proceeding any further.
+> [!IMPORTANT]
+>  Make sure these tools are correctly installed on your platform before proceeding any further.
 
-[[/img/Important-icon.png|alt="ImportantIcon"]] Do not forget to select "_**Debug (-g)**_" to the "_**Optimize**_" list in the "_**Arduino Board Selection**_" of your project else you will not have debugging symbols.
+> [!IMPORTANT]
+>  Do not forget to select "_**Debug (-g)**_" to the "_**Optimize**_" list in the "_**Arduino Board Selection**_" of your project else you will not have debugging symbols.
 
 ### 3.2 Setting up debug configuration 
 
@@ -135,7 +141,8 @@ The _**“Actual executable”**_ field show the full executable path.
 
 [[/img/OCDConfig.png|alt="OpenOCD-config"]]
 
-[[/img/Important-icon.png|alt="ImportantIcon"]] Do not forget to replace the config files with the version of the board you are using.
+> [!IMPORTANT]
+>  Do not forget to replace the config files with the version of the board you are using.
 
 #### 3.2.1 Setting up GDB
 
@@ -207,7 +214,8 @@ In your user [`settings.json`](https://code.visualstudio.com/docs/getstarted/set
     "arduino.additionalUrls": "https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json"
 ```
 
-[[/img/Tips-icon.png|alt="Tips"]] For further options see [vscode-arduino Readme](https://github.com/microsoft/vscode-arduino/blob/main/README.md) 
+> [!TIP]
+> For further options see [vscode-arduino Readme](https://github.com/microsoft/vscode-arduino/blob/main/README.md)
 
 Now, Ensure STM32 core installation is installed by opening the "**Arduino Board Manager**". Open the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Board Manager**, `STM32 Cores` should be listed in `Contributed` Type:
 

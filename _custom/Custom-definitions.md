@@ -87,7 +87,8 @@ Syntax in the board.txt:
 
 Then add a `*.S` file in the `variant/NUCLEO_L476RG/` folder.
 
-[[/img/Important-icon.png|alt="Important"]] **Important note: file extension must be `.S` not `.s`**
+> [!WARNING]
+> file extension must be `.S` not `.s`**
 
 ## Custom PinMap array
 
@@ -173,7 +174,8 @@ It can be redefined thanks the `variant.h` or `build_opt.h` or `hal_conf_extra.h
 #define I2C_VALID_TIMING_NBR 64
 ```
 
-[[/img/Warning-icon.png|alt="Warning"]] **Higher number ensure lowest clock error but require more time to compute depending of the board.**
+> [!WARNING]
+> Higher number ensure lowest clock error but require more time to compute depending of the board.
 
 Moreover, to avoid time spent to compute the I2C timing, it can be defined in the `variant.h` or `build_opt.h` or `hal_conf_extra.h` with:
 
@@ -190,7 +192,8 @@ Moreover, to avoid time spent to compute the I2C timing, it can be defined in th
 
 ## I2C timeout in tick unit
 
-[[/img/Warning-icon.png|alt="Warning"]] **Since core version higher than 1.9.0.**
+> [!Note]
+> Since core version higher than 1.9.0.
 
 I2C timeout in tick unit can be redefined. Default: **100**
 
@@ -222,7 +225,8 @@ Some libraries use `F_CPU` at build time for conditional purpose (example [Ardui
 
 `F_CPU` can be redefined at build time using `build_opt.h` or `hal_conf_extra.h` then it will be possible to define it as a constant.
 
-[[/img/Important-icon.png|alt="Important"]] **Important note: user have to ensure to set it to the proper value.**
+> [!IMPORTANT]
+> user have to ensure to set it to the proper value.
 
 ## Serial Rx/Tx buffer size
 
@@ -239,7 +243,8 @@ By default, Serial Rx/Tx buffer size are defined like this:
 
 Each size can be redefined at build time using `build_opt.h` or `hal_conf_extra.h`
 
-[[/img/Warning-icon.png|alt="Warning"]] A "_power of 2_" buffer size is recommended to dramatically optimize all the modulo operations for ring buffers.
+> [!WARNING]
+> A "_power of 2_" buffer size is recommended to dramatically optimize all the modulo operations for ring buffers.
 
 #### Example using `build_opt.h`:
 ```C

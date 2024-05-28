@@ -47,9 +47,8 @@ _Params_ register address
 _Params_ register data  
 _Returns_ LPS22HB_STATUS_OK in case of success, an error code otherwise  
 
-## Note
-
-This library uses the Wire library presents in the STM32 core by default.
+> [!NOTE]
+> This library uses the Wire library presents in the STM32 core by default.
 
 ## Examples
 

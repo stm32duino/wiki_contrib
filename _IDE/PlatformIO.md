@@ -1,6 +1,7 @@
 # [PlatformIO]
 
-### [[/img/Warning-icon.png|alt="Warning"]] The [STM32duino GitHub organization] does not support issue met using [PlatformIO]. Only the Arduino IDE is supported. Below information are provided "as it" based on this PR [#1413] from [@brianredbeard]. Do not hesitate to correct them.
+> [!WARNING]
+> The [STM32duino GitHub organization] does not support issue met using [PlatformIO]. Only the Arduino IDE is supported. Below information are provided "as it" based on this PR [#1413] from [@brianredbeard]. Do not hesitate to correct them.
 
 
 In your project, set your environment to use the `platform` setting `ststm32` and the `framework` setting `arduino`, e.g:

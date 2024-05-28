@@ -11,12 +11,14 @@ Libraries using basic features like Serial, SPI, I2C,... should be fully compati
 * [Third party](#third-party)
   * [Tested](#tested)
 
-[[/img/Warning-icon.png|alt="Warning"]] _Arduino boards provide ICSP connector used by several Arduino shields for SPI signal: MISO/MOSI/SCK. STM32 boards do not have this ICSP connector, so this requires to manually wire those SPI signals to the desired pin (mainly: D11 to D13)_
+> [!WARNING]
+> Arduino boards provide ICSP connector used by several Arduino shields for SPI signal: MISO/MOSI/SCK. STM32 boards do not have this ICSP connector, so this requires to manually wire those SPI signals to the desired pin (mainly: D11 to D13)
 
-[[/img/Note-icon.png|alt="Note"]] All dedicated STM32 libraries are available through the "_**Library Manager**_"
-or have a look hereafter to see which one is available:
-
-* http://www.arduinolibraries.info/architectures/stm32
+> [!NOTE]
+> All dedicated STM32 libraries are available through the "_**Library Manager**_"
+> or have a look hereafter to see which one is available:
+>
+> * http://www.arduinolibraries.info/architectures/stm32
 
 ## Built-in (delivered with the core package)
 
@@ -102,7 +104,9 @@ These libraries are guaranteed to work fine with all NUCLEO boards supported in 
 * [X-NUCLEO-GNSS1A1](https://github.com/stm32duino/X-NUCLEO-GNSS1A1): to support the X-NUCLEO-GNSS1A1 expansion board using the TESEO-LIV3F module. It depends on the following libraries:
   * [MicroNMEA](https://github.com/stevemarple/MicroNMEA)
 
-[[/img/Note-icon.png|alt="Note"]] In order to perform the firmware upgrade, the following Java application should be used:
+> [!NOTE]
+> In order to perform the firmware upgrade, the following Java application should be used:
+
   * [Teseo-LIV3F-Flash-Updater](https://github.com/stm32duino/Teseo-LIV3F-Flash-Updater)
 
 * [X-NUCLEO-IDB05A1](https://github.com/stm32duino/X-NUCLEO-IDB05A1): it is a Bluetooth Low Energy evaluation board based on the SPBTLE-RF BlueNRG-MS RF module. It depends on the following library:

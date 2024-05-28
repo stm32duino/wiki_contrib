@@ -147,13 +147,12 @@ _Params_ range value in millimeter
 _Params_ pointer to MotionData_t structure  
 _Return_ One of these gestures code: GESTURES_MOTION_NULL, GESTURES_MOTION_DOWN_STATE, GESTURES_MOTION_UP_STATE, GESTURES_MOTION_RAISE_UP or GESTURES_MOTION_DROP_DOWN  
 
-## Note
-
-The maximum detection distance is influenced by the color of the target and the
-indoor or outdoor situation due to absence or presence of external infrared.
-The detection range is between ~40cm and ~120cm. (see chapter 5 of the VL53L0X
-datasheet).
-If you need an higher accuracy (up to +200cm), you should implement your own function.
+> [!NOTE]
+> The maximum detection distance is influenced by the color of the target and the
+> indoor or outdoor situation due to absence or presence of external infrared.
+> The detection range is between ~40cm and ~120cm. (see chapter 5 of the VL53L0X
+> datasheet).
+> If you need an higher accuracy (up to +200cm), you should implement your own function.
 
 ## Examples
 

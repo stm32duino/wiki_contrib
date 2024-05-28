@@ -32,7 +32,8 @@ This means that the generic STM32 MCU files required for a variant are generated
 
 ### Generated variant files
 
-[[/img/Warning-icon.png|alt="Warning"]] **Below files are automatically generated so do not modify them. Only the `generic_clock.c` can be modified to add default system clock configuration and so will not be overwritten.**
+> [!WARNING]
+> Below files are automatically generated so do not modify them. Only the `generic_clock.c` can be modified to add default system clock configuration and so will not be overwritten.
 
  * `board_entry.txt`: contains generic variant declaration to ease board addition in the [`boards.txt`] file. See [Arduino boards.txt specification].
  * `generic_clock.c`: contains the default system clock configuration: `WEAK void SystemClock_Config(void)`
@@ -41,14 +42,16 @@ This means that the generic STM32 MCU files required for a variant are generated
  * `variant_generic.cpp`: contains Digital PinName array and Analog (`Ax) [pin number] array
  * `variant_generic.h`: contains all definition required by the variant: STM32 [pin number] definitions, peripheral pins for default instances: Serial, I2C, SPI, Tone, Servo, ...
 
-[[/img/Tips-icon.png|alt="Tips"]] The example of all the steps below are available in this PR: [Add generic G0B1R(B-C-E)T, G0C1R(C-E)T and Nucleo-G0B1RE ](../pull/1398)
+> [!TIP]
+> The example of all the steps below are available in this PR: [Add generic G0B1R(B-C-E)T, G0C1R(C-E)T and Nucleo-G0B1RE ](../pull/1398)
 
 ---
 # Define a new generic variant
 
 Before adding a specific board, it is a good practice to add the generic entry of the STM32 MCU as it is possible to use it with the specific board.
 
-[[/img/Note-icon.png|alt="Note"]] A folder name can reference several MCU references so several boards entry could be added. Not only the one of the specific board.
+> [!NOTE]
+> A folder name can reference several MCU references so several boards entry could be added. Not only the one of the specific board.
 
 ## 1 - Find the MCU folder
 
@@ -133,7 +136,8 @@ WEAK void SystemClock_Config(void)
 }
 ```
 
-[[/img/Important-icon.png|alt="Important"]] For generic board the internal clock is used: `HSI`. 
+> [!IMPORTANT]
+>  For generic board the internal clock is used: `HSI`.
 
 [STM32CubeMX] is also used to generate it.
 
@@ -214,20 +218,22 @@ In this example only `USB` needs to be enabled as other peripherals default cloc
  ```
 </details>
 
-[[/img/Tips-icon.png|alt="Tips"]] Pay attention to the default value of HAL RCC structures. CubeMx set it to `0` but it produces warning.
-Simply remove the `0` like this:
-
-```patch
--  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
--  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-+  RCC_OscInitTypeDef RCC_OscInitStruct = {};
-+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {};
-```
+> [!TIP]
+> Pay attention to the default value of HAL RCC structures. CubeMx set it to `0` but it produces warning.
+> Simply remove the `0` like this:
+>
+> ```patch
+> -  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+> -  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+> +  RCC_OscInitTypeDef RCC_OscInitStruct = {};
+> +  RCC_ClkInitTypeDef RCC_ClkInitStruct = {};
+> ```
 
 ## 4 - Declare the variant
 It is still to add the menu and add relevant information (Flash and SRAM sizes, ...)
 
-[[/img/Tips-icon.png|alt="Tips"]] See [Arduino boards.txt specification] for further options.
+> [!TIP]
+> See [Arduino boards.txt specification] for further options.
 
 Edit [`boards.txt`] file, then:
 1. Find the menu part where to add the generic entry. In this example the `GenG0` menu.
@@ -305,9 +311,10 @@ Finally, all the new reference have to be added in the [`README.md`]
 ## 6 - Restart
 Restart Arduino IDE and try one of the new entry with the [CheckVariant example].
 
-[[/img/Important-icon.png|alt="Important"]] An issue with the Arduino IDE 2.x prevents the board to appears
-in the menu. Follow this workaround to get it working:
-https://github.com/arduino/arduino-ide/issues/1030#issuecomment-1152005617
+> [!IMPORTANT]
+> An issue with the Arduino IDE 2.x prevents the board to appears
+> in the menu. Follow this workaround to get it working:
+> https://github.com/arduino/arduino-ide/issues/1030#issuecomment-1152005617
 
 ---
 # Define a specific board

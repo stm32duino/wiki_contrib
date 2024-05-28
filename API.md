@@ -58,7 +58,8 @@ _Params_ `func` pointer to the callback function
 * `void unregisterCoreCallback(void (*func)(void))`: unregister a callback function  
 _Params_ `func` pointer to the callback function  
 
-[[/img/Warning-icon.png|alt="Warning"]] By default, the core callback feature is disabled, to enable it `CORE_CALLBACK` must be defined.
+> [!WARNING]
+> By default, the core callback feature is disabled, to enable it `CORE_CALLBACK` must be defined.
 
 [`build_opt.h`][build_opt.h] can be used to define it by adding `-DCORE_CALLBACK`.
 
@@ -77,7 +78,8 @@ As each pin has not the same capabilities, it uses the best way:
 ### Frequency
 `analogWriteFrequency(freq)` has been added in core version greater than **1.5.0** to set the frequency used by `analogWrite()`. Default is `PWM_FREQUENCY` (1000) in Hertz.
 
-**_Note_** frequency is common to all channels of a specified timer, setting the frequency for one channel will impact all others of the same timer.
+> [!NOTE]
+> frequency is common to all channels of a specified timer, setting the frequency for one channel will impact all others of the same timer.
 
 #### Example
 ```C
@@ -109,7 +111,8 @@ to the desired ADC sample time.
 An example which read then convert to proper Unit the 3 internal channels + A0 is provided with [STM32Examples](https://github.com/stm32duino/STM32Examples) library:
 [Internal_channels](https://github.com/stm32duino/STM32Examples/blob/main/examples/Peripherals/ADC/Internal_channels/Internal_channels.ino)
 
-[[/img/Warning-icon.png|alt="Warning"]] This example is provided "as it" and can require some update mainly for datasheet values.
+> [!WARNING]
+> This example is provided "as it" and can require some update mainly for datasheet values.
 
 ## HardwareSerial
 
@@ -140,7 +143,8 @@ void loop() {
 Another solution is to add a [`build_opt.h`][build_opt.h] file alongside your main `.ino` file with: `-DENABLE_HWSERIALx`.
 This will define the `Serialx` instance using the first `USARTx` instance found in the `PeripheralPins.c` of your variant.
 
-[[/img/Note-icon.png|alt="Note"]] **Note** that only the latter solution allows to use the `serialEventx()` callback in the sketch.
+> [!NOTE]
+> that only the latter solution allows to use the `serialEventx()` callback in the sketch.
 
 For Example, if you define in the [`build_opt.h`][build_opt.h]: `-DENABLE_HWSERIAL3`
 
@@ -167,7 +171,8 @@ It is also possible to change the default pins used by the `Serial` instance usi
 * `void setRx(PinName rx)`
 * `void setTx(PinName tx)`
 
-[[/img/Warning-icon.png|alt="Warning"]] **Have to be called before `begin()`.**
+> [!WARNING]
+> Have to be called before `begin()`.
 
 ##### Example:
 ```C++
@@ -289,7 +294,8 @@ void loop() {
 }
 ```
 
-**Note:** Serial Rx/TX buffer size can be changed, see [[custom definitions|Custom-definitions#serial-rxtx-buffer-size]]
+> [!NOTE]
+> Serial Rx/TX buffer size can be changed, see [[custom definitions|Custom-definitions#serial-rxtx-buffer-size]]
 
 #### Enable hardware flow control
 
@@ -366,7 +372,8 @@ void setup() {
 #### Change default `SPI` instance pins 
 It is also possible to change the default pins used by the `SPI` instance using above API:
 
-[[/img/Warning-icon.png|alt="Warning"]] **Have to be called before `begin()`.**
+> [!WARNING]
+> Have to be called before `begin()`.
 
 * `void setMISO(uint32_t miso)`
 * `void setMOSI(uint32_t mosi)`
@@ -377,7 +384,8 @@ It is also possible to change the default pins used by the `SPI` instance using 
 * `void setSCLK(PinName sclk)`
 * `void setSSEL(PinName ssel)`
 
-**_Note 1_** Using `setSSEL()` allows to enable hardware CS pin management linked to the SPI peripheral.
+> [!NOTE]
+> Using `setSSEL()` allows to enable hardware CS pin management linked to the SPI peripheral.
 
 ##### Example:
 ```C++
@@ -476,7 +484,8 @@ It is also possible to change the default pins used by the `Wire` instance using
 * `void setSCL(PinName scl)`
 * `void setSDA(PinName sda)`
 
-[[/img/Warning-icon.png|alt="Warning"]] **Have to be called before `begin()`.**
+> [!WARNING]
+> Have to be called before `begin()`.
 
 ##### Example:
 ```C++
@@ -563,13 +572,14 @@ In this case, following switches should be defined (in variant.h or [`build_opt.
 
 see example of variant implementation: [#938](../pull/938)
 
-[[/img/Warning-icon.png|alt="Warning"]] **Single/dual bank configuration**:
-
-Default last sector used correspond to default board configuration.  
-
-For example, NUCLEO_F767ZI is by default configured in single bank. Last sector correspond to this bank configuration.  
-If this configuration is changed, it is then mandatory to customize `FLASH_BASE_ADDRESS`/`FLASH_DATA_SECTOR`,
-even to use last sector of Flash.
+> [!WARNING]
+> Single/dual bank configuration:
+>
+> Default last sector used correspond to default board configuration.
+>
+> For example, NUCLEO_F767ZI is by default configured in single bank. Last sector correspond to this bank configuration.
+> If this configuration is changed, it is then mandatory to customize `FLASH_BASE_ADDRESS`/`FLASH_DATA_SECTOR`,
+> even to use last sector of Flash.
 
 ## [[Servo library]]
 

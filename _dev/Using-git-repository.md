@@ -40,8 +40,11 @@ So, do:<br>
 
   `git clone https://github.com/stm32duino/Arduino_Core_STM32.git 2.0.0`
 
-[[/img/Tips-icon.png|alt="Tips"]] _On Linux, It is possible to clone it elsewhere and create a symlink named \<version>_<br>
+> [!TIP]
+> On Linux, It is possible to clone it elsewhere and create a symlink named \<version>
 
-[[/img/Important-icon.png|alt="Important"]] _Uninstalling from the boards managers will remove the git repository!_
+> [!CAUTION]
+> Uninstalling from the boards managers will remove the git repository!
 
-[[/img/Note-icon.png|alt="Note"]] If you do not have deleted the stm32 core extracted package (step [2.](#2-delete-the-stm32-core-extracted-package)), in "**Tools > Board**" menu, you will have twice the "**STM32 board**" menu.<br>
+> [!NOTE]
+> If you do not have deleted the stm32 core extracted package (step [2.](#2-delete-the-stm32-core-extracted-package)), in "**Tools > Board**" menu, you will have twice the "**STM32 board**" menu.<br>

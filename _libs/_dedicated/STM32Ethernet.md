@@ -19,22 +19,21 @@ Both libraries are available through the Arduino Libraries manager.<br>
 Click on "**Sketch**" menu and then "**Include Library > Manage Libraries...**"<br>
 Search "_LwIP_" then install "**_LwIP_**" and "**_STM32Ethernet_**"
 
-## Note
-
-* The library is based on LwIP, a Lightweight TCP/IP stack.  
-<http://git.savannah.gnu.org/cgit/lwip.git>  
-<http://lwip.wikia.com/wiki/LwIP_Wiki>  
-
-* EthernetClass::maintain() in no more required to renew IP address from DHCP.  
-It is done automatically by the LwIP stack in a background task.  
-
-* An Idle task is required by the LwIP stack to handle timer and data reception.<br>
-This idle task is called inside a timer callback each 1 ms by the
-function `stm32_eth_scheduler()`.<br>
-A `DEFAULT_ETHERNET_TIMER` is set in the library to `TIM14`.<br>
-`DEFAULT_ETHERNET_TIMER` can be redefined in the core variant.<br>
-Be careful to not lock the system in a function which disabling IRQ.<br>
-Call `Ethernet::schedule()` performs an update of the LwIP stack.<br>
+> [!NOTE]
+> * The library is based on LwIP, a Lightweight TCP/IP stack.
+> <http://git.savannah.gnu.org/cgit/lwip.git>
+> <http://lwip.wikia.com/wiki/LwIP_Wiki>
+>
+> * EthernetClass::maintain() in no more required to renew IP address from DHCP.
+>   It is done automatically by the LwIP stack in a background task.
+>
+> * An Idle task is required by the LwIP stack to handle timer and data reception.
+>   This idle task is called inside a timer callback each 1 ms by the
+>   function `stm32_eth_scheduler()`.
+>   A `DEFAULT_ETHERNET_TIMER` is set in the library to `TIM14`.
+>   `DEFAULT_ETHERNET_TIMER` can be redefined in the core variant.
+>   Be careful to not lock the system in a function which disabling IRQ.
+>   Call `Ethernet::schedule()` performs an update of the LwIP stack.
 
 ## Source
 

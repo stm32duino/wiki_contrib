@@ -11,4 +11,5 @@ As he mentioned [here](https://github.com/stm32duino/Arduino_Core_STM32/issues/6
 
 https://github.com/RickKimball/vendor
 
-[[/img/Warning-icon.png|alt="Warning"]] **This use case was based on 1.4.0 version.**
+> [!WARNING]
+> This use case was based on 1.4.0 version.

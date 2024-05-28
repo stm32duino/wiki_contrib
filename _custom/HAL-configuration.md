@@ -35,8 +35,8 @@ Custom HAL configuration file can replace the default one by adding a file named
 
 ### HAL modules configuration 
 
-[[/img/Important-icon.png|alt="Important"]] **Below HAL modules or definitions are listed for convenience but may not be up to date. Refer to [cores/arduino/stm32/stm32yyxx_hal_conf.h](
-../blob/main/cores/arduino/stm32/stm32yyxx_hal_conf.h) to make sure having up to date values.**
+> [!IMPORTANT]
+> Below HAL modules or definitions are listed for convenience but may not be up to date. Refer to [cores/arduino/stm32/stm32yyxx_hal_conf.h](../blob/main/cores/arduino/stm32/stm32yyxx_hal_conf.h) to make sure having up to date values.
 
 #### Mandatory HAL module enabled by default
 * `HAL_MODULE_ENABLED`
@@ -77,7 +77,8 @@ Custom HAL configuration file can replace the default one by adding a file named
 * `HAL_SD_MODULE_DISABLED`
 * `HAL_QSPI_MODULE_DISABLED`
 
-[[/img/Tips-icon.png|alt="Tips"]] Disable unused features can reduce significantly FLASH and RAM usage.
+> [!TIP]
+> Disable unused features can reduce significantly FLASH and RAM usage.
 
 ##### Example of `Blink.ino` for Nucleo-L031K6 with 32768 bytes of Flash and 8192 bytes of RAM:
 
@@ -91,7 +92,8 @@ Custom HAL configuration file can replace the default one by adding a file named
 
 ### Other HAL configuration
 
-[[/img/Important-icon.png|alt="Important"]] **Below HAL configurations are listed for convenience but may not be up to date. Refer to the required default STM32 HAL configuration file `stm32yyxx_hal_conf_default.h` in `system/STM32YYxx/` (where `YY` is the MCU series) to make sure having up to date values.**
+> [!IMPORTANT]
+> Below HAL configurations are listed for convenience but may not be up to date. Refer to the required default STM32 HAL configuration file `stm32yyxx_hal_conf_default.h` in `system/STM32YYxx/` (where `YY` is the MCU series) to make sure having up to date values.
 
 #### Oscillator Values adaptation
 Hereafter, list of possible oscillator values which can be redefined:

@@ -13,7 +13,8 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-[[/img/Warning-icon.png|alt="Warning"]] Needs *Arduino_Core_STM32* version > 1.6.1
+> [!WARNING]
+> Requires *Arduino_Core_STM32* version higher than 1.6.1
 
 ##  1. <a name='Introduction'></a>Introduction
 
@@ -29,7 +30,8 @@ __Example__:
 
 Each timer may provide several channels, nevertheless it is important to understand that all channels of the same timer share the same counter and thus have the same period/frequency.
 
-[[/img/Warning-icon.png|alt="Warning"]] __For genericity purpose, HardwareTimer library uses all timers like a 16bits timer (even if some may be wider).__
+> [!WARNING]
+> For genericity purpose, HardwareTimer library uses all timers like a 16bits timer (even if some may be wider).
 
 
 ##  2. <a name='API'></a>API
@@ -96,7 +98,8 @@ Each timer may provide several channels, nevertheless it is important to underst
 
 `HardwareTimer` is a C++ class, 1st thing to do is to instantiate an object with `TIM` instance as parameter.
 
-[[/img/Note-icon.png|alt="Note"]] Some instances are used by Servo, Tone and SoftSerial (see TIMER_SERVO, TIMER_TONE and TIMER_SERIAL) but only when they are used. Just be sure there is no conflict with your own usage.
+> [!NOTE]
+> Some instances are used by Servo, Tone and SoftSerial (see TIMER_SERVO, TIMER_TONE and TIMER_SERIAL) but only when they are used. Just be sure there is no conflict with your own usage.
 
 __Example__:
 ```C++
@@ -105,9 +108,11 @@ __Example__:
 
 Then it is possible to configure mode of a channel.
 
-[[/img/Note-icon.png|alt="Note"]] No need to configure pin mode (output/input/AlternateFunction), it will be done automatically by HardwareTimer library.
+> [!NOTE]
+> No need to configure pin mode (output/input/AlternateFunction), it will be done automatically by HardwareTimer library.
 
-[[/img/Note-icon.png|alt="Note"]] Channel range [1..4], but not all timers support 4 channels.
+> [!NOTE]
+> Channel range [1..4], but not all timers support 4 channels.
 
 __Example__: 
 ```C++
@@ -145,11 +150,14 @@ typedef enum {
 Then it is possible to configure *PrescalerFactor*. The Timer clock will be divided by this factor (if timer clock is 10Khz, and prescaler factor is 2, then timer will count at 5kHz).
 
 
-[[/img/Note-icon.png|alt="Note"]] Configuration of *prescaler* is automatic when using method `setOverflow` with `format == MICROSEC_FORMAT` or `format == HERTZ_FORMAT`.
+> [!NOTE]
+> Configuration of *prescaler* is automatic when using method `setOverflow` with `format == MICROSEC_FORMAT` or `format == HERTZ_FORMAT`.
 
-[[/img/Note-icon.png|alt="Note"]] *Prescaler* is for timer counter and thus is common to all channel.
+> [!NOTE]
+> *Prescaler* is for timer counter and thus is common to all channel.
 
-[[/img/Note-icon.png|alt="Note"]] *PrescalerFactor* range: [1.. 0x10000]  (Hardware register will range [0..0xFFFF]).
+> [!NOTE]
+> *PrescalerFactor* range: [1.. 0x10000]  (Hardware register will range [0..0xFFFF]).
 
 __Example__:
 ```C++
@@ -162,11 +170,14 @@ For __output__ it correspond to period or frequency.
 
 For __input capture__ it is suggested to use max value: 0x10000 to avoid rollover before capture occurs .
 
-[[/img/Note-icon.png|alt="Note"]] Configuration of *prescaler* is automatic when using method `setOverflow` with `format == MICROSEC_FORMAT` or `format == HERTZ_FORMAT`.
+> [!NOTE]
+> Configuration of *prescaler* is automatic when using method `setOverflow` with `format == MICROSEC_FORMAT` or `format == HERTZ_FORMAT`.
 
-[[/img/Note-icon.png|alt="Note"]] *overflow* is common to all channel.
+> [!NOTE]
+> *overflow* is common to all channel.
 
-[[/img/Note-icon.png|alt="Note"]] *Overflow* range: [1.. 0x10000] (Hardware register will range [0..0xFFFF]).
+> [!NOTE]
+> *Overflow* range: [1.. 0x10000] (Hardware register will range [0..0xFFFF]).
 
 __Example__:
 ```C++
@@ -178,9 +189,11 @@ __Example__:
 
 Then it is possible to configure *CaptureCompare* (channel specific CaptureCompare register).
 
-[[/img/Note-icon.png|alt="Note"]] *CaptureCompare* is for one channel only.
+> [!NOTE]
+> *CaptureCompare* is for one channel only.
 
-[[/img/Note-icon.png|alt="Note"]] *CaptureCompare* range: [0.. 0xFFFF]
+> [!NOTE]
+> *CaptureCompare* range: [0.. 0xFFFF]
 
 __Example__:
 ```C++
@@ -204,7 +217,8 @@ __Example__:
 
 It is now time to start timer.
 
-[[/img/Note-icon.png|alt="Note"]] All channel of the same timer are started at the same time (as there is only 1 counter per timer).
+> [!NOTE]
+> All channel of the same timer are started at the same time (as there is only 1 counter per timer).
 
 __Example__:
 ```C++
@@ -252,7 +266,8 @@ Also, to get ride of Interrupt callback:
 ```C++
     detachInterrupt()
 ```
-[[/img/Note-icon.png|alt="Note"]] Once the timer is started with the callback enabled you can disable and enable the callback through `detachInterrupt` and `attachInterrupt` freely, how many times you want. However, if the first `resume` (= timer start) is done without **before** calling `attachInterrupt`, the HardwareTimer will **not** be able to attach the interrupt later (for performance reasons the timer will be started with interrupts disabled)
+> [!NOTE]
+> Once the timer is started with the callback enabled you can disable and enable the callback through `detachInterrupt` and `attachInterrupt` freely, how many times you want. However, if the first `resume` (= timer start) is done without **before** calling `attachInterrupt`, the HardwareTimer will **not** be able to attach the interrupt later (for performance reasons the timer will be started with interrupts disabled)
 
 If you detach and attach interrupts while the timer is running, starting from version 1.8.0, you can also know if there's a callback already attached (without the need to track it externally) through the method
 ```C++
@@ -306,7 +321,8 @@ Following examples are provided in [STM32Examples](https://github.com/stm32duino
         External signal (signal generator for example) should be connected to `D2`.
 
 ##  5. <a name='Dependencies'></a>Dependencies
-[[/img/Warning-icon.png|alt="Warning"]] Needs *Arduino_Core_STM32* version > 1.6.1
+> [!WARNING]
+> Required *Arduino_Core_STM32* version higher than 1.6.1
 
 *Tone*, *Servo* and *analogwrite* have been updated to use *HardwareTimer*.
 

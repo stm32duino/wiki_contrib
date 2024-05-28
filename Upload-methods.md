@@ -42,21 +42,22 @@ https://www.st.com/en/development-tools/stm32cubeprog.html`
 Aborting!
 ```
 
-##### [[/img/Warning-icon.png|alt="Warning"]] **Linux user** having _`STM32_Programmer.sh` not found_, 2 cases have been identified:
-
-  1 . Arduino IDE installed from the "Software" package manager (See Ubuntu user issue about this: https://github.com/stm32duino/Arduino_Tools/issues/63)
-
-  It means snap has been used to install Arduino IDE and snap does not use the default user `PATH`:
-  https://snapcraft.io/docs/environment-variables
-
-  **In that case, up to end user to provide the correct environment by adding the correct path of the STM32CubeProgrammer to the snap environment.**
-
-  2 . A desktop entry has been created (using the `install.sh`) then the `PATH` variable is not populated. In that case edit the Arduino desktop entry file (`arduino-arduinoide.desktop`) to set `PATH` like this:
-
-```patch
-- Exec="<arduino path installation>/arduino"
-+ Exec=sh -c "PATH=<STM32CubeProgrammer path installation>/bin:$PATH <arduino path installation>/arduino"
-```
+> [!WARNING]
+> **Linux user** having _`STM32_Programmer.sh` not found_, 2 cases have been identified:
+>
+>  1 . Arduino IDE installed from the "Software" package manager (See Ubuntu user issue about this: https://github.com/stm32duino/Arduino_Tools/issues/63)
+>
+>  It means snap has been used to install Arduino IDE and snap does not use the default user `PATH`:
+>  https://snapcraft.io/docs/environment-variables
+>
+>  **In that case, up to end user to provide the correct environment by adding the correct path of the STM32CubeProgrammer to the snap environment.**
+>
+>  2 . A desktop entry has been created (using the `install.sh`) then the `PATH` variable is not populated. In that case edit the Arduino desktop entry file (`arduino-arduinoide.desktop`) to set `PATH` like this:
+>
+> ```patch
+> - Exec="<arduino path installation>/arduino"
+> + Exec=sh -c "PATH=<STM32CubeProgrammer path installation>/bin:$PATH <arduino path installation>/arduino"
+> ```
 
 ### Arduino integration
 
@@ -75,13 +76,15 @@ See [AN2606](https://www.st.com/content/ccc/resource/technical/document/applicat
  * `-rst` for SWD to reset the device after the flash
  * `{serial.port.file} -s` for Serial
 
-[[/img/Note-icon.png|alt="Note"]] Note: I2C, SPI, CAN could be added as supported by the [STM32CubeProgrammer] tool.
+> [!NOTE]
+> I2C, SPI, CAN could be added as supported by the [STM32CubeProgrammer] tool.
 
 ### SWD
 
 Requires a [ST-Link/V2](https://www.st.com/content/st_com/en/products/development-tools/hardware-development-tools/hardware-development-tools-for-stm32/st-link-v2.html) or [ST-Link/V3](https://www.st.com/en/development-tools/stlink-v3set.html) device connected to the PC over USB and to the board via the SWD interface.
 
-[[/img/Tips-icon.png|alt="Tips"]] Several boards manufactured by ST integrate ST-Link: [Nucleo], [Discovery], [Eval].
+> [!TIP]
+> Several boards manufactured by ST integrate ST-Link: [Nucleo], [Discovery], [Eval].
 
 Be sure that the necessary driver for Windows is installed ([available here](https://www.st.com/en/development-tools/stsw-link009.html)) and the ST-Link adapter is updated to the latest firmware ([application to upgrade the firmware](https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-programmers/stsw-link007.html)).
 
@@ -92,7 +95,8 @@ Only 3 pins are required for basic programming and debugging of the STM32 MCU de
 * SWCLK
 * 3.3V (optional)
 
-[[/img/Important-icon.png|alt="ImportantIcon"]] **Avoid wired 3.3V to the target board if it is already powered by an other source (external supply, USB,..) else you may damage the board, programmer, USB port or external supply.**
+> [!CAUTION]
+> **Avoid wired 3.3V to the target board if it is already powered by an other source (external supply, USB,..) else you may damage the board, programmer, USB port or external supply.**
 
 Refers to [ST-Link V2](https://www.st.com/resource/en/user_manual/dm00026748.pdf) or [ST-Link V3](https://www.st.com/resource/en/user_manual/dm00526767-stlinkv3set-debuggerprogrammer-for-stm8-and-stm32-stmicroelectronics.pdf) user Manual and to the board documentations (User Manual, schematics,...) to ensure connect to the right pins.
 
@@ -100,7 +104,8 @@ Refers to [ST-Link V2](https://www.st.com/resource/en/user_manual/dm00026748.pdf
 
 This requires to restart the STM32 in 'native bootloader' mode and rely on `Boot` pins. Check in [STM32 microcontroller system memory boot mode AN2606](https://www.st.com/content/ccc/resource/technical/document/application_note/b9/9b/16/3a/12/1e/40/0c/CD00167594.pdf/files/CD00167594.pdf/jcr:content/translations/en.CD00167594.pdf) which pattern to apply to activate the bootloader for the dedicated STM32 MCU. Check also which U(S)ART is used.
 
-[[/img/Warning-icon.png|alt="Warning"]] A serial port or additional USB to Serial adapter is needed.
+> [!WARNING]
+> A serial port or additional USB to Serial adapter is needed.
 
 Connect `power`, `GND`, and `Tx/Rx` pins of the serial adapter to your STM32 U(S)ART. 
 
@@ -110,12 +115,14 @@ Adapter `Tx` goes to STM32 `Rx` and `Rx` goes to STM32 `Tx`.
 
 This requires to restart the STM32 in 'native bootloader' mode and rely on `Boot` pins. Check in [STM32 microcontroller system memory boot mode AN2606](https://www.st.com/content/ccc/resource/technical/document/application_note/b9/9b/16/3a/12/1e/40/0c/CD00167594.pdf/files/CD00167594.pdf/jcr:content/translations/en.CD00167594.pdf) which pattern to apply to activate the bootloader for the dedicated STM32 MCU.
 
-[[/img/Warning-icon.png|alt="Warning"]] **USB cable have to be plug to enter in DFU mode.**
+> [!WARNING]
+> **USB cable have to be plug to enter in DFU mode.**
 
+> [!TIP]
+> On Linux with some boards like the black pill, press and hold the boot button then plug the board in. Check dmsg to see if the board is was recognized as in DFU mode.
 
-[[/img/Tips-icon.png|alt="Tips"]] On Linux with some boards like the black pill, press and hold the boot button then plug the board in. Check dmsg to see if the board is was recognized as in DFU mode.  
-
-Note that on Linux you may need udev rules setup if the programmer cannot access your board.  After putting the board in DFU mode, check the kernel using dmesg, you should see your board.  Install dfu-util and run dfu-util -l as root and if it works, run as your user.  If it fails, you need to setup UDEV.  See the 45-maple.rules file for an example. 
+> [!NOTE]
+> on Linux you may need udev rules setup if the programmer cannot access your board. After putting the board in DFU mode, check the kernel using dmesg, you should see your board.  Install dfu-util and run dfu-util -l as root and if it works, run as your user.  If it fails, you need to setup UDEV.  See the 45-maple.rules file for an example.
 
 Edit /etc/udev/rules.d/45-maple.rules.  The first lines are for Maple.  The last line defines your board (the info reported by dfu-util -l or from running dmesg).  This was tested on Fedora 33.
 ```Console
@@ -136,11 +143,12 @@ After running this, tell udev to reload the rules:
 
 Refers to [Black Magic Probe](https://github.com/blacksphere/blackmagic) site and its [Getting-Started](https://github.com/blacksphere/blackmagic/wiki/Getting-Started) Wiki.
 
-[[/img/Warning-icon.png|alt="Warning"]] **On Windows [Black Magic Probe](https://github.com/blacksphere/blackmagic) has a restriction**: 
-for ports `>= COM10` the command line requires to add this prefix `\\.\`.
-This is not handled by the core as it is tools restriction. To be able to use it:
-
-Go into the **Device manager**, select "**Show hidden devices**" and go to the "**Ports**" section, right-click on one COM port below COM10 and select "_Uninstall device_" to delete it. Free at least 2 COM port bleow 10. Then connect your BMP again.
+> [!WARNING]
+> **On Windows [Black Magic Probe](https://github.com/blacksphere/blackmagic) has a restriction**:
+> for ports `>= COM10` the command line requires to add this prefix `\\.\`.
+> This is not handled by the core as it is tools restriction. To be able to use it:
+>
+> Go into the **Device manager**, select "**Show hidden devices**" and go to the "**Ports**" section, right-click on one COM port below COM10 and select "_Uninstall device_" to delete it. Free at least 2 COM port bleow 10. Then connect your BMP again.
 
 ## HID Bootloader 2.2 (HID BL)
 
@@ -161,7 +169,8 @@ The `hid-flash` tool is available on Windows, Linux and MacOS.
 
 Details of HID bootloader v2.2 (and newer) hid-flash tool as well as ready-to-use binary files can be found at the GitHub repository: https://github.com/Serasidis/STM32_HID_Bootloader
 
-[[/img/Warning-icon.png|alt="Warning"]] **USB CDC have to be enable else you will not be able to upload automatically as bootloader reset sequence are managed through the USB CDC communication port.**
+> [!WARNING]
+> USB CDC have to be enable else you will not be able to upload automatically as bootloader reset sequence are managed through the USB CDC communication port.
 
 ## Maple DFU Bootloader
 
@@ -180,13 +189,14 @@ http://docs.leaflabs.com/static.leaflabs.com/pub/leaflabs/maple-docs/latest/boot
 This modified version of the _Maple bootloader_ is known as STM32duino-bootloader or also **_bootloader 2.0_**.
 Details about the STM32duino-bootloader as well as ready to use binary files can be found in the GitHub repository: https://github.com/rogerclarkmelbourne/STM32duino-bootloader
 
-**Notes:**
- * Maple devices (including clones) generally come with the original Maple bootloader preloaded.
- * Generic STM32F103 boards on the other side come with no custom bootloader installed.
- * Maple bootloader 2.0 consumes 8KB of flash.
- * Maple bootloader original consumes 20kb of flash and some of the SRAM.
+> [!NOTE]
+> * Maple devices (including clones) generally come with the original Maple bootloader preloaded.
+> * Generic STM32F103 boards on the other side come with no custom bootloader installed.
+> * Maple bootloader 2.0 consumes 8KB of flash.
+> * Maple bootloader original consumes 20kb of flash and some of the SRAM.
 
-[[/img/Warning-icon.png|alt="Warning"]] **USB CDC have to be enable else you will not be able to upload automatically as bootloader reset sequence are managed through the USB CDC communication port.**
+> [!WARNING]
+> USB CDC have to be enable else you will not be able to upload automatically as bootloader reset sequence are managed through the USB CDC communication port.
 
 
 [Discovery]: https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits.html
