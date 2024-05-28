@@ -1,9 +1,9 @@
-# HAL module configuration
+# HAL configuration
 
 Since core version greater than **1.5.0**, a default STM32 HAL configuration is provided per STM32 series.
 As those files were almost the same for the same series, a default one per series avoid to add one for each variant.
 
-Each required STM32 HAL configuration file is in `system/STM32YYxx/` (where `YY` is the MCU serie).<br>
+Each required STM32 HAL configuration file is in `system/STM32YYxx/` (where `YY` is the MCU series).<br>
 
 It allows to wrap to the correct HAL configurations. Example for a STM32F2: [stm32f2xx_hal_conf.h](../blob/main/system/STM32F2xx/stm32f2xx_hal_conf.h)
 ```C
@@ -91,7 +91,7 @@ Custom HAL configuration file can replace the default one by adding a file named
 
 ### Other HAL configuration
 
-[[/img/Important-icon.png|alt="Important"]] **Below HAL configurations are listed for convenience but may not be up to date. Refer to the required default STM32 HAL configuration file `stm32yyxx_hal_conf_default.h` in `system/STM32YYxx/` (where `YY` is the MCU serie) to make sure having up to date values.**
+[[/img/Important-icon.png|alt="Important"]] **Below HAL configurations are listed for convenience but may not be up to date. Refer to the required default STM32 HAL configuration file `stm32yyxx_hal_conf_default.h` in `system/STM32YYxx/` (where `YY` is the MCU series) to make sure having up to date values.**
 
 #### Oscillator Values adaptation
 Hereafter, list of possible oscillator values which can be redefined:
@@ -142,3 +142,28 @@ Hereafter list of possible definition:
 * `HAL_PWR_MODULE_ONLY`
 
 I2C and SPI do not required definition as used only thanks built-in library. Do not include `Wire.h` or `SPI.h` will allow to use the HAL module.
+
+# HAL assertion management
+
+> [!NOTE]
+> Required core version higher than 2.7.1.
+
+HAL and LL include assertions which can be enabled by defining `USE_FULL_ASSERT` in `build_opt.h`.
+
+By default, `assert_failed(uint8_t *file, uint32_t line)` will print the assertion location (file and line) and loop forever. Print rely on `_Error_Handler(const char *msg, int val)` so it is available only when debug is enabled anyway end user can redefine it as it is a `WEAK` function.
+
+#### Example at sketch level
+
+```C++
+extern "C" void assert_failed(uint8_t *file, uint32_t line) {
+  // Custom code
+  printf("Assert failed: %s (%lu)\n", (char *)file, line);
+}
+
+// the setup function runs once when you press reset or power the board
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  assert_param(LED_BUILTIN == 0);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+```
