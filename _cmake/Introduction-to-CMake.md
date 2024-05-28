@@ -16,7 +16,7 @@ Both these kinds of files are written using CMake's own language; cf. below.
 Whatever the user interface (system shell, cmake-gui, IDE, ...), there always are two main steps: configuration and build.
 - In the __configuration step__, CMake reads the build description (CMakeLists.txt) and generates files for the build tool to use (e.g., `Makefile` or `build.ninja`).
 - In the __build step__, the build tool is called, either directly or indirectly, to perform the build and generate the required build artifacts.
-In case CMake needs to be re-run (maybe because one of the CMakeLists.txt has been edited), this is handled automatically without requiring the user to go through another configuration step. This means the _configuration step needs only to be invoked once_ explicitely, even when rebuilding an updated project.
+In case CMake needs to be re-run (maybe because one of the CMakeLists.txt has been edited), this is handled automatically without requiring the user to go through another configuration step. This means the _configuration step needs only to be invoked once_ explicitly, even when rebuilding an updated project.
 
 CMake projects are usually built "out-of-source", meaning the build artifacts end up in a parallel directory tree,
 as opposed to "in-source" builds, where they are mixed with the source files.
@@ -40,7 +40,7 @@ The syntax of the CMake language is very simple: the only statement is the funct
 You may want to read [the CMake tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html) to get a comprehensive overview of the features CMake offers.
 
 For a detailed list of the functions this project provides, please refer to [[Functions reference]].
-Below is an introduction to general-purpose CMake; most of it is abstracted away in said funtions.
+Below is an introduction to general-purpose CMake; most of it is abstracted away in said functions.
 
 Here are some key points about the structure of a `CMakeLists.txt` (Also read [the documentation](https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html)):
 - The main file must start with a call to [`cmake_minimum_required()`](https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html), to make sure the version of CMake meets the expectations;

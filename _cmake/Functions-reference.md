@@ -35,8 +35,8 @@ This is the main function that encapsulates most of the automation of Arduino. I
 - `targetName` is the name of the [binary target](https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#binary-executables) that will be created as a result of this function; this is a handle that may be reused in later calls, to e.g., `insights()`.
 - `sourcefile...` is a list of sources files to be compiled. This does not comprise header files (`.h`).
   You are strongly advised to hard-code the list of files directly in the CMakeLists.txt. Using [wildcards](https://cmake.org/cmake/help/latest/command/file.html#glob) is possible, but not guaranteed to work in all cases.
-- the optional `dependencies` are targets, usually Arduino libraries such as created by `external_library()`, that the sketch depdends on.
-  The CMake build model makes it awkward at best to automatically handle dependencies the way Arduino does, so they have to be specified explicitely.
+- the optional `dependencies` are targets, usually Arduino libraries such as created by `external_library()`, that the sketch dedends on.
+  The CMake build model makes it awkward at best to automatically handle dependencies the way Arduino does, so they have to be specified explicitly.
 
 What this function does is the following:
 
@@ -94,8 +94,8 @@ insights(TARGET <targetName>
 
 This function lets you produce insights about the build process.
 It uses Graphviz to generate SVG files in order to better understand what happens throughout the build: configuration, compilation, linking.
-The mandatory TARGET argument is the name of the element to analyze, usually your sketch target (crated with `build_sketch()`).
-Each insight keyword is optional; even when provided, they are not built by default, you have to explicitely generate them with the build tool (e.g., `ninja symbols.svg`).
+The mandatory TARGET argument is the name of the element to analyze, usually your sketch target (created with `build_sketch()`).
+Each insight keyword is optional; even when provided, they are not built by default, you have to explicitly generate them with the build tool (e.g., `ninja symbols.svg`).
 
 | Keyword | Generated file | Description |
 | :------ | :------------- | :---------- |

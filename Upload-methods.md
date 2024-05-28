@@ -161,7 +161,7 @@ The `hid-flash` tool is available on Windows, Linux and MacOS.
 
 Details of HID bootloader v2.2 (and newer) hid-flash tool as well as ready-to-use binary files can be found at the GitHub repository: https://github.com/Serasidis/STM32_HID_Bootloader
 
-[[/img/Warning-icon.png|alt="Warning"]] **USB CDC have to be enable else you will not be able to upload automatically as bootloader reset sequence are manged through the USB CDC communication port.**
+[[/img/Warning-icon.png|alt="Warning"]] **USB CDC have to be enable else you will not be able to upload automatically as bootloader reset sequence are managed through the USB CDC communication port.**
 
 ## Maple DFU Bootloader
 
@@ -186,7 +186,7 @@ Details about the STM32duino-bootloader as well as ready to use binary files can
  * Maple bootloader 2.0 consumes 8KB of flash.
  * Maple bootloader original consumes 20kb of flash and some of the SRAM.
 
-[[/img/Warning-icon.png|alt="Warning"]] **USB CDC have to be enable else you will not be able to upload automatically as bootloader reset sequence are manged through the USB CDC communication port.**
+[[/img/Warning-icon.png|alt="Warning"]] **USB CDC have to be enable else you will not be able to upload automatically as bootloader reset sequence are managed through the USB CDC communication port.**
 
 
 [Discovery]: https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits.html

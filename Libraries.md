@@ -30,7 +30,7 @@ or have a look hereafter to see which one is available:
 
 ## Dedicated
 
-Some libraries have been developped to support specific features (hardware or not):
+Some libraries have been developed to support specific features (hardware or not):
 
 * [STM32Ethernet](https://github.com/stm32duino/STM32Ethernet): for on board Ethernet port (ex: Nucleo-F429ZI). This library is fully compatible with Arduino [Ethernet](https://www.arduino.cc/en/Reference/Ethernet) API. It depends on the following libraries:
   * [LwIP](https://github.com/stm32duino/LwIP): lightweight TCP/IP stack (LwIP) is a small independent implementation of the TCP/IP protocol suite
@@ -52,9 +52,9 @@ Some libraries have been developped to support specific features (hardware or no
 * [LIS2MDL](https://github.com/stm32duino/LIS2MDL):  to support the LIS2MDL high-performance 3-axis magnetometer
 * [LIS3DHH](https://github.com/stm32duino/LIS3DHH): to support the LIS3DHH 3D accelerometer
 * [LIS3MDL](https://github.com/stm32duino/LIS3MDL): to support the LIS3MDL high-performance 3-axis magnetometer. Dedicated [[Wiki page|LIS3MDL]]
-* [LPS22HB](https://github.com/stm32duino/LPS22HB): to support the LPS22HB 260-1260 hPa absolute digital ouput barometer. Dedicated [[Wiki page|LPS22HB]]
-* [LPS25HB](https://github.com/stm32duino/LPS25HB): to support the LPS25HB 260-1260 hPa absolute digital ouput barometer
-* [LPS22HH](https://github.com/stm32duino/LPS22HH): to support the LPS22HH 260-1260 hPa absolute digital ouput barometer
+* [LPS22HB](https://github.com/stm32duino/LPS22HB): to support the LPS22HB 260-1260 hPa absolute digital output barometer. Dedicated [[Wiki page|LPS22HB]]
+* [LPS25HB](https://github.com/stm32duino/LPS25HB): to support the LPS25HB 260-1260 hPa absolute digital output barometer
+* [LPS22HH](https://github.com/stm32duino/LPS22HH): to support the LPS22HH 260-1260 hPa absolute digital output barometer
 * [LSM303AGR](https://github.com/stm32duino/LSM303AGR): to support the LSM303AGR 3D accelerometer and 3D magnetometer
 * [LSM6DSO](https://github.com/stm32duino/LSM6DSO): to support the LSM6DSO 3D accelerometer and 3D gyroscope
 * [LSM6DSOX](https://github.com/stm32duino/LSM6DSOX): to support the LSM6DSOX 3D accelerometer and 3D gyroscope

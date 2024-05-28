@@ -29,7 +29,7 @@ We demand version >= 3.9. Please browse the official [Python download page](http
 
 These are available on [PyPi](https://pypi.org/), meaning you can install them with `pip install <package>`. When using third-party modules, in order not to impact any other project you may be working on, it is customary (but not mandatory!) to set up a [virtual environment](https://packaging.python.org/en/latest/tutorials/installing-packages/#creating-virtual-environments) (Look up `virtualenv`, `virtualenvwrapper` on PyPi for more information on this process).
 
-The following modules are used througout the project:
+The following modules are used throughout the project:
 - `jinja2`, a templating engine to autogenerate some CMake configuration files.
 - `graphviz`, a rendering engine to generate graphs as insights into the project
 

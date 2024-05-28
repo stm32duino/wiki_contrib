@@ -53,7 +53,7 @@ optional arguments:
   --cli CLI, -x CLI     path to arduino-cli
   --board BOARD, -b BOARD
                         board name
-  --fire                lauch the build immediately (use with caution!)
+  --fire                launch the build immediately (use with caution!)
   --output OUTPUT, -o OUTPUT
                         output file (CMake) with placeholders
   --sketch SKETCH, -s SKETCH

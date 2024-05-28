@@ -105,7 +105,7 @@ Two standard tools are required in order to debug the code:
 
 ### 3.2 Setting up debug configuration 
 
-If you are using sloeber directly, not CDT with the plugin. The you probaly will not find the below mentiones menue "Debug Configurations" under "Run". This is, because you are in the arduino view. In this view, all "unneccessary" menues are hidden. To overcome this, you can change the view: 
+If you are using sloeber directly, not CDT with the plugin. The you probably will not find the below mentioned menu "Debug Configurations" under "Run". This is, because you are in the arduino view. In this view, all "unnecessary" menus are hidden. To overcome this, you can change the view: 
 
 You can choose the regular C/C++ view. 
 Alternatively you can also reach the debug configurations menu by right-click on your project under the arduino view. 
