@@ -1,17 +1,17 @@
 > [!WARNING]
-> Since core release 2.8.0, only Arduino IDE 2 is supported.
-> To use Legacy IDE (1.8.X), see the [[Getting Started_V1]]
+> This page is dedicated to Legacy Arduino IDE (1.8.X).
+> Legacy Arduino IDE (1.8.X) can be used only with core version prio to 2.8.0.
+> For core version higher or equal to 2.8.0, see the [[Getting Started]]
 
 # Install Arduino.cc IDE
-
-Download and install [Arduino IDE 2](https://www.arduino.cc/en/software) for the required OS.
-([Windows](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing/#windows), [Linux](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing/#linux) or [macOS](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing/#macos) instructions)
+Download and install [Arduino software (IDE)](https://www.arduino.cc/en/software) for the required OS.
+([Windows](https://docs.arduino.cc/software/ide-v1/tutorials/Windows), [Linux](https://docs.arduino.cc/software/ide-v1/tutorials/Linux) or [Mac](https://docs.arduino.cc/software/ide-v1/tutorials/macOS/) instructions)
 
 ## About Boards manager concept
 Arduino.cc IDE allows to add easily new board thanks the "**Boards Managers**".
 More information about "**Boards Managers**" is available on Arduino.cc official website:
 
-[Installing a Board Package in the IDE 2](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-board-manager)
+[Installing additional Arduino Cores](https://docs.arduino.cc/learn/starting-guide/cores)
 
 The corresponding STM32 cores packages are provided thanks to:
 
@@ -27,7 +27,7 @@ So carefully follow the following steps.
 
 1- Launch Arduino.cc IDE. Click on "**File**" menu and then "**Preferences**".
 
-[[img/v2/preferences.png|alt=Preferences]]
+[[img/v1/preferences.png|alt=Preferences]]
 
 The "**Preferences**" dialog will open, then add the following link to the "*Additional Boards Managers URLs*" field:
 
@@ -35,31 +35,31 @@ https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectron
 
 Click "**Ok**"
 
-2- Click on "**Tools**" menu and then "**Boards > Boards Manager**" or use the underlined icon on the left side bar:
+2- Click on "**Tools**" menu and then "**Boards > Boards Manager**"
 
-[[img/v2/menu_bm.png|alt="BoardsManager Menu"]]
+[[img/v1/menu_bm.png|alt="BoardsManager Menu"]]
 
 The board manager will open and you will see a list of installed and available boards. 
 
 Select "**Contributed**" type.
 
-[[img/v2/boardsmanager.png|alt="BoardsManager dialog"]]
+[[img/v1/boardsmanager.png|alt="BoardsManager dialog"]]
 
 Select the "**STM32 MCU based boards**" and click on install.
 
-[[img/v2/boardsmanager2.png|alt="BoardsManager dialog"]]
+[[img/v1/boardsmanager2.png|alt="BoardsManager dialog"]]
 
-After installation is complete a "*\<version> installed*" tag appears below the core name.
+After installation is complete an "*INSTALLED*" tag appears next to the core name. 
 
 You can close the Board Manager.
 
-[[img/v2/boardslist.png|alt="Boards list"]]
+[[img/v1/boardslist.png|alt="Boards list"]]
 
 Now you can find the STM32 boards package in the "**Board**" menu.
 
 Select the desired boards series: _Nucleo-64 / Nucleo-144 / Discovery / ..._
 
-[[img/v2/SelectBoard.png|alt="Select boards"]]
+[[img/v1/SelectBoard.png|alt="Select boards"]]
 
 Then you can find the Nucleo-64 boards available in a sub-menu of the "Tools" menu.
 
@@ -81,34 +81,34 @@ Else configure the proxy in the Arduino.cc IDE (open the "**Preferences**" dialo
 
 2. Launch the Arduino software
 
-    [[/img/v2/arduino.png|alt="Arduino icon"]]
+    [[/img/v1/arduino.png|alt="Arduino icon"]]
 
 3. Select the [Nucleo L476RG] board in two steps:
 
 a. From the "**Tools > Board**" menu, select the STM32 boards groups: _Nucleo-64_
 
-  [[/img/v2/boardslist.png|alt="Board selection"]]
+  [[/img/v1/boardslist.png|alt="Board selection"]]
 
 b. Then from the "**Tools > Board part number**" menu, select the [Nucleo L476RG]
 
-  [[/img/v2/SelectBoard.png|alt="Board selection"]]
+  [[/img/v1/SelectBoard.png|alt="Board selection"]]
 
 3. Select the serial port from the "**Tools > Port**" menu
 
     * On Mac, it's something like _/dev/tty.usbmodem-1511_.
-    * On Windows, it's often the highest-numbered COM port. In this example, it's _COM40_
+    * On Windows, it's often the highest-numbered COM port. In this example, it's _COM5_
     * On Linux, it's something like _/dev/ttyACM0_.
 
     (Or unplug the board, check the menu, and then plug the board and check what new port appears)
 
-  [[/img/v2/SelectPort.png|alt="Port selection"]]
+  [[/img/v1/SelectPort.png|alt="Port selection"]]
 
 ## Upload methods
 Depending of the board, several upload methods could be proposed, thanks the "**Tools > Upload Method**" menu.
 
 See [[Upload methods]] for more details.
 
-[[/img/v2/UploadMethod.png|alt="Upload Method"]]
+[[/img/v1/UploadMethod.png|alt="Upload Method"]]
 
 # Examples
 * [[Blink-example]]

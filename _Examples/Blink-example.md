@@ -1,6 +1,6 @@
 ## Blink example on [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html)
-1. If not already done, download and install the [Arduino software (IDE)](https://www.arduino.cc/en/Main/Software) for the required OS.
-([Windows](https://www.arduino.cc/en/Guide/Windows), [Linux](https://www.arduino.cc/en/Guide/linux) or [Mac](https://www.arduino.cc/en/Guide/MacOSX) instructions)
+
+1. If not already done, [[Getting-Started#Install-Arduino.cc-IDE]]
 
 2. Configure the IDE to the desired board. 
 
@@ -8,12 +8,12 @@
 
 3. Open the Blink sketch from the "**File> Examples > 01.Basics > Blink**"
 
-  [[/img/SelectBlinkExample.png|alt="Blink example selection"]]
-
 4. Click the upload button
   
   See [[Getting-Started#upload-method]] to change the upload method.
 
-  [[/img/Upload.png|alt="Upload"]]
+  [[/img/v1/Upload.png|alt="Upload"]]
+
+  [[/img/v2/Upload.png|alt="Upload"]]
 
 That's all. LED should blink on the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html).
