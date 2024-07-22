@@ -7,5 +7,4 @@ It can be installed thanks the Arduino library manager.
 Hereafter wiki pages to use an example:
 
 1. [[Blink example]]
-2. [[Firmata example]]
 
