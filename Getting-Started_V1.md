@@ -1,5 +1,5 @@
 > [!WARNING]
-> This page is dedicated to Legacy Arduino IDE (1.8.X).
+> This page is dedicated to Legacy Arduino IDE (1.8.X) usage.
 > Legacy Arduino IDE (1.8.X) can be used only with core version prio to 2.8.0.
 > For core version higher or equal to 2.8.0, see the [[Getting Started]]
 

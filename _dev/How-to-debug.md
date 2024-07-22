@@ -1,6 +1,7 @@
 # How to debug
 
 Below, some ways to debug:
+ * [Arduino IDE 2 (Supported and recommended way)](#arduino-ide-2-supported-and-recommended-way)
  * [Eclipse and Sloeber](#eclipse-and-sloeber)
  * [PlatformIO](#PlatformIO)
  * [Visual Studio and VisualGDB](#visual-studio-and-visualgdb)
@@ -8,8 +9,39 @@ Below, some ways to debug:
  * [Command line GDB](#command-line-gdb)
 
 > [!WARNING]
-> **Only the Arduino IDE is officially supported.**
+> **Only the Arduino IDE 2 is officially supported.**
 
+# Arduino IDE 2 (Supported and recommended way)
+
+> [!Note]
+> Requires a [ST-Link/V2](https://www.st.com/content/st_com/en/products/development-tools/hardware-development-tools/hardware-development-tools-for-stm32/st-link-v2.html) or [ST-Link/V3](https://www.st.com/en/development-tools/stlink-v3set.html) device connected to the PC over USB and to the board via the SWD interface.
+
+1. If not already done, [[Getting-Started#Install-Arduino.cc-IDE]]
+
+2. Configure the IDE to the desired board. Here the [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html) which already includes a ST-Link.
+
+  See [[Getting-Started#configuring-ide]]
+
+3. Open the Blink sketch from the "**File> Examples > 01.Basics > Blink**".
+
+4. Select the "**Optimize for debugging**" in the "**Sketch**" menu:
+
+  [[/img/debug/arduino/OptimizeDebug.png|alt="Optimize for debugging"]]
+
+5. Click the upload button
+
+  See [[Getting-Started#upload-method]] to change the upload method.
+
+  [[/img/v2/Upload.png|alt="Upload"]]
+
+6. Click the start debugging button:
+
+  [[/img/debug/arduino/startDebug.png|alt="Start debugging"]]
+
+  [[/img/debug/arduino/debugSession.png|alt="Debugging session"]]
+
+> [!TIP]
+> Refer to official documentation to see how [Using the Debugger](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-debugger/#using-the-debugger).
 
 # Eclipse and Sloeber
 ## 1 - Software requirements
@@ -29,11 +61,11 @@ The GNU MCU Eclipse plug-ins provide multiple tools based on the GNU toolchains 
 
 Launch Eclipse, go to _**“Help > Eclipse Marketplace”**_ and search for the _**"GNU MCU plug-in"**_. <br>
 
-[[/img/EclipseMP.png|alt="EclipseMarketPlace"]]
+[[/img/debug/sloeber/EclipseMP.png|alt="EclipseMarketPlace"]]
 
 In the tree view, expand _**“GNU MCU Eclipse {version}”**_ and uncheck all items. In previous versions, you had to choose the OpenOCD entry. Since there is no such entry, you cannot select it. OpenOCD will automatically be installed. Confirm and follow the recommended instructions. Then restart Eclipse.<br>
 
-[[/img/EclipseMPGNU.png|alt="EclipseMarketPlaceGNU"]]
+[[/img/debug/sloeber/EclipseMPGNU.png|alt="EclipseMarketPlaceGNU"]]
 
 To finish the OpenOCD plug-in configuration, and for a simpler integration, install OpenOCD binaries by following the [“How to install the OpenOCD binaries”](https://gnu-mcu-eclipse.github.io/openocd/install/ 
 ) tutorial. This Guide will tell you to extract the openocd binaries to a specific path (Windows).
@@ -42,7 +74,7 @@ To finish the OpenOCD plug-in configuration, and for a simpler integration, inst
 From the Eclipse main tab, go to _**“Help > Eclipse Marketplace”**_ and search for _**Sloeber**_. <br>
 Download the _**"Sloeber plugin"**_ , follow the recommended instructions and restart Eclipse. <br>
 By now, the main tab should look like the following:
-[[/img/SloeberMenu.png|alt="SloeberMenu"]]
+[[/img/debug/sloeber/SloeberMenu.png|alt="SloeberMenu"]]
 
 ### 1.3 - Install STM32 Cores
 Open _**“Arduino > Preferences”**_.<br>
@@ -50,11 +82,11 @@ In the tree view that pops up, go to _**“Arduino > Third party index url’s�
 
 https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/main/package_stmicroelectronics_index.json
 
-[[/img/UrlIndex.png|alt="UrlIndex"]]
+[[/img/debug/sloeber/UrlIndex.png|alt="UrlIndex"]]
 
 Hit _**“Apply and Close”**_ then re-open the _**“Arduino > Preferences”**_ menu. The STM32 Core is now available in the _**“Platforms and Boards”**_ menu.
 
-[[/img/CoreInstall.png|alt="CoreInstall"]]
+[[/img/debug/sloeber/CoreInstall.png|alt="CoreInstall"]]
 
 Select the latest core version and hit _**“Apply and Close”**_.
 
@@ -73,7 +105,7 @@ Complete the Arduino required information (board type, port number …) form and
 
 Do not forget to select the _**“Platform folder”**_ that corresponding to the STM32 Core version previously installed.
 
-[[/img/ProjectConfig.png|alt="ProjectConfig"]] 
+[[/img/debug/sloeber/ProjectConfig.png|alt="ProjectConfig"]]
 
 > [!NOTE]
 > If you plan to debug, select "_**Debug (-g)**_" from the "_**Optimize**_" list else you will not have debugging symbols.
@@ -82,7 +114,7 @@ From there, you can create your own sketch or use pre-configured examples. <br>
 In this case, we will try the _**“Blink”**_ example.<br>
 From the _**“select code”**_ bar, apply _**“Sample sketch”**_ and then choose _**“Examples > 01.Basics > Blink”**_ and _**“Finish”**_.
 
-[[/img/BuiltInExamples.png|alt="BuiltInExamples"]] 
+[[/img/debug/sloeber/BuiltInExamples.png|alt="BuiltInExamples"]]
 
 > [!NOTE]
 > As the GCC ARM Toolchain is provided by the STM32 core, you do not have to download it in order to program your board.
@@ -119,7 +151,7 @@ Alternatively you can also reach the debug configurations menu by right-click on
 From the _**“Run”**_ menu, select _**“Debug Configurations”**_.
 Double-click on **_“GDB OpenOCD Debugging”_** to create a new configuration and set the configuration name.
 
-[[/img/DebugMenu.png|alt="DebugMenu"]]
+[[/img/debug/sloeber/DebugMenu.png|alt="DebugMenu"]]
 
 Move to the _**“Debugger”**_ tab in order to configure OpenOCD and GDB. 
 
@@ -139,7 +171,7 @@ The _**“Actual executable”**_ field show the full executable path.
         -s "${openocd_path}/../scripts" -f interface/stlink-v2-1.cfg -f target/stm32f0x.cfg
 ```
 
-[[/img/OCDConfig.png|alt="OpenOCD-config"]]
+[[/img/debug/sloeber/OCDConfig.png|alt="OpenOCD-config"]]
 
 > [!IMPORTANT]
 >  Do not forget to replace the config files with the version of the board you are using.
@@ -154,7 +186,7 @@ In the _**“Debugger”**_ tab, scroll to the GDB Client setup field.
 
 By now, the _**“Debugger”**_ tab should look like the following: 
 
-[[/img/DebugConfig.png|alt="DebugConfig"]]
+[[/img/debug/sloeber/DebugConfig.png|alt="DebugConfig"]]
 
 Move to the _**“Startup”**_ tab, scroll until the _**“Run/Restart Commands”**_ fields and add:<br> 
 ``` 
@@ -172,11 +204,11 @@ If the configuration process runs correctly, you will be able to see the debug c
 
 If you are facing problems with messages like "binary not found" you should try to click on the drop down menu and then on your configuration instead of just click on the debug icon. 
 
-[[/img/DebugConsole.png|alt="DebugConsole"]]
+[[/img/debug/sloeber/DebugConsole.png|alt="DebugConsole"]]
 
 Now, you can easily debug your code by using the Eclipse debug features including running step-by-step mode, live breakpoint, inspecting memory access, live view of variable contents and many more.
 
-[[/img/DebugView.png|alt="DebugView"]]
+[[/img/debug/sloeber/DebugView.png|alt="DebugView"]]
 
 
 # PlatformIO
@@ -198,80 +230,18 @@ This [tutorial](https://visualgdb.com/tutorials/arduino/stm32/) shows how to dev
 
 ## 1. Install
 
-See [prerequisites](https://github.com/microsoft/vscode-arduino/blob/main/README.md#prerequisites).
-
-* Download and install [Visual Studio code](https://code.visualstudio.com/)
-* Install Arduino extension from Microsoft: [vscode-arduino](https://github.com/Microsoft/vscode-arduino)
-
-[[/img/VSCodeArduinoExtension.png|alt="VSCode Arduino Extension"]]
-
-## 2. Configuration
-
-Some settings are required for [vscode-arduino](https://github.com/Microsoft/vscode-arduino) extension.
-In your user [`settings.json`](https://code.visualstudio.com/docs/getstarted/settings), add:
-```
-    "arduino.path": "c:\STM32\arduino\arduino-1.8.9-windows\arduino-1.8.9\",`
-    "arduino.additionalUrls": "https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json"
-```
-
-> [!TIP]
-> For further options see [vscode-arduino Readme](https://github.com/microsoft/vscode-arduino/blob/main/README.md)
-
-Now, Ensure STM32 core installation is installed by opening the "**Arduino Board Manager**". Open the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Board Manager**, `STM32 Cores` should be listed in `Contributed` Type:
-
-[[/img/VSCodeBoardManager.png|alt="VSCode Board Manager"]]
-
-## 3. Build an example
-
-### 3.1 Board Configuration
-
-Firstly, it is necessary to choose a board to build.
-
-Open the "**Arduino Board Configuration**". Open the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Board Config**
-
-[[/img/VSCodeBoardConfig.png|alt="VSCode Board Config"]]
-
-In this example, [Nucleo L476RG](http://www.st.com/en/evaluation-tools/nucleo-l476rg.html).
-
-### 3.2 Choose an example
-
-Open the "**Arduino Examples**" by opening the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Examples**
-
-[[/img/VSCodeArduinoExamples.png|alt="VSCode Arduino Examples"]]
-
-For this example, Blink has been selected, then you will have this:
-
-[[/img/VSCodeBlinkExample.png|alt="VSCode Blink Example"]]
-
-### 3.3 Build and upload
-
-Opening the Command Palette (<kbd>F1</kbd> or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>) and search/select **Arduino: Verify** to only build or **Arduino: Upload**  to build and upload.
-
-[[/img/VSCodeUpload.png|alt="VSCode Upload"]]
-
-## Enhance C/C++ code browsing
-
-[[/img/under-construction.jpg|alt="Under construction"]]
-
-## 4. Debug configuration
-
-### 4.1. Install
-* Install Cortex-Debug from Marus25 (@Marus): [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
-
-[[/img/VSCodeCortexDebugExtension.png|alt="VSCode Cortex-Debug Extension"]]
-
-* Install OpenOCD
+See the Visual Studio Code extension for Arduino [README.md](https://github.com/microsoft/vscode-arduino/blob/main/README.md).
 
 # Command Line GDB
 
-## 5. Command Line GDB
-### 5.1. Requirements
+## 1. Command Line GDB
+### 1.1. Requirements
 * Linux, tested in Ubuntu 18.04 
 * Requires Arduino IDE with stm32duino installed
 * STLink compatible dongle
 * assuming Blue Pill board, but it probably work with any other STM32 board
 
-### 5.2. Compiling for Debug
+### 1.2. Compiling for Debug
 * In the Arduino IDE, go to menu File->Preferences and check compilation verbose
 * Open your code, for example, the blink code
 * In the Arduino IDE, go to Tools->Optimize->Debug. This will include -g in the compilation process, including debug symbols
@@ -321,7 +291,7 @@ Application is running
 Start operation achieved successfully
 ```
 
-### 5.3 Debugging with Command Line GDB
+### 1.3 Debugging with Command Line GDB
 
 * Open a terminal and run `st-info` to start gdbserver
 * Open another terminal and run `~/.arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-gdb /tmp/arduino_build_742171/Blink-stm32.ino.elf` to run the gdb used by stm32duino. Note that the path to the ELF file was figure out in the compilation messages in the Arduino IDE, shown in the previous section.
@@ -349,7 +319,10 @@ c
 c
 ```
 
-### 5.4 Debugging with GUI GDB
+### 1.4 Debugging with GUI GDB
 
 * It is also possible to debug with GUI, such as `ddd`. It requires software installation with the command `sudo apt-get install -y ddd`. 
-* To run `ddd`, open a terminal and type `ddd --debugger ~/.arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-gdb /tmp/arduino_build_742171/Blink-stm32.ino.elf`. Note that you must point to the appropriate gdb and ELF file. 
+* To run `ddd`, open a terminal and type `ddd --debugger ~/.arduino15/packages/STM32/tools/xpack-arm-none-eabi-gcc/9.2.1-1.1/bin/arm-none-eabi-gdb /tmp/arduino_build_742171/Blink-stm32.ino.elf`. 
+
+> [!NOTE]  
+> Check to point to the appropriate gdb and ELF file. 
