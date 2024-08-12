@@ -169,3 +169,23 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 }
 ```
+
+# HAL FDCAN for STM32G0xx series
+
+> [!NOTE]
+> Required core version higher or equal to 2.8.0.
+
+STM23G0xx series shared an irq with the `HardwareTimer` but the default irq handler did not managed the `FDCAN` one as the core does not support it.
+
+Since https://github.com/stm32duino/Arduino_Core_STM32/pull/2301 the handler properly forward to the correct handler.
+
+Anyway, application have to declare the `phfdcan1` and `phfdcan2` handles.
+
+Example:
+```C
+FDCAN_HandleTypeDef myhfdcan1;
+FDCAN_HandleTypeDef *phfdcan1 = &myhfdcan1;
+#if defined(FDCAN2_BASE)
+FDCAN_HandleTypeDef *phfdcan2 = NULL;
+#endif
+```
