@@ -93,6 +93,17 @@ As each pin has not the same capabilities, it uses the best way:
 
 [[/img/PWM_Freq.png|alt="PWM Freq result"]]
 
+### DAC output buffer
+
+> [!NOTE]
+> Available since version 2.8.0, thanks [#2309]
+
+It is now possible to disable the DAC output buffer (which is enabled by default) by defining `DISABLE_DAC_OUTPUTBUFFER`
+using one of the below options:
+ * [[hal_conf_extra.h|HAL-configuration#core-version--150-1]]
+ * [`build_opt.h`][build_opt.h]
+ * header file of the variant: `variant_<boardname>.h`
+
 ### ADC internal channels
 Available in core version greater than **1.5.0**
 
