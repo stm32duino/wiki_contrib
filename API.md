@@ -96,7 +96,7 @@ As each pin has not the same capabilities, it uses the best way:
 ### DAC output buffer
 
 > [!NOTE]
-> Available since version 2.8.0, thanks [#2309]
+> Available since version 2.8.0, thanks [#2309](https://github.com/stm32duino/Arduino_Core_STM32/pull/2309).
 
 It is now possible to disable the DAC output buffer (which is enabled by default) by defining `DISABLE_DAC_OUTPUTBUFFER`
 using one of the below options:
