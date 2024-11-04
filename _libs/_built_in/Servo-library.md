@@ -16,7 +16,7 @@ The Servo library allows to control upt to 12 RC (hobby) servo motors on any GPI
 
 ##  2. <a name='API'></a>API
 STM32duino Servo API is the same as Arduino Servo API:
-https://www.arduino.cc/en/reference/servo
+https://docs.arduino.cc/libraries/servo/
 ```C++
     Servo();
     uint8_t attach(int pin, int value = DEFAULT_PULSE_WIDTH);  // attach the given pin to the next free channel, sets pinMode, set angle value, returns channel number or 0 if failure

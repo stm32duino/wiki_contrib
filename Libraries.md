@@ -22,19 +22,19 @@ Libraries using basic features like Serial, SPI, I2C,... should be fully compati
 
 ## Built-in (delivered with the core package)
 
-* EEPROM: follow the official [EEPROM](https://www.arduino.cc/en/Reference/EEPROM) API
-* Servo: follow the official [Servo](https://www.arduino.cc/en/Reference/Servo) API
-* SoftwareSerial: follow the official [SoftwareSerial](https://www.arduino.cc/en/Reference/softwareSerial) API.<br>
+* EEPROM: follow the official [EEPROM](https://docs.arduino.cc/learn/built-in-libraries/eeprom/) API
+* Servo: follow the official [Servo](https://docs.arduino.cc/libraries/servo/) API
+* SoftwareSerial: follow the official [SoftwareSerial](https://docs.arduino.cc/learn/built-in-libraries/software-serial/) API.<br>
   It uses an **hardware timer**. Interrupt is triggered at a `frequency = Baudrate * OVERSAMPLE` (by default _3*baudrate_) to handle RX as well as TX transmissions.
   This impacts CPU load specially at high baudrate.
-* SPI: follow the official [SPI](https://www.arduino.cc/en/Reference/SPI) API
-* Wire (I2C): follow the official [Wire](https://www.arduino.cc/en/Reference/Wire) API
+* SPI: follow the official [SPI](https://docs.arduino.cc/language-reference/en/functions/communication/SPI/) API
+* Wire (I2C): follow the official [Wire](https://docs.arduino.cc/language-reference/en/functions/communication/Wire/) API
 
 ## Dedicated
 
 Some libraries have been developed to support specific features (hardware or not):
 
-* [STM32Ethernet](https://github.com/stm32duino/STM32Ethernet): for on board Ethernet port (ex: Nucleo-F429ZI). This library is fully compatible with Arduino [Ethernet](https://www.arduino.cc/en/Reference/Ethernet) API. It depends on the following libraries:
+* [STM32Ethernet](https://github.com/stm32duino/STM32Ethernet): for on board Ethernet port (ex: Nucleo-F429ZI). This library is fully compatible with Arduino [Ethernet](https://docs.arduino.cc/libraries/ethernet/) API. It depends on the following libraries:
   * [LwIP](https://github.com/stm32duino/LwIP): lightweight TCP/IP stack (LwIP) is a small independent implementation of the TCP/IP protocol suite
   
   Dedicated [[Wiki page|STM32Ethernet]]
@@ -42,7 +42,7 @@ Some libraries have been developed to support specific features (hardware or not
 * [STM32LowPower](https://github.com/stm32duino/STM32LowPower): to support some STM32 low power mode. It depends on the following libraries:
   * [STM32RTC](https://github.com/stm32duino/STM32RTC)
 * [STM32RTC](https://github.com/stm32duino/STM32RTC): to support the real-time clock (RTC) controller embedded in the STM32 microcontrollers. It is based on the Arduino RTCZero library
-* [STM32SD](https://github.com/stm32duino/STM32SD): to support SDIO or SDMMC controller for board with SD card slot (ex: Disco-F746). This library is fully compatible with Arduino [SD](https://www.arduino.cc/en/Reference/SD) API. It depends on the following libraries:
+* [STM32SD](https://github.com/stm32duino/STM32SD): to support SDIO or SDMMC controller for board with SD card slot (ex: Disco-F746). This library is fully compatible with Arduino [SD](https://docs.arduino.cc/libraries/sd/) API. It depends on the following libraries:
   * [FatFS](https://github.com/stm32duino/FatFs): FatFs is a generic FAT file system module for small embedded systems. The FatFs is written in compliance with ANSI C and completely separated from the disk I/O layer. Therefore it is independent of hardware architecture
 
 
