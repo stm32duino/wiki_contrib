@@ -308,8 +308,12 @@ Finally, all the new reference have to be added in the [`README.md`]
  ```
 </details>
 
-## 6 - Restart
-Restart Arduino IDE and try one of the new entry with the [CheckVariant example].
+## 6 - Verify your changes
+After your commit has been merged, you need a way to test it since it has not been released
+yet. You can do that by following
+[Using a git repository](https://github.com/stm32duino/Arduino_Core_STM32/wiki/Using-git-repository).
+
+Then verify your changes with the [CheckVariant example].
 
 > [!IMPORTANT]
 > An issue with the Arduino IDE 2.x prevents the board to appears
