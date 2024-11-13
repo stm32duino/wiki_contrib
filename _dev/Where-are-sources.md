@@ -13,13 +13,8 @@ The stm32 core files can then be found in this directory:
 
 `<Arduino IDE install directory>/packages/STMicroelectronics/hardware/stm32/2.8.1`.
 
-The `2.8.1` changes depending on your installed stm32 core version.
-
-If you use the portable IDE, as described [here](https://www.arduino.cc/en/Guide/PortableIDE),
-then the location is here instead:
-
-* `<Arduino IDE install directory>/portable/` _(Linux/Mac)_
-* `<Arduino IDE install directory>\portable\` _(Windows 10 and 11)_
+> [!NOTE]
+> The `2.8.1` changes depending on your installed stm32 core version.
 
 ## STM32 Tools files location
 
@@ -27,4 +22,5 @@ Go to the Arduino IDE install directory. See above.
 
 Then, go to the `<Arduino install directory>/packages/STMicroelectronics/tools/STM32Tools/2.2.3` directory.
 
-The `2.2.3` changes depending on your installed stm32 tools version.
+> [!NOTE]
+> The `2.2.3` changes depending on your installed stm32 tools version.
