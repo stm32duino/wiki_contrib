@@ -47,6 +47,10 @@ This means that the generic STM32 MCU files required for a variant are generated
 > The example of all the steps below are available in this PR: [Add generic G0B1R(B-C-E)T, G0C1R(C-E)T and Nucleo-G0B1RE ](../pull/1398)
 
 ---
+
+> [!TIP]
+> If you have any issue with the following guide. Do not hesitate to ask question on the [stm32duino Github discussions](https://github.com/orgs/stm32duino/discussions) or the [stm32duino forum](http://stm32duino.com).
+
 # Define a new generic variant
 
 Before adding a specific board, it is a good practice to add the generic entry of the STM32 MCU as it is possible to use it with the specific board.
