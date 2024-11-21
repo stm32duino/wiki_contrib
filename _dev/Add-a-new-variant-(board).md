@@ -40,7 +40,7 @@ This means that the generic STM32 MCU files required for a variant are generated
  * `generic_clock.c`: contains the default system clock configuration: `WEAK void SystemClock_Config(void)`
  * `PinNamesVar.h`: contains specific [`PinName`] definitions of the MCU
  * `PeripheralPins.c`: contains list of available [`PinName`] per peripheral.
- * `variant_generic.cpp`: contains Digital PinName array and Analog (`Ax) [pin number] array
+ * `variant_generic.cpp`: contains Digital PinName array and Analog (`Ax`) [pin number] array
  * `variant_generic.h`: contains all definition required by the variant: STM32 [pin number] definitions, peripheral pins for default instances: Serial, I2C, SPI, Tone, Servo, ...
 
 > [!TIP]
@@ -362,6 +362,7 @@ Then verify your changes with the [CheckVariant example].
 [`boards.txt`]: ../blob/main/boards.txt
 [`G0B1R(B-C-E)T_G0C1R(C-E)T`]: ../blob/main/variants/STM32G0xx/G0B1R(B-C-E)T_G0C1R(C-E)T
 [`PinName`]: tbd
+[pin number]: tbd
 [`platform.txt`]: ../blob/main/platform.txt
 [`variants` folder]: ../blob/main/variants
 [Arduino boards.txt specification]: https://arduino.github.io/arduino-cli/latest/platform-specification/#boardstxt

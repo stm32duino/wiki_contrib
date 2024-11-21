@@ -41,7 +41,7 @@ or
 > There must be no other directories along side the `<x.y.z>` or `<x.y.z-dev>` directory, so don't just rename the old one. If you want to keep it, move it somewhere else entirely.
 > If you do not, in "**Tools > Board**" menu, you should have twice the "**STM32 board**" menu.
 
-## 3. Cloning the git repository to replace the stm32 core version package (1st method)
+## 3. Cloning the git repository to replace the stm32 core version package
 
 Directory of step 2 is now deleted.
 
