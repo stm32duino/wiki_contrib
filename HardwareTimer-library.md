@@ -86,10 +86,10 @@ Each timer may provide several channels, nevertheless it is important to underst
 
     // The following function(s) are available for more advanced timer options
     TIM_HandleTypeDef *getHandle();  // return the handle address for HAL related configuration
-    int getChannel(uint32_t channel);
-    int getLLChannel(uint32_t channel);
-    int getIT(uint32_t channel);
-    int getAssociatedChannel(uint32_t channel);
+    uint32_t getChannel(uint32_t channel);
+    uint32_t getLLChannel(uint32_t channel);
+    uint32_t getIT(uint32_t channel);
+    uint32_t getAssociatedChannel(uint32_t channel);
 #if defined(TIM_CCER_CC1NE)
     bool isComplementaryChannel[TIMER_CHANNELS];
 #endif
@@ -119,12 +119,15 @@ __Example__:
     MyTim->setMode(channel, TIMER_OUTPUT_COMPARE_PWM1, pin);
 ```
 
+
+> [!CAUTION]
+> Since core release 2.9.0: `TIMER_DISABLED` and `TIMER_OUTPUT_COMPARE` are obsolete and replaced by `TIMER_OUTPUT_DISABLED`.
+
 Supported Mode:
 ```C
 typedef enum {
-  TIMER_DISABLED,                         // == TIM_OCMODE_TIMING           no output, useful for only-interrupt
+  TIMER_OUTPUT_DISABLED,                         // == TIM_OCMODE_TIMING           no output, useful for only-interrupt
   // Output Compare
-  TIMER_OUTPUT_COMPARE,                   // == Obsolete, use TIMER_DISABLED instead. Kept for compatibility reason
   TIMER_OUTPUT_COMPARE_ACTIVE,            // == TIM_OCMODE_ACTIVE           pin is set high when counter == channel compare
   TIMER_OUTPUT_COMPARE_INACTIVE,          // == TIM_OCMODE_INACTIVE         pin is set low when counter == channel compare
   TIMER_OUTPUT_COMPARE_TOGGLE,            // == TIM_OCMODE_TOGGLE           pin toggles when counter == channel compare
