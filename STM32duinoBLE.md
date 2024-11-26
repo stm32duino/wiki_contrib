@@ -19,17 +19,13 @@ Erase the flash memory of the BlueNRG-1 chip:
 
 [[/img/stm32duinoBLE/SensorTile_Box3.PNG|alt="Erase of the BlueNRG-1 chip"]]
 
-Download the Link Layer Only firmware for the BLE module from the following link:
-
-[DTM_LLOnly.bin](https://github.com/stm32duino/wiki/blob/main/STEVAL-MKSBOX1V1/DTM_LLOnly.bin)
+Download the archive [STEVAL-MKSBOX1V1.zip] that contains the Link Layer Only firmware named `DTM_LLOnly.bin` for the BLE module.
 
 Load the Link Layer Only firmware in the ST BlueNRG-1_2 Flasher Utility and then press the "Flash" button:
 
 [[/img/stm32duinoBLE/SensorTile_Box4.PNG|alt="Load and flash the new firmware into BlueNRG-1 chip"]]
 
-If you need to restore the stock firmware of the BLE module of STEVAL-MKSBOX1V1, you can repeat the procedure using this firmware image:
-
-[DTM_Full.bin](https://github.com/stm32duino/wiki/blob/main/STEVAL-MKSBOX1V1/DTM_Full.bin)
+If you need to restore the stock firmware of the BLE module of STEVAL-MKSBOX1V1, you can repeat the procedure using the firmware image `DTM_Full.bin` included in the same archive [STEVAL-MKSBOX1V1.zip].
 
 
 # STM32duinoBLE with X-NUCLEO-BNRG2A1
@@ -62,9 +58,7 @@ Erase the flash memory of the BlueNRG-2 chip:
 
 [[/img/stm32duinoBLE/X_NUCLEO_BNRG2A1_6.PNG|alt="Erase of the BlueNRG-2 chip"]]
 
-Download a new version of the firmware for the BLE module from the following link:
-
-[BLUENRG-M2SP_DTM_SPI.hex](https://github.com/stm32duino/wiki/blob/main/X-NUCLEO-BNRG2A1/BLUENRG-M2SP_DTM_SPI.hex)
+Download the archive [X-NUCLEO-BNRG2A1.zip] that contains a new version of the firmware for the BLE module name `LUENRG-M2SP_DTM_SPI.hex`.
 
 Load the new firmware in the RF-Flasher Utility and then press the "Flash" button:
 
@@ -72,3 +66,5 @@ Load the new firmware in the RF-Flasher Utility and then press the "Flash" butto
 
 If you should find some issues during the update process, you can try to repeat the procedure closing the J15 jumper on the X-NUCLEO-BNRG2A1 expansion board.
 
+[STEVAL-MKSBOX1V1.zip]: https://github.com/stm32duino/wiki_contrib/releases/download/0.0.1/STEVAL-MKSBOX1V1.zip
+[X-NUCLEO-BNRG2A1.zip]: https://github.com/stm32duino/wiki_contrib/releases/download/0.0.1/X-NUCLEO-BNRG2A1.zip
