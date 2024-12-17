@@ -17,6 +17,7 @@ Several definitions can be redefined by the end user by different ways:
  * [F_CPU](#f_cpu)
  * [Serial Rx/Tx buffer size](#serial-rxtx-buffer-size)
  * [systemclock_config](#systemclock_config)
+ * [Enable UCPD dead battery behavior](#enable-ucpd-dead-battery-behavior)
 
 ## Change interrupt priority values
 
@@ -261,3 +262,19 @@ extern "C" void SystemClock_Config() {
   // new clock config
 }
 ```
+
+## Enable UCPD dead battery behavior
+
+> [!NOTE]
+> Available with STM32 core version higher than 2.9.0.
+
+By default, UCPD dead battery behavior is disabled after reset.
+After user request to be able to not disable it, user can use this definition to
+not disable it:
+
+`SKIP_DISABLING_UCPD_DEAD_BATTERY`
+
+It can be defined thanks the `variant.h`, `build_opt.h` or `hal_conf_extra.h`
+
+> [!WARNING]
+> Enable it is under user responsability.
