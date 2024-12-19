@@ -22,7 +22,9 @@ Libraries using basic features like Serial, SPI, I2C,... should be fully compati
 
 ## Built-in (delivered with the core package)
 
+* CMSIS_DSP: see usage example [here](../blob/main/libraries/CMSIS_DSP/examples/arm_sin_cos_example_f32/arm_sin_cos_example_f32.ino)
 * EEPROM: follow the official [EEPROM](https://docs.arduino.cc/learn/built-in-libraries/eeprom/) API
+* IWatchdog: see [here](../blob/main/libraries/IWatchdog/README.md)
 * Servo: follow the official [Servo](https://docs.arduino.cc/libraries/servo/) API
 * SoftwareSerial: follow the official [SoftwareSerial](https://docs.arduino.cc/learn/built-in-libraries/software-serial/) API.<br>
   It uses an **hardware timer**. Interrupt is triggered at a `frequency = Baudrate * OVERSAMPLE` (by default _3*baudrate_) to handle RX as well as TX transmissions.
