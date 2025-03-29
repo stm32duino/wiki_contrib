@@ -335,6 +335,19 @@ serial.setRtsCts(PA12, PA11);
 serial.begin(460800);
 ```
 
+#### Enable Tx, Rx Pin Active Level and/or Data Inversion
+
+Available in core version greater than **2.10.1**
+
+The U(S)ART Tx and Rx pin signal values can be inverted (VDD = 0/mark, Gnd = 1/idle), and the U(S)ART can send and receive data in negative/inverse logic (1 = L, 0 = H); the
+parity bit is also inverted.
+
+* Enable Tx and Rx active level inversion on `HardwareSerial` instances, respectively:
+  * `void setTxInvert(void)`
+  * `void setRxInvert(void)`
+* Enable data inversion on `HardwareSerial` instances:
+  * `void setDataInvert(void)`
+
 ## [[HardwareTimer library]]
 
 
