@@ -86,7 +86,14 @@ Syntax in the board.txt:
 
 `Nucleo_64.menu.pnum.NUCLEO_L476RG.build.startup_file=-DCUSTOM_STARTUP_FILE`
 
-Then add a `*.S` file in the `variant/NUCLEO_L476RG/` folder.
+Then add a `*.S` file in the `variant/NUCLEO_L476RG/` folder and add guard to only build for the selected target:
+```
+#if defined(ARDUINO_MALYANM200_F070CB) || defined(ARDUINO_MALYANM300_F070CB)`
+/* Beginning of the startup file */
+...
+/* End of the startup file */
+#endif /* ARDUINO_MALYANM200_F070CB || ARDUINO_MALYANM300_F070CB */
+```
 
 > [!WARNING]
 > file extension must be `.S` not `.s`**
