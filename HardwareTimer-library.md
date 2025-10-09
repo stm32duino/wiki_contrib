@@ -201,7 +201,7 @@ Then it is possible to configure *CaptureCompare* (channel specific CaptureCompa
 __Example__:
 ```C++
     MyTim->setCaptureCompare(channel, 50); // Default format is TICK_FORMAT. 50 ticks
-    MyTim->setCaptureCompare(channel, 50, TICK_FORMAT)
+    MyTim->setCaptureCompare(channel, 50, TICK_COMPARE_FORMAT )
     MyTim->setCaptureCompare(channel, 50, MICROSEC_COMPARE_FORMAT); // 50 microseconds    between counter reset and compare
     MyTim->setCaptureCompare(channel, 50, HERTZ_COMPARE_FORMAT); // 50 Hertz -> 1/50    seconds between counter reset and compare
     MyTim->setCaptureCompare(channel, 50, RESOLUTION_8B_COMPARE_FORMAT); // used for    Dutycycle: [0.. 255]
