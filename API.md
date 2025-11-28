@@ -104,6 +104,11 @@ using one of the below options:
  * [`build_opt.h`][build_opt.h]
  * header file of the variant: `variant_<boardname>.h`
 
+### ADC general
+ * setup: `pinMode(pin, INPUT_ANALOG);` 
+   has to be an ADC pin (e.g. PA0)
+ * read: `uint16_t adc_value = analogRead(pin);`
+
 ### ADC internal channels
 Available in core version greater than **1.5.0**
 
