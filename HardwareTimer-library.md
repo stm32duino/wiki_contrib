@@ -286,6 +286,25 @@ Following examples are provided in [STM32Examples](https://github.com/stm32duino
         Callback toggles pin.
         Once configured, there is only CPU load for callbacks executions.
 
+   * Alternate timebase callback simple example
+     ```
+	 HardwareTimer timer1(TIM1);
+
+	 void timerCallback() {
+		// Toggle led pin. 
+		digitalWrite(LED_BUILTIN, ! digitalRead(LED_BUILTIN));
+	 }
+
+	 void setup()
+		pinMode(LED_BUILTIN, OUTPUT);
+		timer1.pause();
+		timer1.setOverflow(500000, MICROSEC_FORMAT); //set the period
+		timer1.attachInterrupt(timerCallback);
+		timer1.refresh();
+		timer1.resume();
+	 }
+	 ```
+
    * [Timebase_callback_with_parameter.ino](https://github.com/stm32duino/STM32Examples/blob/main/examples/Peripherals/HardwareTimer/Timebase_callback_with_parameter/Timebase_callback_with_parameter.ino)
 
         This example shows how to configure HardwareTimer to execute a callback with parameter at regular interval.
