@@ -287,7 +287,8 @@ Following examples are provided in [STM32Examples](https://github.com/stm32duino
         Once configured, there is only CPU load for callbacks executions.
 
    * Alternate timebase callback simple example
-     ```
+
+```C++
 HardwareTimer timer1(TIM1);
 
 void timerCallback() {
@@ -307,7 +308,7 @@ void setup() {
 void loop() {
   // nothing to do
 }
-	 ```
+```
 
    * [Timebase_callback_with_parameter.ino](https://github.com/stm32duino/STM32Examples/blob/main/examples/Peripherals/HardwareTimer/Timebase_callback_with_parameter/Timebase_callback_with_parameter.ino)
 
